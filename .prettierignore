@@ -1,0 +1,16 @@
+dist
+node_modules
+plop
+coverage
+.changeset
+.next
+build
+scripts
+yarn.lock
+!.storybook
+!.commitlintrc.cjs
+!.lintstagedrc.cjs
+!jest.config.js
+!plopfile.js
+!react-shim.js
+!tsup.config.ts
