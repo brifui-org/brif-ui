@@ -1,0 +1,13 @@
+{
+  "name": "@brifui/core",
+  "version": "0.0.0",
+  "description": "Core library for Brif UI.",
+  "type": "module",
+  "sideEffects": false,
+  "private": true,
+  "devDependencies": {
+    "@brifui/eslint-config": "workspace:*",
+    "@brifui/typescript-config": "workspace:*",
+    "typescript": "5.5.4"
+  }
+}
