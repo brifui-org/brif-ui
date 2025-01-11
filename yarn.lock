@@ -32,7 +32,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@brifui/eslint-config@workspace:packages/eslint-config":
+"@brifui/core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@brifui/core@workspace:packages/core"
+  dependencies:
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/eslint-config@workspace:*, @brifui/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@brifui/eslint-config@workspace:packages/eslint-config"
   dependencies:
@@ -50,7 +60,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/typescript-config@workspace:packages/typescript-config":
+"@brifui/theme@workspace:packages/theme":
+  version: 0.0.0-use.local
+  resolution: "@brifui/theme@workspace:packages/theme"
+  dependencies:
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/typescript-config@workspace:*, @brifui/typescript-config@workspace:packages/typescript-config":
   version: 0.0.0-use.local
   resolution: "@brifui/typescript-config@workspace:packages/typescript-config"
   languageName: unknown
