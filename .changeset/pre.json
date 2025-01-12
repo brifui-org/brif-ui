@@ -8,5 +8,7 @@
     "@brifui/theme": "0.0.0",
     "@brifui/typescript-config": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "three-toys-grab"
+  ]
 }
