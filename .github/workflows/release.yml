@@ -39,12 +39,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN is required for publishing to registry and needs to be provided manually
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      
-      - name: Release
-        if: steps.changesets.outputs.published != 'true'
-        timeout-minutes: 15
-        run: |
-          yarn release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
