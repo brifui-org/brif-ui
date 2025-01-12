@@ -17,4 +17,6 @@ runs:
 
     - name: 📥 Download deps
       shell: bash
-      run: yarn install --frozen-lockfile
+      run: |
+        corepack enable
+        yarn install --frozen-lockfile
