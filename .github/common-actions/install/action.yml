@@ -4,18 +4,17 @@ description: "Sets up Node.js and runs install"
 runs:
   using: composite
   steps:
-    - name: Install dependencies
-      uses: pnpm/action-setup@v4
+    - name: ⎔ Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.17.x
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-
-    - name: Setup Git User
+    - name: 🔎 Setup Git User
       shell: bash
       run: |
         git config --global user.email "thinh.duc.trinh@gmail.com"
         git config --global user.name "Trinh Duc Trinh"
 
-    - name: Install dependencies
+    - name: 📥 Download deps
       shell: bash
-      run: yarn install
+      run: yarn install --frozen-lockfile
