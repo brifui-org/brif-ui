@@ -23,6 +23,9 @@
     ".": "./src/index.ts",
     "./tailwind": "./src/tailwind/index.ts"
   },
+  "peerDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
     "@brifui/typescript-config": "workspace:*",

@@ -33,9 +33,7 @@ const createTailwindPlugin = (configs: BrifUIPluginConfig) => {
     {
       darkMode: "class",
       theme: {
-        colors: {
-          ...resolved.colors
-        }
+        colors: resolved.colors
       }
     }
   );

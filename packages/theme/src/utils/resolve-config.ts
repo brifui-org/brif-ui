@@ -32,11 +32,10 @@ export const resolveConfig = (configs: BrifUIPluginConfig) => {
       for (const [colorName, colorValue] of Object.entries(
         flatten(colorConfig)
       )) {
-        console.log(colorName);
         const parsed = Color(colorValue);
         const [h, s, l] = parsed.hsl().round(2).array();
         const tokenName = `--${prefix}-${tier}-color-${colorName}`;
-        const tokenValue = `hsl(var(${tokenName}))`;
+        const tokenValue = `hsl(var(${tokenName}) / <alpha-value>)`;
         resolved.utilities[cssSelector][tokenName] = `${h} ${s}% ${l}%`;
         resolved.colors[colorName] = tokenValue;
       }
