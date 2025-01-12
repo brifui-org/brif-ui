@@ -15,7 +15,8 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "tsup src"
+    "build": "tsup src",
+    "dev": "tsup src --watch"
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
