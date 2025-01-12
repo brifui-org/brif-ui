@@ -7,9 +7,9 @@ permissions:
 
 on:
   push:
-    paths:
-      - ".changeset/**"
-      - "packages/**"
+    # paths:
+    #   - ".changeset/**"
+    #   - "packages/**"
     branches:
       - "main"
 
@@ -26,11 +26,11 @@ jobs:
       - name: Install
         uses: ./.github/common-actions/install
       
-      - name: Create Release Pull Request or Publish to PM registry
+      - name: Create Release Pull Request or Publish to NPM registry
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: yarn release
+          version: yarn version
           title: "ci(changesets): :package: version packages"
           commit: 'ci(changesets): version packages'
           setupGitUser: false
@@ -40,11 +40,10 @@ jobs:
           # NPM_TOKEN is required for publishing to registry and needs to be provided manually
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       
-      - name: Create  release
+      - name: Release
         if: steps.changesets.outputs.published != 'true'
         timeout-minutes: 15
         run: |
-          yarn version
           yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
