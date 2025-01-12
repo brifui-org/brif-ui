@@ -4,10 +4,43 @@
   "description": "Theming library for Brif UI.",
   "type": "module",
   "sideEffects": false,
+  "keywords": [
+    "theme",
+    "theming",
+    "ui"
+  ],
   "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsup src"
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tailwind": "./src/tailwind/index.ts"
+  },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
+    "@types/color": "^4",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
     "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "color": "^4.2.3",
+    "deepmerge": "^4.3.1"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2019",
+    "format": [
+      "cjs",
+      "esm"
+    ]
   }
 }

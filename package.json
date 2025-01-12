@@ -15,9 +15,11 @@
     "test": "turbo run test",
     "dev": "turbo dev",
     "lint": "turbo lint",
+    "codegen": "turbo run codegen --concurrency 1 --ui stream",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "after:install": "yarn codegen"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
@@ -28,6 +30,7 @@
     "husky": "^9.1.7",
     "inquirer": "9",
     "prettier": "^3.2.5",
+    "tsup": "^8.3.5",
     "turbo": "^2.3.3",
     "typescript": "5.5.4"
   },
@@ -36,7 +39,7 @@
   },
   "packageManager": "yarn@4.6.0",
   "workspaces": [
-    "apps/*",
+    "docs/",
     "packages/*"
   ],
   "config": {
