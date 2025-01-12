@@ -1,0 +1,12 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "brifui-docs": "0.1.0",
+    "@brifui/core": "0.0.0",
+    "@brifui/eslint-config": "0.0.0",
+    "@brifui/theme": "0.0.0",
+    "@brifui/typescript-config": "0.0.0"
+  },
+  "changesets": []
+}
