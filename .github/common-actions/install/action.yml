@@ -7,7 +7,7 @@ runs:
     - name: ⎔ Setup node
       uses: actions/setup-node@v3
       with:
-        node-version: 18.17.x
+        node-version: 20.18.x
 
     - name: 🔎 Setup Git User
       shell: bash
