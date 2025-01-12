@@ -21,7 +21,7 @@
     "commit": "git-cz",
     "after:install": "yarn codegen",
     "version": "changeset version",
-    "release": "changeset publish",
+    "release": "yarn build && changeset publish",
     "changeset:beta": "changeset pre enter beta"
   },
   "devDependencies": {
