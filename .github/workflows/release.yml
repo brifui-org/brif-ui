@@ -2,7 +2,8 @@ name: Release
 
 permissions:
   actions: write
-  contents: read
+  pull-requests: write
+  contents: write
 
 on:
   push:
@@ -25,19 +26,26 @@ jobs:
       - name: Install
         uses: ./.github/common-actions/install
       
-      - name: Create Release Pull Request or Publish to npm registry
+      - name: Create Release Pull Request or Publish to PM registry
         id: changesets
         uses: changesets/action@v1
         with:
           publish: yarn release
-          commit: 'ci: version packages'
+          title: "ci(changesets): :package: version packages"
+          commit: 'ci(changesets): version packages'
+          setupGitUser: false
         env:
           # GITHUB_TOKEN is required for creating a pull request and will be provided by the Github Action automatically
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN is required for publishing to registry and needs to be provided manually
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       
-      # This step will push tags to the repository after the packages are published and will create a new release on Github
-      - name: Push git tag after publish
-        if: steps.changesets.outputs.published == 'true'
-        run: git push --follow-tags
+      - name: Create  release
+        if: steps.changesets.outputs.published != 'true'
+        timeout-minutes: 15
+        run: |
+          yarn version
+          yarn release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
