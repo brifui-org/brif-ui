@@ -24,4 +24,4 @@ runs:
     - name: 📥 Download deps
       shell: bash
       run: |
-        yarn install --frozen-lockfile
+        yarn install --immutable
