@@ -1,4 +1,8 @@
-name: Pre-release
+name: Release
+
+permissions:
+  actions: write
+  contents: read
 
 on:
   push:
