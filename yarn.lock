@@ -2145,6 +2145,7 @@ __metadata:
     "@commitlint/cli": "npm:^19.6.1"
     "@commitlint/config-conventional": "npm:^19.6.0"
     "@commitlint/cz-commitlint": "npm:^19.6.1"
+    clean-package: "npm:^2.2.0"
     commitizen: "npm:^4.3.1"
     husky: "npm:^9.1.7"
     inquirer: "npm:9"
@@ -2365,6 +2366,17 @@ __metadata:
   version: 3.9.0
   resolution: "ci-info@npm:3.9.0"
   checksum: 10c0/6f0109e36e111684291d46123d491bc4e7b7a1934c3a20dea28cba89f1d4a03acd892f5f6a81ed3855c38647e285a150e3c9ba062e38943bef57fee6c1554c3a
+  languageName: node
+  linkType: hard
+
+"clean-package@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "clean-package@npm:2.2.0"
+  dependencies:
+    dot-prop: "npm:^6.0.1"
+  bin:
+    clean-package: bin/main.js
+  checksum: 10c0/014192ddd9ccb48288e934f9b4378ed86c57fdf7b65e38c1a61069e73d79845135d2645142f565ed4ff835a8660fa70387e5cd2a26348253cae699d4d3cedd26
   languageName: node
   linkType: hard
 
@@ -2816,6 +2828,15 @@ __metadata:
   dependencies:
     is-obj: "npm:^2.0.0"
   checksum: 10c0/93f0d343ef87fe8869320e62f2459f7e70f49c6098d948cc47e060f4a3f827d0ad61e83cb82f2bd90cd5b9571b8d334289978a43c0f98fea4f0e99ee8faa0599
+  languageName: node
+  linkType: hard
+
+"dot-prop@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "dot-prop@npm:6.0.1"
+  dependencies:
+    is-obj: "npm:^2.0.0"
+  checksum: 10c0/30e51ec6408978a6951b21e7bc4938aad01a86f2fdf779efe52330205c6bb8a8ea12f35925c2029d6dc9d1df22f916f32f828ce1e9b259b1371c580541c22b5a
   languageName: node
   linkType: hard
 

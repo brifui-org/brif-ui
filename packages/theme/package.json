@@ -15,8 +15,10 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup src",
-    "dev": "tsup src --watch"
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
