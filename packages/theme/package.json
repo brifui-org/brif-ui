@@ -9,6 +9,10 @@
     "theming",
     "ui"
   ],
+  "files": [
+    "dist",
+    "src"
+  ],
   "license": "MIT",
   "publishConfig": {
     "access": "public"
