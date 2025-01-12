@@ -1,5 +1,11 @@
 # @brifui/theme
 
+## 0.0.1-beta.2
+
+### Patch Changes
+
+- [#15](https://github.com/brifui-org/brif-ui/pull/15) [`7c2078d`](https://github.com/brifui-org/brif-ui/commit/7c2078d290c933ea62da6ae42836e050ee366af9) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - included files for theme plugin publish
+
 ## 0.0.1-beta.1
 
 ### Patch Changes
