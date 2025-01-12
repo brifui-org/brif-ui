@@ -6,12 +6,15 @@
     "@brifui/core": "0.0.0",
     "@brifui/eslint-config": "0.0.0",
     "@brifui/theme": "0.0.0",
-    "@brifui/typescript-config": "0.0.0"
+    "@brifui/typescript-config": "0.0.0",
+    "@brifui/box": "0.0.0",
+    "@brifui/components": "0.0.0"
   },
   "changesets": [
     "beige-items-exercise",
     "three-eagles-repair",
     "three-toys-grab",
-    "twelve-chicken-suffer"
+    "twelve-chicken-suffer",
+    "two-bats-warn"
   ]
 }
