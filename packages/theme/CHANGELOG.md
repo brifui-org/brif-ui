@@ -1,5 +1,11 @@
 # @brifui/theme
 
+## 0.0.1-beta.3
+
+### Patch Changes
+
+- [#17](https://github.com/brifui-org/brif-ui/pull/17) [`1fad972`](https://github.com/brifui-org/brif-ui/commit/1fad97278c293ec7a6ac0569b4d4a950ca51b15b) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - fixed published config
+
 ## 0.0.1-beta.2
 
 ### Patch Changes
