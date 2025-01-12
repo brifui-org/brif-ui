@@ -9,6 +9,7 @@
     "@brifui/typescript-config": "0.0.0"
   },
   "changesets": [
-    "three-toys-grab"
+    "three-toys-grab",
+    "twelve-chicken-suffer"
   ]
 }
