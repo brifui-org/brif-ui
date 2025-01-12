@@ -30,7 +30,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          version: yarn version
+          publish: yarn release
           title: "ci(changesets): :package: version packages"
           commit: 'ci(changesets): version packages'
           setupGitUser: false
