@@ -9,7 +9,6 @@
     "theming",
     "ui"
   ],
-  "private": true,
   "license": "MIT",
   "publishConfig": {
     "access": "public"

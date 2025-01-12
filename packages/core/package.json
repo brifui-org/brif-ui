@@ -4,7 +4,6 @@
   "description": "Core library for Brif UI.",
   "type": "module",
   "sideEffects": false,
-  "private": true,
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
