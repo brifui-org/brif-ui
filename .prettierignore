@@ -5,7 +5,6 @@ coverage
 .changeset
 .next
 build
-scripts
 yarn.lock
 !.storybook
 !.commitlintrc.cjs
