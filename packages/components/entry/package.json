@@ -1,11 +1,11 @@
 {
-  "name": "@brifui/core",
+  "name": "@brifui/components",
   "version": "0.0.0",
-  "description": "Core library of Brif UI",
+  "description": "Brif UI components",
   "type": "module",
   "sideEffects": false,
   "keywords": [
-    "brif",
+    "box",
     "component",
     "ui"
   ],
@@ -25,9 +25,9 @@
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
-  "exports": {
-    ".": "./src/index.ts",
-    "./utils": "./src/utils/index.ts"
+  "dependencies": {
+    "@brifui/box": "workspace:*",
+    "@brifui/core": "workspace:*"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",

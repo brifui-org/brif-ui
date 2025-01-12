@@ -1,11 +1,11 @@
 {
-  "name": "@brifui/core",
+  "name": "@brifui/box",
   "version": "0.0.0",
-  "description": "Core library of Brif UI",
+  "description": "Box component - Brif UI",
   "type": "module",
   "sideEffects": false,
   "keywords": [
-    "brif",
+    "box",
     "component",
     "ui"
   ],
@@ -21,19 +21,25 @@
     "build": "tsup src --dts",
     "dev": "tsup src --watch",
     "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "postpack": "clean-package restore",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
-  "exports": {
-    ".": "./src/index.ts",
-    "./utils": "./src/utils/index.ts"
+  "dependencies": {
+    "@brifui/core": "workspace:*"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
     "@types/react": "^19.0.5",
     "@types/react-dom": "^19.0.3",
+    "global-jsdom": "^26.0.0",
+    "jsdom": "^26.0.0",
     "typescript": "5.5.4"
   },
   "tsup": {

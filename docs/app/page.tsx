@@ -1,7 +1,9 @@
+import { Box } from "@brifui/components";
+
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <h1>Hello world!</h1>
-    </div>
+    <Box className="flex items-center justify-center min-h-screen">
+      <Box as="h1">Hello world!</Box>
+    </Box>
   );
 }
