@@ -1,0 +1,21 @@
+name: "Install"
+description: "Sets up Node.js and runs install"
+
+runs:
+  using: composite
+  steps:
+    - name: Install dependencies
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+
+    - name: Setup Git User
+      shell: bash
+      run: |
+        git config --global user.email "thinh.duc.trinh@gmail.com"
+        git config --global user.name "Trinh Duc Trinh"
+
+    - name: Install dependencies
+      shell: bash
+      run: yarn install
