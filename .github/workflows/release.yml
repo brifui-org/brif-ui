@@ -1,0 +1,39 @@
+name: Pre-release
+
+on:
+  push:
+    paths:
+      - ".changeset/**"
+      - "packages/**"
+    branches:
+      - "main"
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Install
+        uses: ./.github/common-actions/install
+      
+      - name: Create Release Pull Request or Publish to npm registry
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
+          commit: 'ci: version packages'
+        env:
+          # GITHUB_TOKEN is required for creating a pull request and will be provided by the Github Action automatically
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN is required for publishing to registry and needs to be provided manually
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+      # This step will push tags to the repository after the packages are published and will create a new release on Github
+      - name: Push git tag after publish
+        if: steps.changesets.outputs.published == 'true'
+        run: git push --follow-tags

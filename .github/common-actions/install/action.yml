@@ -1,0 +1,27 @@
+name: "Install"
+description: "Sets up Node.js and runs install"
+
+runs:
+  using: composite
+  steps:
+    - name: ⎔ Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.18.x
+
+    - name: 🔎 Setup Git User
+      shell: bash
+      run: |
+        git config --global user.email "thinh.duc.trinh@gmail.com"
+        git config --global user.name "Trinh Duc Trinh"
+    
+    # Corepack makes sure to use correct Node.js version for your project, it requires having "engines" specified in package.json file
+    # Read more about Corepack and advanced dependencies caching at: https://infinum.com/handbook/frontend/node/managing-node-npm-versions
+    - name: 🗃️ Enable corepack
+      run: corepack enable
+      shell: bash
+
+    - name: 📥 Download deps
+      shell: bash
+      run: |
+        yarn install --frozen-lockfile
