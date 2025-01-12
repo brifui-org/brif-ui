@@ -1,4 +1,13 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "eslint.workingDirectories": [
+    {
+      "pattern": "packages/*"
+    }
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.format.enable": false,
+  "editor.semanticHighlighting.enabled": false,
+  "typescript.tsserver.enableTracing": true
 }
