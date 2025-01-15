@@ -1,7 +1,9 @@
-import { HTMLTag, PolymophicComponentProps } from "@brifui/core";
+import { DynamicComponentPropsWithRef } from "@brifui/core";
 import { createDynamicComponent } from "@brifui/core/utils";
+import { ElementType } from "react";
 
-export type BoxProps<T extends HTMLTag> = PolymophicComponentProps<T>;
+export type BoxProps<T extends ElementType = "div"> =
+  DynamicComponentPropsWithRef<{}, T>;
 
 export const Box = createDynamicComponent({
   defaultTag: "div",
