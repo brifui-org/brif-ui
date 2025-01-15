@@ -1,6 +1,6 @@
 {
   "name": "@brifui/flex-box",
-  "version": "0.0.0",
+  "version": "0.0.1-beta.0",
   "description": "FlexBox component - Brif UI",
   "type": "module",
   "sideEffects": false,
