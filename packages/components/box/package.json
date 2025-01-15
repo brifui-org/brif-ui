@@ -28,7 +28,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/core": "workspace:*"
+    "@brifui/core": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
@@ -36,8 +38,8 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
-    "@types/react": "^19.0.5",
-    "@types/react-dom": "^19.0.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "global-jsdom": "^26.0.0",
     "jsdom": "^26.0.0",
     "typescript": "5.5.4"

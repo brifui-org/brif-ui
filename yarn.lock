@@ -69,10 +69,12 @@ __metadata:
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.1.0"
-    "@types/react": "npm:^19.0.5"
-    "@types/react-dom": "npm:^19.0.3"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
     global-jsdom: "npm:^26.0.0"
     jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft
@@ -84,6 +86,7 @@ __metadata:
     "@brifui/box": "workspace:*"
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
+    "@brifui/flex-box": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@types/react": "npm:^19.0.5"
     "@types/react-dom": "npm:^19.0.3"
@@ -99,6 +102,9 @@ __metadata:
     "@brifui/typescript-config": "workspace:*"
     "@types/react": "npm:^19.0.5"
     "@types/react-dom": "npm:^19.0.3"
+    class-variance-authority: "npm:^0.7.1"
+    clsx: "npm:^2.1.1"
+    tailwind-merge: "npm:^2.6.0"
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft
@@ -118,6 +124,27 @@ __metadata:
     globals: "npm:^15.12.0"
     typescript: "npm:^5.3.3"
     typescript-eslint: "npm:^8.15.0"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/flex-box@workspace:*, @brifui/flex-box@workspace:packages/components/flex-box":
+  version: 0.0.0-use.local
+  resolution: "@brifui/flex-box@workspace:packages/components/flex-box"
+  dependencies:
+    "@brifui/core": "workspace:*"
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^16.1.0"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft
 
@@ -2860,6 +2887,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"class-variance-authority@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "class-variance-authority@npm:0.7.1"
+  dependencies:
+    clsx: "npm:^2.1.1"
+  checksum: 10c0/0f438cea22131808b99272de0fa933c2532d5659773bfec0c583de7b3f038378996d3350683426b8e9c74a6286699382106d71fbec52f0dd5fbb191792cccb5b
+  languageName: node
+  linkType: hard
+
 "clean-package@npm:^2.2.0":
   version: 2.2.0
   resolution: "clean-package@npm:2.2.0"
@@ -2923,6 +2959,13 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: 10c0/2176952b3649293473999a95d7bebfc9dc96410f6cbd3d2595cf12fd401f63a4bf41a7adbfd3ab2ff09ed60cb9870c58c6acdd18b87767366fabfc163700f13b
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
   languageName: node
   linkType: hard
 
@@ -7678,6 +7721,13 @@ __metadata:
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
   checksum: 10c0/dfbe201ae09ac6053d163578778c53aa860a784147ecf95705de0cd23f42c851e1be7889241495e95c37cabb058edb1052f141387bef68f705afc8f9dd358509
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "tailwind-merge@npm:2.6.0"
+  checksum: 10c0/fc8a5535524de9f4dacf1c16ab298581c7bb757d68a95faaf28942b1c555a619bba9d4c6726fe83986e44973b315410c1a5226e5354c30ba82353bd6d2288fa5
   languageName: node
   linkType: hard
 
