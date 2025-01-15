@@ -8,10 +8,12 @@
     "@brifui/theme": "0.0.0",
     "@brifui/typescript-config": "0.0.0",
     "@brifui/box": "0.0.0",
-    "@brifui/components": "0.0.0"
+    "@brifui/components": "0.0.0",
+    "@brifui/flex-box": "0.0.0"
   },
   "changesets": [
     "beige-items-exercise",
+    "eight-hats-float",
     "three-eagles-repair",
     "three-toys-grab",
     "twelve-chicken-suffer",
