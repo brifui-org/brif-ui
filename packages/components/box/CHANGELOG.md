@@ -1,5 +1,12 @@
 # @brifui/box
 
+## 0.0.1-beta.1
+
+### Patch Changes
+
+- Updated dependencies [[`7501338`](https://github.com/brifui-org/brif-ui/commit/75013387190639e0eb4f62dca7651ce91382b06c)]:
+  - @brifui/core@0.0.1-beta.0
+
 ## 0.0.1-beta.0
 
 ### Patch Changes
