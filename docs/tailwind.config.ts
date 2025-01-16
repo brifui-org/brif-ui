@@ -7,7 +7,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "../node_modules/@brifui/theme/**/*.{js,jsx,ts,tsx}",
-    "../node_modules/@brifui/flex-box/**/*.{js,jsx,ts,tsx}"
+    "../node_modules/@brifui/components/**/*.{js,jsx,ts,tsx}"
   ],
   plugins: [brifui()]
 } satisfies Config;
