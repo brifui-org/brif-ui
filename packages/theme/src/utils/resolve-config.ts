@@ -7,10 +7,12 @@ export const resolveConfig = (configs: BrifUIPluginConfig) => {
 
   const resolved: {
     colors: Record<string, string>;
+    breakpoints: Record<string, string>;
     utilities: Record<string, Record<string, string>>;
     variants: Record<string, Array<string>>;
   } = {
     colors: {},
+    breakpoints: {},
     utilities: {},
     variants: {}
   };
@@ -18,12 +20,21 @@ export const resolveConfig = (configs: BrifUIPluginConfig) => {
   if (!themes) return resolved;
 
   for (const [themeName, themeConfig] of Object.entries(themes)) {
-    const { colors } = themeConfig;
+    const { colors, breakpoints } = themeConfig;
 
     const cssSelector = `.${themeName},[data-theme="${themeName}"]`;
     resolved.utilities[cssSelector] = {};
 
     resolved.variants[themeName] = [`&:is(.${themeName} *)`];
+
+    /**
+     * Breakpoints
+     */
+    for (const [bp, value] of Object.entries(breakpoints)) {
+      const tokenName = `--${prefix}-breakpoint-${bp}`;
+      resolved.utilities[cssSelector][tokenName] = value;
+      resolved.breakpoints[bp] = value;
+    }
 
     /**
      * Colors

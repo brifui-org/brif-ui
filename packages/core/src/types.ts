@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ElementType } from "react";
+import { ComponentPropsWithRef, CSSProperties, ElementType } from "react";
 
 export type Prefer<P, T> = P & Omit<T, keyof P>;
 
@@ -20,4 +20,17 @@ export type DynamicElementProps<T> = {
 export type DynamicComponentPropsWithRef<
   P,
   T extends ElementType
-> = OverwritableType<DynamicElementProps<T>, T> & P;
+> = WithThemedStyleProps<OverwritableType<DynamicElementProps<T>, T> & P>;
+
+/**
+ * Utils
+ */
+export type ComponentPropsFromVariants<V, R extends keyof V = never> = Omit<
+  V,
+  R
+> &
+  Required<Pick<V, R>>;
+
+export type WithThemedStyleProps<P> = Omit<P, "style"> & {
+  style?: CSSProperties | ((theme: any) => CSSProperties);
+};
