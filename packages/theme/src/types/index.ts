@@ -1,4 +1,4 @@
-export * from "./themes";
-export * from "./types";
+export * from "./plugins";
 export * from "./colors";
+export * from "./utils";
 export * from "./breakpoints";

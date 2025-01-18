@@ -1,14 +1,17 @@
 import { Container } from "@brifui/components";
 
+import { theme } from "../.brifui/theme";
+
 export default function Home() {
+  console.log(theme);
   return (
     <Container
-      center
       style={(theme) => ({
-        display: "block"
+        backdropFilter: theme.breakpoints.mobile
       })}
+      center
     >
-      HEHE
+      {JSON.stringify(theme)}
     </Container>
   );
 }
