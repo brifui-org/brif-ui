@@ -3,10 +3,10 @@ import { Container } from "@brifui/components";
 export default function Home() {
   return (
     <Container
-      center
       style={(theme) => ({
-        display: "block"
+        width: theme.breakpoints.mobile
       })}
+      center
     >
       HEHE
     </Container>

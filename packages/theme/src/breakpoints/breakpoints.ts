@@ -8,4 +8,6 @@ export const breakpoints = {
 
 export type DefaultBreakpoints = typeof breakpoints;
 
-export type Breakpoints<B extends Record<string, string>> = B;
+export type Breakpoints = Partial<DefaultBreakpoints> & {
+  [key: string]: string;
+};

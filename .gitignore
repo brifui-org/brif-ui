@@ -21,6 +21,9 @@ coverage
 # Vercel
 .vercel
 
+# BrifUI
+.brifui
+
 # Build Outputs
 .next/
 out/

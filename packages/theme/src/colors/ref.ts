@@ -22,4 +22,4 @@ export const ref = {
   neutral
 };
 
-export type RefColors = typeof ref;
+export type DefaultRefColors = typeof ref;

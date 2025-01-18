@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ElementType, useMemo } from "react";
-import { cn } from "../cn/cn";
+
 import { DynamicComponentPropsWithRef } from "../../types";
+import { cn } from "../cn/cn";
 
 export type CreateDynamicComponentParams<P, DefaultTag extends ElementType> = {
   defaultTag?: DefaultTag;

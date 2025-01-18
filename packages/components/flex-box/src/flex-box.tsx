@@ -1,7 +1,7 @@
+import { cva, type VariantProps } from "class-variance-authority";
+import { ElementType } from "react";
 import { DynamicComponentPropsWithRef } from "@brifui/core";
 import { createDynamicComponent } from "@brifui/core/utils";
-import { ElementType } from "react";
-import { cva, type VariantProps } from "class-variance-authority";
 
 export const flexBoxVariants = cva("flex", {
   variants: {

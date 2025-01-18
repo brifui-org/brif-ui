@@ -8,5 +8,14 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "../node_modules/@brifui/components/**/*.{js,jsx,ts,tsx}"
   ],
-  plugins: [brifui()]
+  plugins: [
+    brifui({
+      theme: {
+        breakpoints: {
+          mobile: "",
+          desktop: ""
+        }
+      }
+    })
+  ]
 } satisfies Config;

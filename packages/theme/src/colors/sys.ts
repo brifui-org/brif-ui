@@ -18,4 +18,4 @@ export const sys = {
   border
 };
 
-export type SysColors = typeof sys;
+export type DefaultSysColors = typeof sys;

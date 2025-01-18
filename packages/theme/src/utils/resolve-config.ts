@@ -1,9 +1,10 @@
 import Color from "color";
-import { flatten } from "./flatten";
+
 import { BrifUIPluginConfig } from "../types";
+import { flatten } from "./flatten";
 
 export const resolveConfig = (configs: BrifUIPluginConfig) => {
-  const { prefix, themes } = configs;
+  const { prefix, theme } = configs;
 
   const resolved: {
     colors: Record<string, string>;
@@ -17,39 +18,38 @@ export const resolveConfig = (configs: BrifUIPluginConfig) => {
     variants: {}
   };
 
-  if (!themes) return resolved;
+  if (!theme) return resolved;
 
-  for (const [themeName, themeConfig] of Object.entries(themes)) {
-    const { colors, breakpoints } = themeConfig;
+  const { colors, breakpoints } = theme;
+  const themeName = "light";
 
-    const cssSelector = `.${themeName},[data-theme="${themeName}"]`;
-    resolved.utilities[cssSelector] = {};
+  const cssSelector = `.${themeName},[data-theme="${themeName}"]`;
+  resolved.utilities[cssSelector] = {};
 
-    resolved.variants[themeName] = [`&:is(.${themeName} *)`];
+  resolved.variants[themeName] = [`&:is(.${themeName} *)`];
 
-    /**
-     * Breakpoints
-     */
-    for (const [bp, value] of Object.entries(breakpoints)) {
-      const tokenName = `--${prefix}-breakpoint-${bp}`;
-      resolved.utilities[cssSelector][tokenName] = value;
-      resolved.breakpoints[bp] = value;
-    }
+  /**
+   * Breakpoints
+   */
+  for (const [bp, value] of Object.entries(breakpoints)) {
+    const tokenName = `--${prefix}-breakpoint-${bp}`;
+    resolved.utilities[cssSelector][tokenName] = value;
+    resolved.breakpoints[bp] = value;
+  }
 
-    /**
-     * Colors
-     */
-    for (const [tier, colorConfig] of Object.entries(colors)) {
-      for (const [colorName, colorValue] of Object.entries(
-        flatten(colorConfig)
-      )) {
-        const parsed = Color(colorValue);
-        const [h, s, l] = parsed.hsl().round(2).array();
-        const tokenName = `--${prefix}-${tier}-color-${colorName}`;
-        const tokenValue = `hsl(var(${tokenName}) / <alpha-value>)`;
-        resolved.utilities[cssSelector][tokenName] = `${h} ${s}% ${l}%`;
-        resolved.colors[colorName] = tokenValue;
-      }
+  /**
+   * Colors
+   */
+  for (const [tier, colorConfig] of Object.entries(colors)) {
+    for (const [colorName, colorValue] of Object.entries(
+      flatten(colorConfig)
+    )) {
+      const parsed = Color(colorValue);
+      const [h, s, l] = parsed.hsl().round(2).array();
+      const tokenName = `--${prefix}-${tier}-color-${colorName}`;
+      const tokenValue = `hsl(var(${tokenName}) / <alpha-value>)`;
+      resolved.utilities[cssSelector][tokenName] = `${h} ${s}% ${l}%`;
+      resolved.colors[colorName] = tokenValue;
     }
   }
 

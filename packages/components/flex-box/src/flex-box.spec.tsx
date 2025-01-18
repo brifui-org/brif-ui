@@ -1,5 +1,6 @@
+import { render, screen } from "@testing-library/react";
+
 import { FlexBox } from "./flex-box";
-import { screen, render } from "@testing-library/react";
 
 describe("Box", () => {
   it("should render as `div` by default", async () => {

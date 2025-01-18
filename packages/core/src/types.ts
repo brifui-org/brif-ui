@@ -1,4 +1,5 @@
 import { ComponentPropsWithRef, CSSProperties, ElementType } from "react";
+import { BrifUIThemeConfig } from "@brifui/theme";
 
 export type Prefer<P, T> = P & Omit<T, keyof P>;
 
@@ -32,5 +33,5 @@ export type ComponentPropsFromVariants<V, R extends keyof V = never> = Omit<
   Required<Pick<V, R>>;
 
 export type WithThemedStyleProps<P> = Omit<P, "style"> & {
-  style?: CSSProperties | ((theme: any) => CSSProperties);
+  style?: CSSProperties | ((theme: BrifUIThemeConfig) => CSSProperties);
 };
