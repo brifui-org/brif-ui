@@ -1,14 +1,13 @@
-import { Breakpoints } from "../breakpoints";
-import { DefaultRefColors } from "../colors/ref";
-import { DefaultSysColors } from "../colors/sys";
+import { BreakpointConfig } from "./breakpoints";
+import { ColorConfig } from "./colors";
 
 /**
  * The Brif UI theme config
  */
 export type BrifUIThemeConfig = {
   colors: {
-    ref: DefaultRefColors;
-    sys: DefaultSysColors;
+    ref?: Record<string, ColorConfig>;
+    sys?: Record<string, ColorConfig>;
   };
-  breakpoints: Breakpoints;
+  breakpoints: BreakpointConfig;
 };

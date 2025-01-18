@@ -10,10 +10,9 @@ export default {
   ],
   plugins: [
     brifui({
-      theme: {
+      base: {
         breakpoints: {
-          mobile: "",
-          desktop: ""
+          mobile: "250px"
         }
       }
     })

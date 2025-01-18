@@ -1,25 +1,34 @@
-import deepmerge from "deepmerge";
+"use client";
+
 import plugin from "tailwindcss/plugin";
 
-import { light } from "../themes";
-import { BrifUIPluginConfig, BrifUIPluginConfigArgs } from "../types";
-import { generateTypes } from "../utils/generate-types/generate-types";
-import { resolveConfig } from "../utils/resolve-config";
+import { dark, light } from "../themes";
+import { BrifUIPluginConfig, DeepRequired } from "../types";
+import {
+  generateThemeFile,
+  generateTypes
+} from "../utils/generate-types/generate-types";
+import { mergeTheme } from "../utils/merge-theme/merge-theme";
+import { resolveConfig } from "../utils/resolve-config/resolve-config";
 
 export const DEFAULT_PREFIX = "brif";
 
-const defaultConfigs: BrifUIPluginConfig = {
+const defaultConfigs: DeepRequired<BrifUIPluginConfig> = {
   prefix: DEFAULT_PREFIX,
-  theme: light
+  base: light,
+  themes: {
+    light,
+    dark
+  }
 };
 
-const createTailwindPlugin = (args: BrifUIPluginConfigArgs) => {
-  generateTypes(args);
-
-  const configs = deepmerge(defaultConfigs, args) as BrifUIPluginConfig;
+const createTailwindPlugin = (args: BrifUIPluginConfig) => {
+  const configs = mergeTheme(defaultConfigs, args);
   const { prefix } = configs;
-
   const resolved = resolveConfig(configs);
+
+  generateTypes(args);
+  generateThemeFile(configs);
 
   return plugin(
     ({ addBase, addUtilities, addVariant }) => {
@@ -50,6 +59,6 @@ const createTailwindPlugin = (args: BrifUIPluginConfigArgs) => {
   );
 };
 
-export const brifui = (configs: BrifUIPluginConfigArgs = {}) => {
+export function brifui(configs: BrifUIPluginConfig = {}) {
   return createTailwindPlugin(configs);
-};
+}

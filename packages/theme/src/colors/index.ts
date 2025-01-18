@@ -35,3 +35,6 @@ export const colors = {
   secondary,
   text
 };
+
+export { ref as refColors } from "./ref";
+export { sys as sysColors } from "./sys";

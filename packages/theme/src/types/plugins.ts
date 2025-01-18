@@ -3,16 +3,16 @@ import { BrifUIThemeConfig } from "./themes";
 /**
  * The Brif UI Tailwindcss config
  */
-export type BrifUIPluginConfig = {
+export interface BrifUIPluginConfig {
   /**
    * The prefix for css variables
    * @default brif
    */
-  prefix: string;
-  theme: BrifUIThemeConfig;
-};
-
-export type BrifUIPluginConfigArgs = {
   prefix?: string;
-  theme?: Partial<BrifUIThemeConfig>;
-};
+  base?: Partial<BrifUIThemeConfig>;
+  themes?: {
+    light?: Partial<Omit<BrifUIThemeConfig, "breakpoints">>;
+    dark?: Partial<Omit<BrifUIThemeConfig, "breakpoints">>;
+    [key: string]: Partial<Omit<BrifUIThemeConfig, "breakpoints">> | undefined;
+  };
+}

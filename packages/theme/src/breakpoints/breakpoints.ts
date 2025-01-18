@@ -7,7 +7,3 @@ export const breakpoints = {
 };
 
 export type DefaultBreakpoints = typeof breakpoints;
-
-export type Breakpoints = Partial<DefaultBreakpoints> & {
-  [key: string]: string;
-};
