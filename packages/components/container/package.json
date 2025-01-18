@@ -1,6 +1,6 @@
 {
   "name": "@brifui/container",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "Container component - Brif UI",
   "type": "module",
   "sideEffects": false,
