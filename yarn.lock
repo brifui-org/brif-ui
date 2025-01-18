@@ -84,6 +84,7 @@ __metadata:
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
     "@brifui/box": "workspace:*"
+    "@brifui/container": "workspace:*"
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
     "@brifui/flex-box": "workspace:*"
@@ -93,6 +94,27 @@ __metadata:
     "@rslib/core": "npm:^0.3.1"
     "@types/react": "npm:^19.0.5"
     "@types/react-dom": "npm:^19.0.3"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/container@workspace:*, @brifui/container@workspace:packages/components/container":
+  version: 0.0.0-use.local
+  resolution: "@brifui/container@workspace:packages/components/container"
+  dependencies:
+    "@brifui/core": "workspace:*"
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^16.1.0"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:5.5.4"

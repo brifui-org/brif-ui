@@ -22,8 +22,11 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
   excludedProps = []
 }: CreateDynamicComponentParams<P, DefaultTag>) => {
   const Comp = <T extends ElementType = DefaultTag>({
+    // @ts-expect-error idk
     as: Tag = defaultTag as unknown as T,
+    // @ts-expect-error idk
     className = "",
+    style: _style,
     ...props
   }: DynamicComponentPropsWithRef<P, T>) => {
     const { included } = useMemo(() => {
@@ -46,9 +49,16 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
       };
     }, [props]);
 
+    const style = useMemo(() => {
+      if (typeof _style === "undefined") return undefined;
+      else if (typeof _style === "function") return {};
+      return _style;
+    }, [_style]);
+
     return (
       <Tag
         {...(included as any)}
+        style={style}
         className={cn(classNameVariants(props), className)}
       />
     );
