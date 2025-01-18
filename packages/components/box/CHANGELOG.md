@@ -1,5 +1,12 @@
 # @brifui/box
 
+## 0.0.1-beta.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/core@0.0.1-beta.2
+
 ## 0.0.1-beta.2
 
 ### Patch Changes
