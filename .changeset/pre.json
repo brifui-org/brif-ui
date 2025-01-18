@@ -9,12 +9,14 @@
     "@brifui/typescript-config": "0.0.0",
     "@brifui/box": "0.0.0",
     "@brifui/components": "0.0.0",
-    "@brifui/flex-box": "0.0.0"
+    "@brifui/flex-box": "0.0.0",
+    "@brifui/container": "0.0.1-beta.1"
   },
   "changesets": [
     "beige-items-exercise",
     "eight-hats-float",
     "purple-pumas-study",
+    "spicy-melons-kick",
     "three-eagles-repair",
     "three-toys-grab",
     "twelve-chicken-suffer",

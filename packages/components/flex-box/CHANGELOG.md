@@ -1,5 +1,12 @@
 # @brifui/flex-box
 
+## 0.0.1-beta.2
+
+### Patch Changes
+
+- Updated dependencies [[`c00c03d`](https://github.com/brifui-org/brif-ui/commit/c00c03d17b1230204b0f5b2a82968aa8bd4cc5fa)]:
+  - @brifui/core@0.0.1-beta.1
+
 ## 0.0.1-beta.1
 
 ### Patch Changes
