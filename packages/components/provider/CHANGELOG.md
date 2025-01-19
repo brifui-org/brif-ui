@@ -1,5 +1,13 @@
 # @brifui/provider
 
+## 0.0.1-beta.1
+
+### Patch Changes
+
+- Updated dependencies [[`01d07fc`](https://github.com/brifui-org/brif-ui/commit/01d07fcd65eb9c516e9ec0aad83e822bd210aba3)]:
+  - @brifui/theme@0.0.1-beta.7
+  - @brifui/core@0.0.1-beta.4
+
 ## 0.0.1-beta.0
 
 ### Patch Changes
