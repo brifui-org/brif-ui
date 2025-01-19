@@ -5,14 +5,39 @@ import { DeepPartial } from "./utils";
  */
 export interface BrifUIPluginConfig {
   /**
-   * The prefix for css variables
-   * @default brif
+   * The prefix for CSS variables.
+   * @default "brif"
    */
   prefix?: string;
+
+  /**
+   * The file path to save the theme configuration.
+   * @default "./theme-config.ts"
+   */
+  themeFileName?: string;
+
+  /**
+   * The base theme configuration.
+   */
   base?: Partial<BrifUIThemeConfig>;
+
+  /**
+   * The themes configuration, allowing for light and dark themes, as well as custom themes.
+   */
   themes?: {
+    /**
+     * Configuration for the light theme.
+     */
     light?: DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>;
+
+    /**
+     * Configuration for the dark theme.
+     */
     dark?: DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>;
+
+    /**
+     * Configuration for custom themes.
+     */
     [key: string]:
       | DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>
       | undefined;

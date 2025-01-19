@@ -16,5 +16,12 @@ export default {
       }
     }
   },
-  plugins: [brifui()]
+  plugins: [
+    brifui({
+      themeFileName: "./providers/theme-config.ts",
+      themes: {
+        violet: {}
+      }
+    })
+  ]
 } satisfies Config;

@@ -16,6 +16,7 @@ export const DEFAULT_PREFIX = "brif";
 const defaultConfigs: DeepRequired<BrifUIPluginConfig> = {
   prefix: DEFAULT_PREFIX,
   base: light,
+  themeFileName: "./theme-config.ts",
   themes: {
     light,
     dark
