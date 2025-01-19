@@ -1,5 +1,11 @@
 # @brifui/theme
 
+## 0.0.1-beta.6
+
+### Patch Changes
+
+- [#29](https://github.com/brifui-org/brif-ui/pull/29) [`305d731`](https://github.com/brifui-org/brif-ui/commit/305d731df9b2d863515be9f88d17f2517e4a5bd0) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - Improved auto-generated types for theme package
+
 ## 0.0.1-beta.5
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @brifui/flex-box
 
+## 0.0.1-beta.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/core@0.0.1-beta.3
+
 ## 0.0.1-beta.3
 
 ### Patch Changes
