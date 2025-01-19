@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ElementType, useMemo } from "react";
+import { ElementType, useContext, useMemo } from "react";
 
+import { BrifUIContext } from "../../context";
 import { DynamicComponentPropsWithRef } from "../../types";
 import { cn } from "../cn/cn";
 
@@ -18,18 +19,34 @@ export type CreateDynamicComponentParams<P, DefaultTag extends ElementType> = {
 
 export const createDynamicComponent = <P, DefaultTag extends ElementType>({
   defaultTag = "div" as DefaultTag,
+  displayName,
   classNameVariants = () => "",
   defaultProps = {} as DynamicComponentPropsWithRef<P, DefaultTag>,
   excludedProps = []
 }: CreateDynamicComponentParams<P, DefaultTag>) => {
   const Comp = <T extends ElementType = DefaultTag>({
-    // @ts-expect-error idk
     as: Tag = defaultTag as unknown as T,
-    // @ts-expect-error idk
     className = "",
     style: _style,
     ...props
   }: DynamicComponentPropsWithRef<P, T>) => {
+    const themeContext = useContext(BrifUIContext);
+    if (!themeContext) {
+      throw new Error(
+        "createDynamicComponent must be used within a BrifUIProvider"
+      );
+    }
+
+    const { themeConfig, currentTheme } = themeContext;
+    if (!themeConfig.themes) {
+      throw new Error("No theme is found.");
+    }
+
+    const theme = themeConfig.themes[currentTheme];
+    if (!theme) {
+      throw new Error(`Theme ${theme} is not defined.`);
+    }
+
     const { included } = useMemo(() => {
       const excluded: Record<string, any> = {};
       const included: Record<string, any> = {};
@@ -52,9 +69,10 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
 
     const style = useMemo(() => {
       if (typeof _style === "undefined") return undefined;
-      else if (typeof _style === "function") return {};
+      else if (typeof _style === "function")
+        return _style(theme as BrifUIThemeConfig);
       return _style;
-    }, [_style]);
+    }, [_style, theme]);
 
     return (
       <Tag
@@ -64,6 +82,7 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
       />
     );
   };
+  Comp.displayName = displayName;
 
   return Comp;
 };

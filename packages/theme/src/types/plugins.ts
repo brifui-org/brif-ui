@@ -1,3 +1,5 @@
+import { DeepPartial } from "./utils";
+
 /**
  * The Brif UI Tailwindcss config
  */
@@ -9,8 +11,10 @@ export interface BrifUIPluginConfig {
   prefix?: string;
   base?: Partial<BrifUIThemeConfig>;
   themes?: {
-    light?: Partial<Omit<BrifUIThemeConfig, "breakpoints">>;
-    dark?: Partial<Omit<BrifUIThemeConfig, "breakpoints">>;
-    [key: string]: Partial<Omit<BrifUIThemeConfig, "breakpoints">> | undefined;
+    light?: DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>;
+    dark?: DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>;
+    [key: string]:
+      | DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>
+      | undefined;
   };
 }

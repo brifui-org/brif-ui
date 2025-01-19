@@ -1,10 +1,11 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderView } from "@brifui/mocks";
 
 import { Box } from "./box";
 
 describe("Box", () => {
   it("should render as `div` by default", async () => {
-    render(<Box>Hello world</Box>);
+    renderView(<Box>Hello world</Box>);
 
     const element = await screen.findByText("Hello world");
 
@@ -14,7 +15,7 @@ describe("Box", () => {
 
   describe("when change `as` to span", () => {
     it("should render as `span`", async () => {
-      render(<Box as="span">Hello world</Box>);
+      renderView(<Box as="span">Hello world</Box>);
 
       const element = await screen.findByText("Hello world");
       expect(element).toBeVisible();
@@ -24,7 +25,7 @@ describe("Box", () => {
 
   describe("when set className", () => {
     it("should render element with corresponding className", async () => {
-      render(
+      renderView(
         <Box as="span" className="text-red">
           Hello world
         </Box>

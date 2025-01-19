@@ -2,10 +2,8 @@ import { ComponentPropsWithRef, CSSProperties, ElementType } from "react";
 
 export type Prefer<P, T> = P & Omit<T, keyof P>;
 
-export type PolymorphicComponentPropsWithRef<T extends ElementType> = Pick<
-  ComponentPropsWithRef<T>,
-  keyof ComponentPropsWithRef<T>
->;
+export type PolymorphicComponentPropsWithRef<T extends ElementType> =
+  ComponentPropsWithRef<T>;
 
 export type OverwritableType<OwnProps, Type extends ElementType> = Prefer<
   OwnProps,
@@ -31,6 +29,6 @@ export type ComponentPropsFromVariants<V, R extends keyof V = never> = Omit<
 > &
   Required<Pick<V, R>>;
 
-export type WithThemedStyleProps<P> = Omit<P, "style"> & {
+export type WithThemedStyleProps<P> = P & {
   style?: CSSProperties | ((theme: BrifUIThemeConfig) => CSSProperties);
 };

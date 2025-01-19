@@ -1,5 +1,7 @@
-import { cva, type VariantProps } from "class-variance-authority";
+"use client";
+
 import { ElementType } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   ComponentPropsFromVariants,
   DynamicComponentPropsWithRef
@@ -22,7 +24,7 @@ export const containerVariants = cva("container", {
   }
 });
 
-export const Container = createDynamicComponent<ContainerProps, "div">({
+export const Container = createDynamicComponent<ContainerVariantsProps, "div">({
   defaultTag: "div",
   displayName: "Container",
   classNameVariants: containerVariants,

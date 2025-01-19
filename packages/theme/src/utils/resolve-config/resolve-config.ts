@@ -1,6 +1,6 @@
 import Color from "color";
 
-import { BrifUIPluginConfig, DeepRequired } from "../../types";
+import { BrifUIPluginConfig, DeepRequired, NestedObject } from "../../types";
 import { flatten } from "../flatten";
 
 export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
@@ -9,12 +9,14 @@ export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
   const resolved: {
     colors: Record<string, string>;
     breakpoints: Record<string, string>;
+    spacing: Record<string, string>;
     utilities: Record<string, Record<string, string>>;
     variants: Record<string, Array<string>>;
     themes: Record<string, string>;
   } = {
     colors: {},
     breakpoints: {},
+    spacing: {},
     utilities: {},
     variants: {},
     themes: {}
@@ -40,10 +42,25 @@ export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
      */
     if ("breakpoints" in themeConfig && themeName === "base") {
       for (const [bp, value] of Object.entries(themeConfig.breakpoints)) {
-        if (!base.breakpoints[bp]) continue;
+        if (!base.breakpoints[bp as keyof BrifUIThemeConfig["breakpoints"]])
+          continue;
         const tokenName = `--${prefix}-breakpoint-${bp}`;
         resolved.utilities[cssSelector][tokenName] = value;
         resolved.breakpoints[bp] = value;
+      }
+    }
+
+    /**
+     * Spacing
+     * NOTE: It is only available in the base theme.
+     */
+    if ("spacing" in themeConfig && themeName === "base") {
+      for (const [spacing, value] of Object.entries(themeConfig.spacing)) {
+        if (!base.spacing[spacing as keyof BrifUIThemeConfig["spacing"]])
+          continue;
+        const tokenName = `--${prefix}-spacing-${spacing.replaceAll(".", "_")}`;
+        resolved.utilities[cssSelector][tokenName] = value;
+        resolved.spacing[spacing] = `var(${tokenName})`;
       }
     }
 
@@ -60,7 +77,7 @@ export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
     };
     for (const [tier, colorConfig] of Object.entries(colors)) {
       for (const [colorName, colorValue] of Object.entries(
-        flatten(colorConfig)
+        flatten(colorConfig as NestedObject)
       )) {
         if (
           !flattenBaseColors[tier as "ref" | "sys"] ||

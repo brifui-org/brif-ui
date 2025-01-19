@@ -1,16 +1,13 @@
 import { Provider } from "@/providers";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Funnel_Display } from "next/font/google";
 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"]
-});
+import { Layout } from "@/layouts";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const funnelDisplay = Funnel_Display({
+  variable: "--font-funnel-display",
   subsets: ["latin"]
 });
 
@@ -26,10 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <Provider>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <link rel="icon" href="/favicon.png" sizes="any" />
+      <body className={`${funnelDisplay.variable}  antialiased`}>
+        <Layout>{children}</Layout>
       </body>
     </Provider>
   );

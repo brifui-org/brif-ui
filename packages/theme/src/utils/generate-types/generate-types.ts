@@ -49,7 +49,7 @@ export const generateThemeKeys = (configs: BrifUIPluginConfig) => {
   const keys = Object.keys(themes).filter(
     (key) => key !== "light" && key !== "dark"
   );
-  return `type BrifUITheme = ${["light", "dark", ...keys].map((themeKey) => JSON.stringify(themeKey)).join(" | ")}`;
+  return `type BrifUIThemeKey = ${["light", "dark", ...keys].map((themeKey) => JSON.stringify(themeKey)).join(" | ")}`;
 };
 
 export const generateTypes = async (configs: BrifUIPluginConfig) => {
@@ -68,7 +68,8 @@ export const generateTypes = async (configs: BrifUIPluginConfig) => {
 import {
     BreakpointConfig,
     ExtendRefColors,
-    ExtendSysColors
+    ExtendSysColors,
+    SpacingConfig
   } from "@brifui/theme";
 
 declare global {
@@ -78,6 +79,7 @@ declare global {
       sys: ${generateColorTypes(sys, "sys")}
     },
     ${generateBreakpointTypes(configs)}
+    spacing: SpacingConfig;
   };
 
   ${generateThemeKeys(configs)}

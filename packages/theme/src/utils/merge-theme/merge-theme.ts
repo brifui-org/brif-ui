@@ -19,7 +19,8 @@ export const mergeTheme = (
   })) {
     themes[themeName] = {
       ...deepmerge(base, themeConfig as unknown as BrifUIThemeConfig),
-      breakpoints: base.breakpoints
+      breakpoints: base.breakpoints,
+      spacing: base.spacing
     };
   }
 
