@@ -1,12 +1,11 @@
 {
-  "name": "@brifui/components",
-  "version": "0.0.1-beta.4",
-  "description": "Brif UI components",
+  "name": "@brifui/provider",
+  "version": "0.0.0",
+  "description": "Provider component - Brif UI",
   "type": "module",
   "sideEffects": false,
   "keywords": [
-    "box",
-    "flexbox",
+    "provider",
     "component",
     "ui"
   ],
@@ -19,30 +18,32 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rslib build",
-    "dev": "rslib build --watch",
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch",
     "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "postpack": "clean-package restore",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
     "@brifui/core": "workspace:*",
+    "@brifui/theme": "workspace:*",
+    "class-variance-authority": "^0.7.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/box": "workspace:*",
-    "@brifui/container": "workspace:*",
     "@brifui/eslint-config": "workspace:*",
-    "@brifui/flex-box": "workspace:*",
-    "@brifui/provider": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
-    "@microsoft/api-extractor": "^7.49.1",
-    "@rsbuild/plugin-react": "^1.1.0",
-    "@rslib/core": "^0.3.1",
-    "@types/react": "^19.0.5",
-    "@types/react-dom": "^19.0.3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "global-jsdom": "^26.0.0",
+    "jsdom": "^26.0.0",
     "typescript": "5.5.4"
   },
   "tsup": {

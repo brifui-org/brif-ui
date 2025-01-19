@@ -32,9 +32,5 @@ export type ComponentPropsFromVariants<V, R extends keyof V = never> = Omit<
   Required<Pick<V, R>>;
 
 export type WithThemedStyleProps<P> = Omit<P, "style"> & {
-  style?:
-    | CSSProperties
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore dynamic types
-    | ((theme: import("@brifui/theme").BrifUIThemeConfig) => CSSProperties);
+  style?: CSSProperties | ((theme: BrifUIThemeConfig) => CSSProperties);
 };
