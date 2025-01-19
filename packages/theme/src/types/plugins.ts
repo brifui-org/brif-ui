@@ -1,5 +1,3 @@
-import { BrifUIThemeConfig } from "./themes";
-
 /**
  * The Brif UI Tailwindcss config
  */

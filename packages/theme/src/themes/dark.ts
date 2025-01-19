@@ -1,13 +1,12 @@
 import { breakpoints } from "../breakpoints";
 import { ref } from "../colors/ref";
 import { sys } from "../colors/sys";
-import { DeepRequired } from "../types";
-import { BrifUIThemeConfig } from "../types/themes";
+import type { DeepRequired } from "../types";
 
-export const dark: DeepRequired<BrifUIThemeConfig> = {
+export const dark = {
   colors: {
     ref,
     sys
   },
   breakpoints
-};
+} as unknown as DeepRequired<BrifUIThemeConfig>;

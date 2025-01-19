@@ -5,7 +5,7 @@ import plugin from "tailwindcss/plugin";
 import { dark, light } from "../themes";
 import { BrifUIPluginConfig, DeepRequired } from "../types";
 import {
-  generateThemeFile,
+  generateThemeConfigFile,
   generateTypes
 } from "../utils/generate-types/generate-types";
 import { mergeTheme } from "../utils/merge-theme/merge-theme";
@@ -28,7 +28,7 @@ const createTailwindPlugin = (args: BrifUIPluginConfig) => {
   const resolved = resolveConfig(configs);
 
   generateTypes(args);
-  generateThemeFile(configs);
+  generateThemeConfigFile(configs);
 
   return plugin(
     ({ addBase, addUtilities, addVariant }) => {

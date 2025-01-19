@@ -21,7 +21,17 @@ export default defineConfig({
   ],
   output: {
     target: "web",
-    externals: ["react", "react-dom"]
+    externals: [
+      "react",
+      "react-dom",
+      "@brifui/eslint-config",
+      "@brifui/typescript-config",
+      "@rsbuild/plugin-react",
+      "@microsoft/api-extractor",
+      "@types/react",
+      "@types/react-dom",
+      "typescript"
+    ]
   },
   plugins: [pluginReact()]
 });

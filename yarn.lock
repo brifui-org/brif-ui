@@ -155,6 +155,7 @@ __metadata:
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
     "@brifui/flex-box": "workspace:*"
+    "@brifui/provider": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@microsoft/api-extractor": "npm:^7.49.1"
     "@rsbuild/plugin-react": "npm:^1.1.0"
@@ -228,6 +229,28 @@ __metadata:
   dependencies:
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^16.1.0"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/provider@workspace:*, @brifui/provider@workspace:packages/components/provider":
+  version: 0.0.0-use.local
+  resolution: "@brifui/provider@workspace:packages/components/provider"
+  dependencies:
+    "@brifui/core": "workspace:*"
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/theme": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"

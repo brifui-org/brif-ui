@@ -1,17 +1,18 @@
-import { Container } from "@brifui/components";
+"use client";
 
-import { theme } from "../.brifui/theme";
+import { Container, useTheme } from "@brifui/components";
 
 export default function Home() {
-  console.log(theme);
+  const { currentTheme } = useTheme();
+
   return (
     <Container
       style={(theme) => ({
-        backdropFilter: theme.breakpoints.mobile
+        width: theme.breakpoints.mobile
       })}
       center
     >
-      {JSON.stringify(theme)}
+      Hello world - Theme is {currentTheme}
     </Container>
   );
 }
