@@ -1,0 +1,19 @@
+{
+  "name": "@brifui/mocks",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.tsx",
+    "./setup": "./src/setup.ts"
+  },
+  "devDependencies": {
+    "@brifui/eslint-config": "workspace:*",
+    "@brifui/provider": "workspace:*",
+    "@brifui/typescript-config": "workspace:*",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "typescript": "5.5.4"
+  }
+}

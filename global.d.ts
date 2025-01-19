@@ -1,4 +1,9 @@
-import { BreakpointConfig, ColorConfig } from "./packages/theme";
+import {
+  BreakpointConfig,
+  BrifUIPluginConfig,
+  ColorConfig,
+  SpacingConfig
+} from "./packages/theme";
 
 declare global {
   interface BrifUIThemeConfig {
@@ -7,7 +12,10 @@ declare global {
       sys?: Record<string, ColorConfig>;
     };
     breakpoints: BreakpointConfig;
+    spacing: SpacingConfig;
   }
+
+  type BrifUIThemeKey = any;
 }
 
 export {};

@@ -16,6 +16,7 @@ export const DEFAULT_PREFIX = "brif";
 const defaultConfigs: DeepRequired<BrifUIPluginConfig> = {
   prefix: DEFAULT_PREFIX,
   base: light,
+  themeFileName: "./theme-config.ts",
   themes: {
     light,
     dark
@@ -53,7 +54,8 @@ const createTailwindPlugin = (args: BrifUIPluginConfig) => {
       darkMode: "class",
       theme: {
         colors: resolved.colors,
-        screens: resolved.breakpoints
+        screens: resolved.breakpoints,
+        spacing: resolved.spacing
       }
     }
   );

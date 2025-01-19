@@ -132,10 +132,8 @@ __metadata:
   dependencies:
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
+    "@brifui/mocks": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
-    "@testing-library/dom": "npm:^10.4.0"
-    "@testing-library/jest-dom": "npm:^6.6.3"
-    "@testing-library/react": "npm:^16.1.0"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     global-jsdom: "npm:^26.0.0"
@@ -174,10 +172,8 @@ __metadata:
   dependencies:
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
+    "@brifui/mocks": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
-    "@testing-library/dom": "npm:^10.4.0"
-    "@testing-library/jest-dom": "npm:^6.6.3"
-    "@testing-library/react": "npm:^16.1.0"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     class-variance-authority: "npm:^0.7.1"
@@ -229,10 +225,8 @@ __metadata:
   dependencies:
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
+    "@brifui/mocks": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
-    "@testing-library/dom": "npm:^10.4.0"
-    "@testing-library/jest-dom": "npm:^6.6.3"
-    "@testing-library/react": "npm:^16.1.0"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     class-variance-authority: "npm:^0.7.1"
@@ -240,6 +234,20 @@ __metadata:
     jsdom: "npm:^26.0.0"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/mocks@workspace:*, @brifui/mocks@workspace:packages/mocks":
+  version: 0.0.0-use.local
+  resolution: "@brifui/mocks@workspace:packages/mocks"
+  dependencies:
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/provider": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^16.1.0"
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft

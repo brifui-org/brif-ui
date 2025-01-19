@@ -2,6 +2,8 @@ import "@testing-library/jest-dom/vitest";
 
 import { configure } from "@testing-library/react";
 
-configure({
-  reactStrictMode: true
-});
+export default function setup() {
+  configure({
+    reactStrictMode: true
+  });
+}

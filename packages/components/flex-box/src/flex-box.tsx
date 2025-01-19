@@ -1,5 +1,7 @@
-import { cva, type VariantProps } from "class-variance-authority";
+"use client";
+
 import { ElementType } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { DynamicComponentPropsWithRef } from "@brifui/core";
 import { createDynamicComponent } from "@brifui/core/utils";
 

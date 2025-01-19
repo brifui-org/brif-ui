@@ -1,4 +1,4 @@
-type NestedObject = string | { [key: string]: NestedObject };
+import { NestedObject } from "../types";
 
 export const flatten = (obj: NestedObject): Record<string, string> => {
   const flatted: Record<string, string> = {};

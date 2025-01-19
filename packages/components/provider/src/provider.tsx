@@ -1,19 +1,11 @@
 "use client";
 
 import React, { useContext } from "react";
+import { BrifUIContext, TBrifUIContext } from "@brifui/core";
 import type { BrifUIPluginConfig } from "@brifui/theme";
 
-type Theme<Config extends BrifUIPluginConfig> = keyof Config["themes"];
-
-export type BrifUIContext<
-  Config extends BrifUIPluginConfig = BrifUIPluginConfig
-> = {
-  themeConfig: Config;
-  currentTheme: Theme<Config>;
-  setTheme: React.Dispatch<React.SetStateAction<Theme<Config>>>;
-};
-
-const BrifUIContext = React.createContext<BrifUIContext | undefined>(undefined);
+type Theme<Config extends BrifUIPluginConfig = BrifUIPluginConfig> =
+  keyof Config["themes"];
 
 export const Provider = <Config extends BrifUIPluginConfig>({
   themeConfig,
@@ -51,5 +43,8 @@ export const useTheme = () => {
     throw new Error("useTheme must be used within a BrifUIProvider");
   }
 
-  return context;
+  return context as unknown as TBrifUIContext<
+    BrifUIPluginConfig,
+    BrifUIThemeKey
+  >;
 };

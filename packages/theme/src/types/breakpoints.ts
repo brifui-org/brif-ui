@@ -1,5 +1,5 @@
+import { DefaultBreakpoints } from "../breakpoints";
+
 export type BreakpointConfig<
-  B extends Record<string, string> = Record<string, string>
-> = B & {
-  [key: string]: string;
-};
+  B extends Record<string, string> | undefined = undefined
+> = B extends undefined ? DefaultBreakpoints : B;

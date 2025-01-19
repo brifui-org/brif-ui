@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { renderView, screen } from "@brifui/mocks";
 
 import { FlexBox } from "./flex-box";
 
 describe("Box", () => {
   it("should render as `div` by default", async () => {
-    render(<FlexBox>Hello world</FlexBox>);
+    renderView(<FlexBox>Hello world</FlexBox>);
 
     const element = await screen.findByText("Hello world");
 
@@ -14,7 +14,7 @@ describe("Box", () => {
 
   describe("when change `as` to span", () => {
     it("should render as `span`", async () => {
-      render(<FlexBox as="span">Hello world</FlexBox>);
+      renderView(<FlexBox as="span">Hello world</FlexBox>);
 
       const element = await screen.findByText("Hello world");
       expect(element).toBeVisible();
@@ -24,7 +24,7 @@ describe("Box", () => {
 
   describe("when set className", () => {
     it("should render element with corresponding className", async () => {
-      render(
+      renderView(
         <FlexBox as="span" className="text-red">
           Hello world
         </FlexBox>
@@ -39,7 +39,7 @@ describe("Box", () => {
 
   describe("when set flexDirection to column", () => {
     it("should have `flex-column` className", async () => {
-      render(
+      renderView(
         <FlexBox as="span" className="text-red" flexDirection="column">
           Hello world
         </FlexBox>
@@ -52,7 +52,7 @@ describe("Box", () => {
     });
 
     it("should not pass flexDirection to the component", async () => {
-      render(
+      renderView(
         <FlexBox as="span" className="text-red" flexDirection="column">
           Hello world
         </FlexBox>
@@ -66,7 +66,7 @@ describe("Box", () => {
 
   describe("when set inline to true", () => {
     it("should have `inline-flex` className", async () => {
-      render(
+      renderView(
         <FlexBox inline as="span">
           Hello world
         </FlexBox>
@@ -81,7 +81,7 @@ describe("Box", () => {
 
   describe("when set alignItems to start", () => {
     it("should have `items-start` className", async () => {
-      render(
+      renderView(
         <FlexBox alignItems="start" as="span">
           Hello world
         </FlexBox>
@@ -97,7 +97,7 @@ describe("Box", () => {
 
   describe("when set justifyContent to start", () => {
     it("should have `justify-start` className", async () => {
-      render(
+      renderView(
         <FlexBox justifyContent="start" as="span">
           Hello world
         </FlexBox>
