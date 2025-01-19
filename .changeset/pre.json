@@ -11,12 +11,14 @@
     "@brifui/components": "0.0.0",
     "@brifui/flex-box": "0.0.0",
     "@brifui/container": "0.0.1-beta.1",
-    "@brifui/provider": "0.0.0"
+    "@brifui/provider": "0.0.0",
+    "@brifui/mocks": "0.0.0"
   },
   "changesets": [
     "beige-items-exercise",
     "eight-hats-float",
     "grumpy-goats-turn",
+    "hungry-donkeys-explain",
     "purple-pumas-study",
     "seven-pans-relax",
     "spicy-melons-kick",

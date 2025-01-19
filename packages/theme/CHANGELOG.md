@@ -1,5 +1,11 @@
 # @brifui/theme
 
+## 0.0.1-beta.7
+
+### Patch Changes
+
+- [#31](https://github.com/brifui-org/brif-ui/pull/31) [`01d07fc`](https://github.com/brifui-org/brif-ui/commit/01d07fcd65eb9c516e9ec0aad83e822bd210aba3) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - allowed to customize saved theme config
+
 ## 0.0.1-beta.6
 
 ### Patch Changes
