@@ -11,7 +11,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
         <div className="min-h-[200vh]" />
       </aside>
-      <Container as="main" className="px-16 py-8" center>
+      <Container as="main" className="px-16 py-8 bg-transparent" center>
         {children}
       </Container>
     </div>

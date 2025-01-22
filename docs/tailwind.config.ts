@@ -18,7 +18,6 @@ export default {
   },
   plugins: [
     brifui({
-      themeFileName: "./providers/theme-config.ts",
       themes: {
         violet: {}
       }

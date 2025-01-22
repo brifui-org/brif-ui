@@ -1,7 +1,5 @@
-import { neutral } from "./neutral";
-
 export const text = {
-  DEFAULT: neutral[900],
-  muted: neutral[500],
-  disabled: neutral[400]
+  DEFAULT: 'ref.neutral.900',
+  muted: 'ref.neutral.500',
+  disabled: 'ref.neutral.400',
 };

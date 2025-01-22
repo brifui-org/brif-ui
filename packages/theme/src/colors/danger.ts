@@ -1,5 +1,3 @@
-import { red } from "./red";
-
 export const danger = {
-  DEFAULT: red[500]
+  DEFAULT: 'ref.red.500'
 };

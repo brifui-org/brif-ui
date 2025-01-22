@@ -2,7 +2,7 @@
 
 import { Provider as BrifUIProvider } from "@brifui/components";
 
-import { themeConfig } from "./theme-config";
+import { themeConfig } from "@/theme/theme";
 
 export function Provider({ children }: { children?: React.ReactNode }) {
   return (
