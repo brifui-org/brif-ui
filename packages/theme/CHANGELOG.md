@@ -1,5 +1,11 @@
 # @brifui/theme
 
+## 0.0.1-beta.8
+
+### Patch Changes
+
+- [#33](https://github.com/brifui-org/brif-ui/pull/33) [`3c65ff7`](https://github.com/brifui-org/brif-ui/commit/3c65ff7cdee2d735da9d5ee12a528ff399b43453) Thanks [@thinh-trinh-duc](https://github.com/thinh-trinh-duc)! - added ability to referrence another color and refactor theme plugin
+
 ## 0.0.1-beta.7
 
 ### Patch Changes
