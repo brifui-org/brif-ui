@@ -27,6 +27,7 @@ export const mergeTheme = (
   return {
     ...theme1,
     ...theme2,
+    themeFile: deepmerge(theme1.themeFile, theme2.themeFile ?? {}),
     base,
     themes: themes as unknown as DeepRequired<BrifUIPluginConfig>["themes"]
   };

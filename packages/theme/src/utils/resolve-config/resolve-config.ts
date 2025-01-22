@@ -1,7 +1,7 @@
-import Color from "color";
-
-import { BrifUIPluginConfig, DeepRequired, NestedObject } from "../../types";
-import { flatten } from "../flatten";
+import { BrifUIPluginConfig, DeepRequired } from "../../types";
+import { resolveBreakpointsConfig } from "./resolve-breakpoints-config";
+import { resolveColorsConfig } from "./resolve-colors-config";
+import { resolveSpacingConfig } from "./resolve-spacing-config";
 
 export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
   const { prefix, themes, base } = configs;
@@ -17,15 +17,13 @@ export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
     colors: {},
     breakpoints: {},
     spacing: {},
+    themes: {},
     utilities: {},
-    variants: {},
-    themes: {}
+    variants: {}
   };
 
   for (const [themeName, themeConfig] of Object.entries({ base, ...themes })) {
     if (!themeConfig) continue;
-
-    const { colors } = themeConfig;
 
     const cssSelector =
       themeName === "base"
@@ -36,18 +34,34 @@ export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
     resolved.variants[themeName] = [`&:is(.${themeName} *)`];
 
     /**
+     * Colors
+     */
+    const resolvedColors = resolveColorsConfig(
+      themeConfig.colors as DeepRequired<BrifUIThemeConfig["colors"]>,
+      base.colors,
+      prefix
+    );
+    resolved.colors = resolvedColors.colors;
+    resolved.utilities[cssSelector] = Object.assign(
+      resolved.utilities[cssSelector],
+      resolvedColors.utilities
+    );
+
+    /**
      * Breakpoints
-     *
      * NOTE: It is only available in the base theme.
      */
     if ("breakpoints" in themeConfig && themeName === "base") {
-      for (const [bp, value] of Object.entries(themeConfig.breakpoints)) {
-        if (!base.breakpoints[bp as keyof BrifUIThemeConfig["breakpoints"]])
-          continue;
-        const tokenName = `--${prefix}-breakpoint-${bp}`;
-        resolved.utilities[cssSelector][tokenName] = value;
-        resolved.breakpoints[bp] = value;
-      }
+      const resolvedBreakpoints = resolveBreakpointsConfig(
+        themeConfig.breakpoints,
+        base.breakpoints,
+        prefix
+      );
+      resolved.breakpoints = resolvedBreakpoints.breakpoints
+      resolved.utilities[cssSelector] = Object.assign(
+        resolved.utilities[cssSelector],
+        resolvedBreakpoints.utilities
+      );
     }
 
     /**
@@ -55,43 +69,12 @@ export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
      * NOTE: It is only available in the base theme.
      */
     if ("spacing" in themeConfig && themeName === "base") {
-      for (const [spacing, value] of Object.entries(themeConfig.spacing)) {
-        if (!base.spacing[spacing as keyof BrifUIThemeConfig["spacing"]])
-          continue;
-        const tokenName = `--${prefix}-spacing-${spacing.replaceAll(".", "_")}`;
-        resolved.utilities[cssSelector][tokenName] = value;
-        resolved.spacing[spacing] = `var(${tokenName})`;
-      }
-    }
-
-    /**
-     * Colors
-     */
-    const { colors: { sys: baseSys = {}, ref: baseRef = {} } = {} } =
-      base ?? {};
-    const flattenBaseSysColors = flatten(baseSys);
-    const flattenBaseRefColors = flatten(baseRef);
-    const flattenBaseColors = {
-      sys: flattenBaseSysColors,
-      ref: flattenBaseRefColors
-    };
-    for (const [tier, colorConfig] of Object.entries(colors)) {
-      for (const [colorName, colorValue] of Object.entries(
-        flatten(colorConfig as NestedObject)
-      )) {
-        if (
-          !flattenBaseColors[tier as "ref" | "sys"] ||
-          !flattenBaseColors[tier as "ref" | "sys"][colorName]
-        )
-          continue;
-
-        const parsed = Color(colorValue);
-        const [h, s, l] = parsed.hsl().round(2).array();
-        const tokenName = `--${prefix}-${tier}-color-${colorName}`;
-        const tokenValue = `hsl(var(${tokenName}) / <alpha-value>)`;
-        resolved.utilities[cssSelector][tokenName] = `${h} ${s}% ${l}%`;
-        resolved.colors[colorName] = tokenValue;
-      }
+      const resolvedSpacing = resolveSpacingConfig(themeConfig.spacing, base.spacing, prefix)
+      resolved.spacing = resolvedSpacing.spacing
+      resolved.utilities[cssSelector] = Object.assign(
+        resolved.utilities[cssSelector],
+        resolvedSpacing.utilities
+      );
     }
   }
 

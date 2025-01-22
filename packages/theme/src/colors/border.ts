@@ -1,5 +1,3 @@
-import { neutral } from "./neutral";
-
 export const border = {
-  DEFAULT: neutral[500]
+  DEFAULT: 'ref.neutral.500'
 };
