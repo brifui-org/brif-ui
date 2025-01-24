@@ -1,4 +1,8 @@
-import { BrifUIPluginConfig, DeepRequired } from "../../types";
+import {
+  BrifUIPluginConfig,
+  DeepRequired,
+  ResolvedBrifUIConfig
+} from "../../types";
 import { resolveBreakpointsConfig } from "./resolve-breakpoints-config";
 import { resolveColorsConfig } from "./resolve-colors-config";
 import { resolveSpacingConfig } from "./resolve-spacing-config";
@@ -6,14 +10,7 @@ import { resolveSpacingConfig } from "./resolve-spacing-config";
 export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
   const { prefix, themes, base } = configs;
 
-  const resolved: {
-    colors: Record<string, string>;
-    breakpoints: Record<string, string>;
-    spacing: Record<string, string>;
-    utilities: Record<string, Record<string, string>>;
-    variants: Record<string, Array<string>>;
-    themes: Record<string, string>;
-  } = {
+  const resolved: ResolvedBrifUIConfig = {
     colors: {},
     breakpoints: {},
     spacing: {},

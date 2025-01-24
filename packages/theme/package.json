@@ -27,7 +27,8 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./tailwind": "./src/tailwind/index.ts"
+    "./tailwind": "./src/tailwind/index.ts",
+    "./utils": "./src/utils/index.ts"
   },
   "peerDependencies": {
     "tailwindcss": "^3.4.17"

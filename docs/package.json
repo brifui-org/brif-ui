@@ -1,8 +1,10 @@
 {
   "name": "brifui-docs",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
+    "postinstall": "brif codegen",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -15,6 +17,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@brifui/cli": "workspace:*",
     "@brifui/eslint-config": "workspace:*",
     "@brifui/theme": "workspace:*",
     "@brifui/typescript-config": "workspace:*",

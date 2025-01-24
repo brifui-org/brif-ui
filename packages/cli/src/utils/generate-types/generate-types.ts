@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, writeFile } from "node:fs";
 import path from "node:path";
 
-import { BrifUIPluginConfig, ColorConfig, DeepRequired } from "../../types";
+import { BrifUIPluginConfig, ColorConfig, DeepRequired } from "@brifui/theme";
 
 const DIR = ".brifui";
 const FILENAME = `${DIR}/brif-types.d.ts`;

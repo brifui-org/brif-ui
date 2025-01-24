@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { BrifUIContext, TBrifUIContext } from "@brifui/core";
 import type { BrifUIPluginConfig } from "@brifui/theme";
 
@@ -8,24 +8,21 @@ type Theme<Config extends BrifUIPluginConfig = BrifUIPluginConfig> =
   keyof Config["themes"];
 
 export const Provider = <Config extends BrifUIPluginConfig>({
-  themeConfig,
   children = () => null,
   defaultTheme = "light" as Theme<Config>
 }: {
-  themeConfig: Config;
   children?: (currentTheme: Theme<Config>) => React.ReactNode;
   defaultTheme?: Theme<Config>;
 }) => {
   const [currentTheme, setTheme] = React.useState<Theme<Config>>(defaultTheme);
-
-  if (!themeConfig) {
-    return null;
-  }
+  const themeConfig = useMemo(() => {
+    const config = require('../.brifui/theme.ts')
+  }, [])
 
   return (
     <BrifUIContext.Provider
       value={{
-        themeConfig,
+        // themeConfig,
         // @ts-expect-error
         currentTheme,
         // @ts-expect-error

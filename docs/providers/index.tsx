@@ -2,11 +2,9 @@
 
 import { Provider as BrifUIProvider } from "@brifui/components";
 
-import { themeConfig } from "@/theme/theme";
-
 export function Provider({ children }: { children?: React.ReactNode }) {
   return (
-    <BrifUIProvider themeConfig={themeConfig} defaultTheme="light">
+    <BrifUIProvider defaultTheme="light">
       {(currentTheme) => (
         <html lang="en" className={currentTheme}>
           {children}
