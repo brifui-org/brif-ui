@@ -1,0 +1,67 @@
+{
+  "name": "@brifui/cli",
+  "version": "0.0.0",
+  "description": "CLI library of Brif UI",
+  "type": "module",
+  "sideEffects": false,
+  "keywords": [
+    "brif",
+    "cli",
+    "ui"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "bin"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch",
+    "dev:codegen": "nodemon --watch dist ./bin/dev.js codegen",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore",
+    "gen:command": "oclif generate command"
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "devDependencies": {
+    "@brifui/eslint-config": "workspace:*",
+    "@brifui/mocks": "workspace:*",
+    "@brifui/typescript-config": "workspace:*",
+    "@types/node": "^18",
+    "@types/react": "^19.0.5",
+    "@types/react-dom": "^19.0.3",
+    "nodemon": "^3.1.9",
+    "oclif": "^4.17.17",
+    "ts-node": "^10.9.2",
+    "typescript": "5.5.4"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2019",
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  },
+  "dependencies": {
+    "@brifui/theme": "workspace:*",
+    "@oclif/core": "^4.2.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "bin": {
+    "brif": "./bin/run.js"
+  },
+  "oclif": {
+    "bin": "brif",
+    "commands": "./dist/commands",
+    "dirname": "brif",
+    "topicSeparator": " "
+  }
+}

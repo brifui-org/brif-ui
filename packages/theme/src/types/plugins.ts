@@ -43,3 +43,13 @@ export interface BrifUIPluginConfig {
       | undefined;
   };
 }
+
+
+export type ResolvedBrifUIConfig = {
+  colors: Record<string, string>;
+  breakpoints: Record<string, string>;
+  spacing: Record<string, string>;
+  utilities: Record<string, Record<string, string>>;
+  variants: Record<string, Array<string>>;
+  themes: Record<string, string>;
+};

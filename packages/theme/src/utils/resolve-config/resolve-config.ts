@@ -1,19 +1,17 @@
 import Color from "color";
 
-import { BrifUIPluginConfig, DeepRequired, NestedObject } from "../../types";
+import {
+  BrifUIPluginConfig,
+  DeepRequired,
+  NestedObject,
+  ResolvedBrifUIConfig
+} from "../../types";
 import { flatten } from "../flatten";
 
 export const resolveConfig = (configs: DeepRequired<BrifUIPluginConfig>) => {
   const { prefix, themes, base } = configs;
 
-  const resolved: {
-    colors: Record<string, string>;
-    breakpoints: Record<string, string>;
-    spacing: Record<string, string>;
-    utilities: Record<string, Record<string, string>>;
-    variants: Record<string, Array<string>>;
-    themes: Record<string, string>;
-  } = {
+  const resolved: ResolvedBrifUIConfig = {
     colors: {},
     breakpoints: {},
     spacing: {},
