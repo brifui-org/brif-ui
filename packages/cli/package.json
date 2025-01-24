@@ -26,8 +26,6 @@
     "postpack": "clean-package restore",
     "gen:command": "oclif generate command"
   },
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
     "@brifui/mocks": "workspace:*",

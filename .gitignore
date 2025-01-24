@@ -29,7 +29,7 @@ coverage
 out/
 build
 dist
-
+.install-state.gz
 
 # Debug
 npm-debug.log*

@@ -12,6 +12,7 @@ import { mergeTheme } from "../utils/merge-theme/merge-theme";
 import { resolveConfig } from "../utils/resolve-config/resolve-config";
 
 export const DEFAULT_PREFIX = "brif";
+export const BrifUIPluginSymbol = Symbol("BrifUIPlugin");
 export const CodegenResolvedThemeConfig = Symbol("CodegenResolvedThemeConfig");
 export const CodegenArgThemeConfig = Symbol("CodegenArgThemeConfig");
 export const CodegenThemeConfig = Symbol("CodegenThemeConfig");
@@ -19,15 +20,16 @@ export const CodegenThemeConfig = Symbol("CodegenThemeConfig");
 export type BrifUITailwindPlugin = ReturnType<typeof plugin> & {
   [CodegenResolvedThemeConfig]: ResolvedBrifUIConfig;
   [CodegenArgThemeConfig]: BrifUIPluginConfig;
-  [CodegenThemeConfig]: DeepRequired<BrifUIPluginConfig>
+  [CodegenThemeConfig]: DeepRequired<BrifUIPluginConfig>;
+  $$type: symbol;
 };
 
 const defaultConfigs: DeepRequired<BrifUIPluginConfig> = {
   prefix: DEFAULT_PREFIX,
   base: light,
   themeFile: {
-    dir: './theme',
-    name: 'theme.ts'
+    dir: ".brifui",
+    name: "theme.ts"
   },
   themes: {
     light,
@@ -67,11 +69,11 @@ const createTailwindPlugin = (args: BrifUIPluginConfig) => {
         spacing: resolved.spacing
       }
     }
-  ) as BrifUITailwindPlugin
-
+  ) as BrifUITailwindPlugin;
+  p.$$type = BrifUIPluginSymbol;
   p[CodegenResolvedThemeConfig] = resolved;
   p[CodegenArgThemeConfig] = args;
-  p[CodegenThemeConfig] = configs
+  p[CodegenThemeConfig] = configs;
 
   return p;
 };

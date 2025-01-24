@@ -18,6 +18,7 @@ export const findTailwindConfig = ({
   rootDir = "./",
   fileName = "tailwind.config.ts",
 }: FindTailwindConfigArgs = {}) => {
+    console.log(import.meta.resolve('@brifui/theme'))
     const filePath = path.resolve(rootDir, fileName)
     if (!fs.existsSync(filePath)) {
         throw new Error(`Cannot locate the ${filePath} file.`)

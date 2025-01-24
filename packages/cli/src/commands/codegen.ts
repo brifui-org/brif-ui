@@ -1,7 +1,17 @@
 import { Command } from "@oclif/core";
-import { BrifUITailwindPlugin } from "@brifui/theme/tailwind";
-import { CodegenThemeConfig, CodegenArgThemeConfig } from "@brifui/theme/tailwind";
-import { findTailwindConfig, generateTypes, generateThemeConfigFile } from "../utils";
+import {
+  BrifUIPluginSymbol,
+  BrifUITailwindPlugin,
+  CodegenArgThemeConfig,
+  CodegenThemeConfig
+} from "@brifui/theme/tailwind";
+import pathff from 'node:path'
+
+import {
+  findTailwindConfig,
+  generateThemeConfigFile,
+  generateTypes
+} from "../utils";
 
 export default class Codegen extends Command {
   static override description =
@@ -10,10 +20,12 @@ export default class Codegen extends Command {
   public async run(): Promise<void> {
     const path = findTailwindConfig();
     const { default: config } = await import(path);
-    const plugin = config.plugins.find((p: any) => p[CodegenThemeConfig]) as BrifUITailwindPlugin;
-    const args = plugin[CodegenArgThemeConfig]
-    const tconfig = plugin[CodegenThemeConfig]
-    generateTypes(args)
-    generateThemeConfigFile(tconfig)
+    const plugin = config.plugins.find(
+      (p: any) => "$$type" in p && p.$$type === BrifUIPluginSymbol
+    ) as BrifUITailwindPlugin;
+    const args = plugin[CodegenArgThemeConfig];
+    const tconfig = plugin[CodegenThemeConfig];
+    generateTypes(args);
+    generateThemeConfigFile(tconfig);
   }
 }
