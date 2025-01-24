@@ -1,5 +1,3 @@
-import { purple } from "./purple";
-
 export const secondary = {
-  DEFAULT: purple[500]
+  DEFAULT: "ref.purple.500"
 };

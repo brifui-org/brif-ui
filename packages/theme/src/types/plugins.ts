@@ -11,10 +11,20 @@ export interface BrifUIPluginConfig {
   prefix?: string;
 
   /**
-   * The file path to save the theme configuration.
-   * @default "./theme-config.ts"
+   * Configurations of generated theme file.
    */
-  themeFileName?: string;
+  themeFile?: {
+    /**
+     * Path to save the configuration file.
+     * @default "./themes/"
+     */
+    dir?: string,
+    /**
+     * Name of the configuration file.
+     * @default "theme.ts"
+     */
+    name?: string
+  };
 
   /**
    * The base theme configuration.
