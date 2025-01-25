@@ -11,27 +11,28 @@ export default defineConfig({
     {
       bundle: true,
       dts: true,
-      format: "esm"
+      format: "esm",
+      autoExternal: {
+        dependencies: false,
+        optionalDependencies: true,
+        devDependencies: true,
+        peerDependencies: true
+      }
     },
     {
       bundle: true,
       dts: true,
-      format: "cjs"
+      format: "cjs",
+      autoExternal: {
+        dependencies: false,
+        optionalDependencies: true,
+        devDependencies: true,
+        peerDependencies: true
+      }
     }
   ],
   output: {
-    target: "web",
-    externals: [
-      "react",
-      "react-dom",
-      "@brifui/eslint-config",
-      "@brifui/typescript-config",
-      "@rsbuild/plugin-react",
-      "@microsoft/api-extractor",
-      "@types/react",
-      "@types/react-dom",
-      "typescript"
-    ]
+    target: "web"
   },
   plugins: [pluginReact()]
 });

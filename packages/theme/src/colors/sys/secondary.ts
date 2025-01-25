@@ -1,3 +1,4 @@
 export const secondary = {
-  DEFAULT: "ref.purple.500"
+  DEFAULT: "ref.violet.500",
+  foreground: "ref.white"
 };

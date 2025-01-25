@@ -1,21 +1,23 @@
 import { background } from "./background";
 import { border } from "./border";
 import { danger } from "./danger";
+import { ddefault } from "./default";
+import { foreground } from "./foreground";
 import { primary } from "./primary";
 import { secondary } from "./secondary";
 import { success } from "./success";
-import { text } from "./text";
 import { warning } from "./warning";
 
 export const sys = {
-  text,
+  foreground,
   primary,
   secondary,
   success,
   warning,
   danger,
   background,
-  border
+  border,
+  default: ddefault
 };
 
 export type DefaultSysColors = typeof sys;

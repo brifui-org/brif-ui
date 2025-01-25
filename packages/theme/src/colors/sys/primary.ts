@@ -1,3 +1,4 @@
 export const primary = {
-  DEFAULT: 'ref.blue.500'
+  DEFAULT: "#ffb41f",
+  foreground: "sys.foreground"
 };
