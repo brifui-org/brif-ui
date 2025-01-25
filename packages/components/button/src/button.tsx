@@ -20,7 +20,7 @@ export const buttonVariants = cva(
        * @default false
        */
       isLoading: {
-        true: ["!pl-8"],
+        true: [""],
         false: [""]
       },
       /**
@@ -239,7 +239,7 @@ export const buttonVariants = cva(
     defaultVariants: {
       variant: "solid",
       size: "md",
-      color: "primary",
+      color: "default",
       isLoading: false
     }
   }
