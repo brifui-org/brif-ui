@@ -1,6 +1,6 @@
 {
   "name": "@brifui/core",
-  "version": "0.0.1-beta.5",
+  "version": "0.0.1-beta.6",
   "description": "Core library of Brif UI",
   "type": "module",
   "sideEffects": false,

@@ -1,5 +1,12 @@
 # @brifui/components
 
+## 0.0.1-beta.8
+
+### Patch Changes
+
+- Updated dependencies [[`69ce05f`](https://github.com/brifui-org/brif-ui/commit/69ce05f89c017c2a2488a61728c9e0f0c0aeb931)]:
+  - @brifui/core@0.0.1-beta.6
+
 ## 0.0.1-beta.7
 
 ### Patch Changes

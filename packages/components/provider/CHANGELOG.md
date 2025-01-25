@@ -1,5 +1,15 @@
 # @brifui/provider
 
+## 0.0.1-beta.3
+
+### Patch Changes
+
+- [#36](https://github.com/brifui-org/brif-ui/pull/36) [`69ce05f`](https://github.com/brifui-org/brif-ui/commit/69ce05f89c017c2a2488a61728c9e0f0c0aeb931) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added token
+
+- Updated dependencies [[`69ce05f`](https://github.com/brifui-org/brif-ui/commit/69ce05f89c017c2a2488a61728c9e0f0c0aeb931)]:
+  - @brifui/theme@0.0.1-beta.9
+  - @brifui/core@0.0.1-beta.6
+
 ## 0.0.1-beta.2
 
 ### Patch Changes
