@@ -1,5 +1,11 @@
 # @brifui/flex-box
 
+## 0.0.1-beta.0
+
+### Patch Changes
+
+- [#40](https://github.com/brifui-org/brif-ui/pull/40) [`ee79d5e`](https://github.com/brifui-org/brif-ui/commit/ee79d5ec30e0636536dd1da1b6070b71f97de64b) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - first release
+
 ## 0.0.1-beta.7
 
 ### Patch Changes
