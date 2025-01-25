@@ -14,7 +14,8 @@
     "@brifui/provider": "0.0.0",
     "@brifui/mocks": "0.0.0",
     "@brifui/button": "0.0.0",
-    "@brifui/spinner": "0.0.0"
+    "@brifui/spinner": "0.0.0",
+    "@brifui/input": "0.0.0"
   },
   "changesets": [
     "beige-items-exercise",
@@ -30,6 +31,7 @@
     "spicy-melons-kick",
     "three-eagles-repair",
     "three-toys-grab",
+    "tidy-tomatoes-arrive",
     "twelve-chicken-suffer",
     "two-bats-warn"
   ]
