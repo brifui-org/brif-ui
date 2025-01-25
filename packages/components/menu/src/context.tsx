@@ -1,5 +1,15 @@
-import React, { createContext, useCallback, useContext, useRef } from "react";
-import { cn } from "@brifui/core/utils";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useLayoutEffect,
+  useRef
+} from "react";
+import { Prefer } from "@brifui/core";
+import { cn, pickChildrenByType } from "@brifui/core/utils";
+
+import { Item } from "./item";
+import { Track } from "./track";
 
 export type TMenuContext = {
   onItemHover: (ev: React.MouseEvent<HTMLDivElement>) => void;
@@ -9,21 +19,44 @@ export const MenuContext = createContext<TMenuContext>({
   onItemHover: () => void 0
 });
 
-export const Root = ({
-  children,
-  className,
-  ...props
-}: React.ComponentPropsWithRef<"div">) => {
+export type MenuRootProps = Prefer<
+  {
+    orientation?: "horizontal" | "vertical";
+  },
+  React.ComponentPropsWithRef<"div">
+>;
+
+export const Root = ({ children, className, ...props }: MenuRootProps) => {
   const rootRef = useRef<HTMLDivElement>(null);
+  const position = useRef<{
+    y: number;
+  }>({ y: 0 });
 
   const onItemHover = useCallback<TMenuContext["onItemHover"]>((e) => {
     if (!rootRef.current) return;
     const el = rootRef.current;
     const { y } = e.currentTarget.getBoundingClientRect();
     requestAnimationFrame(() => {
-      el.style.setProperty("--menu-vertical-top", `${y - 260.5}px`);
+      el.style.setProperty(
+        "--menu-vertical-top",
+        `${y - position.current.y}px`
+      );
     });
   }, []);
+
+  useLayoutEffect(() => {
+    if (!rootRef.current) return;
+    const firstItem = rootRef.current.querySelector(
+      'div[role="menuitem"]:first-child'
+    );
+    if (firstItem) {
+      const { y } = firstItem.getBoundingClientRect();
+      position.current.y = y;
+    }
+  }, []);
+
+  const items = pickChildrenByType(children, Item);
+  const tracks = pickChildrenByType(children, Track);
 
   return (
     <MenuContext.Provider value={{ onItemHover }}>
@@ -33,7 +66,8 @@ export const Root = ({
         className={cn("relative", className)}
         {...props}
       >
-        {children}
+        {items}
+        {tracks}
       </div>
     </MenuContext.Provider>
   );

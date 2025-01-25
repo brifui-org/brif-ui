@@ -14,6 +14,12 @@ export const Default: Story = {
       <Menu.Item>Item 1</Menu.Item>
       <Menu.Item>Item 2</Menu.Item>
       <Menu.Item>Item 3</Menu.Item>
+      <Menu.Item>Item 1</Menu.Item>
+      <Menu.Item>Item 2</Menu.Item>
+      <Menu.Item>Item 3</Menu.Item>
+      <Menu.Item>Item 1</Menu.Item>
+      <Menu.Item>Item 2</Menu.Item>
+      <Menu.Item>Item 3</Menu.Item>
       <Menu.Track triggerType="hover" />
     </Menu.Root>
   )
