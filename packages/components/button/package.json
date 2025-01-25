@@ -1,0 +1,54 @@
+{
+  "name": "@brifui/button",
+  "version": "0.0.0",
+  "description": "Button component - Brif UI",
+  "type": "module",
+  "sideEffects": false,
+  "keywords": [
+    "button",
+    "component",
+    "ui"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "dependencies": {
+    "@brifui/core": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@brifui/eslint-config": "workspace:*",
+    "@brifui/mocks": "workspace:*",
+    "@brifui/typescript-config": "workspace:*",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "global-jsdom": "^26.0.0",
+    "jsdom": "^26.0.0",
+    "typescript": "5.5.4"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2019",
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  }
+}

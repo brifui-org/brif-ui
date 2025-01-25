@@ -1345,11 +1345,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/button@workspace:*, @brifui/button@workspace:packages/components/button":
+  version: 0.0.0-use.local
+  resolution: "@brifui/button@workspace:packages/components/button"
+  dependencies:
+    "@brifui/core": "workspace:*"
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/mocks": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@brifui/components@workspace:*, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
     "@brifui/box": "workspace:*"
+    "@brifui/button": "workspace:*"
     "@brifui/container": "workspace:*"
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
@@ -5510,6 +5530,7 @@ __metadata:
     "@types/react-dom": "npm:^19"
     concurrently: "npm:^9.1.2"
     next: "npm:15.1.4"
+    postcss: "npm:^8.5.1"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     storybook: "npm:^8.5.1"
@@ -10965,7 +10986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.4.33, postcss@npm:^8.4.38":
+"postcss@npm:^8.2.14, postcss@npm:^8.4.33, postcss@npm:^8.4.38, postcss@npm:^8.5.1":
   version: 8.5.1
   resolution: "postcss@npm:8.5.1"
   dependencies:

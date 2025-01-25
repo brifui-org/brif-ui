@@ -1,3 +1,4 @@
 export const warning = {
-  DEFAULT: 'ref.yellow.500'
+  DEFAULT: "ref.amber.500",
+  foreground: "sys.foreground"
 };

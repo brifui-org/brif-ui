@@ -27,22 +27,23 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/core": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@brifui/box": "workspace:*",
+    "@brifui/button": "workspace:*",
+    "@brifui/container": "workspace:*",
+    "@brifui/flex-box": "workspace:*",
+    "@brifui/provider": "workspace:*"
   },
   "devDependencies": {
-    "@brifui/box": "workspace:*",
-    "@brifui/container": "workspace:*",
+    "@brifui/core": "workspace:*",
     "@brifui/eslint-config": "workspace:*",
-    "@brifui/flex-box": "workspace:*",
-    "@brifui/provider": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
     "@microsoft/api-extractor": "^7.49.1",
     "@rsbuild/plugin-react": "^1.1.0",
     "@rslib/core": "^0.3.1",
     "@types/react": "^19.0.5",
     "@types/react-dom": "^19.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "typescript": "5.5.4"
   },
   "tsup": {

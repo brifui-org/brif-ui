@@ -7,12 +7,25 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./layouts/**/*.{js,ts,jsx,tsx,mdx}",
+    "./stories/**/*.{js,ts,jsx,tsx,mdx}",
     "../node_modules/@brifui/components/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-funnel-display)"]
+        display: ["var(--font-funnel-display)", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"]
+      },
+      animation: {
+        push: "push .85s cubic-bezier(0, 0, 0.2, 1) forwards"
+      },
+      keyframes: {
+        push: {
+          "75%, 100%": {
+            transform: "scale(1.15) scaleY(1.25)",
+            opacity: "0"
+          }
+        }
       }
     }
   },
