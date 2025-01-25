@@ -27,7 +27,6 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
   const Comp = <T extends ElementType = DefaultTag>({
     as: Tag = defaultTag as unknown as T,
     className = "",
-    style: _style,
     ...props
   }: DynamicComponentPropsWithRef<P, T>) => {
     const themeContext = useContext(BrifUIContext);
@@ -57,14 +56,9 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
       };
     }, [props]);
 
-    const style = useMemo(() => {
-      return _style;
-    }, [_style]);
-
     return (
       <Tag
         {...(included as any)}
-        style={style}
         className={cn(classNameVariants(props), className)}
       />
     );

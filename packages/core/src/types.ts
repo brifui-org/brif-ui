@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, CSSProperties, ElementType } from "react";
+import { ComponentPropsWithRef, ElementType } from "react";
 
 export type Prefer<P, T> = P & Omit<T, keyof P>;
 
@@ -18,7 +18,7 @@ export type DynamicElementProps<T> = {
 export type DynamicComponentPropsWithRef<
   P,
   T extends ElementType
-> = WithThemedStyleProps<OverwritableType<DynamicElementProps<T>, T> & P>;
+> = OverwritableType<DynamicElementProps<T>, T> & P;
 
 /**
  * Utils
@@ -28,7 +28,3 @@ export type ComponentPropsFromVariants<V, R extends keyof V = never> = Omit<
   R
 > &
   Required<Pick<V, R>>;
-
-export type WithThemedStyleProps<P> = P & {
-  style?: CSSProperties | ((theme: BrifUIThemeConfig) => CSSProperties);
-};
