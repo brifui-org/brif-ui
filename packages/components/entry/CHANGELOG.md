@@ -1,5 +1,14 @@
 # @brifui/components
 
+## 0.0.1-beta.9
+
+### Patch Changes
+
+- [#38](https://github.com/brifui-org/brif-ui/pull/38) [`19c8505`](https://github.com/brifui-org/brif-ui/commit/19c8505edf7bdbcac43318efb28f53a99e97b3ac) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added button
+
+- Updated dependencies [[`19c8505`](https://github.com/brifui-org/brif-ui/commit/19c8505edf7bdbcac43318efb28f53a99e97b3ac)]:
+  - @brifui/button@0.0.1-beta.0
+
 ## 0.0.1-beta.8
 
 ### Patch Changes

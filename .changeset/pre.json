@@ -12,7 +12,8 @@
     "@brifui/flex-box": "0.0.0",
     "@brifui/container": "0.0.1-beta.1",
     "@brifui/provider": "0.0.0",
-    "@brifui/mocks": "0.0.0"
+    "@brifui/mocks": "0.0.0",
+    "@brifui/button": "0.0.0"
   },
   "changesets": [
     "beige-items-exercise",
@@ -20,6 +21,7 @@
     "eight-hats-float",
     "grumpy-goats-turn",
     "hungry-donkeys-explain",
+    "poor-crabs-end",
     "purple-pumas-study",
     "seven-pans-relax",
     "sour-coats-enjoy",
