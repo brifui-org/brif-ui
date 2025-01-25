@@ -7,7 +7,6 @@
     "dev": "concurrently \"yarn run dev:docs\" \"yarn run dev:storybook\"",
     "dev:docs": "next dev --turbopack",
     "dev:storybook": "storybook dev -p 6006 --no-open",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "build-storybook": "storybook build"

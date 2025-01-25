@@ -19,7 +19,7 @@ declare global {
     shadow: ShadowConfig;
   }
 
-  type BrifUIThemeKey = any;
+  type BrifUIThemeKey = "light" | "dark";
 }
 
 export {};

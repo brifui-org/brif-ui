@@ -22,7 +22,7 @@ export default {
       keyframes: {
         push: {
           "75%, 100%": {
-            transform: "scale(1.15) scaleY(1.25)",
+            transform: "scale(1.11) scaleY(1.2)",
             opacity: "0"
           }
         }

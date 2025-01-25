@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
 import { BrifUIContext, TBrifUIContext } from "@brifui/core";
 
 export const Provider = ({
   children = () => null,
-  defaultTheme = "light" as BrifUIThemeKey
+  defaultTheme = "light"
 }: {
   children?: (currentTheme: BrifUIThemeKey) => React.ReactNode;
   defaultTheme?: BrifUIThemeKey;
