@@ -1,11 +1,11 @@
 {
-  "name": "@brifui/button",
-  "version": "0.0.1-beta.0",
-  "description": "Button component - Brif UI",
+  "name": "@brifui/spinner",
+  "version": "0.0.0",
+  "description": "Spinner component - Brif UI",
   "type": "module",
   "sideEffects": false,
   "keywords": [
-    "button",
+    "spinner",
     "component",
     "ui"
   ],
@@ -29,7 +29,6 @@
   "module": "./src/index.ts",
   "dependencies": {
     "@brifui/core": "workspace:*",
-    "@brifui/spinner": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
