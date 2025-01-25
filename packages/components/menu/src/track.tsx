@@ -21,8 +21,9 @@ export const Track: React.FC<MenuTrackProps> = ({
       className={cn(
         [
           "absolute top-0 left-0 bg-default/10 w-full h-full rounded-md pointer-events-none",
-          "transition-all h-7 [transition-timing-function:cubic-bezier(0.25,0.1,0.25,1)]",
-          "translate-y-[var(--menu-vertical-top,_0px)]"
+          "transition-[var(--menu-track-transition-property,_all)] h-7 [transition-timing-function:cubic-bezier(0.25,0.1,0.25,1)]",
+          "translate-y-[var(--menu-vertical-top,_0px)]",
+          "opacity-[var(--menu-track-opacity,_0)]"
         ],
         className
       )}

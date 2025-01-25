@@ -44,6 +44,27 @@ export const Root = ({ children, className, ...props }: MenuRootProps) => {
     });
   }, []);
 
+  const onRootMouseEnter = useCallback(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        el.style.setProperty("--menu-track-transition-property", "all");
+        el.style.setProperty("--menu-track-opacity", "1");
+      });
+    }, 100);
+  }, []);
+  const onRootMouseLeave = useCallback(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    requestAnimationFrame(() => {
+      el.style.setProperty("--menu-track-opacity", "0");
+      setTimeout(() => {
+        el.style.setProperty("--menu-track-transition-property", "none");
+      }, 100);
+    });
+  }, []);
+
   useLayoutEffect(() => {
     if (!rootRef.current) return;
     const firstItem = rootRef.current.querySelector(
@@ -65,6 +86,8 @@ export const Root = ({ children, className, ...props }: MenuRootProps) => {
         role="menu"
         className={cn("relative", className)}
         {...props}
+        onMouseEnter={onRootMouseEnter}
+        onMouseLeave={onRootMouseLeave}
       >
         {items}
         {tracks}
