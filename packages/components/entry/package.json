@@ -31,7 +31,8 @@
     "@brifui/button": "workspace:*",
     "@brifui/container": "workspace:*",
     "@brifui/flex-box": "workspace:*",
-    "@brifui/provider": "workspace:*"
+    "@brifui/provider": "workspace:*",
+    "@brifui/spinner": "workspace:*"
   },
   "devDependencies": {
     "@brifui/core": "workspace:*",

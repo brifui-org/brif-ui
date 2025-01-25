@@ -50,6 +50,20 @@ const meta: Meta<typeof Button> = {
           summary: "md"
         }
       }
+    },
+    disabled: {
+      type: "boolean",
+      control: "boolean"
+    },
+    isLoading: {
+      type: "boolean",
+      control: "boolean",
+      description: "Button's loading state",
+      table: {
+        defaultValue: {
+          summary: "false"
+        }
+      }
     }
   }
 };

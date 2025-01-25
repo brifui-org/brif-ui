@@ -2,16 +2,27 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Prefer } from "@brifui/core";
 import { cn } from "@brifui/core/utils";
+import { Spinner } from "@brifui/spinner";
 
 export const buttonVariants = cva(
   [
-    "relative inline-flex items-center justify-center",
+    "relative gap-2 inline-flex items-center justify-center",
     "text-sm font-bold",
     "outline-none",
-    "border-box border border-border"
+    "border-box border border-border",
+    "transition-all ease-in-out",
+    "disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none"
   ],
   {
     variants: {
+      /**
+       * Button's loading state
+       * @default false
+       */
+      isLoading: {
+        true: ["!pl-8"],
+        false: [""]
+      },
       /**
        * Button variant
        * @default "solid"
@@ -228,7 +239,8 @@ export const buttonVariants = cva(
     defaultVariants: {
       variant: "solid",
       size: "md",
-      color: "primary"
+      color: "primary",
+      isLoading: false
     }
   }
 );
@@ -243,13 +255,22 @@ export const Button: React.FC<ButtonProps> = ({
   variant,
   size,
   color,
+  isLoading = false,
   className,
+  children,
   ...props
 }) => {
   return (
     <button
       className={cn(buttonVariants({ variant, size, color }), className)}
       {...props}
-    />
+    >
+      {isLoading && (
+        <span>
+          <Spinner className="text-current" size="xs" />
+        </span>
+      )}
+      {children}
+    </button>
   );
 };
