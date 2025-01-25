@@ -1,6 +1,6 @@
 {
   "name": "@brifui/provider",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "Provider component - Brif UI",
   "type": "module",
   "sideEffects": false,

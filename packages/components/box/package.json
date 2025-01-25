@@ -1,6 +1,6 @@
 {
   "name": "@brifui/box",
-  "version": "0.0.1-beta.6",
+  "version": "0.0.1-beta.7",
   "description": "Box component - Brif UI",
   "type": "module",
   "sideEffects": false,
