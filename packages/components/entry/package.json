@@ -32,6 +32,7 @@
     "@brifui/container": "workspace:*",
     "@brifui/flex-box": "workspace:*",
     "@brifui/input": "workspace:*",
+    "@brifui/menu": "workspace:*",
     "@brifui/provider": "workspace:*",
     "@brifui/spinner": "workspace:*"
   },

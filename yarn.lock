@@ -1376,6 +1376,7 @@ __metadata:
     "@brifui/eslint-config": "workspace:*"
     "@brifui/flex-box": "workspace:*"
     "@brifui/input": "workspace:*"
+    "@brifui/menu": "workspace:*"
     "@brifui/provider": "workspace:*"
     "@brifui/spinner": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
@@ -1470,6 +1471,25 @@ __metadata:
     "@brifui/eslint-config": "workspace:*"
     "@brifui/mocks": "workspace:*"
     "@brifui/spinner": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/menu@workspace:*, @brifui/menu@workspace:packages/components/menu":
+  version: 0.0.0-use.local
+  resolution: "@brifui/menu@workspace:packages/components/menu"
+  dependencies:
+    "@brifui/core": "workspace:*"
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/mocks": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
