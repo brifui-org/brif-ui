@@ -1,5 +1,13 @@
 # @brifui/components
 
+## 0.0.1-beta.10
+
+### Patch Changes
+
+- Updated dependencies [[`ee79d5e`](https://github.com/brifui-org/brif-ui/commit/ee79d5ec30e0636536dd1da1b6070b71f97de64b)]:
+  - @brifui/spinner@0.0.1-beta.0
+  - @brifui/button@0.0.1-beta.1
+
 ## 0.0.1-beta.9
 
 ### Patch Changes

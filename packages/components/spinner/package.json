@@ -1,6 +1,6 @@
 {
   "name": "@brifui/spinner",
-  "version": "0.0.0",
+  "version": "0.0.1-beta.0",
   "description": "Spinner component - Brif UI",
   "type": "module",
   "sideEffects": false,
