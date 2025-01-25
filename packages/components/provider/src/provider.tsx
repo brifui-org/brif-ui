@@ -2,30 +2,20 @@
 
 import React, { useContext, useMemo } from "react";
 import { BrifUIContext, TBrifUIContext } from "@brifui/core";
-import type { BrifUIPluginConfig } from "@brifui/theme";
 
-type Theme<Config extends BrifUIPluginConfig = BrifUIPluginConfig> =
-  keyof Config["themes"];
-
-export const Provider = <Config extends BrifUIPluginConfig>({
+export const Provider = ({
   children = () => null,
-  defaultTheme = "light" as Theme<Config>
+  defaultTheme = "light" as BrifUIThemeKey
 }: {
-  children?: (currentTheme: Theme<Config>) => React.ReactNode;
-  defaultTheme?: Theme<Config>;
+  children?: (currentTheme: BrifUIThemeKey) => React.ReactNode;
+  defaultTheme?: BrifUIThemeKey;
 }) => {
-  const [currentTheme, setTheme] = React.useState<Theme<Config>>(defaultTheme);
-  const themeConfig = useMemo(() => {
-    const config = require('../.brifui/theme.ts')
-  }, [])
+  const [currentTheme, setTheme] = React.useState<BrifUIThemeKey>(defaultTheme);
 
   return (
     <BrifUIContext.Provider
       value={{
-        // themeConfig,
-        // @ts-expect-error
         currentTheme,
-        // @ts-expect-error
         setTheme
       }}
     >
@@ -40,8 +30,5 @@ export const useTheme = () => {
     throw new Error("useTheme must be used within a BrifUIProvider");
   }
 
-  return context as unknown as TBrifUIContext<
-    BrifUIPluginConfig,
-    BrifUIThemeKey
-  >;
+  return context as unknown as TBrifUIContext<BrifUIThemeKey>;
 };

@@ -4,11 +4,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "postinstall": "brif codegen",
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"yarn run dev:docs\" \"yarn run dev:storybook\"",
+    "dev:docs": "next dev --turbopack",
+    "dev:storybook": "storybook dev -p 6006",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@brifui/components": "workspace:*",
@@ -17,14 +19,23 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/cli": "workspace:*",
     "@brifui/eslint-config": "workspace:*",
     "@brifui/theme": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.1",
+    "@storybook/addon-interactions": "^8.5.1",
+    "@storybook/addon-onboarding": "^8.5.1",
+    "@storybook/blocks": "^8.5.1",
+    "@storybook/nextjs": "^8.5.1",
+    "@storybook/react": "^8.5.1",
+    "@storybook/test": "^8.5.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
+    "storybook": "^8.5.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
