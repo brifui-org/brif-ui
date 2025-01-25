@@ -1,4 +1,4 @@
-import { DeepPartial } from "./utils";
+import { DeepPartial, DeepRequired } from "./utils";
 
 /**
  * The Brif UI Tailwindcss config
@@ -18,12 +18,12 @@ export interface BrifUIPluginConfig {
      * Path to save the configuration file.
      * @default "./themes/"
      */
-    dir?: string,
+    dir?: string;
     /**
      * Name of the configuration file.
      * @default "theme.ts"
      */
-    name?: string
+    name?: string;
   };
 
   /**
@@ -38,28 +38,51 @@ export interface BrifUIPluginConfig {
     /**
      * Configuration for the light theme.
      */
-    light?: DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>;
+    light?: DeepPartial<
+      Omit<
+        BrifUIThemeConfig,
+        "breakpoints" | "spacing" | "borderRadius" | "shadow"
+      >
+    >;
 
     /**
      * Configuration for the dark theme.
      */
-    dark?: DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>;
+    dark?: DeepPartial<
+      Omit<
+        BrifUIThemeConfig,
+        "breakpoints" | "spacing" | "borderRadius" | "shadow"
+      >
+    >;
 
     /**
      * Configuration for custom themes.
      */
     [key: string]:
-      | DeepPartial<Omit<BrifUIThemeConfig, "breakpoints" | "spacing">>
+      | DeepPartial<
+          Omit<
+            BrifUIThemeConfig,
+            "breakpoints" | "spacing" | "borderRadius" | "shadow"
+          >
+        >
       | undefined;
   };
 }
-
 
 export type ResolvedBrifUIConfig = {
   colors: Record<string, string>;
   breakpoints: Record<string, string>;
   spacing: Record<string, string>;
+  borderRadius: Record<string, string>;
+  shadow: Record<string, string>;
   utilities: Record<string, Record<string, string>>;
   variants: Record<string, Array<string>>;
   themes: Record<string, string>;
+};
+
+export type RequiredBrifUIPluginConfig = Omit<
+  DeepRequired<BrifUIPluginConfig>,
+  "themes"
+> & {
+  themes: BrifUIPluginConfig["themes"];
 };

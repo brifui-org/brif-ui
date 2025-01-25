@@ -2,8 +2,13 @@
 
 # Dependencies
 node_modules
-.pnp
-.pnp.js
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # Local env files
 .env
@@ -31,10 +36,13 @@ build
 dist
 .install-state.gz
 
-# Debug
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
+
+*storybook.log
 
 # Misc
 .DS_Store

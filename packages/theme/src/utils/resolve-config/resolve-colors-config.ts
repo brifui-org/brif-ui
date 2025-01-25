@@ -20,7 +20,6 @@ const parseOrReferenceColor = (
 
 export const resolveColorsConfig = (
   colors: DeepRequired<BrifUIThemeConfig["colors"]>,
-  baseColors: DeepRequired<BrifUIThemeConfig["colors"]>,
   prefix: string
 ) => {
   const resolved: {
@@ -34,23 +33,10 @@ export const resolveColorsConfig = (
   /**
    * Colors
    */
-  const { sys: baseSys = {}, ref: baseRef = {} } = baseColors;
-  const flattenBaseSysColors = flatten(baseSys);
-  const flattenBaseRefColors = flatten(baseRef);
-  const flattenBaseColors = {
-    sys: flattenBaseSysColors,
-    ref: flattenBaseRefColors
-  };
   for (const [tier, colorConfig] of Object.entries(colors)) {
     for (const [colorName, colorValue] of Object.entries(
       flatten(colorConfig as NestedObject)
     )) {
-      if (
-        !flattenBaseColors[tier as "ref" | "sys"] ||
-        !flattenBaseColors[tier as "ref" | "sys"][colorName]
-      )
-        continue;
-
       const parsed = parseOrReferenceColor(colorValue, {
         prefix
       });

@@ -1,1 +1,0 @@
-export { mockTailwindConfig as default } from '@brifui/mocks/tailwind'

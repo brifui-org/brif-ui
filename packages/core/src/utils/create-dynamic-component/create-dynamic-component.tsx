@@ -27,7 +27,6 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
   const Comp = <T extends ElementType = DefaultTag>({
     as: Tag = defaultTag as unknown as T,
     className = "",
-    style: _style,
     ...props
   }: DynamicComponentPropsWithRef<P, T>) => {
     const themeContext = useContext(BrifUIContext);
@@ -35,16 +34,6 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
       throw new Error(
         "createDynamicComponent must be used within a BrifUIProvider"
       );
-    }
-
-    const { themeConfig, currentTheme } = themeContext;
-    if (!themeConfig.themes) {
-      throw new Error("No theme is found.");
-    }
-
-    const theme = themeConfig.themes[currentTheme];
-    if (!theme) {
-      throw new Error(`Theme ${theme} is not defined.`);
     }
 
     const { included } = useMemo(() => {
@@ -67,17 +56,9 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
       };
     }, [props]);
 
-    const style = useMemo(() => {
-      if (typeof _style === "undefined") return undefined;
-      else if (typeof _style === "function")
-        return _style(theme as BrifUIThemeConfig);
-      return _style;
-    }, [_style, theme]);
-
     return (
       <Tag
         {...(included as any)}
-        style={style}
         className={cn(classNameVariants(props), className)}
       />
     );

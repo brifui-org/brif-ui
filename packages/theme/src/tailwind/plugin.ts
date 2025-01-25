@@ -1,14 +1,8 @@
-"use client";
-
+import deepmerge from "deepmerge";
 import plugin from "tailwindcss/plugin";
 
-import { dark, light } from "../themes";
-import {
-  BrifUIPluginConfig,
-  DeepRequired,
-  ResolvedBrifUIConfig
-} from "../types";
-import { mergeTheme } from "../utils/merge-theme/merge-theme";
+import { base, dark, light } from "../themes";
+import { BrifUIPluginConfig, RequiredBrifUIPluginConfig } from "../types";
 import { resolveConfig } from "../utils/resolve-config/resolve-config";
 
 export const DEFAULT_PREFIX = "brif";
@@ -17,16 +11,9 @@ export const CodegenResolvedThemeConfig = Symbol("CodegenResolvedThemeConfig");
 export const CodegenArgThemeConfig = Symbol("CodegenArgThemeConfig");
 export const CodegenThemeConfig = Symbol("CodegenThemeConfig");
 
-export type BrifUITailwindPlugin = ReturnType<typeof plugin> & {
-  [CodegenResolvedThemeConfig]: ResolvedBrifUIConfig;
-  [CodegenArgThemeConfig]: BrifUIPluginConfig;
-  [CodegenThemeConfig]: DeepRequired<BrifUIPluginConfig>;
-  $$type: symbol;
-};
-
-const defaultConfigs: DeepRequired<BrifUIPluginConfig> = {
+const defaultConfigs: RequiredBrifUIPluginConfig = {
   prefix: DEFAULT_PREFIX,
-  base: light,
+  base,
   themeFile: {
     dir: ".brifui",
     name: "theme.ts"
@@ -38,11 +25,11 @@ const defaultConfigs: DeepRequired<BrifUIPluginConfig> = {
 };
 
 const createTailwindPlugin = (args: BrifUIPluginConfig) => {
-  const configs = mergeTheme(defaultConfigs, args);
+  const configs = deepmerge(defaultConfigs, args) as RequiredBrifUIPluginConfig;
   const { prefix } = configs;
   const resolved = resolveConfig(configs);
 
-  const p = plugin(
+  return plugin(
     ({ addBase, addUtilities, addVariant }) => {
       addBase({
         ":root, [data-theme]": {
@@ -66,16 +53,12 @@ const createTailwindPlugin = (args: BrifUIPluginConfig) => {
       theme: {
         colors: resolved.colors,
         screens: resolved.breakpoints,
-        spacing: resolved.spacing
+        spacing: resolved.spacing,
+        borderRadius: resolved.borderRadius,
+        boxShadow: resolved.shadow
       }
     }
-  ) as BrifUITailwindPlugin;
-  p.$$type = BrifUIPluginSymbol;
-  p[CodegenResolvedThemeConfig] = resolved;
-  p[CodegenArgThemeConfig] = args;
-  p[CodegenThemeConfig] = configs;
-
-  return p;
+  );
 };
 
 export function brifui(configs: BrifUIPluginConfig = {}) {
