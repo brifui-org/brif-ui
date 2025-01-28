@@ -12,7 +12,10 @@ import { cn, pickChildrenByType } from "@brifui/core/utils";
 import { Item } from "./item";
 import { Track } from "./track";
 
+export type MenuSize = 'sm' | 'md' | 'lg'
+
 export type TMenuContext = {
+  size: MenuSize
   value: string | undefined;
   onItemClick: (
     value: string
@@ -21,6 +24,7 @@ export type TMenuContext = {
 };
 
 export const MenuContext = createContext<TMenuContext>({
+  size: 'md',
   value: undefined,
   onItemClick: () => () => void 0,
   onItemHover: () => void 0
@@ -32,6 +36,7 @@ export type MenuRootProps = Prefer<
     onValueChange?: (value: string) => void;
     value?: string;
     defaultValue?: string;
+    size?: MenuSize
   },
   React.ComponentPropsWithRef<"div">
 >;
@@ -42,6 +47,7 @@ export const Root = ({
   onValueChange = () => void 0,
   children,
   className,
+  size = 'md',
   ...props
 }: MenuRootProps) => {
   const [value, setValue] = useState<string | undefined>(defaultValue);
@@ -116,11 +122,8 @@ export const Root = ({
     }
   }, []);
 
-  const items = pickChildrenByType(children, Item);
-  const tracks = pickChildrenByType(children, Track);
-
   return (
-    <MenuContext.Provider value={{ value, onItemHover, onItemClick }}>
+    <MenuContext.Provider value={{ size, value, onItemHover, onItemClick }}>
       <div
         ref={rootRef}
         role="menu"
@@ -129,8 +132,7 @@ export const Root = ({
         onMouseEnter={onRootMouseEnter}
         onMouseLeave={onRootMouseLeave}
       >
-        {items}
-        {tracks}
+        {children}
       </div>
     </MenuContext.Provider>
   );

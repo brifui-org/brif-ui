@@ -3,9 +3,9 @@ import { Box } from "@brifui/components";
 
 export const Logo = () => {
   return (
-    <Box className="py-8 px-16 border-b-2 border-border">
+    <Box className="">
       <Link className="w-fit inline-block" href="/">
-        <h1 className="font-display font-semibold text-4xl w-fit">Brif</h1>
+        <h1 className="font-display font-semibold text-3xl w-fit">Brif</h1>
       </Link>
     </Box>
   );
