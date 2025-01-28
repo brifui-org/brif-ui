@@ -5,3 +5,4 @@ export * from "@brifui/container";
 export * from "@brifui/button";
 export * from "@brifui/spinner";
 export * from "@brifui/input";
+export { default as Menu } from "@brifui/menu";

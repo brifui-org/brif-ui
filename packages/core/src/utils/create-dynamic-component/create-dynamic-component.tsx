@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ElementType, useContext, useMemo } from "react";
+import { ElementType, useMemo } from "react";
 
-import { BrifUIContext } from "../../context";
 import { DynamicComponentPropsWithRef } from "../../types";
 import { cn } from "../cn/cn";
 
@@ -29,13 +28,6 @@ export const createDynamicComponent = <P, DefaultTag extends ElementType>({
     className = "",
     ...props
   }: DynamicComponentPropsWithRef<P, T>) => {
-    const themeContext = useContext(BrifUIContext);
-    if (!themeContext) {
-      throw new Error(
-        "createDynamicComponent must be used within a BrifUIProvider"
-      );
-    }
-
     const { included } = useMemo(() => {
       const excluded: Record<string, any> = {};
       const included: Record<string, any> = {};
