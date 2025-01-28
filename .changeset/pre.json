@@ -15,12 +15,14 @@
     "@brifui/mocks": "0.0.0",
     "@brifui/button": "0.0.0",
     "@brifui/spinner": "0.0.0",
-    "@brifui/input": "0.0.0"
+    "@brifui/input": "0.0.0",
+    "@brifui/menu": "0.0.0"
   },
   "changesets": [
     "beige-items-exercise",
     "big-fishes-decide",
     "breezy-bulldogs-impress",
+    "dull-yaks-refuse",
     "eight-hats-float",
     "grumpy-goats-turn",
     "hungry-donkeys-explain",
