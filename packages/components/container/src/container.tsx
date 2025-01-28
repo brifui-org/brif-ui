@@ -8,7 +8,7 @@ import {
 } from "@brifui/core";
 import { createDynamicComponent } from "@brifui/core/utils";
 
-export const containerVariants = cva("container", {
+export const containerVariants = cva("container px-4", {
   variants: {
     /**
      * Align container to the center

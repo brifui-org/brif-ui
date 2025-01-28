@@ -1,19 +1,18 @@
 import React from "react";
-import { Logo } from "@/components";
+import { Header } from "@/components";
+import { Sidebar } from "@/components/sidebar";
 import { Container } from "@brifui/components";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="grid grid-cols-[300px_1fr] min-h-screen">
-      <aside className="relative w-full border-r-2 border-border overflow-auto max-h-screen">
-        <div className="sticky top-0 left-0">
-          <Logo />
-        </div>
-        <div className="min-h-[200vh]" />
-      </aside>
-      <Container as="main" className="px-16 py-8 bg-transparent" center>
-        {children}
-      </Container>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <div className="flex-1 py-5">
+        <Container className="grid grid-cols-[200px_1fr] gap-2" center>
+          <Sidebar />
+          <main>{children}</main>
+        </Container>
+      </div>
     </div>
   );
 };

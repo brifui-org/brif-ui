@@ -1,6 +1,6 @@
 import { Provider } from "@/providers";
 import type { Metadata } from "next";
-import { Funnel_Display, Funnel_Sans } from "next/font/google";
+import { Funnel_Display, Inter } from "next/font/google";
 
 import "./globals.css";
 
@@ -10,8 +10,8 @@ const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
   subsets: ["latin"]
 });
-const funnelSans = Funnel_Sans({
-  variable: "--font-funnel-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"]
 });
 
@@ -29,7 +29,7 @@ export default function RootLayout({
     <Provider>
       <link rel="icon" href="/favicon.png" sizes="any" />
       <body
-        className={`${funnelDisplay.variable} ${funnelSans.variable} antialiased`}
+        className={`${funnelDisplay.variable} ${inter.variable} antialiased`}
       >
         <Layout>{children}</Layout>
       </body>
