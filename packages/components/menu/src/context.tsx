@@ -65,6 +65,15 @@ export const Root = ({
   );
   const rootRef = useRef<HTMLDivElement>(null);
 
+  const isomorphicValue = useMemo(() => {
+    if (value) return value;
+    return innerValue;
+  }, [value, innerValue]);
+  const isomorphicSetValue = useMemo(() => {
+    if (onValueChange) return onValueChange;
+    return setInnerValue;
+  }, [onValueChange]);
+
   const calculateHoverTrackPosition = useCallback((hoverEl: HTMLElement) => {
     const rootEl = rootRef.current;
     if (!rootEl) return;
@@ -107,23 +116,14 @@ export const Root = ({
   const paintActiveTrack = useCallback(
     (el?: HTMLElement | null) => {
       if (!rootRef.current || !isomorphicValue) return;
-      let activeEl =
+      const activeEl =
         el ||
         rootRef.current.querySelector('[role="menuitem"][data-active="true"]');
       if (activeEl instanceof HTMLElement)
         calculateActiveTrackPosition(activeEl);
     },
-    [calculateActiveTrackPosition]
+    [calculateActiveTrackPosition, isomorphicValue]
   );
-
-  const isomorphicValue = useMemo(() => {
-    if (value) return value;
-    return innerValue;
-  }, [value, innerValue]);
-  const isomorphicSetValue = useMemo(() => {
-    if (onValueChange) return onValueChange;
-    return setInnerValue;
-  }, [onValueChange]);
 
   /**
    * Item
@@ -134,7 +134,7 @@ export const Root = ({
       isomorphicSetValue(value);
       paintActiveTrack(e.currentTarget);
     },
-    [onValueChange]
+    [isomorphicSetValue, paintActiveTrack]
   );
   const onItemHover = useCallback<TMenuContext["onItemHover"]>(
     (e) => {

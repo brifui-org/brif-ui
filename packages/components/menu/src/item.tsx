@@ -3,7 +3,7 @@
 import { ElementType, useId } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { Box } from "@brifui/box";
-import { DynamicComponentPropsWithRef, Prefer } from "@brifui/core";
+import { DynamicComponentPropsWithRef } from "@brifui/core";
 import { cn } from "@brifui/core/utils";
 
 import { useMenuContext } from "./context";

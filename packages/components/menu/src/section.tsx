@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { cva } from "class-variance-authority";
 import { Prefer } from "@brifui/core";
 import { cn } from "@brifui/core/utils";

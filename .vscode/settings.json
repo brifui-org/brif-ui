@@ -3,7 +3,7 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "eslint.workingDirectories": [
     {
-      "pattern": "packages/*"
+      "pattern": "packages/**/*"
     }
   ],
   "typescript.tsdk": "node_modules/typescript/lib",

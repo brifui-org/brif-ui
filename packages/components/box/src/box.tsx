@@ -5,7 +5,7 @@ import { DynamicComponentPropsWithRef } from "@brifui/core";
 import { createDynamicComponent } from "@brifui/core/utils";
 
 export type BoxProps<T extends ElementType = "div"> =
-  DynamicComponentPropsWithRef<{}, T>;
+  DynamicComponentPropsWithRef<object, T>;
 
 export const Box = createDynamicComponent({
   defaultTag: "div",

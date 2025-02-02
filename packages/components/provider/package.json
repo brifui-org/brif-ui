@@ -23,7 +23,8 @@
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "lint": "eslint ."
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
@@ -42,6 +43,7 @@
     "@testing-library/react": "^16.1.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9.15.0",
     "global-jsdom": "^26.0.0",
     "jsdom": "^26.0.0",
     "typescript": "5.5.4"
