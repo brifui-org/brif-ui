@@ -6,16 +6,15 @@ import { Spinner } from "@brifui/spinner";
 
 export const inputVariants = cva(
   [
-    "relative flex items-center justify-center",
-    "text-sm",
-    "outline-none transition-all ease-in-out"
+    "relative flex items-center justify-center overflow-hidden",
+    "text-sm shadow-sm",
+    "outline-none transition-all ease-in-out",
+    "focus-within:ring"
   ],
   {
     variants: {
       disabled: {
-        true: [
-          "opacity-50 cursor-not-allowed pointer-events-none [&>input]:bg-default/[0.05] after:hidden"
-        ],
+        true: ["opacity-50 cursor-not-allowed [&>input]:bg-default/[0.05]"],
         false: [""]
       },
       /**
@@ -31,10 +30,7 @@ export const inputVariants = cva(
        * @default "outlined"
        */
       variant: {
-        outlined: [
-          "border",
-          "after:absolute after:inset-0 after:-z-10 after:bg-opacity-20 after:transition-all after:ease-in-out"
-        ]
+        outlined: ["border"]
       },
       /**
        * Input's size
@@ -44,20 +40,17 @@ export const inputVariants = cva(
         sm: [
           "h-8",
           "[&>input]:px-4 [&>input]:py-1",
-          "rounded-sm after:rounded-sm [&>input]:rounded-[calc(theme(borderRadius.sm)-1px)]",
-          "focus-within:after:scale-x-[1.02] focus-within:after:scale-y-[1.2]"
+          "rounded-md [&>input]:rounded-[calc(theme(borderRadius.sm)-1px)]"
         ],
         md: [
           "h-10",
           "[&>input]:px-4 [&>input]:py-1",
-          "rounded-md after:rounded-md [&>input]:rounded-[calc(theme(borderRadius.md)-1px)]",
-          "focus-within:after:scale-x-[1.023] focus-within:after:scale-y-[1.2]"
+          "rounded-lg [&>input]:rounded-[calc(theme(borderRadius.md)-1px)]"
         ],
         lg: [
           "h-11",
           "[&>input]:px-5 [&>input]:py-1",
-          "rounded-md after:rounded-md [&>input]:rounded-[calc(theme(borderRadius.md)-1px)]",
-          "focus-within:after:scale-x-[1.027] focus-within:after:scale-y-[1.2]"
+          "rounded-lg [&>input]:rounded-[calc(theme(borderRadius.md)-1px)]"
         ]
       },
       /**
@@ -79,42 +72,29 @@ export const inputVariants = cva(
       {
         variant: "outlined",
         color: "default",
-        class: [
-          "hover:border-default after:bg-default",
-          "focus-within:border-default"
-        ]
+        class: ["focus-within:ring-default/20 focus-within:border-default/40"]
       },
       {
         variant: "outlined",
         color: "primary",
-        class: [
-          "hover:border-primary after:bg-primary",
-          "focus-within:border-primary"
-        ]
+        class: ["focus-within:ring-primary/20 focus-within:border-primary/30"]
       },
       {
         variant: "outlined",
         color: "secondary",
         class: [
-          "hover:border-secondary after:bg-secondary",
-          "focus-within:border-secondary"
+          "focus-within:ring-secondary/20 focus-within:border-secondary/30"
         ]
       },
       {
         variant: "outlined",
         color: "success",
-        class: [
-          "hover:border-success after:bg-success",
-          "focus-within:border-success"
-        ]
+        class: ["focus-within:ring-success/20 focus-within:border-success/30"]
       },
       {
         variant: "outlined",
         color: "destructive",
-        class: [
-          "hover:border-danger after:bg-danger",
-          "focus-within:border-danger"
-        ]
+        class: ["focus-within:ring-danger/20 focus-within:border-danger/30"]
       }
     ],
     defaultVariants: {

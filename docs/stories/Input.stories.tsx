@@ -10,7 +10,7 @@ const meta: Meta<typeof Input> = {
         type: "select",
         disable: true
       },
-      description: "Button's variant",
+      description: "Input's variant",
       options: ["solid", "outlined", "ghost", "link"],
       table: {
         defaultValue: {
@@ -21,7 +21,7 @@ const meta: Meta<typeof Input> = {
     color: {
       type: "string",
       control: "select",
-      description: "Button's color",
+      description: "Input's color",
       options: ["default", "primary", "secondary", "success", "destructive"],
       table: {
         defaultValue: {
@@ -32,7 +32,7 @@ const meta: Meta<typeof Input> = {
     size: {
       type: "string",
       control: "select",
-      description: "Button's size",
+      description: "Input's size",
       options: ["sm", "md", "lg"],
       table: {
         defaultValue: {
@@ -47,7 +47,7 @@ const meta: Meta<typeof Input> = {
     isLoading: {
       type: "boolean",
       control: "boolean",
-      description: "Button's loading state",
+      description: "Input's loading state",
       table: {
         defaultValue: {
           summary: "false"
@@ -63,7 +63,7 @@ type Story = StoryObj<typeof Input>;
 export const Outlined: Story = {
   render: (props) => (
     <div className="w-[300px]">
-      <Input {...props} />
+      <Input placeholder="Enter your email..." {...props} />
     </div>
   ),
   args: {

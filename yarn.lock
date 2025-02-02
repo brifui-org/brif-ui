@@ -1487,6 +1487,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brifui/menu@workspace:packages/components/menu"
   dependencies:
+    "@brifui/box": "workspace:*"
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
     "@brifui/mocks": "workspace:*"
