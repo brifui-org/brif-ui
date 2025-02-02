@@ -35,7 +35,8 @@
     "@brifui/input": "workspace:*",
     "@brifui/menu": "workspace:*",
     "@brifui/provider": "workspace:*",
-    "@brifui/spinner": "workspace:*"
+    "@brifui/spinner": "workspace:*",
+    "@brifui/typography": "workspace:*"
   },
   "devDependencies": {
     "@brifui/core": "workspace:*",

@@ -1595,6 +1595,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/typography@workspace:packages/components/typography":
+  version: 0.0.0-use.local
+  resolution: "@brifui/typography@workspace:packages/components/typography"
+  dependencies:
+    "@brifui/core": "workspace:*"
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/mocks": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@changesets/apply-release-plan@npm:^7.0.7":
   version: 7.0.7
   resolution: "@changesets/apply-release-plan@npm:7.0.7"

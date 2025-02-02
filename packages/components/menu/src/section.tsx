@@ -46,7 +46,7 @@ export const Section: React.FC<MenuSectionProps> = ({
       <div className={cn(menuSectionVariants({ size }))}>{label}</div>
       <div
         className={cn(
-          "relative grid w-full overflow-hidden transition-[grid-template-rows] pl-4"
+          "relative grid w-full transition-[grid-template-rows] pl-4"
         )}
       >
         <div className="absolute top-0 left-0 w-px h-full bg-border ml-2" />

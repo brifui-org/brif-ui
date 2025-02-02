@@ -1,3 +1,1 @@
-export default function Home() {
-  return "Hello world - Theme is";
-}
+export { default } from "./(overview)/introduction/page";

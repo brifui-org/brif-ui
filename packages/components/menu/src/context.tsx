@@ -64,6 +64,7 @@ export const Root = ({
     defaultValue
   );
   const rootRef = useRef<HTMLDivElement>(null);
+  const hoverAnimationTimeoutId = useRef<number>(NaN);
 
   const isomorphicValue = useMemo(() => {
     if (value) return value;
@@ -89,6 +90,13 @@ export const Root = ({
         `${x - rootRect.x}px`
       );
       rootEl.style.setProperty("--hover-track-width", `${width}px`);
+      window.clearTimeout(hoverAnimationTimeoutId.current);
+      hoverAnimationTimeoutId.current = window.setTimeout(() => {
+        requestAnimationFrame(() => {
+          rootEl.style.setProperty("--hover-track-transition-property", "all");
+          rootEl.style.setProperty("--hover-track-opacity", "1");
+        });
+      }, 100);
     });
   }, []);
   const calculateActiveTrackPosition = useCallback((activeEl: HTMLElement) => {
@@ -124,6 +132,12 @@ export const Root = ({
     },
     [calculateActiveTrackPosition, isomorphicValue]
   );
+  const paintHoverTrack = useCallback(
+    (el: HTMLElement) => {
+      calculateHoverTrackPosition(el);
+    },
+    [calculateHoverTrackPosition]
+  );
 
   /**
    * Item
@@ -132,36 +146,26 @@ export const Root = ({
     (value: string) => (e) => {
       if (e.currentTarget.ariaDisabled === "true") return;
       isomorphicSetValue(value);
-      paintActiveTrack(e.currentTarget);
     },
-    [isomorphicSetValue, paintActiveTrack]
+    [isomorphicSetValue]
   );
   const onItemHover = useCallback<TMenuContext["onItemHover"]>(
     (e) => {
-      calculateHoverTrackPosition(e.currentTarget);
+      paintHoverTrack(e.currentTarget);
     },
-    [calculateHoverTrackPosition]
+    [paintHoverTrack]
   );
 
   /**
    * Root
    */
-  const onRootMouseEnter = useCallback(() => {
-    const el = rootRef.current;
-    if (!el) return;
-    setTimeout(() => {
-      requestAnimationFrame(() => {
-        el.style.setProperty("--hover-track-transition-property", "all");
-        el.style.setProperty("--hover-track-opacity", "1");
-      });
-    }, 100);
-  }, []);
   const onRootMouseLeave = useCallback(() => {
     const el = rootRef.current;
     if (!el) return;
     requestAnimationFrame(() => {
       el.style.setProperty("--hover-track-opacity", "0");
-      setTimeout(() => {
+      window.clearTimeout(hoverAnimationTimeoutId.current);
+      hoverAnimationTimeoutId.current = window.setTimeout(() => {
         el.style.setProperty("--hover-track-transition-property", "none");
       }, 100);
     });
@@ -189,7 +193,6 @@ export const Root = ({
         aria-orientation={orientation}
         className={cn("relative flex flex-col gap-1", className)}
         {...props}
-        onMouseEnter={onRootMouseEnter}
         onMouseLeave={onRootMouseLeave}
       >
         <div />
