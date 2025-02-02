@@ -11,7 +11,7 @@ export const menuItemVariants = cva(
   [
     "flex items-center",
     "px-2 py-1 w-full",
-    "text-foreground-muted",
+    "text-foreground",
     "cursor-pointer"
   ],
   {
@@ -21,7 +21,7 @@ export const menuItemVariants = cva(
       },
       disabled: {
         true: ["opacity-50 cursor-not-allowed"],
-        false: ["hover:text-foreground"]
+        false: []
       },
       color: {
         default: [],
@@ -39,27 +39,27 @@ export const menuItemVariants = cva(
       {
         isActive: true,
         color: "default",
-        class: "!text-default-foreground"
+        class: "text-default-foreground"
       },
       {
         isActive: true,
         color: "primary",
-        class: "!text-primary-foreground"
+        class: "text-primary-foreground"
       },
       {
         isActive: true,
         color: "secondary",
-        class: "!text-secondary-foreground"
+        class: "text-secondary-foreground"
       },
       {
         isActive: true,
         color: "success",
-        class: "!text-success-foreground"
+        class: "text-success-foreground"
       },
       {
         isActive: true,
         color: "destructive",
-        class: "!text-danger-foreground"
+        class: "text-danger-foreground"
       }
     ]
   }
@@ -79,8 +79,7 @@ export const Item: React.FC<MenuItemProps> = ({
   ...props
 }) => {
   const id = useId();
-  const { size, color, value, onItemHover, onItemClick } =
-    useMenuContext();
+  const { size, color, value, onItemHover, onItemClick } = useMenuContext();
 
   const isActive = value === outerValue;
 
