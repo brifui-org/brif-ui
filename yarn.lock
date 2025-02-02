@@ -1382,6 +1382,7 @@ __metadata:
     "@brifui/provider": "workspace:*"
     "@brifui/spinner": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
+    "@brifui/typography": "workspace:*"
     "@microsoft/api-extractor": "npm:^7.49.1"
     "@rsbuild/plugin-react": "npm:^1.1.0"
     "@rslib/core": "npm:^0.3.1"
@@ -1595,16 +1596,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/typography@workspace:packages/components/typography":
+"@brifui/typography@workspace:*, @brifui/typography@workspace:packages/components/typography":
   version: 0.0.0-use.local
   resolution: "@brifui/typography@workspace:packages/components/typography"
   dependencies:
+    "@brifui/box": "workspace:*"
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
     "@brifui/mocks": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
     eslint: "npm:^9.15.0"
     global-jsdom: "npm:^26.0.0"
     jsdom: "npm:^26.0.0"
@@ -5621,6 +5624,7 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
     concurrently: "npm:^9.1.2"
     next: "npm:15.1.4"
     postcss: "npm:^8.5.1"
