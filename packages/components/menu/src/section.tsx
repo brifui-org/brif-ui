@@ -9,11 +9,7 @@ import { useMenuContext } from "./context";
 import { makeDataAttribute } from "./utils";
 
 export const menuSectionVariants = cva(
-  [
-    "text-foreground-muted border-b border-border",
-    "px-2 py-1 w-full mb-2",
-    "active:bg-opacity-30"
-  ],
+  ["inline-flex items-center", "text-foreground font-bold", "w-full"],
   {
     variants: {
       size: {
@@ -50,9 +46,10 @@ export const Section: React.FC<MenuSectionProps> = ({
       <div className={cn(menuSectionVariants({ size }))}>{label}</div>
       <div
         className={cn(
-          "grid w-full overflow-hidden transition-[grid-template-rows]"
+          "relative grid w-full overflow-hidden transition-[grid-template-rows] pl-4"
         )}
       >
+        <div className="absolute top-0 left-0 w-px h-full bg-border ml-2" />
         <div className={cn("flex flex-col min-h-0 items-center gap-1")}>
           {React.Children.map(children, (child) => {
             if (React.isValidElement(child)) {

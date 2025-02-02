@@ -10,7 +10,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex-1 py-5">
         <Container className="grid grid-cols-[200px_1fr] gap-2" center>
           <Sidebar />
-          <main>{children}</main>
+          <Container as="main" center>
+            {children}
+          </Container>
         </Container>
       </div>
     </div>

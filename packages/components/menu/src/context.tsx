@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState
 } from "react";
@@ -49,9 +50,9 @@ export type MenuRootProps = Prefer<
 >;
 
 export const Root = ({
-  value: outerVaue,
+  value,
   defaultValue,
-  onValueChange = () => void 0,
+  onValueChange,
   children,
   className,
   size = "md",
@@ -59,7 +60,9 @@ export const Root = ({
   orientation = "vertical",
   ...props
 }: MenuRootProps) => {
-  const [value, setValue] = useState<string | undefined>(defaultValue);
+  const [innerValue, setInnerValue] = useState<string | undefined>(
+    defaultValue
+  );
   const rootRef = useRef<HTMLDivElement>(null);
 
   const calculateHoverTrackPosition = useCallback((hoverEl: HTMLElement) => {
@@ -101,16 +104,35 @@ export const Root = ({
     });
   }, []);
 
+  const paintActiveTrack = useCallback(
+    (el?: HTMLElement | null) => {
+      if (!rootRef.current || !isomorphicValue) return;
+      let activeEl =
+        el ||
+        rootRef.current.querySelector('[role="menuitem"][data-active="true"]');
+      if (activeEl instanceof HTMLElement)
+        calculateActiveTrackPosition(activeEl);
+    },
+    [calculateActiveTrackPosition]
+  );
+
+  const isomorphicValue = useMemo(() => {
+    if (value) return value;
+    return innerValue;
+  }, [value, innerValue]);
+  const isomorphicSetValue = useMemo(() => {
+    if (onValueChange) return onValueChange;
+    return setInnerValue;
+  }, [onValueChange]);
+
   /**
    * Item
    */
   const onItemClick = useCallback<TMenuContext["onItemClick"]>(
     (value: string) => (e) => {
-      e.preventDefault();
       if (e.currentTarget.ariaDisabled === "true") return;
-      setValue(value);
-      onValueChange(value);
-      calculateActiveTrackPosition(e.currentTarget);
+      isomorphicSetValue(value);
+      paintActiveTrack(e.currentTarget);
     },
     [onValueChange]
   );
@@ -124,19 +146,16 @@ export const Root = ({
   /**
    * Root
    */
-  const onRootMouseEnter = useCallback(
-    (ev: React.MouseEvent<HTMLDivElement>) => {
-      const el = rootRef.current;
-      if (!el) return;
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          el.style.setProperty("--hover-track-transition-property", "all");
-          el.style.setProperty("--hover-track-opacity", "1");
-        });
-      }, 100);
-    },
-    []
-  );
+  const onRootMouseEnter = useCallback(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        el.style.setProperty("--hover-track-transition-property", "all");
+        el.style.setProperty("--hover-track-opacity", "1");
+      });
+    }, 100);
+  }, []);
   const onRootMouseLeave = useCallback(() => {
     const el = rootRef.current;
     if (!el) return;
@@ -148,12 +167,18 @@ export const Root = ({
     });
   }, []);
 
+  useLayoutEffect(() => {
+    if (isomorphicValue) {
+      paintActiveTrack();
+    }
+  }, [paintActiveTrack, isomorphicValue]);
+
   return (
     <MenuContext.Provider
       value={{
         color,
         size,
-        value,
+        value: isomorphicValue,
         onItemHover,
         onItemClick
       }}

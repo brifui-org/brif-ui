@@ -1,6 +1,9 @@
-import React, { useId } from "react";
+"use client";
+
+import { ElementType, useId } from "react";
 import { cva, VariantProps } from "class-variance-authority";
-import { Prefer } from "@brifui/core";
+import { Box } from "@brifui/box";
+import { DynamicComponentPropsWithRef, Prefer } from "@brifui/core";
 import { cn } from "@brifui/core/utils";
 
 import { useMenuContext } from "./context";
@@ -67,24 +70,25 @@ export const menuItemVariants = cva(
 
 export type MenuVariantProps = VariantProps<typeof menuItemVariants>;
 
-export type MenuItemProps = Prefer<
+export type MenuItemProps<T extends ElementType> = DynamicComponentPropsWithRef<
   Omit<MenuVariantProps, "isActive" | "color"> & { value: string },
-  React.ComponentPropsWithRef<"div">
+  T
 >;
 
-export const Item: React.FC<MenuItemProps> = ({
+export const Item = <T extends ElementType = "div">({
   value: outerValue,
   className,
   disabled,
   ...props
-}) => {
+}: MenuItemProps<T>) => {
   const id = useId();
   const { size, color, value, onItemHover, onItemClick } = useMenuContext();
 
   const isActive = value === outerValue;
 
   return (
-    <div
+    // @ts-expect-error TODO: investigate later
+    <Box
       data-active={isActive}
       aria-disabled={!!disabled}
       {...makeDataAttribute.item(id, value)}

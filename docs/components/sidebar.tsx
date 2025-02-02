@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu } from "@brifui/components";
 
 const menuConfig = [
@@ -10,15 +12,18 @@ const menuConfig = [
     items: [
       {
         label: "Introduction",
-        value: "introduction"
+        value: "intro",
+        href: "/"
       },
       {
         label: "Getting started",
-        value: "getting-started"
+        value: "getting-started",
+        href: "/getting-started"
       },
       {
         label: "Releases",
-        value: "releases"
+        value: "releases",
+        href: "/releases"
       }
     ]
   },
@@ -28,19 +33,23 @@ const menuConfig = [
     items: [
       {
         label: "Box",
-        value: "box"
+        value: "box",
+        href: "/box"
       },
       {
         label: "Grid",
-        value: "grid"
+        value: "grid",
+        href: "/grid"
       },
       {
         label: "Flex",
-        value: "flex"
+        value: "flex",
+        href: "/flex"
       },
       {
         label: "Space",
-        value: "space"
+        value: "space",
+        href: "/space"
       }
     ]
   },
@@ -50,48 +59,68 @@ const menuConfig = [
     items: [
       {
         label: "Alert",
-        value: "alert"
+        value: "alert",
+        href: "/alert"
       },
       {
         label: "Accordion",
-        value: "accordion"
+        value: "accordion",
+        href: "/accordion"
       },
       {
         label: "Avatar",
-        value: "avatar"
+        value: "avatar",
+        href: "/avatar"
       },
       {
         label: "Badge",
-        value: "badge"
+        value: "badge",
+        href: "/badge"
       },
       {
         label: "Button",
-        value: "button"
+        value: "button",
+        href: "/button"
       },
       {
         label: "Calendar",
-        value: "calendar"
+        value: "calendar",
+        href: "/calendar"
       },
       {
         label: "Card",
-        value: "card"
+        value: "card",
+        href: "/card"
       },
       {
         label: "Input",
-        value: "input"
+        value: "input",
+        href: "/input"
       }
     ]
   }
 ];
 
 export const Sidebar = () => {
+  const pathname = usePathname();
+
+  const currentValue =
+    pathname.replaceAll("/", "") === ""
+      ? "intro"
+      : pathname.replaceAll("/", "");
+
   return (
     <aside>
-      <Menu.Root>
+      <Menu.Root defaultValue={currentValue} value={currentValue}>
         {menuConfig.map((menu) => (
           <Menu.Section key={menu.name} label={menu.label}>
             {menu.items.map((item) => (
-              <Menu.Item key={item.value} value={item.value}>
+              <Menu.Item
+                as={Link}
+                href={item.href}
+                key={item.value}
+                value={item.value}
+              >
                 {item.label}
               </Menu.Item>
             ))}
