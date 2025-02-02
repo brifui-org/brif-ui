@@ -1,5 +1,11 @@
 # @brifui/input
 
+## 0.0.1-beta.1
+
+### Patch Changes
+
+- [#51](https://github.com/brifui-org/brif-ui/pull/51) [`c3a5d26`](https://github.com/brifui-org/brif-ui/commit/c3a5d2619fe4ae91ec5296c4640440fe882623c5) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated input styles
+
 ## 0.0.1-beta.0
 
 ### Patch Changes
