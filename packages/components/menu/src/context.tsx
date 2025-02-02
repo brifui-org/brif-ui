@@ -7,27 +7,35 @@ import React, {
   useState
 } from "react";
 import { Prefer } from "@brifui/core";
-import { cn, pickChildrenByType } from "@brifui/core/utils";
+import { cn } from "@brifui/core/utils";
 
-import { Item } from "./item";
-import { Track } from "./track";
+import { MenuSize } from "./shared";
 
-export type MenuSize = 'sm' | 'md' | 'lg'
+export type MenuColor =
+  | "default"
+  | "primary"
+  | "secondary"
+  | "success"
+  | "destructive";
 
 export type TMenuContext = {
-  size: MenuSize
+  size: MenuSize;
+  color: MenuColor;
   value: string | undefined;
   onItemClick: (
     value: string
   ) => (ev: React.MouseEvent<HTMLDivElement>) => void;
   onItemHover: (ev: React.MouseEvent<HTMLDivElement>) => void;
+  onSectionClick: (ev: React.MouseEvent<HTMLDivElement>) => void;
 };
 
 export const MenuContext = createContext<TMenuContext>({
-  size: 'md',
+  size: "md",
+  color: "default",
   value: undefined,
   onItemClick: () => () => void 0,
-  onItemHover: () => void 0
+  onItemHover: () => void 0,
+  onSectionClick: () => void 0
 });
 
 export type MenuRootProps = Prefer<
@@ -36,7 +44,8 @@ export type MenuRootProps = Prefer<
     onValueChange?: (value: string) => void;
     value?: string;
     defaultValue?: string;
-    size?: MenuSize
+    size?: MenuSize;
+    color?: MenuColor;
   },
   React.ComponentPropsWithRef<"div">
 >;
@@ -47,59 +56,110 @@ export const Root = ({
   onValueChange = () => void 0,
   children,
   className,
-  size = 'md',
+  size = "md",
+  color = "default",
+  orientation = "vertical",
   ...props
 }: MenuRootProps) => {
   const [value, setValue] = useState<string | undefined>(defaultValue);
   const rootRef = useRef<HTMLDivElement>(null);
-  const position = useRef<{
-    y: number;
-  }>({ y: 0 });
 
-  const onItemClick = useCallback<TMenuContext["onItemClick"]>(
-    (value: string) => (e) => {
-      setValue(value);
-      const rootEl = rootRef.current;
-      onValueChange(value)
-      if (e.target instanceof HTMLElement && rootEl) {
-        const { y } = e.target.getBoundingClientRect();
-        requestAnimationFrame(() => {
-          rootEl.style.setProperty(
-            "--active-track-vertical-top",
-            `${y - position.current.y}px`
-          );
-          setTimeout(() => {
-            rootEl.style.setProperty("--active-track-opacity", "1");
-            rootEl.style.setProperty("--active-track-transition-property", "all");
-          })
-        });
-      }
-    },
-    [onValueChange]
-  );
-
-  const onItemHover = useCallback<TMenuContext["onItemHover"]>((e) => {
-    if (!rootRef.current) return;
-    const el = rootRef.current;
-    const { y } = e.currentTarget.getBoundingClientRect();
+  const calculateHoverTrackPosition = useCallback((hoverEl: HTMLElement) => {
+    const rootEl = rootRef.current;
+    if (!rootEl) return;
+    const rootRect = rootEl.getBoundingClientRect();
+    const { x, y, width } = hoverEl.getBoundingClientRect();
     requestAnimationFrame(() => {
-      el.style.setProperty(
+      rootEl.style.setProperty(
         "--hover-track-vertical-top",
-        `${y - position.current.y}px`
+        `${y - rootRect.y}px`
       );
+      rootEl.style.setProperty(
+        "--hover-track-vertical-left",
+        `${x - rootRect.x}px`
+      );
+      rootEl.style.setProperty("--hover-track-width", `${width}px`);
+    });
+  }, []);
+  const calculateActiveTrackPosition = useCallback((activeEl: HTMLElement) => {
+    const rootEl = rootRef.current;
+    if (!rootEl) return;
+    const rootRect = rootEl.getBoundingClientRect();
+    const { x, y, width } = activeEl.getBoundingClientRect();
+    requestAnimationFrame(() => {
+      rootEl.style.setProperty(
+        "--active-track-vertical-top",
+        `${y - rootRect.y}px`
+      );
+      rootEl.style.setProperty(
+        "--active-track-vertical-left",
+        `${x - rootRect.x}px`
+      );
+      rootEl.style.setProperty("--active-track-width", `${width}px`);
+      setTimeout(() => {
+        rootEl.style.setProperty("--active-track-opacity", "1");
+        rootEl.style.setProperty("--active-track-transition-property", "all");
+      }, 100);
     });
   }, []);
 
-  const onRootMouseEnter = useCallback(() => {
-    const el = rootRef.current;
-    if (!el) return;
-    setTimeout(() => {
+  /**
+   * Item
+   */
+  const onItemClick = useCallback<TMenuContext["onItemClick"]>(
+    (value: string) => (e) => {
+      e.preventDefault()
+      if (e.currentTarget.ariaDisabled === 'true') return
+      setValue(value);
+      onValueChange(value);
+      calculateActiveTrackPosition(e.currentTarget)
+    },
+    [onValueChange]
+  );
+  const onItemHover = useCallback<TMenuContext["onItemHover"]>(
+    (e) => {
+      calculateHoverTrackPosition(e.currentTarget);
+    },
+    [calculateHoverTrackPosition]
+  );
+
+  /**
+   * Section
+   */
+  const onSectionClick = useCallback<TMenuContext['onSectionClick']>((ev) => {
+    const parentEl = ev.currentTarget.parentElement
+    const rootEl = rootRef.current
+    if (!parentEl || !rootEl) return
+
+    const innerActiveItem = parentEl.querySelector('div[role="menuitem"][data-active="true"]')
+    const isClosed = parentEl.getAttribute("data-state") === 'closed'
+    if (innerActiveItem && !isClosed) {
       requestAnimationFrame(() => {
-        el.style.setProperty("--hover-track-transition-property", "all");
-        el.style.setProperty("--hover-track-opacity", "1");
-      });
-    }, 100);
-  }, []);
+        rootEl.style.setProperty("--active-track-opacity", "0");
+      })
+    } else if (innerActiveItem && isClosed) {
+      requestAnimationFrame(() => {
+        rootEl.style.setProperty("--active-track-opacity", "1");
+      })
+    }
+  }, [])
+
+  /**
+   * Root
+   */
+  const onRootMouseEnter = useCallback(
+    (ev: React.MouseEvent<HTMLDivElement>) => {
+      const el = rootRef.current;
+      if (!el) return;
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          el.style.setProperty("--hover-track-transition-property", "all");
+          el.style.setProperty("--hover-track-opacity", "1");
+        });
+      }, 100);
+    },
+    []
+  );
   const onRootMouseLeave = useCallback(() => {
     const el = rootRef.current;
     if (!el) return;
@@ -111,27 +171,27 @@ export const Root = ({
     });
   }, []);
 
-  useLayoutEffect(() => {
-    if (!rootRef.current) return;
-    const firstItem = rootRef.current.querySelector(
-      'div[role="menuitem"]:first-child'
-    );
-    if (firstItem) {
-      const { y } = firstItem.getBoundingClientRect();
-      position.current.y = y;
-    }
-  }, []);
-
   return (
-    <MenuContext.Provider value={{ size, value, onItemHover, onItemClick }}>
+    <MenuContext.Provider
+      value={{
+        color,
+        size,
+        value,
+        onItemHover,
+        onItemClick,
+        onSectionClick
+      }}
+    >
       <div
         ref={rootRef}
         role="menu"
+        aria-orientation={orientation}
         className={cn("relative flex flex-col gap-1", className)}
         {...props}
         onMouseEnter={onRootMouseEnter}
         onMouseLeave={onRootMouseLeave}
       >
+        <div />
         {children}
       </div>
     </MenuContext.Provider>
