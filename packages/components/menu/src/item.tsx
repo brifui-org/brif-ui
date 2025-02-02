@@ -3,7 +3,7 @@
 import { ElementType, useId } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { Box } from "@brifui/box";
-import { DynamicComponentPropsWithRef, Prefer } from "@brifui/core";
+import { DynamicComponentPropsWithRef } from "@brifui/core";
 import { cn } from "@brifui/core/utils";
 
 import { useMenuContext } from "./context";
@@ -15,12 +15,15 @@ export const menuItemVariants = cva(
     "flex items-center",
     "px-2 py-1 w-full",
     "text-foreground",
-    "cursor-pointer"
+    "cursor-pointer",
+    "transition-none"
   ],
   {
     variants: {
       isActive: {
-        true: ["font-medium"]
+        true: [
+          "font-medium transition-[color,font-weight] [transition-timing-function:cubic-bezier(0.25,0.1,0.25,1)] delay-75"
+        ]
       },
       disabled: {
         true: ["opacity-50 cursor-not-allowed"],

@@ -1,11 +1,11 @@
 {
-  "name": "@brifui/button",
-  "version": "0.0.1-beta.1",
-  "description": "Button component - Brif UI",
+  "name": "@brifui/typography",
+  "version": "0.0.0",
+  "description": "Typography component - Brif UI",
   "type": "module",
   "sideEffects": false,
   "keywords": [
-    "button",
+    "typography",
     "component",
     "ui"
   ],
@@ -29,11 +29,11 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
+    "@brifui/box": "workspace:*",
     "@brifui/core": "workspace:*",
-    "@brifui/spinner": "workspace:*",
-    "class-variance-authority": "^0.7.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "class-variance-authority": "^0.7.1"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",

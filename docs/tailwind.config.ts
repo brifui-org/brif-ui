@@ -14,7 +14,8 @@ export default {
     extend: {
       fontFamily: {
         display: ["var(--font-funnel-display)", "sans-serif"],
-        sans: ["var(--font-inter)", "sans-serif"]
+        sans: ["var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-outfit)", "sans-serif"]
       },
       animation: {
         push: "push .85s cubic-bezier(0, 0, 0.2, 1) forwards"

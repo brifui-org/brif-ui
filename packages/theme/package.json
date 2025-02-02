@@ -21,7 +21,8 @@
     "build": "tsup src --dts",
     "dev": "tsup src --watch",
     "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "postpack": "clean-package restore",
+    "lint": "eslint ."
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
@@ -38,6 +39,7 @@
     "@brifui/typescript-config": "workspace:*",
     "@types/color": "^4",
     "clean-package": "^2.2.0",
+    "eslint": "^9.15.0",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.2",
     "typescript": "5.5.4"

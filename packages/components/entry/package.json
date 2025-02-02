@@ -22,7 +22,8 @@
     "build": "rslib build",
     "dev": "rslib build --watch",
     "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "postpack": "clean-package restore",
+    "lint": "eslint ."
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
@@ -34,7 +35,8 @@
     "@brifui/input": "workspace:*",
     "@brifui/menu": "workspace:*",
     "@brifui/provider": "workspace:*",
-    "@brifui/spinner": "workspace:*"
+    "@brifui/spinner": "workspace:*",
+    "@brifui/typography": "workspace:*"
   },
   "devDependencies": {
     "@brifui/core": "workspace:*",
@@ -45,6 +47,7 @@
     "@rslib/core": "^0.3.1",
     "@types/react": "^19.0.5",
     "@types/react-dom": "^19.0.3",
+    "eslint": "^9.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "5.5.4"
