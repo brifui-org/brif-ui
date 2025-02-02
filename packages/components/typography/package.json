@@ -1,6 +1,6 @@
 {
   "name": "@brifui/typography",
-  "version": "0.0.0",
+  "version": "0.0.1-beta.0",
   "description": "Typography component - Brif UI",
   "type": "module",
   "sideEffects": false,

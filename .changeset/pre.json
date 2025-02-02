@@ -16,12 +16,14 @@
     "@brifui/button": "0.0.0",
     "@brifui/spinner": "0.0.0",
     "@brifui/input": "0.0.0",
-    "@brifui/menu": "0.0.0"
+    "@brifui/menu": "0.0.0",
+    "@brifui/typography": "0.0.0"
   },
   "changesets": [
     "beige-items-exercise",
     "big-fishes-decide",
     "breezy-bulldogs-impress",
+    "dirty-cherries-mix",
     "dull-yaks-refuse",
     "eight-hats-float",
     "grumpy-goats-turn",
