@@ -10,24 +10,16 @@ import { makeDataAttribute } from "./utils";
 
 export const menuSectionVariants = cva(
   [
-    "text-foreground",
-    "px-2 py-1 w-full",
-    "cursor-pointer",
-    "active:bg-opacity-30",
+    "text-foreground-muted border-b border-border",
+    "px-2 py-1 w-full mb-2",
+    "active:bg-opacity-30"
   ],
   {
     variants: {
       size: {
-        sm: ["text-sm h-7 rounded-md"],
-        md: ["text-md h-8 rounded-lg"],
-        lg: ["text-lg h-10 rounded-lg"]
-      },
-      color: {
-        default: ["active:bg-default"],
-        primary: ["active:bg-primary"],
-        secondary: ["active:bg-secondary"],
-        success: ["active:bg-success"],
-        destructive: ["active:bg-danger"]
+        sm: ["text-sm h-7"],
+        md: ["text-md h-8"],
+        lg: ["text-lg h-10"]
       }
     }
   }
@@ -45,41 +37,23 @@ export const Section: React.FC<MenuSectionProps> = ({
   ...props
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [open, setOpen] = useState(true);
-  const { size, color, onItemHover, onSectionClick } = useMenuContext();
+  const { size } = useMenuContext();
+
   return (
     <div
       ref={sectionRef}
       {...makeDataAttribute.section(id)}
-      data-state={open ? "opened" : "closed"}
       role="group"
-      className="group"
+      className="group mb-2"
       {...props}
     >
-      <div
-        className={cn(menuSectionVariants({ color, size }))}
-        onMouseEnter={onItemHover}
-        onClick={(e) => {
-          setOpen((prev) => !prev);
-          onSectionClick(e);
-        }}
-      >
-        {label}
-      </div>
+      <div className={cn(menuSectionVariants({ size }))}>{label}</div>
       <div
         className={cn(
-          "grid w-full overflow-hidden transition-[grid-template-rows]",
-          {
-            ["grid-rows-1"]: open,
-            ["grid-rows-[0]"]: !open
-          }
+          "grid w-full overflow-hidden transition-[grid-template-rows]"
         )}
       >
-        <div
-          className={cn("flex flex-col min-h-0 items-center gap-2", {
-            ["ml-6 mt-2"]: open
-          })}
-        >
+        <div className={cn("flex flex-col min-h-0 items-center gap-1")}>
           {React.Children.map(children, (child) => {
             if (React.isValidElement(child)) {
               return React.cloneElement(child, {});

@@ -26,7 +26,6 @@ export type TMenuContext = {
     value: string
   ) => (ev: React.MouseEvent<HTMLDivElement>) => void;
   onItemHover: (ev: React.MouseEvent<HTMLDivElement>) => void;
-  onSectionClick: (ev: React.MouseEvent<HTMLDivElement>) => void;
 };
 
 export const MenuContext = createContext<TMenuContext>({
@@ -34,8 +33,7 @@ export const MenuContext = createContext<TMenuContext>({
   color: "default",
   value: undefined,
   onItemClick: () => () => void 0,
-  onItemHover: () => void 0,
-  onSectionClick: () => void 0
+  onItemHover: () => void 0
 });
 
 export type MenuRootProps = Prefer<
@@ -108,11 +106,11 @@ export const Root = ({
    */
   const onItemClick = useCallback<TMenuContext["onItemClick"]>(
     (value: string) => (e) => {
-      e.preventDefault()
-      if (e.currentTarget.ariaDisabled === 'true') return
+      e.preventDefault();
+      if (e.currentTarget.ariaDisabled === "true") return;
       setValue(value);
       onValueChange(value);
-      calculateActiveTrackPosition(e.currentTarget)
+      calculateActiveTrackPosition(e.currentTarget);
     },
     [onValueChange]
   );
@@ -122,27 +120,6 @@ export const Root = ({
     },
     [calculateHoverTrackPosition]
   );
-
-  /**
-   * Section
-   */
-  const onSectionClick = useCallback<TMenuContext['onSectionClick']>((ev) => {
-    const parentEl = ev.currentTarget.parentElement
-    const rootEl = rootRef.current
-    if (!parentEl || !rootEl) return
-
-    const innerActiveItem = parentEl.querySelector('div[role="menuitem"][data-active="true"]')
-    const isClosed = parentEl.getAttribute("data-state") === 'closed'
-    if (innerActiveItem && !isClosed) {
-      requestAnimationFrame(() => {
-        rootEl.style.setProperty("--active-track-opacity", "0");
-      })
-    } else if (innerActiveItem && isClosed) {
-      requestAnimationFrame(() => {
-        rootEl.style.setProperty("--active-track-opacity", "1");
-      })
-    }
-  }, [])
 
   /**
    * Root
@@ -178,8 +155,7 @@ export const Root = ({
         size,
         value,
         onItemHover,
-        onItemClick,
-        onSectionClick
+        onItemClick
       }}
     >
       <div
