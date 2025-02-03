@@ -8,6 +8,7 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./layouts/**/*.{js,ts,jsx,tsx,mdx}",
     "./stories/**/*.{js,ts,jsx,tsx,mdx}",
+    "./mdx-components.tsx",
     "../node_modules/@brifui/components/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {

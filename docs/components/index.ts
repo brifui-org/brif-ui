@@ -1,3 +1,4 @@
 export * from "./logo";
 export * from "./header";
-export * from "./section";
+export * from "./gradient-card";
+export * from "./installation";
