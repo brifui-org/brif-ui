@@ -9,7 +9,11 @@ import {
   type BrifUITailwindPlugin
 } from "@brifui/theme/tailwind";
 
-import { findTailwindConfig, generateThemeConfig } from "../utils";
+import {
+  findTailwindConfig,
+  generateThemeConfig,
+  generateThemeTypes
+} from "../utils";
 
 export default class Codegen extends Command {
   static override args = {
@@ -38,6 +42,9 @@ export default class Codegen extends Command {
     const themeConfig = brifUIConfig[CodegenThemeConfig];
 
     await generateThemeConfig(themeConfig);
+    await generateThemeTypes({
+      output: path.resolve("./", this.TEMP_DIR, "theme.d.ts")
+    });
   }
 
   private getBrifUIPlugin(config: Config): BrifUITailwindPlugin {
