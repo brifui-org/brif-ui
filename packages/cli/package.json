@@ -1,0 +1,79 @@
+{
+  "name": "@brifui/cli",
+  "description": "A CLI for BrifUI",
+  "version": "0.0.0",
+  "author": "Thinh Trinh Duc",
+  "bin": {
+    "brifui": "./bin/dev.js"
+  },
+  "bugs": "https://github.com/brifui-org/brif-ui/issues",
+  "dependencies": {
+    "@brifui/theme": "workspace:*",
+    "@oclif/core": "^4",
+    "@oclif/plugin-help": "^6",
+    "@oclif/plugin-plugins": "^5",
+    "fast-glob": "^3.3.3",
+    "find-up": "^7.0.0"
+  },
+  "devDependencies": {
+    "@brifui/typescript-config": "workspace:*",
+    "@eslint/compat": "^1",
+    "@oclif/prettier-config": "^0.2.1",
+    "@oclif/test": "^4",
+    "@types/chai": "^4",
+    "@types/mocha": "^10",
+    "@types/node": "^18",
+    "chai": "^4",
+    "eslint": "^9",
+    "eslint-config-oclif": "^6",
+    "eslint-config-prettier": "^10",
+    "mocha": "^10",
+    "oclif": "^4",
+    "shx": "^0.3.3",
+    "tailwindcss": "^3.4.17",
+    "ts-node": "^10",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "./bin",
+    "./dist",
+    "./oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/brifui-org/brif-ui",
+  "keywords": [
+    "cli",
+    "brifui"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "oclif": {
+    "bin": "brifui",
+    "dirname": "brifui",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "codegen": {
+        "description": "Generate theme configurations"
+      }
+    }
+  },
+  "repository": "https://github.com/brifui-org/brif-ui/brif-ui",
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "dev": "node ./bin/dev.js",
+    "lint": "eslint",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "oclif manifest && oclif readme",
+    "version": "oclif readme && git add README.md"
+  },
+  "types": "dist/index.d.ts"
+}

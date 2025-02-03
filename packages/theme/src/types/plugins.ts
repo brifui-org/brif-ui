@@ -3,7 +3,7 @@ import { DeepPartial, DeepRequired } from "./utils";
 /**
  * The Brif UI Tailwindcss config
  */
-export interface BrifUIPluginConfig {
+export interface BrifUIPluginConfigArgs {
   /**
    * The prefix for CSS variables.
    * @default "brif"
@@ -81,8 +81,8 @@ export type ResolvedBrifUIConfig = {
 };
 
 export type RequiredBrifUIPluginConfig = Omit<
-  DeepRequired<BrifUIPluginConfig>,
+  DeepRequired<BrifUIPluginConfigArgs>,
   "themes"
 > & {
-  themes: BrifUIPluginConfig["themes"];
+  themes: BrifUIPluginConfigArgs["themes"];
 };

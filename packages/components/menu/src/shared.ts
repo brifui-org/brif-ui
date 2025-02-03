@@ -9,7 +9,7 @@ export const sizeVariants = cva("", {
     }
   },
   defaultVariants: {
-    size: 'md'
+    size: "md"
   }
 });
-export type MenuSize = VariantProps<typeof sizeVariants>['size']
+export type MenuSize = VariantProps<typeof sizeVariants>["size"];

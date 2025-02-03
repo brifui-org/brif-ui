@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/commands/codegen.ts","./src/utils/find-tailwind-config.ts","./src/utils/index.ts"],"version":"5.7.3"}

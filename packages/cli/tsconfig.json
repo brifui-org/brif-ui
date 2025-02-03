@@ -1,0 +1,16 @@
+{
+  "extends": "@brifui/typescript-config/base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "module": "ES2022",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2022",
+    "moduleResolution": "bundler",
+  },
+  "include": ["./src/**/*"],
+  "ts-node": {
+    "esm": true
+  }
+}

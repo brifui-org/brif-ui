@@ -40,6 +40,7 @@
     "husky": "^9.1.7",
     "inquirer": "9",
     "prettier": "^3.2.5",
+    "prettier-plugin-sort-json": "^4.1.1",
     "tsup": "^8.3.5",
     "turbo": "^2.3.3",
     "typescript": "5.5.4",
