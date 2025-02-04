@@ -8,7 +8,7 @@ const meta: Meta<typeof Menu.Root> = {
       type: "string",
       control: "select",
       description: "Button's color",
-      options: ["default", "primary", "secondary", "success", "destructive"],
+      options: ["default", "primary", "secondary", "destructive"],
       table: {
         defaultValue: {
           summary: "primary"

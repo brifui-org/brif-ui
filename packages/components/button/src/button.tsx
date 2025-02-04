@@ -28,31 +28,26 @@ export const buttonVariants = cva(
        * @default "solid"
        */
       variant: {
-        solid: [
-          "[&:not(:active)]:after:animate-push",
-          "after:absolute after:inset-0 after:-z-10 after:bg-opacity-80"
-        ],
+        solid: [],
         outlined: [
-          "hover:bg-gradient-to-b from-10%",
-          "[&:not(:active)]:after:animate-push",
-          "after:absolute after:inset-0 after:-z-10 after:bg-opacity-80"
+          "hover:bg-gradient-to-b hover:from-10%",
+          "active:bg-gradient-to-b active:from-10%"
         ],
         ghost: [
-          "bg-transparent border-transparent",
-          "hover:bg-opacity-30",
-          "active:bg-opacity-50",
-          "after:hidden"
+          "bg-transparent border-none",
+          "hover:bg-opacity-10",
+          "active:bg-opacity-30"
         ],
-        link: ["bg-transparent border-transparent", "after:hidden"]
+        link: ["bg-transparent border-none"]
       },
       /**
        * Button's size
        * @default "md"
        */
       size: {
-        sm: ["h-8", "px-4 py-1", "rounded-sm after:rounded-md"],
-        md: ["h-10", "px-4 py-1", "rounded-md after:rounded-lg"],
-        lg: ["h-11", "px-5 py-1", "rounded-md after:rounded-lg"],
+        sm: ["h-8", "px-4 py-1", "rounded-sm"],
+        md: ["h-10", "px-4 py-1", "rounded-md"],
+        lg: ["h-11", "px-5 py-1", "rounded-md"],
         icon: []
       },
       /**
@@ -60,11 +55,10 @@ export const buttonVariants = cva(
        * @default "primary"
        */
       color: {
-        default: ["after:bg-default"],
-        primary: ["after:bg-primary"],
-        secondary: ["after:bg-secondary"],
-        destructive: ["after:bg-danger"],
-        success: ["after:bg-success"]
+        default: [],
+        primary: [],
+        secondary: [],
+        destructive: []
       }
     },
     compoundVariants: [
@@ -78,8 +72,8 @@ export const buttonVariants = cva(
           "bg-default",
           "border-default",
           "text-default-foreground",
-          "hover:bg-default-hover",
-          "active:bg-default-active"
+          "hover:bg-default-hover hover:border-default-hover",
+          "active:bg-default-active active:border-default-active"
         ]
       },
       {
@@ -89,8 +83,8 @@ export const buttonVariants = cva(
           "bg-primary",
           "border-primary",
           "text-primary-foreground",
-          "hover:bg-primary-hover",
-          "active:bg-primary-active"
+          "hover:bg-primary-hover hover:border-primary-hover",
+          "active:bg-primary-active active:border-primary-active"
         ]
       },
       {
@@ -100,19 +94,8 @@ export const buttonVariants = cva(
           "bg-secondary",
           "border-secondary",
           "text-secondary-foreground",
-          "hover:bg-secondary-hover",
-          "active:bg-secondary-active"
-        ]
-      },
-      {
-        variant: "solid",
-        color: "success",
-        class: [
-          "bg-success",
-          "border-success",
-          "text-success-foreground",
-          "hover:bg-success-hover",
-          "active:bg-success-active"
+          "hover:bg-secondary-hover hover:border-secondary-hover",
+          "active:bg-secondary-active active:border-secondary-active"
         ]
       },
       {
@@ -122,8 +105,8 @@ export const buttonVariants = cva(
           "bg-danger",
           "border-danger",
           "text-danger-foreground",
-          "hover:bg-danger-hover",
-          "active:bg-danger-active"
+          "hover:bg-danger-hover hover:border-danger-hover",
+          "active:bg-danger-active active:border-danger-active"
         ]
       },
       /**
@@ -155,14 +138,6 @@ export const buttonVariants = cva(
       },
       {
         variant: "outlined",
-        color: "success",
-        class: [
-          "bg-background text-success border-success",
-          "from-success/0 to-success/10"
-        ]
-      },
-      {
-        variant: "outlined",
         color: "destructive",
         class: [
           "bg-background text-danger border-danger",
@@ -189,11 +164,6 @@ export const buttonVariants = cva(
       },
       {
         variant: "ghost",
-        color: "success",
-        class: ["text-success", "hover:bg-success"]
-      },
-      {
-        variant: "ghost",
         color: "destructive",
         class: ["text-danger", "hover:bg-danger"]
       },
@@ -205,8 +175,8 @@ export const buttonVariants = cva(
         color: "default",
         class: [
           "text-default",
-          "hover:text-default/80",
-          "active:text-default/90"
+          "hover:text-default-hover",
+          "active:text-default-active"
         ]
       },
       {
@@ -214,8 +184,8 @@ export const buttonVariants = cva(
         color: "primary",
         class: [
           "text-primary",
-          "hover:text-primary/80",
-          "active:text-primary/90"
+          "hover:text-primary-hover",
+          "active:text-primary-active"
         ]
       },
       {
@@ -223,23 +193,18 @@ export const buttonVariants = cva(
         color: "secondary",
         class: [
           "text-secondary",
-          "hover:text-secondary/80",
-          "active:text-secondary/90"
-        ]
-      },
-      {
-        variant: "link",
-        color: "success",
-        class: [
-          "text-success",
-          "hover:text-success/80",
-          "active:text-success/90"
+          "hover:text-secondary-hover",
+          "active:text-secondary-active"
         ]
       },
       {
         variant: "link",
         color: "destructive",
-        class: ["text-danger", "hover:text-danger/80", "active:text-danger/90"]
+        class: [
+          "text-danger",
+          "hover:text-danger-hover",
+          "active:text-danger-active"
+        ]
       }
     ],
     defaultVariants: {

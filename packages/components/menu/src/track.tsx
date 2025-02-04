@@ -31,7 +31,6 @@ export const menuTrackVariants = cva(
         default: [],
         primary: [],
         secondary: [],
-        success: [],
         destructive: []
       }
     },
@@ -53,11 +52,6 @@ export const menuTrackVariants = cva(
         triggerType: "active",
         color: "secondary",
         class: ["bg-secondary"]
-      },
-      {
-        triggerType: "active",
-        color: "success",
-        class: ["bg-success"]
       },
       {
         triggerType: "active",

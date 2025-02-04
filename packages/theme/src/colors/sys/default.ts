@@ -1,5 +1,5 @@
 export const ddefault = {
-  DEFAULT: "sys.foreground",
+  DEFAULT: "ref.black",
   foreground: "ref.white",
   disabled: "ref.neutral.400",
   hover: "ref.neutral.600",
@@ -7,8 +7,8 @@ export const ddefault = {
 };
 
 export const darkDefault = {
-  DEFAULT: "sys.foreground",
-  foreground: "ref.white",
+  DEFAULT: "ref.white",
+  foreground: "ref.black",
   disabled: "ref.neutral.400",
   hover: "ref.neutral.600",
   active: "ref.neutral.800"

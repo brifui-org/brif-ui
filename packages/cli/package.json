@@ -69,9 +69,9 @@
     "build": "shx rm -rf dist && tsc -b",
     "dev": "node ./bin/dev.js",
     "lint": "eslint",
-    "postpack": "shx rm -f oclif.manifest.json",
+    "postpack": "shx rm -f oclif.manifest.json && clean-package restore",
     "posttest": "yarn lint",
-    "prepack": "oclif manifest && oclif readme",
+    "prepack": "oclif manifest && oclif readme && clean-package",
     "version": "oclif readme && git add README.md"
   },
   "types": "dist/index.d.ts"

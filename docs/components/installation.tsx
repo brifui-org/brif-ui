@@ -1,5 +1,5 @@
 "use client";
 
 export const Installation = () => {
-  return <div></div>;
+  return <div>HEHE</div>;
 };

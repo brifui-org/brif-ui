@@ -1,0 +1,8 @@
+{
+  "indent": 2,
+  "replace": {
+    "bin": {
+      "brifui": "./bin/run.js"
+    }
+  }
+}

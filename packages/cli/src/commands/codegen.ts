@@ -63,6 +63,7 @@ export default class Codegen extends Command {
 
   private async rmTempDir() {
     await fs.rm(path.resolve("./", this.TEMP_DIR), {
+      force: true,
       recursive: true
     });
   }

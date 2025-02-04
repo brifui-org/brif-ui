@@ -12,12 +12,7 @@ import { cn } from "@brifui/core/utils";
 
 import { MenuSize } from "./shared";
 
-export type MenuColor =
-  | "default"
-  | "primary"
-  | "secondary"
-  | "success"
-  | "destructive";
+export type MenuColor = "default" | "primary" | "secondary" | "destructive";
 
 export type TMenuContext = {
   size: MenuSize;
@@ -56,7 +51,7 @@ export const Root = ({
   children,
   className,
   size = "md",
-  color = "primary",
+  color = "default",
   orientation = "vertical",
   ...props
 }: MenuRootProps) => {
