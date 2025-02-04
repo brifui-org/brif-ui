@@ -56,7 +56,7 @@ export const Root = ({
   children,
   className,
   size = "md",
-  color = "default",
+  color = "primary",
   orientation = "vertical",
   ...props
 }: MenuRootProps) => {

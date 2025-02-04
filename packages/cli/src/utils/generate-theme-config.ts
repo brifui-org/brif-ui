@@ -5,6 +5,7 @@ import { type RequiredBrifUIPluginConfig } from "@brifui/theme";
 export const generateThemeConfig = async (
   config: RequiredBrifUIPluginConfig
 ) => {
+  await fs.mkdir(config.themeFile.dir, { recursive: true });
   await fs.writeFile(
     path.resolve(config.themeFile.dir, config.themeFile.name),
     `

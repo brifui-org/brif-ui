@@ -33,8 +33,8 @@ export default {
   },
   plugins: [
     brifui({
-      themes: {
-        violet: {}
+      themeFile: {
+        dir: "theme"
       }
     })
   ]

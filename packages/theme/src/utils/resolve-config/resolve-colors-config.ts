@@ -1,6 +1,6 @@
 import Color from "color";
 
-import { DeepRequired, NestedObject } from "../../types";
+import { DeepPartial, NestedObject } from "../../types";
 import { flatten } from "../flatten";
 
 const parseOrReferenceColor = (
@@ -19,7 +19,7 @@ const parseOrReferenceColor = (
 };
 
 export const resolveColorsConfig = (
-  colors: DeepRequired<BrifUIThemeConfig["colors"]>,
+  colors: DeepPartial<BrifUIThemeConfig["colors"]>,
   prefix: string
 ) => {
   const resolved: {
@@ -29,6 +29,8 @@ export const resolveColorsConfig = (
     colors: {},
     utilities: {}
   };
+
+  if (!colors) return resolved;
 
   /**
    * Colors

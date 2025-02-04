@@ -40,9 +40,10 @@ export const buttonVariants = cva(
         ghost: [
           "bg-transparent border-transparent",
           "hover:bg-opacity-30",
-          "active:bg-opacity-50"
+          "active:bg-opacity-50",
+          "after:hidden"
         ],
-        link: ["bg-transparent border-transparent"]
+        link: ["bg-transparent border-transparent", "after:hidden"]
       },
       /**
        * Button's size
@@ -77,7 +78,8 @@ export const buttonVariants = cva(
           "bg-default",
           "border-default",
           "text-default-foreground",
-          "hover:bg-default/80"
+          "hover:bg-default-hover",
+          "active:bg-default-active"
         ]
       },
       {
@@ -87,7 +89,8 @@ export const buttonVariants = cva(
           "bg-primary",
           "border-primary",
           "text-primary-foreground",
-          "hover:bg-primary/80"
+          "hover:bg-primary-hover",
+          "active:bg-primary-active"
         ]
       },
       {
@@ -97,7 +100,8 @@ export const buttonVariants = cva(
           "bg-secondary",
           "border-secondary",
           "text-secondary-foreground",
-          "hover:bg-secondary/80"
+          "hover:bg-secondary-hover",
+          "active:bg-secondary-active"
         ]
       },
       {
@@ -107,7 +111,8 @@ export const buttonVariants = cva(
           "bg-success",
           "border-success",
           "text-success-foreground",
-          "hover:bg-success/80"
+          "hover:bg-success-hover",
+          "active:bg-success-active"
         ]
       },
       {
@@ -117,7 +122,8 @@ export const buttonVariants = cva(
           "bg-danger",
           "border-danger",
           "text-danger-foreground",
-          "hover:bg-danger/80"
+          "hover:bg-danger-hover",
+          "active:bg-danger-active"
         ]
       },
       /**

@@ -43,8 +43,10 @@ export default class Codegen extends Command {
 
     await generateThemeConfig(themeConfig);
     await generateThemeTypes({
+      config: themeConfig,
       output: path.resolve("./", this.TEMP_DIR, "theme.d.ts")
     });
+    await fs.rm(path.resolve("./", this.TEMP_DIR, "tailwind.config.js"));
   }
 
   private getBrifUIPlugin(config: Config): BrifUITailwindPlugin {

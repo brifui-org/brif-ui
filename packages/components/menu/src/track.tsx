@@ -16,26 +16,55 @@ export const menuTrackVariants = cva(
     variants: {
       triggerType: {
         hover: [
-          "bg-opacity-10",
+          "bg-background-hover",
           "transition-[var(--hover-track-transition-property,_all)] opacity-[var(--hover-track-opacity,_0)] translate-x-[var(--hover-track-vertical-left,_0px)] translate-y-[var(--hover-track-vertical-top,_0px)]",
           "w-[var(--hover-track-width,_0px)]",
           "-z-[10]"
         ],
         active: [
-          "bg-opacity",
           "transition-[var(--active-track-transition-property,_none)] opacity-[var(--active-track-opacity,_0)] translate-x-[var(--active-track-vertical-left,_0px)] translate-y-[var(--active-track-vertical-top,_0px)]",
           "w-[var(--active-track-width,_100%)]",
           "-z-[5] shadow-sm"
         ]
       },
       color: {
-        default: ["bg-default shadow-default"],
-        primary: ["bg-primary shadow-primary"],
-        secondary: ["bg-secondary shadow-secondary"],
-        success: ["bg-success shadow-success"],
-        destructive: ["bg-danger shadow-danger"]
+        default: [],
+        primary: [],
+        secondary: [],
+        success: [],
+        destructive: []
       }
-    }
+    },
+    compoundVariants: [
+      /**
+       * Active
+       */
+      {
+        triggerType: "active",
+        color: "default",
+        class: ["bg-default"]
+      },
+      {
+        triggerType: "active",
+        color: "primary",
+        class: ["bg-primary"]
+      },
+      {
+        triggerType: "active",
+        color: "secondary",
+        class: ["bg-secondary"]
+      },
+      {
+        triggerType: "active",
+        color: "success",
+        class: ["bg-success"]
+      },
+      {
+        triggerType: "active",
+        color: "destructive",
+        class: ["bg-danger"]
+      }
+    ]
   }
 );
 
