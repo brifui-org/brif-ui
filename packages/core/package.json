@@ -18,11 +18,12 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup src --dts",
+    "build": "tsup src --experimental-dts",
     "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
