@@ -1,7 +1,7 @@
 {
   "name": "@brifui/cli",
   "description": "A CLI for BrifUI",
-  "version": "0.0.0",
+  "version": "0.0.1-beta.0",
   "author": "Thinh Trinh Duc",
   "bin": {
     "brifui": "./bin/dev.js"
