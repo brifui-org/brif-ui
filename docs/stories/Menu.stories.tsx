@@ -8,7 +8,7 @@ const meta: Meta<typeof Menu.Root> = {
       type: "string",
       control: "select",
       description: "Button's color",
-      options: ["default", "primary", "secondary", "success", "destructive"],
+      options: ["default", "primary", "secondary", "destructive"],
       table: {
         defaultValue: {
           summary: "primary"
@@ -27,7 +27,9 @@ export const Default: Story = {
       <Menu.Item value="1">Item 1</Menu.Item>
       <Menu.Item value="2">Item 2</Menu.Item>
       <Menu.Item value="3">Item 3</Menu.Item>
-      <Menu.Item disabled value="disabled">Disabled item</Menu.Item>
+      <Menu.Item disabled value="disabled">
+        Disabled item
+      </Menu.Item>
       <Menu.Section id="section" label="Section">
         <Menu.Item value="section-1">Section - Item 1</Menu.Item>
         <Menu.Item value="section-2">Section - Item 2</Menu.Item>

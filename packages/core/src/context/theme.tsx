@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import "@brifui/theme/types";
+
 export type TBrifUIContext<
   Key extends string | number | symbol = BrifUIThemeKey
 > = {

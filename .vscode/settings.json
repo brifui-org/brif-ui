@@ -9,5 +9,8 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.format.enable": false,
   "editor.semanticHighlighting.enabled": false,
-  "typescript.tsserver.enableTracing": true
+  "typescript.tsserver.enableTracing": true,
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

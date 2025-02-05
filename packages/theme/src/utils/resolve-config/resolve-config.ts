@@ -6,7 +6,7 @@ import { resolveShadowConfig } from "./resolve-shadow-config";
 import { resolveSpacingConfig } from "./resolve-spacing-config";
 
 export const resolveConfig = (configs: RequiredBrifUIPluginConfig) => {
-  const { prefix, base } = configs;
+  const { prefix, base, themes = {} } = configs;
 
   const resolved: ResolvedBrifUIConfig = {
     colors: {},
@@ -75,6 +75,22 @@ export const resolveConfig = (configs: RequiredBrifUIPluginConfig) => {
     resolved.utilities[rootCssSelector],
     resolvedShadow.utilities
   );
+
+  for (const [themeName, themeConfig] of Object.entries(themes)) {
+    const cssSelector = `.${themeName}`;
+    resolved.utilities[cssSelector] = {};
+    if (themeConfig && themeConfig.colors) {
+      /**
+       * Colors
+       */
+      const resolvedColors = resolveColorsConfig(themeConfig.colors, prefix);
+      resolved.colors = resolvedColors.colors;
+      resolved.utilities[cssSelector] = Object.assign(
+        resolved.utilities[cssSelector],
+        resolvedColors.utilities
+      );
+    }
+  }
 
   return resolved;
 };

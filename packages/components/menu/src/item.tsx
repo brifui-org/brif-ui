@@ -33,7 +33,6 @@ export const menuItemVariants = cva(
         default: [],
         primary: [],
         secondary: [],
-        success: [],
         destructive: []
       }
     },
@@ -56,11 +55,6 @@ export const menuItemVariants = cva(
         isActive: true,
         color: "secondary",
         class: "text-secondary-foreground"
-      },
-      {
-        isActive: true,
-        color: "success",
-        class: "text-success-foreground"
       },
       {
         isActive: true,

@@ -3,7 +3,7 @@
   "semi": true,
   "trailingComma": "none",
   "quoteProps": "as-needed",
-  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-sort-json"],
   "importOrder": ["^react$", "<THIRD_PARTY_MODULES>", "<BUILTIN_MODULES>", "^@brifui/(.*)$", "", "^[./]"],
   "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
   "importOrderTypeScriptVersion": "5.0.0",

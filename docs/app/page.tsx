@@ -1,1 +1,1 @@
-export { default } from "./(overview)/introduction/page";
+export { default } from "./(overview)/introduction/page.mdx";

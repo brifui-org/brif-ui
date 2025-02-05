@@ -14,7 +14,13 @@
         "types": "./dist/tailwind/index.d.ts",
         "import": "./dist/tailwind/index.js",
         "require": "./dist/tailwind/index.cjs"
-      }
+      },
+      "./utils": {
+        "types": "./dist/utils/index.d.ts",
+        "import": "./dist/utils/index.js",
+        "require": "./dist/utils/index.cjs"
+      },
+      "./types": "./dist/types/global.ts"
     }
   }
 }

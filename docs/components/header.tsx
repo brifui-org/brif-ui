@@ -1,6 +1,7 @@
 "use client";
 
 import { Container } from "@brifui/components";
+
 import { Logo } from "./logo";
 
 export const Header = () => {

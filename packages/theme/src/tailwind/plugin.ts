@@ -2,7 +2,11 @@ import deepmerge from "deepmerge";
 import plugin from "tailwindcss/plugin";
 
 import { base, dark, light } from "../themes";
-import { BrifUIPluginConfig, RequiredBrifUIPluginConfig } from "../types";
+import {
+  BrifUIPluginConfigArgs,
+  RequiredBrifUIPluginConfig,
+  ResolvedBrifUIConfig
+} from "../types";
 import { resolveConfig } from "../utils/resolve-config/resolve-config";
 
 export const DEFAULT_PREFIX = "brif";
@@ -10,6 +14,13 @@ export const BrifUIPluginSymbol = Symbol("BrifUIPlugin");
 export const CodegenResolvedThemeConfig = Symbol("CodegenResolvedThemeConfig");
 export const CodegenArgThemeConfig = Symbol("CodegenArgThemeConfig");
 export const CodegenThemeConfig = Symbol("CodegenThemeConfig");
+
+export type BrifUITailwindPlugin = ReturnType<typeof plugin> & {
+  $$name: symbol;
+  [CodegenArgThemeConfig]: BrifUIPluginConfigArgs;
+  [CodegenResolvedThemeConfig]: ResolvedBrifUIConfig;
+  [CodegenThemeConfig]: RequiredBrifUIPluginConfig;
+};
 
 const defaultConfigs: RequiredBrifUIPluginConfig = {
   prefix: DEFAULT_PREFIX,
@@ -24,12 +35,12 @@ const defaultConfigs: RequiredBrifUIPluginConfig = {
   }
 };
 
-const createTailwindPlugin = (args: BrifUIPluginConfig) => {
+const createTailwindPlugin = (args: BrifUIPluginConfigArgs) => {
   const configs = deepmerge(defaultConfigs, args) as RequiredBrifUIPluginConfig;
   const { prefix } = configs;
   const resolved = resolveConfig(configs);
 
-  return plugin(
+  const p = plugin(
     ({ addBase, addUtilities, addVariant }) => {
       addBase({
         ":root, [data-theme]": {
@@ -58,9 +69,15 @@ const createTailwindPlugin = (args: BrifUIPluginConfig) => {
         boxShadow: resolved.shadow
       }
     }
-  );
+  ) as BrifUITailwindPlugin;
+  p.$$name = BrifUIPluginSymbol;
+  p[CodegenArgThemeConfig] = args;
+  p[CodegenResolvedThemeConfig] = resolved;
+  p[CodegenThemeConfig] = configs;
+
+  return p;
 };
 
-export function brifui(configs: BrifUIPluginConfig = {}) {
+export function brifui(configs: BrifUIPluginConfigArgs = {}) {
   return createTailwindPlugin(configs);
 }

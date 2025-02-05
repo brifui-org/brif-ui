@@ -1,11 +1,8 @@
-import {
-  BorderRadiusConfig,
-  BreakpointConfig,
-  BrifUIPluginConfig,
-  ColorConfig,
-  ShadowConfig,
-  SpacingConfig
-} from "./packages/theme";
+import { BorderRadiusConfig } from "./border-radius";
+import { BreakpointConfig } from "./breakpoints";
+import { ColorConfig } from "./colors";
+import { ShadowConfig } from "./shadow";
+import { SpacingConfig } from "./spacing";
 
 declare global {
   interface BrifUIThemeConfig {
@@ -21,5 +18,3 @@ declare global {
 
   type BrifUIThemeKey = "light" | "dark";
 }
-
-export {};

@@ -2,13 +2,18 @@
 
 import React, { useContext } from "react";
 import { BrifUIContext, TBrifUIContext } from "@brifui/core";
+import { RequiredBrifUIPluginConfig } from "@brifui/theme";
 
-export const Provider = ({
+export const Provider = <T extends RequiredBrifUIPluginConfig>({
+  themeConfig,
   children = () => null,
   defaultTheme = "light"
 }: {
-  children?: (currentTheme: BrifUIThemeKey) => React.ReactNode;
+  children?:
+    | ((currentTheme: BrifUIThemeKey) => React.ReactNode)
+    | React.ReactNode;
   defaultTheme?: BrifUIThemeKey;
+  themeConfig: T;
 }) => {
   const [currentTheme, setTheme] = React.useState<BrifUIThemeKey>(defaultTheme);
 
@@ -19,7 +24,7 @@ export const Provider = ({
         setTheme
       }}
     >
-      {children(currentTheme)}
+      {typeof children === "function" ? children(currentTheme) : children}
     </BrifUIContext.Provider>
   );
 };

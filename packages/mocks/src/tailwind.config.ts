@@ -4,7 +4,7 @@
 import type { Config } from "tailwindcss";
 import { brifui } from "@brifui/theme/tailwind";
 
-export const mockTailwindConfig =  {
+export const mockTailwindConfig = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",

@@ -18,7 +18,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup src --dts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsup src --experimental-dts",
     "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
@@ -29,7 +30,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./tailwind": "./src/tailwind/index.ts",
-    "./utils": "./src/utils/index.ts"
+    "./utils": "./src/utils/index.ts",
+    "./types": "./src/types/global.ts"
   },
   "peerDependencies": {
     "tailwindcss": "^3.4.17"
