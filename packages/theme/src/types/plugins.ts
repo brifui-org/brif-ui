@@ -1,3 +1,4 @@
+import { DefaultBaseTheme } from "../themes";
 import { DeepPartial, DeepRequired } from "./utils";
 
 /**
@@ -29,7 +30,7 @@ export interface BrifUIPluginConfigArgs {
   /**
    * The base theme configuration.
    */
-  base?: Partial<BrifUIThemeConfig>;
+  base?: Partial<DefaultBaseTheme>;
 
   /**
    * The themes configuration, allowing for light and dark themes, as well as custom themes.
@@ -38,34 +39,17 @@ export interface BrifUIPluginConfigArgs {
     /**
      * Configuration for the light theme.
      */
-    light?: DeepPartial<
-      Omit<
-        BrifUIThemeConfig,
-        "breakpoints" | "spacing" | "borderRadius" | "shadow"
-      >
-    >;
+    light?: DeepPartial<DefaultBaseTheme>;
 
     /**
      * Configuration for the dark theme.
      */
-    dark?: DeepPartial<
-      Omit<
-        BrifUIThemeConfig,
-        "breakpoints" | "spacing" | "borderRadius" | "shadow"
-      >
-    >;
+    dark?: DeepPartial<DefaultBaseTheme>;
 
     /**
      * Configuration for custom themes.
      */
-    [key: string]:
-      | DeepPartial<
-          Omit<
-            BrifUIThemeConfig,
-            "breakpoints" | "spacing" | "borderRadius" | "shadow"
-          >
-        >
-      | undefined;
+    [key: string]: DeepPartial<DefaultBaseTheme> | undefined;
   };
 }
 

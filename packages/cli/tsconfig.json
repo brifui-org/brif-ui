@@ -9,7 +9,7 @@
     "target": "es2022",
     "moduleResolution": "bundler",
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "../../declaration.d.ts"],
   "ts-node": {
     "esm": true
   }

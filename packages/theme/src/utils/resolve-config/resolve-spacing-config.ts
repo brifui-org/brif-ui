@@ -1,7 +1,5 @@
-import { DeepRequired } from "../../types";
-
 export const resolveSpacingConfig = (
-  spacingConfig: DeepRequired<BrifUIThemeConfig["spacing"]>,
+  spacingConfig: unknown,
   prefix: string
 ) => {
   const resolved: {
@@ -11,6 +9,8 @@ export const resolveSpacingConfig = (
     spacing: {},
     utilities: {}
   };
+
+  if (!spacingConfig || typeof spacingConfig !== "object") return resolved;
 
   for (const [spacing, value] of Object.entries(spacingConfig)) {
     const tokenName = `--${prefix}-spacing-${spacing.replaceAll(".", "_")}`;

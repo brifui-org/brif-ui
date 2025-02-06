@@ -1995,6 +1995,7 @@ __metadata:
     "@brifui/core": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
     "@brifui/mocks": "workspace:*"
+    "@brifui/provider": "workspace:*"
     "@brifui/spinner": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@types/react": "npm:^19"

@@ -4,6 +4,8 @@ import { Funnel_Display, Inter } from "next/font/google";
 import "../app/globals.css";
 
 import { useLayoutEffect } from "react";
+import { theme } from "@/theme";
+import { Provider } from "@brifui/components";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
@@ -33,7 +35,11 @@ const preview: Preview = {
         );
       }, []);
 
-      return <Story />;
+      return (
+        <Provider themeConfig={theme}>
+          <Story />
+        </Provider>
+      );
     }
   ],
   render: () => null,

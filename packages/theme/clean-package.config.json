@@ -19,8 +19,7 @@
         "types": "./dist/utils/index.d.ts",
         "import": "./dist/utils/index.js",
         "require": "./dist/utils/index.cjs"
-      },
-      "./types": "./dist/types/global.ts"
+      }
     }
   }
 }

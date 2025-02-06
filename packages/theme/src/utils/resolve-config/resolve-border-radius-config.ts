@@ -1,7 +1,5 @@
-import { DeepRequired } from "../../types";
-
 export const resolveBorderRadiusConfig = (
-  borderRadius: DeepRequired<BrifUIThemeConfig["borderRadius"]>,
+  borderRadius: unknown,
   prefix: string
 ) => {
   const resolved: {
@@ -11,6 +9,8 @@ export const resolveBorderRadiusConfig = (
     borderRadius: {},
     utilities: {}
   };
+
+  if (!borderRadius || typeof borderRadius !== "object") return resolved;
 
   for (const [spacing, value] of Object.entries(borderRadius)) {
     const tokenName = `--${prefix}-border-radius-${spacing.replaceAll(".", "_")}`;

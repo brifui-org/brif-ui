@@ -3,7 +3,6 @@ import { breakpoints } from "../breakpoints";
 import { colors } from "../colors";
 import { shadow } from "../shadow";
 import { spacing } from "../spacing";
-import type { DeepRequired } from "../types";
 
 export const base = {
   colors,
@@ -11,4 +10,6 @@ export const base = {
   spacing,
   borderRadius,
   shadow
-} as unknown as DeepRequired<BrifUIThemeConfig>;
+};
+
+export type DefaultBaseTheme = typeof base;

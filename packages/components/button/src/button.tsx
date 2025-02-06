@@ -1,17 +1,29 @@
+"use client";
+
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Prefer } from "@brifui/core";
 import { cn } from "@brifui/core/utils";
+import { useTheme } from "@brifui/provider";
 import { Spinner } from "@brifui/spinner";
+import { ComponentColor } from "@brifui/theme/types";
+
+export const cssVars = {
+  textColor: "--brifui-comp-button-foreground",
+  idleColor: "--brifui-comp-button-idle-color",
+  hoverColor: "--brifui-comp-button-hover-color",
+  disabledColor: "--brifui-comp-button-disabled-color",
+  activeColor: "--brifui-comp-button-active-color"
+};
 
 export const buttonVariants = cva(
   [
     "relative gap-2 inline-flex items-center justify-center",
     "text-sm font-bold",
-    "outline-none",
-    "border-box border border-border",
-    "transition-all ease-in-out",
-    "disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none"
+    "border-box border border-transparent",
+    "disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none",
+    "focus:outline-none",
+    "focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary"
   ],
   {
     variants: {
@@ -28,17 +40,32 @@ export const buttonVariants = cva(
        * @default "solid"
        */
       variant: {
-        solid: [],
+        solid: [
+          "text-[var(--brifui-comp-button-foreground)]",
+          "bg-[var(--brifui-comp-button-idle-color)]",
+          "hover:bg-[var(--brifui-comp-button-hover-color)]",
+          "active:bg-[var(--brifui-comp-button-active-color)]",
+          "disabled:bg-[var(--brifui-comp-button-disabled-color)]"
+        ],
         outlined: [
-          "hover:bg-gradient-to-b hover:from-10%",
-          "active:bg-gradient-to-b active:from-10%"
+          "bg-background",
+          "border-[var(--brifui-comp-button-idle-color)]",
+          "text-[var(--brifui-comp-button-idle-color)]",
+          "from-[color-mix(in_hsl,_transparent,_var(--brifui-comp-button-idle-color)_0%)] to-[color-mix(in_hsl,_transparent,_var(--brifui-comp-button-idle-color)_10%)] hover:bg-gradient-to-b hover:from-10%",
+          "active:shadow-[inset_0_0_0_1px_var(--brifui-comp-button-idle-color)]"
         ],
         ghost: [
+          "text-[var(--brifui-comp-button-idle-color)]",
           "bg-transparent border-none",
-          "hover:bg-opacity-10",
-          "active:bg-opacity-30"
+          "hover:bg-[color-mix(in_hsl,_transparent,_var(--brifui-comp-button-idle-color)_10%)]",
+          "active:bg-[color-mix(in_hsl,_transparent,_var(--brifui-comp-button-idle-color)_30%)]"
         ],
-        link: ["bg-transparent border-none"]
+        link: [
+          "text-[var(--brifui-comp-button-idle-color)]",
+          "hover:text-[var(--brifui-comp-button-hover-color)]",
+          "active:text-[var(--brifui-comp-button-active-color)]",
+          "bg-transparent border-none"
+        ]
       },
       /**
        * Button's size
@@ -49,168 +76,11 @@ export const buttonVariants = cva(
         md: ["h-10", "px-4 py-1", "rounded-md"],
         lg: ["h-11", "px-5 py-1", "rounded-md"],
         icon: []
-      },
-      /**
-       * Button's color
-       * @default "primary"
-       */
-      color: {
-        default: [],
-        primary: [],
-        secondary: [],
-        destructive: []
       }
     },
-    compoundVariants: [
-      /**
-       * Solid
-       */
-      {
-        variant: "solid",
-        color: "default",
-        class: [
-          "bg-default",
-          "border-default",
-          "text-default-foreground",
-          "hover:bg-default-hover hover:border-default-hover",
-          "active:bg-default-active active:border-default-active"
-        ]
-      },
-      {
-        variant: "solid",
-        color: "primary",
-        class: [
-          "bg-primary",
-          "border-primary",
-          "text-primary-foreground",
-          "hover:bg-primary-hover hover:border-primary-hover",
-          "active:bg-primary-active active:border-primary-active"
-        ]
-      },
-      {
-        variant: "solid",
-        color: "secondary",
-        class: [
-          "bg-secondary",
-          "border-secondary",
-          "text-secondary-foreground",
-          "hover:bg-secondary-hover hover:border-secondary-hover",
-          "active:bg-secondary-active active:border-secondary-active"
-        ]
-      },
-      {
-        variant: "solid",
-        color: "destructive",
-        class: [
-          "bg-danger",
-          "border-danger",
-          "text-danger-foreground",
-          "hover:bg-danger-hover hover:border-danger-hover",
-          "active:bg-danger-active active:border-danger-active"
-        ]
-      },
-      /**
-       * Outlined
-       */
-      {
-        variant: "outlined",
-        color: "default",
-        class: [
-          "bg-background text-default border-default",
-          "from-default/0 to-default/10"
-        ]
-      },
-      {
-        variant: "outlined",
-        color: "primary",
-        class: [
-          "bg-background text-primary border-primary",
-          "from-primary/0 to-primary/10"
-        ]
-      },
-      {
-        variant: "outlined",
-        color: "secondary",
-        class: [
-          "bg-background text-secondary border-secondary",
-          "from-secondary/0 to-secondary/10"
-        ]
-      },
-      {
-        variant: "outlined",
-        color: "destructive",
-        class: [
-          "bg-background text-danger border-danger",
-          "from-danger/0 to-danger/10"
-        ]
-      },
-      /**
-       * Ghost
-       */
-      {
-        variant: "ghost",
-        color: "default",
-        class: ["text-default", "hover:bg-default"]
-      },
-      {
-        variant: "ghost",
-        color: "primary",
-        class: ["text-primary", "hover:bg-primary"]
-      },
-      {
-        variant: "ghost",
-        color: "secondary",
-        class: ["text-secondary", "hover:bg-secondary"]
-      },
-      {
-        variant: "ghost",
-        color: "destructive",
-        class: ["text-danger", "hover:bg-danger"]
-      },
-      /**
-       * Link
-       */
-      {
-        variant: "link",
-        color: "default",
-        class: [
-          "text-default",
-          "hover:text-default-hover",
-          "active:text-default-active"
-        ]
-      },
-      {
-        variant: "link",
-        color: "primary",
-        class: [
-          "text-primary",
-          "hover:text-primary-hover",
-          "active:text-primary-active"
-        ]
-      },
-      {
-        variant: "link",
-        color: "secondary",
-        class: [
-          "text-secondary",
-          "hover:text-secondary-hover",
-          "active:text-secondary-active"
-        ]
-      },
-      {
-        variant: "link",
-        color: "destructive",
-        class: [
-          "text-danger",
-          "hover:text-danger-hover",
-          "active:text-danger-active"
-        ]
-      }
-    ],
     defaultVariants: {
       variant: "solid",
       size: "md",
-      color: "default",
       isLoading: false
     }
   }
@@ -219,7 +89,9 @@ export const buttonVariants = cva(
 export type ButtonVariantsProps = VariantProps<typeof buttonVariants>;
 export type ButtonProps = Prefer<
   ButtonVariantsProps,
-  React.ComponentPropsWithRef<"button">
+  React.ComponentPropsWithRef<"button"> & {
+    color?: ComponentColor;
+  }
 >;
 
 export const Button: React.FC<ButtonProps> = ({
@@ -229,11 +101,26 @@ export const Button: React.FC<ButtonProps> = ({
   isLoading = false,
   className,
   children,
+  style = {},
   ...props
 }) => {
+  const { resolveSysColor, defaultColor } = useTheme();
+
   return (
     <button
-      className={cn(buttonVariants({ variant, size, color }), className)}
+      className={cn(buttonVariants({ variant, size }), className)}
+      style={{
+        ...style,
+        [cssVars.textColor]: resolveSysColor(color || defaultColor)(
+          "foreground"
+        ),
+        [cssVars.idleColor]: resolveSysColor(color || defaultColor)("DEFAULT"),
+        [cssVars.hoverColor]: resolveSysColor(color || defaultColor)("hover"),
+        [cssVars.activeColor]: resolveSysColor(color || defaultColor)("active"),
+        [cssVars.disabledColor]: resolveSysColor(color || defaultColor)(
+          "disabled"
+        )
+      }}
       {...props}
     >
       {isLoading && (

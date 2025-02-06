@@ -1,7 +1,5 @@
-import { DeepRequired } from "../../types";
-
 export const resolveBreakpointsConfig = (
-  breakpoints: DeepRequired<BrifUIThemeConfig["breakpoints"]>,
+  breakpoints: unknown,
   prefix: string
 ) => {
   const resolved: {
@@ -11,6 +9,8 @@ export const resolveBreakpointsConfig = (
     breakpoints: {},
     utilities: {}
   };
+
+  if (!breakpoints || typeof breakpoints !== "object") return resolved;
 
   for (const [bp, value] of Object.entries(breakpoints)) {
     const tokenName = `--${prefix}-breakpoint-${bp}`;
