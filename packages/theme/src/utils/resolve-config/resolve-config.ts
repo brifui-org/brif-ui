@@ -84,7 +84,7 @@ export const resolveConfig = (configs: RequiredBrifUIPluginConfig) => {
        * Colors
        */
       const resolvedColors = resolveColorsConfig(themeConfig.colors, prefix);
-      resolved.colors = resolvedColors.colors;
+      resolved.colors = Object.assign(resolved.colors, resolvedColors.colors);
       resolved.utilities[cssSelector] = Object.assign(
         resolved.utilities[cssSelector],
         resolvedColors.utilities

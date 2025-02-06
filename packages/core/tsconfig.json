@@ -1,5 +1,5 @@
 {
   "extends": "@brifui/typescript-config/react.json",
-  "include": ["src", "../../global.d.ts"],
+  "include": ["src", "../../declaration.d.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }

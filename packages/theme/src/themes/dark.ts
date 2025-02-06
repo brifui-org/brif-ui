@@ -8,6 +8,7 @@ import { darkSecondary } from "../colors/sys/secondary";
 import { darkSuccess } from "../colors/sys/success";
 import { darkWarning } from "../colors/sys/warning";
 import type { DeepPartial } from "../types";
+import { DefaultBaseTheme } from "./base";
 
 export const dark = {
   colors: {
@@ -23,4 +24,4 @@ export const dark = {
       default: darkDefault
     }
   }
-} satisfies DeepPartial<BrifUIThemeConfig>;
+} satisfies DeepPartial<DefaultBaseTheme>;

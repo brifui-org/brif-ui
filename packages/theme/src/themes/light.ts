@@ -1,5 +1,6 @@
 import type { DeepPartial } from "../types";
+import { DefaultBaseTheme } from "./base";
 
 export const light = {
   colors: {}
-} satisfies DeepPartial<BrifUIThemeConfig>;
+} satisfies DeepPartial<DefaultBaseTheme>;

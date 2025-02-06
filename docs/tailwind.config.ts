@@ -35,6 +35,9 @@ export default {
     brifui({
       themeFile: {
         dir: "theme"
+      },
+      themes: {
+        violet: {}
       }
     })
   ]

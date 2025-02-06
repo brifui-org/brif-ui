@@ -1,9 +1,4 @@
-import { DeepRequired } from "../../types";
-
-export const resolveShadowConfig = (
-  shadowConfig: DeepRequired<BrifUIThemeConfig["shadow"]>,
-  prefix: string
-) => {
+export const resolveShadowConfig = (shadowConfig: unknown, prefix: string) => {
   const resolved: {
     shadow: Record<string, string>;
     utilities: Record<string, string>;
@@ -11,6 +6,8 @@ export const resolveShadowConfig = (
     shadow: {},
     utilities: {}
   };
+
+  if (!shadowConfig || typeof shadowConfig !== "object") return resolved;
 
   for (const [shadow, value] of Object.entries(shadowConfig)) {
     const tokenName = `--${prefix}-shadow-${shadow.replaceAll(".", "_")}`;

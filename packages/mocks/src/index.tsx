@@ -2,11 +2,11 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { Provider } from "@brifui/provider";
 
-import { themeConfig } from "./theme-config";
+import { theme } from "./theme";
 
 export const TestRoot = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Provider themeConfig={themeConfig} defaultTheme="light">
+    <Provider themeConfig={theme} defaultTheme="light">
       {(currentTheme) => (
         <html className={currentTheme}>
           <body>{children}</body>
@@ -21,3 +21,4 @@ export const renderView = (component: React.ReactNode) => {
 };
 
 export * from "@testing-library/react";
+export { theme };

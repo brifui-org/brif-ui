@@ -62,7 +62,9 @@ const createTailwindPlugin = (args: BrifUIPluginConfigArgs) => {
     {
       darkMode: "class",
       theme: {
-        colors: resolved.colors,
+        colors: Object.assign(resolved.colors, {
+          transparent: "transparent"
+        }),
         screens: resolved.breakpoints,
         spacing: resolved.spacing,
         borderRadius: resolved.borderRadius,

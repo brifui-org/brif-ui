@@ -22,7 +22,6 @@ import { zinc } from "./zinc";
 export const ref = {
   white: "#ffffff",
   black: "#000000",
-  transparent: "#FFFFFFFF",
   rose,
   pink,
   purple,

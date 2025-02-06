@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import { BrifUIContext, TBrifUIContext } from "@brifui/core";
-import { RequiredBrifUIPluginConfig } from "@brifui/theme";
+import type { BrifUIThemeConfig, BrifUIThemeKey } from "@brifui/theme/types";
 
-export const Provider = <T extends RequiredBrifUIPluginConfig>({
+export const Provider = <T extends BrifUIThemeConfig>({
   themeConfig,
   children = () => null,
   defaultTheme = "light"
@@ -17,11 +17,24 @@ export const Provider = <T extends RequiredBrifUIPluginConfig>({
 }) => {
   const [currentTheme, setTheme] = React.useState<BrifUIThemeKey>(defaultTheme);
 
+  const resolveSysColor = useCallback<TBrifUIContext["resolveSysColor"]>(
+    (colorName) => (state) => {
+      if (state.includes("DEFAULT")) {
+        return `hsl(var(--brif-sys-color-${colorName.split(".").join("-")}))`;
+      }
+      return `hsl(var(--brif-sys-color-${colorName.split(".").join("-")}-${state}))`;
+    },
+    []
+  );
+
   return (
     <BrifUIContext.Provider
       value={{
+        themeConfig,
         currentTheme,
-        setTheme
+        setTheme,
+        resolveSysColor,
+        defaultColor: "default"
       }}
     >
       {typeof children === "function" ? children(currentTheme) : children}
