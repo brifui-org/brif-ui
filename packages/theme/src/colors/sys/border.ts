@@ -1,9 +1,13 @@
-export const border = {
-  DEFAULT: "ref.neutral.200",
-  disabled: "ref.neutral.200"
-};
+import { BorderColors } from "@brifui/types";
 
-export const darkBorder = {
-  DEFAULT: "ref.neutral.700",
-  disabled: "ref.neutral.700"
+export const border: BorderColors = {
+  DEFAULT: {
+    value: "{colors.gray.1000}"
+  },
+  subtle: {
+    value: "{colors.gray.200}"
+  },
+  disabled: {
+    value: "{colors.gray.100}"
+  }
 };

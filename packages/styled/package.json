@@ -1,0 +1,72 @@
+{
+  "name": "@brifui/styled",
+  "version": "0.0.0",
+  "description": "Styled system for Brif UI.",
+  "sideEffects": false,
+  "keywords": [
+    "styled",
+    "theming",
+    "ui"
+  ],
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./css": {
+      "types": "./dist/css/index.d.ts",
+      "require": "./dist/css/index.mjs",
+      "import": "./dist/css/index.mjs"
+    },
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "require": "./dist/tokens/index.mjs",
+      "import": "./dist/tokens/index.mjs"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/types/index.mjs",
+      "import": "./dist/types/index.mjs"
+    },
+    "./patterns": {
+      "types": "./dist/patterns/index.d.ts",
+      "require": "./dist/patterns/index.mjs",
+      "import": "./dist/patterns/index.mjs"
+    },
+    "./jsx": {
+      "types": "./dist/jsx/index.d.ts",
+      "require": "./dist/jsx/index.mjs",
+      "import": "./dist/jsx/index.mjs"
+    },
+    "./recipes": {
+      "types": "./dist/recipes/index.d.ts",
+      "require": "./dist/recipes/index.mjs",
+      "import": "./dist/recipes/index.mjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "codegen": "panda codegen",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "peerDependencies": {
+    "@pandacss/dev": "^0.52.0"
+  },
+  "devDependencies": {
+    "@brifui/eslint-config": "workspace:*",
+    "@brifui/types": "workspace:*",
+    "@brifui/typescript-config": "workspace:*",
+    "eslint": "^9.15.0",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@brifui/theme": "workspace:*",
+    "@pandacss/dev": "^0.52.0"
+  }
+}

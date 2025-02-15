@@ -1,0 +1,64 @@
+{
+  "name": "@brifui/postcss",
+  "version": "0.0.0",
+  "description": "PostCSS library for Brif UI.",
+  "sideEffects": false,
+  "keywords": [
+    "postcss-plugin",
+    "PostCSS",
+    "theming",
+    "ui"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch",
+    "lint": "eslint ."
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "author": "Thinh Trinh Duc <thinh.duc.trinh@gmail.com>",
+  "peerDependencies": {
+    "@pandacss/postcss": "^0.52.0",
+    "postcss": "^8.4.49"
+  },
+  "devDependencies": {
+    "@brifui/eslint-config": "workspace:*",
+    "@brifui/typescript-config": "workspace:*",
+    "eslint": "^9.15.0",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@pandacss/postcss": "^0.52.0",
+    "postcss": "^8.4.49"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2019",
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "shims": true
+  }
+}

@@ -1,15 +1,16 @@
-export const primary = {
-  DEFAULT: "ref.blue.700",
-  foreground: "ref.white",
-  disabled: "ref.blue.400",
-  hover: "ref.blue.600",
-  active: "ref.blue.800"
-};
+import { PrimaryColors } from "@brifui/types";
 
-export const darkPrimary = {
-  DEFAULT: "ref.blue.500",
-  foreground: "ref.black",
-  disabled: "ref.blue.700",
-  hover: "ref.blue.400",
-  active: "ref.blue.600"
+export const primary: PrimaryColors = {
+  DEFAULT: {
+    value: "{colors.blue.700}"
+  },
+  foreground: {
+    value: "{colors.gray.100}"
+  },
+  hover: {
+    value: "{colors.blue.600}"
+  },
+  active: {
+    value: "{colors.blue.800}"
+  }
 };

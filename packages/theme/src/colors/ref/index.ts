@@ -1,47 +1,27 @@
 import { amber } from "./amber";
 import { blue } from "./blue";
-import { cyan } from "./cyan";
-import { emerald } from "./emerald";
+import { gray } from "./gray";
+import { grayAlpha } from "./gray-alpha";
 import { green } from "./green";
-import { indigo } from "./indigo";
-import { lime } from "./lime";
-import { neutral } from "./neutral";
-import { orange } from "./orange";
 import { pink } from "./pink";
 import { purple } from "./purple";
 import { red } from "./red";
-import { rose } from "./rose";
-import { sky } from "./sky";
-import { slate } from "./slate";
-import { stone } from "./stone";
 import { teal } from "./teal";
-import { violet } from "./violet";
-import { yellow } from "./yellow";
-import { zinc } from "./zinc";
 
 export const ref = {
-  white: "#ffffff",
-  black: "#000000",
-  rose,
-  pink,
-  purple,
-  violet,
-  indigo,
-  blue,
-  sky,
-  cyan,
-  teal,
-  emerald,
-  green,
-  lime,
-  yellow,
+  black: {
+    value: "hsl(0%, 0%, 0%)"
+  },
+  white: {
+    value: "hsl(0%, 0%, 100%)"
+  },
   amber,
-  orange,
+  blue,
   red,
-  neutral,
-  zinc,
-  stone,
-  slate
+  gray,
+  grayAlpha,
+  green,
+  teal,
+  purple,
+  pink
 };
-
-export type DefaultRefColors = typeof ref;

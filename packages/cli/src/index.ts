@@ -1,1 +1,4 @@
-export {run} from '@oclif/core'
+#!/usr/bin/env node
+import { main } from "./main.js";
+
+main();

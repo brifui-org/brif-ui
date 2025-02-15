@@ -1,12 +1,24 @@
-export const purple = {
-  "50": "#faf5ff",
-  "100": "#f3e8ff",
-  "200": "#e9d5ff",
-  "300": "#d8b4fe",
-  "400": "#c084fc",
-  "500": "#a855f7",
-  "600": "#9333ea",
-  "700": "#7e22ce",
-  "800": "#6b21a8",
-  "900": "#581c87"
+import { ColorToken } from "@brifui/types";
+
+const purpleValue = {
+  100: "276, 100%, 97%",
+  200: "277, 87%, 97%",
+  300: "274, 78%, 95%",
+  400: "276, 71%, 92%",
+  500: "274, 70%, 82%",
+  600: "273, 72%, 73%",
+  700: "272, 51%, 54%",
+  800: "272, 47%, 45%",
+  900: "274, 71%, 43%",
+  1000: "276, 100%, 15%"
 };
+
+export const purple = Object.entries(purpleValue).reduce<ColorToken>(
+  (obj, [stop, value]) => {
+    obj[stop] = {
+      value: `hsl(${value})`
+    };
+    return obj;
+  },
+  {}
+);
