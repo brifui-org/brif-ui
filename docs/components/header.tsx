@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { css } from "@brifui/styled/css";
 
 export const Header: React.FC = () => {
@@ -17,13 +18,15 @@ export const Header: React.FC = () => {
           py: "2"
         })}
       >
-        <Image
-          quality={100}
-          alt="Brif UI logo"
-          src="/logo.png"
-          width={42}
-          height={42}
-        />
+        <Link href="/">
+          <Image
+            quality={100}
+            alt="Brif UI logo"
+            src="/logo.png"
+            width={42}
+            height={42}
+          />
+        </Link>
       </div>
     </header>
   );

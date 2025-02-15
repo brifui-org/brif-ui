@@ -158,6 +158,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/card@workspace:*, @brifui/card@workspace:packages/components/card":
+  version: 0.0.0-use.local
+  resolution: "@brifui/card@workspace:packages/components/card"
+  dependencies:
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/styled": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@brifui/cli@workspace:*, @brifui/cli@workspace:packages/cli":
   version: 0.0.0-use.local
   resolution: "@brifui/cli@workspace:packages/cli"
@@ -189,6 +207,7 @@ __metadata:
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
     "@brifui/button": "workspace:*"
+    "@brifui/card": "workspace:*"
     "@brifui/eslint-config": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@microsoft/api-extractor": "npm:^7.49.1"

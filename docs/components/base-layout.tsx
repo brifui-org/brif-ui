@@ -10,7 +10,8 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
     <div
       className={css({
         mx: "auto",
-        maxW: "1024px",
+        w: "100%",
+        maxW: "1440px",
         minH: "screen",
         display: "flex",
         flexDir: "column",
@@ -20,7 +21,11 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
       })}
     >
       <Header />
-      <main className={css({ flex: 1 })}>{children}</main>
+      <main
+        className={css({ flex: 1, display: "flex", flexDirection: "column" })}
+      >
+        {children}
+      </main>
     </div>
   );
 };
