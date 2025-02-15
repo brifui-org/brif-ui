@@ -314,6 +314,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/utils@workspace:*, @brifui/utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "@brifui/utils@workspace:packages/utils"
+  dependencies:
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@microsoft/api-extractor": "npm:^7.49.1"
+    "@rsbuild/plugin-react": "npm:^1.1.0"
+    "@rslib/core": "npm:^0.3.1"
+    "@types/react": "npm:^19.0.5"
+    "@types/react-dom": "npm:^19.0.3"
+    eslint: "npm:^9.15.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  peerDependencies:
+    react: ^19.0.0
+    react-dom: ^19.0.0
+  languageName: unknown
+  linkType: soft
+
 "@changesets/apply-release-plan@npm:^7.0.8":
   version: 7.0.8
   resolution: "@changesets/apply-release-plan@npm:7.0.8"
@@ -4420,9 +4441,11 @@ __metadata:
     "@brifui/styled": "workspace:*"
     "@brifui/theme": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
+    "@brifui/utils": "workspace:*"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
+    lucide-react: "npm:^0.475.0"
     next: "npm:15.1.6"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
@@ -7075,6 +7098,15 @@ __metadata:
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: 10c0/cb53e582785c48187d7a188d3379c181b5ca2a9c78d2bce3e7dee36f32761d1c42983da3fe12b55cb74e1779fa94cdc2e5367c028a9b35317184ede0c07a30a9
+  languageName: node
+  linkType: hard
+
+"lucide-react@npm:^0.475.0":
+  version: 0.475.0
+  resolution: "lucide-react@npm:0.475.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/9cb17bd4e70da4db104874b6b2e9d9c7e2be9438e9d1c0b2565df0c4d0bdd1add41b7dff3cb60840699ecbd29870c453878b42b69a7c46480def0c9370a852a9
   languageName: node
   linkType: hard
 

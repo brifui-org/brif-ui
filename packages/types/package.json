@@ -25,7 +25,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "peerDependencies": {
-    "@pandacss/dev": "^0.52.0"
+    "@pandacss/dev": "^0.52.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
@@ -35,6 +37,8 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@pandacss/dev": "^0.52.0"
+    "@pandacss/dev": "^0.52.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

@@ -12,11 +12,14 @@
   "dependencies": {
     "@brifui/components": "workspace:*",
     "@brifui/styled": "workspace:*",
+    "@brifui/utils": "workspace:*",
+    "lucide-react": "^0.475.0",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@brifui/types": "workspace:*",
     "@brifui/cli": "workspace:*",
     "@brifui/eslint-config": "workspace:*",
     "@brifui/theme": "workspace:*",

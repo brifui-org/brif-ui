@@ -1,144 +1,56 @@
 import React from "react";
-import { css, cva, type RecipeVariantProps } from "@brifui/styled/css";
+import { css, cx } from "@brifui/styled/css";
+import { findChildrenByType } from "@brifui/utils";
 
-export const buttonVariants = cva({
-  base: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    /**
-     * Fonts
-     */
-    fontFamily: "body",
-    fontWeight: "600",
-    /**
-     * Hover
-     */
-    _hover: {
-      "&:not(:disabled)": {
-        cursor: "pointer",
-        boxShadow: "md"
-      }
-    },
-    /**
-     * Focus
-     */
-    _focusVisible: {
-      outline: "4px solid {colors.primary}",
-      outlineOffset: "2px"
-    },
-    _disabled: {
-      opacity: 0.32,
-      cursor: "not-allowed"
-    }
-  },
-  variants: {
-    variant: {
-      solid: {
-        bg: "default",
-        borderColor: "default",
-        color: "default.foreground",
-        _hover: {
-          "&:not(:disabled)": {
-            bg: "primary",
-            borderColor: "default",
-            color: "primary.foreground"
-          }
-        },
-        _active: {
-          "&:not(:disabled)": {
-            bg: "primary.active"
-          }
-        }
-      },
-      outline: {
-        bg: "background",
-        borderColor: "text",
-        color: "text",
-        _hover: {
-          "&:not(:disabled)": {
-            bg: "background.hover"
-          }
-        },
-        _active: {
-          "&:not(:disabled)": {
-            bg: "background.active"
-          }
-        }
-      },
-      error: {
-        bg: "error",
-        borderColor: "error",
-        color: "error.foreground",
-        _hover: {
-          "&:not(:disabled)": {
-            bg: "error.hover",
-            borderColor: "error.hover"
-          }
-        },
-        _active: {
-          "&:not(:disabled)": {
-            bg: "error.active",
-            borderColor: "error.active"
-          }
-        }
-      },
-      warning: {
-        bg: "warning",
-        borderColor: "warning",
-        color: "warning.foreground",
-        _hover: {
-          "&:not(:disabled)": {
-            bg: "warning.hover",
-            borderColor: "warning.hover"
-          }
-        },
-        _active: {
-          "&:not(:disabled)": {
-            bg: "warning.active",
-            borderColor: "warning.active"
-          }
-        }
-      }
-    },
-    size: {
-      sm: {
-        borderRadius: "component.md",
-        height: "component.sm",
-        px: "2",
-        fontSize: "small"
-      },
-      md: {
-        height: "component.md",
-        px: "2.5",
-        borderRadius: "component.md",
-        fontSize: "small"
-      },
-      lg: {
-        height: "component.lg",
-        px: "3.5",
-        borderRadius: "component.lg",
-        fontSize: "medium"
-      }
-    }
-  },
-  defaultVariants: {
-    variant: "solid",
-    size: "md"
-  }
-});
+import { ButtonVariantProps, buttonVariants } from "./variants";
 
-export type ButtonProps = RecipeVariantProps<typeof buttonVariants> &
-  React.ComponentPropsWithRef<"button">;
-
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  variant,
-  size,
+const Prefix: React.FC<React.ComponentPropsWithRef<"div">> = ({
+  className,
   ...props
 }) => {
+  return (
+    <div
+      className={cx(
+        css({
+          mr: "px"
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+};
+
+const Suffix: React.FC<React.ComponentPropsWithRef<"div">> = ({
+  className,
+  ...props
+}) => {
+  return (
+    <div
+      className={cx(
+        css({
+          ml: "px"
+        }),
+        className
+      )}
+      {...props}
+    />
+  );
+};
+
+export type ButtonProps = ButtonVariantProps &
+  React.ComponentPropsWithRef<"button">;
+
+export const Button: React.FC<ButtonProps> & {
+  Prefix: typeof Prefix;
+  Suffix: typeof Suffix;
+} = ({ children, variant, size, ...props }) => {
+  const [prefixes, suffixes, others] = findChildrenByType(
+    children,
+    Prefix,
+    Suffix
+  );
+
   return (
     <button
       className={buttonVariants({
@@ -147,7 +59,11 @@ export const Button: React.FC<ButtonProps> = ({
       })}
       {...props}
     >
-      <span className={css({ px: "1.5" })}>{children}</span>
+      {prefixes}
+      <span className={css({ px: "1.5" })}>{others}</span>
+      {suffixes}
     </button>
   );
 };
+Button.Prefix = Prefix;
+Button.Suffix = Suffix;

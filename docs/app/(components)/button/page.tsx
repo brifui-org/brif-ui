@@ -1,4 +1,5 @@
 import { Page } from "@/components/page";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@brifui/components";
 
 export default function ButtonDocs() {
@@ -8,6 +9,7 @@ export default function ButtonDocs() {
         title="Button"
         description="Trigger an action or event, such as submitting a form or displaying a dialog."
       />
+
       <Page.Section title="Sizes" description="The default size is medium">
         <Page.Preview>
           <Button size="sm">Solid</Button>
@@ -15,6 +17,7 @@ export default function ButtonDocs() {
           <Button size="lg">Solid</Button>
         </Page.Preview>
       </Page.Section>
+
       <Page.Section title="Variants" description="The default variant is solid">
         <Page.Preview>
           <Button variant="solid">Solid</Button>
@@ -24,7 +27,7 @@ export default function ButtonDocs() {
         </Page.Preview>
       </Page.Section>
 
-      <Page.Section title="Disabled" description="The default variant is solid">
+      <Page.Section title="Disabled">
         <Page.Preview>
           <Button variant="solid" disabled>
             Solid
@@ -37,6 +40,32 @@ export default function ButtonDocs() {
           </Button>
           <Button variant="warning" disabled>
             Warning
+          </Button>
+        </Page.Preview>
+      </Page.Section>
+
+      <Page.Section title="Prefix and suffix">
+        <Page.Preview>
+          <Button>
+            <Button.Prefix>
+              <ArrowLeft size={20} />
+            </Button.Prefix>
+            Solid
+          </Button>
+          <Button>
+            Solid
+            <Button.Suffix>
+              <ArrowRight size={20} />
+            </Button.Suffix>
+          </Button>
+          <Button>
+            <Button.Prefix>
+              <ArrowLeft size={20} />
+            </Button.Prefix>
+            Solid
+            <Button.Suffix>
+              <ArrowRight size={20} />
+            </Button.Suffix>
           </Button>
         </Page.Preview>
       </Page.Section>
