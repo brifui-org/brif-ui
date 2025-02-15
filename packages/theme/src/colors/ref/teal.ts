@@ -1,12 +1,24 @@
-export const teal = {
-  "50": "#f0fdfa",
-  "100": "#ccfbf1",
-  "200": "#99f6e4",
-  "300": "#5eead4",
-  "400": "#2dd4bf",
-  "500": "#14b8a6",
-  "600": "#0d9488",
-  "700": "#0f766e",
-  "800": "#115e59",
-  "900": "#134e4a"
+import { ColorToken } from "@brifui/types";
+
+const tealValue = {
+  100: "169, 70%, 96%",
+  200: "167, 70%, 94%",
+  300: "168, 70%, 90%",
+  400: "170, 70%, 85%",
+  500: "170, 70%, 72%",
+  600: "170, 70%, 57%",
+  700: "173, 80%, 36%",
+  800: "173, 83%, 30%",
+  900: "174, 91%, 25%",
+  1000: "171, 80%, 13%"
 };
+
+export const teal = Object.entries(tealValue).reduce<ColorToken>(
+  (obj, [stop, value]) => {
+    obj[stop] = {
+      value: `hsl(${value})`
+    };
+    return obj;
+  },
+  {}
+);

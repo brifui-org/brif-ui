@@ -35,6 +35,7 @@ out/
 build
 dist
 .install-state.gz
+*.buildinfo
 
 # debug
 npm-debug.log*
@@ -49,3 +50,6 @@ yarn-error.log*
 *.pem
 temp
 *.backup
+## Panda
+styled-system
+styled-system-studio

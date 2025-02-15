@@ -1,11 +1,13 @@
-import { SysBackgroundColor } from "../../types";
+import { BackgroundColors } from "@brifui/types";
 
-export const background = {
-  DEFAULT: "ref.white",
-  hover: "ref.neutral.100"
-} satisfies SysBackgroundColor;
-
-export const darkBackground = {
-  DEFAULT: "ref.black",
-  hover: "ref.neutral.900"
-} satisfies SysBackgroundColor;
+export const background: BackgroundColors = {
+  DEFAULT: {
+    value: "{colors.white}"
+  },
+  hover: {
+    value: "{colors.gray.200}"
+  },
+  active: {
+    value: "{colors.gray.300}"
+  }
+};

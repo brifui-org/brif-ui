@@ -1,14 +1,4 @@
-import {includeIgnoreFile} from '@eslint/compat'
-import oclif from 'eslint-config-oclif'
-import prettier from 'eslint-config-prettier'
-import path from 'node:path'
-import {fileURLToPath} from 'node:url'
+import { config } from "@brifui/eslint-config/react";
 
-const gitignorePath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.gitignore')
-
-export default [includeIgnoreFile(gitignorePath), ...oclif, prettier, {
-  rules: {
-    "perfectionist/sort-imports": "off",
-    "perfectionist/sort-named-imports": "off"
-  }
-}]
+/** @type {import("eslint").Linter.Config} */
+export default config;

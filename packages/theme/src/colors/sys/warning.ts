@@ -1,15 +1,16 @@
-export const warning = {
-  DEFAULT: "ref.amber.500",
-  foreground: "sys.foreground",
-  disabled: "ref.amber.400",
-  hover: "ref.amber.600",
-  active: "ref.amber.800"
-};
+import { WarningColors } from "@brifui/types";
 
-export const darkWarning = {
-  DEFAULT: "ref.amber.500",
-  foreground: "sys.foreground",
-  disabled: "ref.amber.400",
-  hover: "ref.amber.600",
-  active: "ref.amber.800"
+export const warning: WarningColors = {
+  DEFAULT: {
+    value: "{colors.amber.800}"
+  },
+  foreground: {
+    value: "{colors.gray.1000}"
+  },
+  hover: {
+    value: "color-mix(in hsl, {colors.amber.800}, {colors.text} 10%)"
+  },
+  active: {
+    value: "color-mix(in hsl, {colors.amber.800}, {colors.text} 20%)"
+  }
 };

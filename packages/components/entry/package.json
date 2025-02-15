@@ -19,8 +19,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rslib build",
-    "dev": "rslib build --watch",
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."
@@ -28,18 +28,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/box": "workspace:*",
-    "@brifui/button": "workspace:*",
-    "@brifui/container": "workspace:*",
-    "@brifui/flex-box": "workspace:*",
-    "@brifui/input": "workspace:*",
-    "@brifui/menu": "workspace:*",
-    "@brifui/provider": "workspace:*",
-    "@brifui/spinner": "workspace:*",
-    "@brifui/typography": "workspace:*"
+    "@brifui/button": "workspace:*"
   },
   "devDependencies": {
-    "@brifui/core": "workspace:*",
     "@brifui/eslint-config": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
     "@microsoft/api-extractor": "^7.49.1",
@@ -53,6 +44,7 @@
     "typescript": "5.5.4"
   },
   "tsup": {
+    "minify": false,
     "clean": true,
     "target": "es2019",
     "format": [

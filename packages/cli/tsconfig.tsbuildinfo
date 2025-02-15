@@ -1,1 +1,0 @@
-{"root":["./src/index.ts","./src/commands/codegen.ts","./src/utils/find-tailwind-config.ts","./src/utils/generate-theme-config.ts","./src/utils/generate-theme-types.ts","./src/utils/index.ts","../../declaration.d.ts"],"version":"5.7.3"}

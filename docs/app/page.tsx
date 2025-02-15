@@ -1,1 +1,3 @@
-export { default } from "./(overview)/introduction/page.mdx";
+export default function Home() {
+  return "Hello";
+}

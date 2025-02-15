@@ -2,7 +2,6 @@
   "name": "@brifui/theme",
   "version": "0.0.1-beta.9",
   "description": "Theming library for Brif UI.",
-  "type": "module",
   "sideEffects": false,
   "keywords": [
     "theme",
@@ -10,6 +9,7 @@
     "ui"
   ],
   "files": [
+    "styled-system",
     "dist",
     "src"
   ],
@@ -20,7 +20,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
-    "dev": "tsup src --watch",
+    "dev": "tsup src --dts --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."
@@ -29,25 +29,26 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./tailwind": "./src/tailwind/index.ts",
-    "./utils": "./src/utils/index.ts"
+    "./postcss": "./postcss.js"
   },
   "peerDependencies": {
-    "tailwindcss": "^3.4.17"
+    "@pandacss/dev": "^0.52.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
+    "@brifui/types": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
     "@types/color": "^4",
     "clean-package": "^2.2.0",
     "eslint": "^9.15.0",
-    "tailwindcss": "^3.4.17",
-    "tsx": "^4.19.2",
     "typescript": "5.5.4"
   },
   "dependencies": {
+    "@brifui/postcss": "workspace:*",
+    "@pandacss/dev": "^0.52.0",
     "color": "^4.2.3",
-    "deepmerge": "^4.3.1"
+    "deepmerge": "^4.3.1",
+    "escalade": "^3.2.0"
   },
   "tsup": {
     "clean": true,
@@ -55,6 +56,7 @@
     "format": [
       "cjs",
       "esm"
-    ]
+    ],
+    "shims": true
   }
 }

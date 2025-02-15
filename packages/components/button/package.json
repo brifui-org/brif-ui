@@ -23,23 +23,17 @@
     "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
     "lint": "eslint ."
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/core": "workspace:*",
-    "@brifui/provider": "workspace:*",
-    "@brifui/spinner": "workspace:*",
-    "class-variance-authority": "^0.7.1",
+    "@brifui/styled": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
-    "@brifui/mocks": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
     "@types/react": "^19",
     "@types/react-dom": "^19",
