@@ -8,6 +8,6 @@ export const border: BorderColors = {
     value: "{colors.gray.200}"
   },
   disabled: {
-    value: "{colors.gray.100}"
+    value: "{colors.gray.700}"
   }
 };

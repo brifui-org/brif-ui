@@ -44,7 +44,7 @@ export type ButtonProps = ButtonVariantProps &
 export const Button: React.FC<ButtonProps> & {
   Prefix: typeof Prefix;
   Suffix: typeof Suffix;
-} = ({ children, variant, size, ...props }) => {
+} = ({ children, variant, size, className, ...props }) => {
   const [prefixes, suffixes, others] = findChildrenByType(
     children,
     Prefix,
@@ -53,10 +53,13 @@ export const Button: React.FC<ButtonProps> & {
 
   return (
     <button
-      className={buttonVariants({
-        variant,
-        size
-      })}
+      className={cx(
+        buttonVariants({
+          variant,
+          size
+        }),
+        className
+      )}
       {...props}
     >
       {prefixes}

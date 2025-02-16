@@ -3,6 +3,7 @@ import { cva, cx, RecipeVariantProps } from "@brifui/styled/css";
 
 export const cardVariants = cva({
   base: {
+    bg: "background",
     borderWidth: "1px",
     borderStyle: "solid",
     borderColor: "border",

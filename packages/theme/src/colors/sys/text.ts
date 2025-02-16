@@ -8,6 +8,6 @@ export const text: TextColors = {
     value: "{colors.gray.900}"
   },
   disabled: {
-    value: "{colors.gray.400}"
+    value: "{colors.gray.700}"
   }
 };

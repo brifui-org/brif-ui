@@ -15,7 +15,9 @@ export const Header: React.FC = () => {
     >
       <div
         className={css({
-          py: "2"
+          w: "calc(202px + {spacing.6})",
+          py: "2",
+          borderRight: "2px dashed {colors.border}"
         })}
       >
         <Link href="/">

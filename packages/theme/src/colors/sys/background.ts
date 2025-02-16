@@ -9,5 +9,8 @@ export const background: BackgroundColors = {
   },
   active: {
     value: "{colors.gray.300}"
+  },
+  disabled: {
+    value: "{colors.gray.200}"
   }
 };
