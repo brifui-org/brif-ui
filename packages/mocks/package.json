@@ -1,7 +1,7 @@
 {
-  "name": "@brifui/types",
+  "name": "@brifui/mocks",
   "version": "0.0.0",
-  "description": "Types library for Brif UI.",
+  "description": "Mocks library for Brif UI.",
   "type": "module",
   "sideEffects": false,
   "keywords": [
@@ -24,6 +24,10 @@
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./setup": "./src/setup.ts"
+  },
   "peerDependencies": {
     "@pandacss/dev": "^0.52.0",
     "react": "^19.0.0",

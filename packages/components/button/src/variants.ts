@@ -1,8 +1,4 @@
-import React from "react";
-import { error } from "console";
-import { css, cva, type RecipeVariantProps } from "@brifui/styled/css";
-
-const resolveCssVar = (name: string) => `var(${name})`;
+import { cva, type RecipeVariantProps } from "@brifui/styled/css";
 
 export const buttonVariants = cva({
   base: {
@@ -133,24 +129,4 @@ export const buttonVariants = cva({
   }
 });
 
-export type ButtonProps = RecipeVariantProps<typeof buttonVariants> &
-  React.ComponentPropsWithRef<"button">;
-
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  variant,
-  size,
-  ...props
-}) => {
-  return (
-    <button
-      className={buttonVariants({
-        variant,
-        size
-      })}
-      {...props}
-    >
-      <span className={css({ px: "1.5" })}>{children}</span>
-    </button>
-  );
-};
+export type ButtonVariantProps = RecipeVariantProps<typeof buttonVariants>;

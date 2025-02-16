@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
 const Title: React.FC<{ title: string; description: string }> = ({
@@ -82,8 +83,23 @@ const Section: React.FC<{
   );
 };
 
+const Preview: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+  return (
+    <Card
+      className={css({
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between"
+      })}
+    >
+      {children}
+    </Card>
+  );
+};
+
 export const Page = ({ children }: { children?: React.ReactNode }) => {
   return <div className={css({ pb: "24" })}>{children}</div>;
 };
 Page.Title = Title;
 Page.Section = Section;
+Page.Preview = Preview;

@@ -28,7 +28,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/button": "workspace:*"
+    "@brifui/button": "workspace:*",
+    "@brifui/card": "workspace:*"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
