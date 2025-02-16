@@ -3,9 +3,9 @@ import findUp from "escalade/sync";
 import path from "node:path";
 import { Config } from "@brifui/types";
 
+import { keyframes } from "../../keyframes";
 import { preset } from "../../preset";
-import { resolveColors } from "./resolve-colors";
-import { resolveFonts } from "./resolve-fonts";
+import { resolveConfig } from "./resolve-config";
 
 function findStyledPackage() {
   const nodeModules: string[] = [];
@@ -47,9 +47,12 @@ export const defineConfig = (configs: Config = {}) => {
     theme: {
       extend: {
         tokens: {
-          fonts: resolveFonts(configs)
+          colors: resolveConfig(configs, "colors"),
+          fonts: resolveConfig(configs, "fonts")
         }
-      }
+      },
+      keyframes: resolveConfig(configs, "keyframes"),
+      breakpoints: resolveConfig(configs, "breakpoints")
     },
     presets: [preset],
     importMap: "@brifui/styled",

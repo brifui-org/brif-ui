@@ -40,8 +40,13 @@ const MENU = [
         key: "input",
         title: "Input",
         href: "/docs/input"
+      },
+      {
+        key: "avatar",
+        title: "Avatar",
+        href: "/docs/avatar"
       }
-    ].sort()
+    ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }
 ];
 

@@ -1,5 +1,6 @@
 import { definePreset } from "@pandacss/dev";
 
+import { breakpoints } from "./breakpoints";
 import { ref, sys } from "./colors";
 import { fonts } from "./fonts";
 import { componentRadii, radii } from "./radii";
@@ -29,6 +30,13 @@ export const preset = definePreset({
       radii: {
         component: componentRadii
       }
+    },
+    breakpoints
+  },
+  globalCss: {
+    html: {
+      "--global-font-heading": "{fonts.heading}",
+      "--global-font-body": "{fonts.body}"
     }
   }
 });

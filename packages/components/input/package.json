@@ -2,7 +2,6 @@
   "name": "@brifui/input",
   "version": "0.0.1",
   "description": "Input component - Brif UI",
-  "type": "module",
   "sideEffects": false,
   "keywords": [
     "input",
@@ -40,6 +39,7 @@
     "@brifui/mocks": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
     "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.15.0",

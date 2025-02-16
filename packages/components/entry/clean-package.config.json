@@ -1,8 +1,8 @@
 {
   "indent": 2,
   "replace": {
-    "main": "dist/index.cjs",
-    "module": "dist/index.js",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
     "types": "dist/components/entry/src/index.d.ts"
   }
 }
