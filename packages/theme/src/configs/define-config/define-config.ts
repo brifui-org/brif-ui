@@ -4,6 +4,7 @@ import path from "node:path";
 import { Config } from "@brifui/types";
 
 import { preset } from "../../preset";
+import { resolveColors } from "./resolve-colors";
 import { resolveFonts } from "./resolve-fonts";
 
 function findStyledPackage() {

@@ -1,7 +1,6 @@
 "use client";
 
-import { Card } from "@/components/_card";
-import { Button } from "@brifui/components";
+import { Button, Card } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
 const components: string[] = [

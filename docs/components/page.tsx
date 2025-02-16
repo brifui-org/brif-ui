@@ -1,7 +1,6 @@
 import React from "react";
+import { Card } from "@brifui/components";
 import { css } from "@brifui/styled/css";
-
-import { Card } from "./_card";
 
 const Title: React.FC<{ title: string; description: string }> = ({
   title,

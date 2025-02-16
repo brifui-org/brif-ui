@@ -145,8 +145,10 @@ __metadata:
   resolution: "@brifui/button@workspace:packages/components/button"
   dependencies:
     "@brifui/eslint-config": "workspace:*"
+    "@brifui/mocks": "workspace:*"
     "@brifui/styled": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
+    "@brifui/utils": "workspace:*"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     eslint: "npm:^9.15.0"
@@ -240,6 +242,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/mocks@workspace:*, @brifui/mocks@workspace:packages/mocks":
+  version: 0.0.0-use.local
+  resolution: "@brifui/mocks@workspace:packages/mocks"
+  dependencies:
+    "@brifui/eslint-config": "workspace:*"
+    "@brifui/typescript-config": "workspace:*"
+    "@pandacss/dev": "npm:^0.52.0"
+    clean-package: "npm:^2.2.0"
+    eslint: "npm:^9.15.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  peerDependencies:
+    "@pandacss/dev": ^0.52.0
+    react: ^19.0.0
+    react-dom: ^19.0.0
+  languageName: unknown
+  linkType: soft
+
 "@brifui/postcss@workspace:*, @brifui/postcss@workspace:packages/postcss":
   version: 0.0.0-use.local
   resolution: "@brifui/postcss@workspace:packages/postcss"
@@ -302,9 +323,13 @@ __metadata:
     "@pandacss/dev": "npm:^0.52.0"
     clean-package: "npm:^2.2.0"
     eslint: "npm:^9.15.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
     typescript: "npm:5.5.4"
   peerDependencies:
     "@pandacss/dev": ^0.52.0
+    react: ^19.0.0
+    react-dom: ^19.0.0
   languageName: unknown
   linkType: soft
 
@@ -4440,6 +4465,7 @@ __metadata:
     "@brifui/eslint-config": "workspace:*"
     "@brifui/styled": "workspace:*"
     "@brifui/theme": "workspace:*"
+    "@brifui/types": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@brifui/utils": "workspace:*"
     "@types/node": "npm:^20"

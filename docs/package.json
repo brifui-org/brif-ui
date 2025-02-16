@@ -19,10 +19,10 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/types": "workspace:*",
     "@brifui/cli": "workspace:*",
     "@brifui/eslint-config": "workspace:*",
     "@brifui/theme": "workspace:*",
+    "@brifui/types": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
