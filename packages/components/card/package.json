@@ -21,6 +21,8 @@
     "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
     "dev": "tsup src --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
+    "@brifui/mocks": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
     "@types/react": "^19",
     "@types/react-dom": "^19",

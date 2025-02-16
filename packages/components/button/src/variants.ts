@@ -17,8 +17,7 @@ export const buttonVariants = cva({
      */
     _hover: {
       "&:not(:disabled)": {
-        cursor: "pointer",
-        boxShadow: "md"
+        cursor: "pointer"
       }
     },
     /**
@@ -107,19 +106,34 @@ export const buttonVariants = cva({
         borderRadius: "component.md",
         height: "component.sm",
         px: "2",
-        fontSize: "small"
+        fontSize: "small",
+        _hover: {
+          "&:not(:disabled)": {
+            boxShadow: "component.sm"
+          }
+        }
       },
       md: {
         height: "component.md",
         px: "2.5",
         borderRadius: "component.md",
-        fontSize: "small"
+        fontSize: "small",
+        _hover: {
+          "&:not(:disabled)": {
+            boxShadow: "component.md"
+          }
+        }
       },
       lg: {
         height: "component.lg",
         px: "3.5",
         borderRadius: "component.lg",
-        fontSize: "medium"
+        fontSize: "medium",
+        _hover: {
+          "&:not(:disabled)": {
+            boxShadow: "component.lg"
+          }
+        }
       }
     }
   },

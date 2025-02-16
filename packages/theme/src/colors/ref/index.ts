@@ -10,10 +10,10 @@ import { teal } from "./teal";
 
 export const ref = {
   black: {
-    value: "hsl(0%, 0%, 0%)"
+    value: "#000000"
   },
   white: {
-    value: "hsl(0%, 0%, 100%)"
+    value: "#ffffff"
   },
   amber,
   blue,

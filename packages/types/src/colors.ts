@@ -29,6 +29,7 @@ export type BackgroundColors = {
   DEFAULT: Token<string>;
   hover: Token<string>;
   active: Token<string>;
+  disabled: Token<string>;
 };
 export type DefaultColors = SemanticColors;
 export type PrimaryColors = SemanticColors;

@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Button, Card } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
@@ -23,12 +25,13 @@ export default function Home() {
     <>
       <section
         className={css({
-          py: 16,
+          py: 24,
           px: 6,
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           borderBottom: "1px solid {colors.border}",
-          flex: 1
+          flex: 1,
+          bg: 'linear-gradient(127deg, rgba(255,227,175,1) 0%, rgba(255,255,255,1) 100%), url("/noisy.png");'
         })}
       >
         <div
@@ -36,41 +39,91 @@ export default function Home() {
             px: 4,
             pt: 24,
             display: "flex",
-            flexDirection: "column",
-            gap: "6"
+            flexDirection: "column"
           })}
         >
           <h1
             className={css({
-              fontSize: "xxx-large",
+              mb: 4,
+              fontSize: "2.65rem",
               fontFamily: "heading",
               fontWeight: "600",
-              lineHeight: "0.9"
+              lineHeight: "3.3rem"
             })}
           >
-            Meet Brif,
-            <br />A beautiful UI components built with Panda CSS and React.
+            Meet{" "}
+            <span
+              className={css({
+                border: "1px solid transparent",
+                borderColor: "border",
+                borderRadius: "component.md",
+                boxShadow: "component.md",
+                px: 6,
+                py: 0,
+                bg: "amber.700"
+              })}
+            >
+              Brif
+            </span>
+            <br />A beautiful UI components built with{" "}
+            <span
+              className={css({
+                border: "1px solid transparent",
+                borderColor: "border",
+                borderRadius: "component.md",
+                boxShadow: "component.md",
+                px: 6,
+                py: 0,
+                bg: "#f6e458",
+                color: "#000000"
+              })}
+            >
+              PandaCSS
+            </span>{" "}
+            and{" "}
+            <span
+              className={css({
+                border: "1px solid transparent",
+                borderColor: "border",
+                borderRadius: "component.md",
+                boxShadow: "component.md",
+                px: 6,
+                py: 0,
+                bg: "#292929",
+                color: "#08d9ff"
+              })}
+            >
+              React.
+            </span>
           </h1>
           <p
             className={css({
-              fontSize: "x-large"
+              fontSize: "larger",
+              mb: 10
             })}
-          ></p>
+          >
+            BrifUI offers a comprehensive suite of free UI components to help
+            you ship new features faster.
+          </p>
 
           <div
             className={css({ display: "flex", alignItems: "center", gap: 8 })}
           >
-            <Button size="lg">Get started</Button>
-            <div
-              className={css({
-                w: "300px",
-                height: "100%",
-                background: "background.hover",
-                border: "1px solid {colors.border}",
-                borderRadius: "lg",
-                p: "4"
-              })}
-            ></div>
+            <Link href="/docs">
+              <Button size="lg" className="group">
+                Get started
+                <Button.Suffix
+                  className={css({
+                    transition: "transform",
+                    _groupHover: {
+                      transform: "translateX({spacing.1})"
+                    }
+                  })}
+                >
+                  <ArrowRight />
+                </Button.Suffix>
+              </Button>
+            </Link>
           </div>
         </div>
         <div

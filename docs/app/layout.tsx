@@ -1,7 +1,6 @@
 import { BaseLayout } from "@/components/base-layout";
 import type { Metadata } from "next";
 import { Funnel_Display, Inter } from "next/font/google";
-import { css } from "@brifui/styled/css";
 
 import "./globals.css";
 
