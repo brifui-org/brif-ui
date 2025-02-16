@@ -11,6 +11,7 @@
   "files": [
     "styled-system",
     "dist",
+    "postcss.js",
     "src"
   ],
   "license": "MIT",
