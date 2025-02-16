@@ -1,5 +1,12 @@
 # @brifui/components
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [[`1e18ba1`](https://github.com/brifui-org/brif-ui/commit/1e18ba1705a4d242eddcd1a6d5ef25cb5f0db51b)]:
+  - @brifui/input@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
