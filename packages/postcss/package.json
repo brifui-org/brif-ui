@@ -1,6 +1,6 @@
 {
   "name": "@brifui/postcss",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "PostCSS library for Brif UI.",
   "sideEffects": false,
   "keywords": [
