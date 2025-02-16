@@ -1,6 +1,6 @@
 {
   "name": "@brifui/components",
-  "version": "0.0.1-beta.15",
+  "version": "0.0.1",
   "description": "Brif UI components",
   "type": "module",
   "sideEffects": false,
