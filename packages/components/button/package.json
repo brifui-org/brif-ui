@@ -36,10 +36,10 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^16.1.0",
     "@brifui/eslint-config": "workspace:*",
     "@brifui/mocks": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
+    "@testing-library/react": "^16.1.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.15.0",
