@@ -11,7 +11,7 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
       className={css({
         mx: "auto",
         w: "100%",
-        maxW: "1440px",
+        maxW: "1280px",
         minH: "screen",
         display: "flex",
         flexDir: "column",

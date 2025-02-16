@@ -2,7 +2,6 @@
   "name": "@brifui/button",
   "version": "0.0.1",
   "description": "Button component - Brif UI",
-  "type": "module",
   "sideEffects": false,
   "keywords": [
     "button",

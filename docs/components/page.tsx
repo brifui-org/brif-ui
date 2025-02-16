@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { Card } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
@@ -83,13 +83,18 @@ const Section: React.FC<{
   );
 };
 
-const Preview: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+const Preview: React.FC<{
+  children?: React.ReactNode;
+  justify?: CSSProperties["justifyContent"];
+  gap?: 2 | 4 | 6;
+}> = ({ children, justify = "space-between", gap }) => {
   return (
     <Card
       className={css({
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: justify,
+        gap
       })}
     >
       {children}

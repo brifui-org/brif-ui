@@ -2,7 +2,6 @@
   "name": "@brifui/utils",
   "version": "0.0.0",
   "description": "Brif UI components - utils library",
-  "type": "module",
   "sideEffects": false,
   "keywords": [
     "utils",

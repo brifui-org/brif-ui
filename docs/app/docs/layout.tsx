@@ -16,7 +16,7 @@ export default function DocsLayout({
       })}
     >
       <Menu
-        className={css({ borderRight: "2px dashed {colors.border}" })}
+        className={css({ borderRight: "1px solid {colors.border}" })}
       ></Menu>
       <div>{children}</div>
     </div>

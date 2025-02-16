@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {
   main
-} from "./chunk-E6QCQHPO.mjs";
+} from "./chunk-GRKKTHUC.mjs";
 import "./chunk-52FHM3CF.mjs";
 
 // src/index.ts

@@ -25,10 +25,16 @@ export default function Home() {
     <>
       <section
         className={css({
-          py: 24,
+          py: {
+            base: 12,
+            md: 24
+          },
           px: 6,
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: {
+            base: "1fr",
+            md: "1fr 1fr"
+          },
           borderBottom: "1px solid {colors.border}",
           flex: 1,
           bg: 'linear-gradient(127deg, rgba(255,227,175,1) 0%, rgba(255,255,255,1) 100%), url("/noisy.png");'
@@ -37,7 +43,10 @@ export default function Home() {
         <div
           className={css({
             px: 4,
-            pt: 24,
+            py: {
+              base: 12,
+              md: 24
+            },
             display: "flex",
             flexDirection: "column"
           })}
@@ -45,10 +54,13 @@ export default function Home() {
           <h1
             className={css({
               mb: 4,
-              fontSize: "2.65rem",
+              fontSize: {
+                base: "2.05rem",
+                md: "2.65rem"
+              },
               fontFamily: "heading",
               fontWeight: "600",
-              lineHeight: "3.3rem"
+              lineHeight: "1.47"
             })}
           >
             Meet{" "}
@@ -98,7 +110,10 @@ export default function Home() {
           </h1>
           <p
             className={css({
-              fontSize: "larger",
+              fontSize: {
+                base: "medium",
+                md: "larger"
+              },
               mb: 10
             })}
           >
@@ -128,7 +143,11 @@ export default function Home() {
         </div>
         <div
           className={css({
-            px: 4
+            px: 4,
+            display: {
+              base: "none",
+              md: "block"
+            }
           })}
         >
           <Card />
@@ -161,13 +180,11 @@ export default function Home() {
           .map((_, i) => (
             <div
               key={i}
-              className={cx(
-                "marquee",
-                css({
-                  display: "flex",
-                  alignItems: "center"
-                })
-              )}
+              className={css({
+                display: "flex",
+                animation: "marquee 60s linear infinite",
+                alignItems: "center"
+              })}
             >
               {components.map((component) => (
                 <div
@@ -205,19 +222,6 @@ export default function Home() {
             zIndex: 9999
           })}
         />
-        <style jsx global>{`
-          .marquee {
-            animation: marquee 60s linear infinite;
-          }
-          @keyframes marquee {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(calc(-100% - 1rem));
-            }
-          }
-        `}</style>
       </section>
     </>
   );
