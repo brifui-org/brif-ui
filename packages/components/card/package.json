@@ -30,6 +30,7 @@
   "module": "./src/index.ts",
   "dependencies": {
     "@brifui/styled": "workspace:*",
+    "@brifui/utils": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

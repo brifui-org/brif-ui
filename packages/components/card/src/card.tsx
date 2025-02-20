@@ -1,32 +1,98 @@
 import React from "react";
-import { cva, cx, RecipeVariantProps } from "@brifui/styled/css";
+import { cx } from "@brifui/styled/css";
+import { findChildrenByType } from "@brifui/utils";
 
-export const cardVariants = cva({
-  base: {
-    bg: "background",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "border",
-    p: "6",
-    borderRadius: "component.lg"
-  },
-  variants: {
-    shadow: {
-      sm: {
-        boxShadow: "sm"
-      },
-      md: { boxShadow: "md" },
-      lg: { boxShadow: "lg" }
-    }
-  },
-  defaultVariants: {
-    shadow: "lg"
-  }
-});
+import { CardVariantProps, cardVariants } from "./variants";
 
-export type CardVariantProps = RecipeVariantProps<typeof cardVariants>;
 export type CardProps = CardVariantProps & React.ComponentPropsWithRef<"div">;
+export type CardHeaderProps = CardProps;
+export type CardBodyProps = CardProps;
+export type CardFooterProps = CardProps;
 
-export const Card: React.FC<CardProps> = ({ shadow, className, ...props }) => {
-  return <div className={cx(cardVariants({ shadow }), className)} {...props} />;
+const Header: React.FC<CardHeaderProps> = ({
+  shadow,
+  bordered,
+  className,
+  ...props
+}) => {
+  return (
+    <div
+      className={cx(cardVariants({ shadow, bordered }).header, className)}
+      {...props}
+    />
+  );
 };
+
+const Body: React.FC<CardBodyProps> = ({
+  shadow,
+  bordered,
+  className,
+  ...props
+}) => {
+  return (
+    <div
+      className={cx(cardVariants({ shadow, bordered }).body, className)}
+      {...props}
+    />
+  );
+};
+
+const Footer: React.FC<CardFooterProps> = ({
+  shadow,
+  bordered,
+  className,
+  ...props
+}) => {
+  return (
+    <div
+      className={cx(cardVariants({ shadow, bordered }).footer, className)}
+      {...props}
+    />
+  );
+};
+
+export const Card: React.FC<CardProps> & {
+  Header: typeof Header;
+  Body: typeof Body;
+  Footer: typeof Footer;
+} = ({ shadow, bordered, className, children, ...props }) => {
+  const [headers, bodies, footers, others] = findChildrenByType(
+    children,
+    Header,
+    Body,
+    Footer
+  );
+
+  return (
+    <div
+      className={cx(cardVariants({ shadow, bordered }).root, className)}
+      {...props}
+    >
+      {headers?.map((header, idx) =>
+        React.cloneElement(header, {
+          key: idx,
+          shadow,
+          bordered
+        })
+      )}
+      {bodies?.map((bodies, idx) =>
+        React.cloneElement(bodies, {
+          key: idx,
+          shadow,
+          bordered
+        })
+      )}
+      {footers?.map((footers, idx) =>
+        React.cloneElement(footers, {
+          key: idx,
+          shadow,
+          bordered
+        })
+      )}
+      {others}
+    </div>
+  );
+};
+Card.Header = Header;
+Card.Body = Body;
+Card.Footer = Footer;

@@ -169,6 +169,7 @@ __metadata:
     "@brifui/mocks": "workspace:*"
     "@brifui/styled": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
+    "@brifui/utils": "workspace:*"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     eslint: "npm:^9.15.0"
