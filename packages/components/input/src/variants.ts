@@ -7,6 +7,7 @@ export const inputVariants = sva({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      background: "background",
       color: "text",
       fontFamily: "body",
       transition: "border-color .15s, box-shadow .15s",
@@ -26,6 +27,7 @@ export const inputVariants = sva({
       }
     },
     input: {
+      flex: 1,
       height: "100%",
       _focus: {
         outline: "none",

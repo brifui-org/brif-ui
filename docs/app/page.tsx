@@ -1,8 +1,9 @@
 "use client";
 
+import { Avatar } from "@/components/_avatar";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Button, Card } from "@brifui/components";
+import { Button, Card, Input } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
 const components: string[] = [
@@ -144,13 +145,69 @@ export default function Home() {
         <div
           className={css({
             px: 4,
+            position: "relative",
             display: {
               base: "none",
               md: "block"
             }
           })}
         >
-          <Card />
+          <Card
+            className={css({
+              position: "absolute",
+              top: 0,
+              left: 0,
+              w: 300
+            })}
+          >
+            <Card.Header
+              className={css({
+                gap: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between"
+              })}
+            >
+              <Avatar
+                size={48}
+                src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
+              />
+              <div
+                className={css({
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between"
+                })}
+              >
+                <div>
+                  <div className={css({ fontWeight: "bold" })}>John Doe</div>
+                  <p
+                    className={css({
+                      fontSize: "small",
+                      color: "text.subtle"
+                    })}
+                  >
+                    @john.doe
+                  </p>
+                </div>
+                <Button size="sm">Follow</Button>
+              </div>
+            </Card.Header>
+            <Card.Body className={css({ pt: 0 })}>
+              <p>Head Over Heels 🎉</p>
+            </Card.Body>
+          </Card>
+
+          <Input
+            className={css({
+              position: "absolute",
+              top: 100,
+              right: 0,
+              w: 300
+            })}
+            placeholder="Enter your email..."
+          />
         </div>
       </section>
       <section

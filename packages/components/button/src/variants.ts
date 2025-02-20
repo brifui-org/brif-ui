@@ -3,6 +3,7 @@ import { cva, type RecipeVariantProps } from "@brifui/styled/css";
 export const buttonVariants = cva({
   base: {
     display: "flex",
+    width: "fit-content",
     alignItems: "center",
     justifyContent: "center",
     borderWidth: "1px",
@@ -135,11 +136,17 @@ export const buttonVariants = cva({
           }
         }
       }
+    },
+    fluid: {
+      true: {
+        width: "100%"
+      }
     }
   },
   defaultVariants: {
     variant: "solid",
-    size: "md"
+    size: "md",
+    fluid: false
   }
 });
 

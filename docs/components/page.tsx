@@ -1,6 +1,7 @@
 import React, { CSSProperties } from "react";
 import { Card } from "@brifui/components";
-import { css } from "@brifui/styled/css";
+import { css, cx } from "@brifui/styled/css";
+import { cq } from "@brifui/styled/patterns";
 
 const Title: React.FC<{ title: string; description: string }> = ({
   title,
@@ -85,19 +86,23 @@ const Section: React.FC<{
 
 const Preview: React.FC<{
   children?: React.ReactNode;
-  justify?: CSSProperties["justifyContent"];
-  gap?: 2 | 4 | 6;
-}> = ({ children, justify = "space-between", gap }) => {
+  className?: string;
+}> = ({ children, className }) => {
   return (
-    <Card
-      className={css({
-        display: "flex",
-        alignItems: "center",
-        justifyContent: justify,
-        gap
-      })}
-    >
-      {children}
+    <Card>
+      <Card.Body
+        className={cx(
+          css({
+            py: 6,
+            display: "grid",
+            alignItems: "center"
+          }),
+          cq({ name: "page-preview" }),
+          className
+        )}
+      >
+        {children}
+      </Card.Body>
     </Card>
   );
 };

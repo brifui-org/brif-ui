@@ -11,36 +11,46 @@ export default function AvatarDocs() {
       />
 
       <Page.Section title="Single">
-        <Page.Preview gap={4} justify="flex-start">
+        <Page.Preview
+          className={css({
+            gap: "4",
+            gridTemplateColumns: "1fr"
+          })}
+        >
           <Avatar
-            size={30}
+            size={20}
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
           <Avatar
-            size={50}
+            size={32}
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
           <Avatar
-            size={100}
+            size={64}
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
         </Page.Preview>
       </Page.Section>
 
       <Page.Section title="Loading">
-        <Page.Preview gap={4} justify="flex-start">
+        <Page.Preview
+          className={css({
+            gap: "4",
+            gridTemplateColumns: "1fr"
+          })}
+        >
           <Avatar
-            size={30}
+            size={20}
             isLoading
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
           <Avatar
-            size={50}
+            size={32}
             isLoading
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
           <Avatar
-            size={100}
+            size={64}
             isLoading
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
