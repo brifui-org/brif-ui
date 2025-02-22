@@ -1,11 +1,10 @@
 {
-  "name": "@brifui/components",
-  "version": "0.0.2",
-  "description": "Brif UI components",
+  "name": "@brifui/select",
+  "version": "0.0.0",
+  "description": "Select component - Brif UI",
   "sideEffects": false,
   "keywords": [
-    "box",
-    "flexbox",
+    "select",
     "component",
     "ui"
   ],
@@ -18,8 +17,10 @@
     "access": "public"
   },
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
     "dev": "tsup src --watch",
+    "test:watch": "vitest watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."
@@ -28,23 +29,28 @@
   "module": "./src/index.ts",
   "dependencies": {
     "@brifui/button": "workspace:*",
-    "@brifui/card": "workspace:*",
-    "@brifui/input": "workspace:*",
-    "@brifui/select": "workspace:*"
+    "@brifui/styled": "workspace:*",
+    "@brifui/utils": "workspace:*",
+    "@radix-ui/react-select": "^2.1.6",
+    "lucide-react": "^0.475.0",
+    "radix-ui": "^1.1.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
+    "@brifui/mocks": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
-    "@microsoft/api-extractor": "^7.49.1",
-    "@types/react": "^19.0.5",
-    "@types/react-dom": "^19.0.3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "^9.15.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "global-jsdom": "^26.0.0",
+    "jsdom": "^26.0.0",
     "typescript": "5.5.4"
   },
   "tsup": {
-    "minify": false,
     "clean": true,
     "target": "es2019",
     "format": [

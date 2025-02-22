@@ -37,6 +37,7 @@
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
+    "@types/node": "^22.13.5",
     "cac": "^6.7.14",
     "clean-package": "^2.2.0",
     "eslint": "^9.15.0",

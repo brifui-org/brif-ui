@@ -38,6 +38,7 @@
     "@brifui/eslint-config": "workspace:*",
     "@brifui/mocks": "workspace:*",
     "@brifui/typescript-config": "workspace:*",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19",
