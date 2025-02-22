@@ -208,6 +208,39 @@ export default function Home() {
             })}
             placeholder="Enter your email..."
           />
+
+          <Card
+            className={css({
+              position: "absolute",
+              top: 150,
+              left: 10,
+              w: 300
+            })}
+          >
+            <Card.Header>
+              <h2
+                className={css({
+                  fontSize: "large",
+                  fontWeight: "bold"
+                })}
+              >
+                Welcome to BrifUI 👋
+              </h2>
+            </Card.Header>
+            <Card.Body
+              className={css({
+                gap: 4,
+                display: "flex",
+                flexDirection: "column"
+              })}
+            >
+              <Input placeholder="Enter your email..." />
+              <Input type="password" placeholder="Enter your password..." />
+              <Button fluid className={css({ mt: 4 })}>
+                Log in
+              </Button>
+            </Card.Body>
+          </Card>
         </div>
       </section>
       <section

@@ -5,9 +5,9 @@ export const border: BorderColors = {
     value: "{colors.gray.1000}"
   },
   subtle: {
-    value: "{colors.gray.200}"
+    value: "{colors.gray.700}"
   },
   disabled: {
-    value: "{colors.gray.700}"
+    value: "{colors.gray.800}"
   }
 };
