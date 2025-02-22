@@ -32,9 +32,6 @@
     ".": "./src/index.ts",
     "./postcss": "./postcss.js"
   },
-  "peerDependencies": {
-    "@pandacss/dev": "^0.52.0"
-  },
   "devDependencies": {
     "@brifui/eslint-config": "workspace:*",
     "@brifui/types": "workspace:*",

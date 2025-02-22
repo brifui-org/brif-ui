@@ -63,7 +63,7 @@ export const Button: React.FC<ButtonProps> & {
       {...props}
     >
       {prefixes}
-      <span className={css({ px: "1.5" })}>{others}</span>
+      <span className={css({ flex: 1, px: "1.5" })}>{others}</span>
       {suffixes}
     </button>
   );

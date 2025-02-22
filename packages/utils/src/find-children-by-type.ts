@@ -1,6 +1,6 @@
 import React from "react";
 
-type Matcher = React.FC;
+type Matcher = Partial<React.FC>;
 export const findChildrenByType = (
   children: React.ReactNode,
   ...matchers: Matcher[]
@@ -15,7 +15,13 @@ export const findChildrenByType = (
       if (React.isValidElement(child) && matcher && child.type === matcher) {
         result.at(i)?.push(child);
         picked.set(childIdx, true);
-      } else if (!React.isValidElement(child)) {
+      }
+    }
+  });
+
+  React.Children.forEach(children, (child, childIdx) => {
+    for (let i = 0; i < matchers.length; i++) {
+      if (!picked.has(childIdx)) {
         result.at(-1)?.push(child);
         picked.set(childIdx, true);
       }

@@ -6,6 +6,7 @@ export const buttonVariants = cva({
     width: "fit-content",
     alignItems: "center",
     justifyContent: "center",
+    transition: "border-color .15s, box-shadow .15s",
     borderWidth: "1px",
     borderStyle: "solid",
     /**
