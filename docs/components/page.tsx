@@ -1,19 +1,21 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import { Card } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 import { cq } from "@brifui/styled/patterns";
 
-const Title: React.FC<{ title: string; description: string }> = ({
-  title,
-  description
-}) => {
+const Title: React.FC<{
+  title: string;
+  description: string;
+  bordered?: boolean;
+  children?: React.ReactNode;
+}> = ({ title, bordered = true, description, children }) => {
   return (
     <div
       className={css({
         p: "12",
         borderBottomWidth: "1px",
         borderBottomStyle: "solid",
-        borderBottomColor: "border.subtle"
+        borderBottomColor: !bordered ? "transparent" : "border.subtle"
       })}
     >
       <h1
@@ -35,37 +37,44 @@ const Title: React.FC<{ title: string; description: string }> = ({
       >
         {description}
       </p>
+      {children}
     </div>
   );
 };
 
 const Section: React.FC<{
-  title: string;
+  title?: string;
   description?: string;
   children?: React.ReactNode;
-}> = ({ title, description, children }) => {
+  className?: string;
+}> = ({ title, description, children, className }) => {
   return (
     <div
-      className={css({
-        p: "12",
-        display: "flex",
-        flexDirection: "column",
-        gap: "6",
-        borderBottomWidth: "1px",
-        borderBottomStyle: "solid",
-        borderBottomColor: "border.subtle"
-      })}
+      className={cx(
+        css({
+          p: 12,
+          gap: 6,
+          display: "flex",
+          flexDirection: "column",
+          borderBottomWidth: "1px",
+          borderBottomStyle: "solid",
+          borderBottomColor: "border.subtle"
+        }),
+        className
+      )}
     >
       <div>
-        <h3
-          className={css({
-            fontFamily: "heading",
-            fontWeight: "bold",
-            fontSize: "x-large"
-          })}
-        >
-          {title}
-        </h3>
+        {title && (
+          <h3
+            className={css({
+              fontFamily: "heading",
+              fontWeight: "bold",
+              fontSize: "x-large"
+            })}
+          >
+            {title}
+          </h3>
+        )}
         {description && (
           <p
             className={css({
