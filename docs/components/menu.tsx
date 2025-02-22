@@ -50,6 +50,11 @@ const MENU = [
         key: "select",
         title: "Select",
         href: "/docs/select"
+      },
+      {
+        key: "checkbox",
+        title: "Checkbox",
+        href: "/docs/checkbox"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }

@@ -1,6 +1,11 @@
 import { Page } from "@/components/page";
+import { Metadata } from "next";
 import { Card } from "@brifui/components";
 import { css } from "@brifui/styled/css";
+
+export const metadata: Metadata = {
+  title: "Introduction | BrifUI"
+};
 
 export default function IntroductionPage() {
   return (

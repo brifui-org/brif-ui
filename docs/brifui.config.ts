@@ -24,7 +24,7 @@ export default defineConfig({
         value: "var(--font-funnel-display)"
       },
       body: {
-        value: "var(--font-inter-sans)"
+        value: "var(--font-geist-sans)"
       }
     }
   }
