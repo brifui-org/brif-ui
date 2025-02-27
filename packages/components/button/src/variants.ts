@@ -7,7 +7,7 @@ export const buttonVariants = cva({
     alignItems: "center",
     justifyContent: "center",
     transition: "border-color .15s, box-shadow .15s",
-    borderWidth: "1px",
+    borderWidth: "2px",
     borderStyle: "solid",
     /**
      * Fonts
@@ -108,10 +108,13 @@ export const buttonVariants = cva({
         borderRadius: "component.md",
         height: "component.sm",
         px: "2",
-        fontSize: "small",
-        _hover: {
-          "&:not(:disabled)": {
+        textStyle: "sm",
+        "&:not(:disabled)": {
+          _hover: {
             boxShadow: "component.sm"
+          },
+          _active: {
+            boxShadow: "none"
           }
         }
       },
@@ -119,10 +122,13 @@ export const buttonVariants = cva({
         height: "component.md",
         px: "2.5",
         borderRadius: "component.md",
-        fontSize: "small",
-        _hover: {
-          "&:not(:disabled)": {
+        textStyle: "md",
+        "&:not(:disabled)": {
+          _hover: {
             boxShadow: "component.md"
+          },
+          _active: {
+            boxShadow: "component.sm"
           }
         }
       },
@@ -130,10 +136,13 @@ export const buttonVariants = cva({
         height: "component.lg",
         px: "3.5",
         borderRadius: "component.lg",
-        fontSize: "medium",
-        _hover: {
-          "&:not(:disabled)": {
+        textStyle: "lg",
+        "&:not(:disabled)": {
+          _hover: {
             boxShadow: "component.lg"
+          },
+          _active: {
+            boxShadow: "component.md"
           }
         }
       }

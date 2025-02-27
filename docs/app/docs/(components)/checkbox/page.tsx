@@ -38,6 +38,7 @@ export default function CheckboxDocs() {
             <Checkbox.Label>Large</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Indeterminate">
@@ -66,6 +67,7 @@ export default function CheckboxDocs() {
             <Checkbox.Label>Large</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Disabled">
@@ -94,6 +96,7 @@ export default function CheckboxDocs() {
             <Checkbox.Label>Indeterminate</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
     </Page>
   );

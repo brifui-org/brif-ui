@@ -4,7 +4,6 @@ export const checkboxVariants = sva({
   slots: ["root", "indicator", "label"],
   base: {
     root: {
-      gap: 2,
       display: "flex",
       alignItems: "center",
       transition: "border-color .15s, box-shadow .15s",
@@ -21,6 +20,7 @@ export const checkboxVariants = sva({
       borderWidth: "1px",
       borderStyle: "solid",
       borderColor: "border",
+      transition: "border-color .15s, box-shadow .15s",
       '&[data-state="checked"]': {
         bg: "default",
         color: "default.foreground",
@@ -37,6 +37,7 @@ export const checkboxVariants = sva({
       }
     },
     label: {
+      pl: 2,
       color: "text",
       cursor: "pointer",
       "&[data-disabled]": {
@@ -48,7 +49,7 @@ export const checkboxVariants = sva({
     size: {
       sm: {
         label: {
-          fontSize: "small"
+          textStyle: "sm"
         },
         indicator: {
           w: "16px",
@@ -67,7 +68,7 @@ export const checkboxVariants = sva({
       },
       md: {
         label: {
-          fontSize: "medium"
+          textStyle: "md"
         },
         indicator: {
           w: "20px",
@@ -86,7 +87,7 @@ export const checkboxVariants = sva({
       },
       lg: {
         label: {
-          fontSize: "medium"
+          textStyle: "lg"
         },
         indicator: {
           w: "24px",

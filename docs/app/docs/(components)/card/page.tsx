@@ -1,3 +1,5 @@
+"use client";
+
 import { Page } from "@/components/page";
 import { Card } from "@brifui/components";
 import { css } from "@brifui/styled/css";

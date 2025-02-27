@@ -181,10 +181,14 @@ export default function Home() {
                 })}
               >
                 <div>
-                  <div className={css({ fontWeight: "bold" })}>John Doe</div>
+                  <div
+                    className={css({ fontWeight: "semibold", textStyle: "md" })}
+                  >
+                    John Doe
+                  </div>
                   <p
                     className={css({
-                      fontSize: "small",
+                      textStyle: "sm",
                       color: "text.subtle"
                     })}
                   >

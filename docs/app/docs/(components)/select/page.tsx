@@ -66,6 +66,7 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Custom icon">
@@ -130,6 +131,7 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Disabled">
@@ -155,6 +157,7 @@ export default function SelectDocs() {
                 <Select.ItemText>Option 2</Select.ItemText>
               </Select.Item>
             </Select.Content>
+            <Page.CodePreview>HIHI</Page.CodePreview>
           </Select>
 
           <Select disabled size="md">
@@ -169,6 +172,7 @@ export default function SelectDocs() {
                 <Select.ItemText>Option 2</Select.ItemText>
               </Select.Item>
             </Select.Content>
+            <Page.CodePreview>HIHI</Page.CodePreview>
           </Select>
 
           <Select disabled size="lg">
@@ -185,6 +189,7 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Error">
@@ -240,6 +245,7 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
     </Page>
   );

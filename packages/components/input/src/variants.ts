@@ -11,9 +11,9 @@ export const inputVariants = sva({
       color: "text",
       fontFamily: "body",
       transition: "border-color .15s, box-shadow .15s",
-      borderWidth: 1,
+      borderWidth: "2px",
       borderStyle: "solid",
-      borderColor: "border.subtle",
+      borderColor: "border",
       '&:not([aria-invalid="true"]):focus-within': {
         borderColor: "border"
       },
@@ -61,7 +61,7 @@ export const inputVariants = sva({
         root: {
           borderRadius: "component.md",
           height: "component.sm",
-          fontSize: "small",
+          textStyle: "sm",
           _focusWithin: {
             boxShadow: "component.sm"
           },
@@ -83,7 +83,7 @@ export const inputVariants = sva({
         root: {
           height: "component.md",
           borderRadius: "component.md",
-          fontSize: "small",
+          textStyle: "md",
           _focusWithin: {
             boxShadow: "component.md"
           },
@@ -105,7 +105,7 @@ export const inputVariants = sva({
         root: {
           height: "component.lg",
           borderRadius: "component.lg",
-          fontSize: "medium",
+          textStyle: "lg",
           _focusWithin: {
             boxShadow: "component.lg"
           },
@@ -127,12 +127,12 @@ export const inputVariants = sva({
     bordered: {
       true: {
         prefix: {
-          borderRightWidth: "1px",
+          borderRightWidth: "2px",
           borderRightStyle: "solid",
           borderRightColor: "inherit"
         },
         suffix: {
-          borderLeftWidth: "1px",
+          borderLeftWidth: "2px",
           borderLeftStyle: "solid",
           borderLeftColor: "inherit"
         }

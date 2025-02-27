@@ -13,7 +13,7 @@ const MENU = [
       {
         key: "introduction",
         title: "Introduction",
-        href: "/docs/introduction"
+        href: "/docs"
       },
       {
         key: "installation",
@@ -55,6 +55,11 @@ const MENU = [
         key: "checkbox",
         title: "Checkbox",
         href: "/docs/checkbox"
+      },
+      {
+        key: "accordion",
+        title: "Accordion",
+        href: "/docs/accordion"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }
@@ -68,9 +73,10 @@ const Item: React.FC<
   return (
     <li
       role="menuitem"
-      data-active={pathname.startsWith(href)}
+      data-active={pathname === href}
       className={css({
         w: 200,
+        textStyle: "md",
         transition: "all .1s ease-in-out",
         borderRadius: "component.md",
         '&:not([data-active="true"])': {
@@ -120,9 +126,8 @@ const Section: React.FC<ComponentPropsWithRef<"div"> & { title: string }> = ({
     >
       <p
         className={css({
-          fontFamily: "body",
-          fontWeight: "600",
-          fontSize: "small",
+          textStyle: "md",
+          fontWeight: "semibold",
           mb: 1
         })}
       >
