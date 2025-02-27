@@ -1,11 +1,9 @@
+"use client";
+
 import { Page } from "@/components/page";
 import { Metadata } from "next";
 import { Card } from "@brifui/components";
 import { css } from "@brifui/styled/css";
-
-export const metadata: Metadata = {
-  title: "Introduction | BrifUI"
-};
 
 export default function IntroductionPage() {
   return (
@@ -39,7 +37,7 @@ export default function IntroductionPage() {
               🌈 Brif UI
             </h1>
             <p className={css({ fontSize: "large", color: "text.subtle" })}>
-              An beautiful, performant and modern React UI library.
+              A high contrast, bright colors, and bold shapes UI library.
             </p>
           </Card.Body>
         </Card>

@@ -5,7 +5,7 @@ export const cardVariants = sva({
   base: {
     root: {
       bg: "background",
-      borderWidth: "1px",
+      borderWidth: "2px",
       borderStyle: "solid",
       borderColor: "border",
       borderRadius: "component.lg"

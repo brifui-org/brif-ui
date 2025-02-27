@@ -1,3 +1,5 @@
+"use client";
+
 import { Page } from "@/components/page";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@brifui/components";
@@ -26,6 +28,7 @@ export default function ButtonDocs() {
           <Button size="md">Solid</Button>
           <Button size="lg">Solid</Button>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Variants" description="The default variant is solid">
@@ -45,6 +48,7 @@ export default function ButtonDocs() {
           <Button variant="error">Error</Button>
           <Button variant="warning">Warning</Button>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Disabled">
@@ -72,6 +76,7 @@ export default function ButtonDocs() {
             Warning
           </Button>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Prefix and suffix">
@@ -107,6 +112,7 @@ export default function ButtonDocs() {
             </Button.Suffix>
           </Button>
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
     </Page>
   );

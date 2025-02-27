@@ -3,6 +3,10 @@ import { definePreset } from "@pandacss/dev";
 import { breakpoints } from "./breakpoints";
 import { ref, sys } from "./colors";
 import { fonts } from "./fonts";
+import { fontSizes } from "./fonts/font-sizes";
+import { fontWeights } from "./fonts/font-weights";
+import { lineHeights } from "./fonts/line-heights";
+import { textStyles } from "./fonts/text-styles";
 import { componentRadii, radii } from "./radii";
 import { componentShadows, shadows } from "./shadows";
 import { componentSizing, sizing as sizes } from "./sizing";
@@ -15,6 +19,9 @@ export const preset = definePreset({
       colors: ref,
       spacing,
       fonts,
+      fontSizes,
+      fontWeights,
+      lineHeights,
       sizes,
       radii,
       shadows
@@ -31,7 +38,8 @@ export const preset = definePreset({
         component: componentRadii
       }
     },
-    breakpoints
+    breakpoints,
+    textStyles
   },
   globalCss: {
     html: {

@@ -15,8 +15,8 @@ export const Header: React.FC = () => {
     >
       <div
         className={css({
-          w: "calc(201px + {spacing.6})",
           py: "2",
+          w: "calc(201px + {spacing.6})",
           borderRight: "1px solid {colors.border}"
         })}
       >

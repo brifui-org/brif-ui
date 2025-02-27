@@ -6,7 +6,7 @@ export const selectVariants = sva({
     content: {
       p: 2,
       bg: "background",
-      borderWidth: 1,
+      borderWidth: "2px",
       borderStyle: "solid",
       borderColor: "border",
       minW: "var(--radix-select-trigger-width)",

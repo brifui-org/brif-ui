@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar } from "@/components/_avatar";
 import { Page } from "@/components/page";
 import { css } from "@brifui/styled/css";
@@ -30,6 +32,7 @@ export default function AvatarDocs() {
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Loading">
@@ -55,6 +58,7 @@ export default function AvatarDocs() {
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
         </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
       </Page.Section>
     </Page>
   );

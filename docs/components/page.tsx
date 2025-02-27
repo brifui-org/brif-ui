@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { Card } from "@brifui/components";
+import { Accordion, Card } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 import { cq } from "@brifui/styled/patterns";
 
@@ -29,7 +31,6 @@ const Title: React.FC<{
       </h1>
       <p
         className={css({
-          fontFamily: "body",
           fontWeight: "medium",
           fontSize: "larger",
           color: "text.subtle"
@@ -98,7 +99,7 @@ const Preview: React.FC<{
   className?: string;
 }> = ({ children, className }) => {
   return (
-    <Card>
+    <Card className={css({ borderBottomRadius: 0, borderBottomWidth: 0 })}>
       <Card.Body
         className={cx(
           css({
@@ -116,9 +117,25 @@ const Preview: React.FC<{
   );
 };
 
+const CodePreview: React.FC<React.PropsWithChildren> = ({ children }) => {
+  return (
+    <Accordion.Root
+      className={css({ boxShadow: "component.lg", borderTopRadius: 0 })}
+      type="single"
+      collapsible
+    >
+      <Accordion.Item value="codepreview">
+        <Accordion.Trigger>Show code</Accordion.Trigger>
+        <Accordion.Content>{children}</Accordion.Content>
+      </Accordion.Item>
+    </Accordion.Root>
+  );
+};
+
 export const Page = ({ children }: { children?: React.ReactNode }) => {
   return <div className={css({ pb: "24" })}>{children}</div>;
 };
 Page.Title = Title;
 Page.Section = Section;
 Page.Preview = Preview;
+Page.CodePreview = CodePreview;
