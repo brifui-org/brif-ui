@@ -60,6 +60,11 @@ const MENU = [
         key: "accordion",
         title: "Accordion",
         href: "/docs/accordion"
+      },
+      {
+        key: "form",
+        title: "Form",
+        href: "/docs/form"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }

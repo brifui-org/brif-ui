@@ -3,10 +3,10 @@ import { cva, type RecipeVariantProps } from "@brifui/styled/css";
 export const buttonVariants = cva({
   base: {
     display: "flex",
-    width: "fit-content",
+    width: "max-content",
     alignItems: "center",
     justifyContent: "center",
-    transition: "border-color .15s, box-shadow .15s",
+    transition: "border-color .15s, box-shadow .15s, transform .15s",
     borderWidth: "2px",
     borderStyle: "solid",
     /**
@@ -111,10 +111,12 @@ export const buttonVariants = cva({
         textStyle: "sm",
         "&:not(:disabled)": {
           _hover: {
-            boxShadow: "component.sm"
+            boxShadow: "component.sm",
+            transform: "translate(-2px, -2px)"
           },
           _active: {
-            boxShadow: "none"
+            boxShadow: "none",
+            transform: "translate(-0px, -0px)"
           }
         }
       },
@@ -125,10 +127,12 @@ export const buttonVariants = cva({
         textStyle: "md",
         "&:not(:disabled)": {
           _hover: {
-            boxShadow: "component.md"
+            boxShadow: "component.md",
+            transform: "translate(-4px, -4px)"
           },
           _active: {
-            boxShadow: "component.sm"
+            boxShadow: "component.sm",
+            transform: "translate(-2px, -2px)"
           }
         }
       },
@@ -139,10 +143,12 @@ export const buttonVariants = cva({
         textStyle: "lg",
         "&:not(:disabled)": {
           _hover: {
-            boxShadow: "component.lg"
+            boxShadow: "component.lg",
+            transform: "translate(-6px, -6px)"
           },
           _active: {
-            boxShadow: "component.md"
+            boxShadow: "component.md",
+            transform: "translate(-4px, -4px)"
           }
         }
       }

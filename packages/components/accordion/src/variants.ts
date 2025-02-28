@@ -5,7 +5,7 @@ export const accordionVariants = sva({
   base: {
     root: {
       w: "100%",
-      bg: "background.active",
+      overflow: "hidden",
       border: "2px solid {colors.border}",
       "& > div": {
         "&:not(:last-child)": {
@@ -15,6 +15,7 @@ export const accordionVariants = sva({
     },
     trigger: {
       px: 5,
+      bg: "background.active",
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
@@ -50,7 +51,10 @@ export const accordionVariants = sva({
     },
     content: {
       px: 5,
+      py: 2,
       overflow: "hidden",
+      boxSizing: "border-box",
+      borderTop: "2px solid {colors.border}",
       '&[data-state="open"]': {
         animation: "accordionSlideDown 300ms ease-out"
       },
