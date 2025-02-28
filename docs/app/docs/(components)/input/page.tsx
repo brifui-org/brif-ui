@@ -36,7 +36,10 @@ export default function InputDocs() {
           className={css({
             gap: 4,
             justifyItems: "center",
-            gridTemplateColumns: "1fr"
+            gridTemplateColumns: {
+              base: "1fr",
+              md: "1fr 1fr 1fr"
+            }
           })}
         >
           <Input placeholder="Default">

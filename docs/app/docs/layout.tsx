@@ -12,13 +12,28 @@ export default function DocsLayout({
       className={css({
         flex: 1,
         display: "grid",
-        gridTemplateColumns: "auto 1fr"
+        gridTemplateColumns: {
+          base: "1fr",
+          lg: "auto 1fr"
+        }
       })}
     >
       <Menu
-        className={css({ borderRight: "1px solid {colors.border}" })}
+        className={css({
+          borderRight: "1px solid {colors.border}",
+          display: {
+            base: "none",
+            lg: "block"
+          }
+        })}
       ></Menu>
-      <div>{children}</div>
+      <div
+        className={css({
+          overflow: "hidden"
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 }

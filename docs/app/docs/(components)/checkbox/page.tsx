@@ -16,7 +16,10 @@ export default function CheckboxDocs() {
         <Page.Preview
           className={css({
             gap: 4,
-            justifyItems: "center",
+            justifyItems: {
+              base: "start",
+              md: "center"
+            },
             gridTemplateColumns: {
               base: "1fr",
               md: "1fr 1fr 1fr"
@@ -45,7 +48,10 @@ export default function CheckboxDocs() {
         <Page.Preview
           className={css({
             gap: 4,
-            justifyItems: "center",
+            justifyItems: {
+              base: "start",
+              md: "center"
+            },
             gridTemplateColumns: {
               base: "1fr",
               md: "1fr 1fr 1fr"
@@ -74,7 +80,10 @@ export default function CheckboxDocs() {
         <Page.Preview
           className={css({
             gap: 4,
-            justifyItems: "center",
+            justifyItems: {
+              base: "start",
+              md: "center"
+            },
             gridTemplateColumns: {
               base: "1fr",
               md: "1fr 1fr 1fr"

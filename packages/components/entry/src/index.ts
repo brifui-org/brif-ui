@@ -4,3 +4,4 @@ export * from "@brifui/input";
 export * from "@brifui/select";
 export * from "@brifui/checkbox";
 export * from "@brifui/accordion";
+export * from "@brifui/form";
