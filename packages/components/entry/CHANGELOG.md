@@ -1,5 +1,12 @@
 # @brifui/components
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [[`4b3c8fc`](https://github.com/brifui-org/brif-ui/commit/4b3c8fc0b16fabd2899890073d4fbefe080c3b20)]:
+  - @brifui/form@0.0.1
+
 ## 0.0.4
 
 ### Patch Changes
