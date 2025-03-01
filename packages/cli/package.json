@@ -1,6 +1,6 @@
 {
   "name": "@brifui/cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "CLI tool for Brif UI.",
   "sideEffects": false,
   "keywords": [
@@ -35,8 +35,8 @@
     "@pandacss/dev": "^0.52.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.2",
-    "@brifui/typescript-config": "^0.0.2",
+    "@brifui/eslint-config": "^0.0.3",
+    "@brifui/typescript-config": "^0.0.3",
     "@types/node": "^22.13.5",
     "cac": "^6.7.14",
     "clean-package": "^2.2.0",
