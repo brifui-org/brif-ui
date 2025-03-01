@@ -27,17 +27,17 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/accordion": "workspace:*",
-    "@brifui/button": "workspace:*",
-    "@brifui/card": "workspace:*",
-    "@brifui/checkbox": "workspace:*",
-    "@brifui/form": "workspace:*",
-    "@brifui/input": "workspace:*",
-    "@brifui/select": "workspace:*"
+    "@brifui/accordion": "^0.0.1",
+    "@brifui/button": "^0.0.2",
+    "@brifui/card": "^0.0.1",
+    "@brifui/checkbox": "^0.0.1",
+    "@brifui/form": "^0.0.1",
+    "@brifui/input": "^0.0.1",
+    "@brifui/select": "^0.0.1"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "workspace:*",
-    "@brifui/typescript-config": "workspace:*",
+    "@brifui/eslint-config": "^0.0.0",
+    "@brifui/typescript-config": "^0.0.0",
     "@microsoft/api-extractor": "^7.49.1",
     "@types/react": "^19.0.5",
     "@types/react-dom": "^19.0.3",

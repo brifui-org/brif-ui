@@ -33,9 +33,9 @@
     "./postcss": "./postcss.js"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "workspace:*",
-    "@brifui/types": "workspace:*",
-    "@brifui/typescript-config": "workspace:*",
+    "@brifui/eslint-config": "^0.0.0",
+    "@brifui/types": "^0.0.1",
+    "@brifui/typescript-config": "^0.0.0",
     "@types/color": "^4",
     "clean-package": "^2.2.0",
     "eslint": "^9.15.0",
