@@ -31,9 +31,9 @@
     "@brifui/button": "^0.0.2",
     "@brifui/card": "^0.0.1",
     "@brifui/checkbox": "^0.0.1",
-    "@brifui/form": "^0.0.1",
-    "@brifui/input": "^0.0.1",
-    "@brifui/select": "^0.0.1"
+    "@brifui/form": "^0.0.2",
+    "@brifui/input": "^0.0.2",
+    "@brifui/select": "^0.0.2"
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.0",
