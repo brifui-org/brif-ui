@@ -43,8 +43,8 @@
     "postcss": "^8.4.49"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "workspace:*",
-    "@brifui/typescript-config": "workspace:*",
+    "@brifui/eslint-config": "^0.0.0",
+    "@brifui/typescript-config": "^0.0.0",
     "eslint": "^9.15.0",
     "typescript": "5.5.4"
   },

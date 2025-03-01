@@ -28,8 +28,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "workspace:*",
-    "@brifui/utils": "workspace:*",
+    "@brifui/styled": "^0.0.1",
+    "@brifui/utils": "^0.0.0",
     "@radix-ui/react-checkbox": "^1.1.4",
     "lucide-react": "^0.475.0",
     "radix-ui": "^1.1.3",
@@ -37,9 +37,9 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "workspace:*",
-    "@brifui/mocks": "workspace:*",
-    "@brifui/typescript-config": "workspace:*",
+    "@brifui/eslint-config": "^0.0.0",
+    "@brifui/mocks": "^0.0.0",
+    "@brifui/typescript-config": "^0.0.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.6.1",

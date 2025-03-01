@@ -69,7 +69,8 @@ export const Button: React.FC<ButtonProps> & {
           flex: 1,
           px: "1.5",
           display: "flex",
-          alignItems: "center"
+          alignItems: "center",
+          justifyContent: "center"
         })}
       >
         {others}

@@ -33,8 +33,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "workspace:*",
-    "@brifui/typescript-config": "workspace:*",
+    "@brifui/eslint-config": "^0.0.0",
+    "@brifui/typescript-config": "^0.0.0",
     "@microsoft/api-extractor": "^7.49.1",
     "@types/react": "^19.0.5",
     "@types/react-dom": "^19.0.3",

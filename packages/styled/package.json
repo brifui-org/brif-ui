@@ -54,14 +54,14 @@
     "@pandacss/dev": "^0.52.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "workspace:*",
-    "@brifui/types": "workspace:*",
-    "@brifui/typescript-config": "workspace:*",
+    "@brifui/eslint-config": "^0.0.0",
+    "@brifui/types": "^0.0.1",
+    "@brifui/typescript-config": "^0.0.0",
     "eslint": "^9.15.0",
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@brifui/theme": "workspace:*",
+    "@brifui/theme": "^0.0.1",
     "@pandacss/dev": "^0.52.0"
   }
 }
