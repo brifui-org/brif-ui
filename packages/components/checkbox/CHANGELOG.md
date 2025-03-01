@@ -1,5 +1,12 @@
 # @brifui/checkbox
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes

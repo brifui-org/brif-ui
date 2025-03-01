@@ -1,5 +1,11 @@
 # @brifui/cli
 
+## 0.0.7
+
+### Patch Changes
+
+- [#94](https://github.com/brifui-org/brif-ui/pull/94) [`c2b14ef`](https://github.com/brifui-org/brif-ui/commit/c2b14ef4684547d762aeab7eb7ec49e8f3916411) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - fixed esm export in cjs
+
 ## 0.0.6
 
 ### Patch Changes
