@@ -1,5 +1,20 @@
 # @brifui/components
 
+## 0.0.9
+
+### Patch Changes
+
+- [#84](https://github.com/brifui-org/brif-ui/pull/84) [`5cf308b`](https://github.com/brifui-org/brif-ui/commit/5cf308b829211a89514a0a807fbd8461cccb8877) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated deps
+
+- Updated dependencies [[`5cf308b`](https://github.com/brifui-org/brif-ui/commit/5cf308b829211a89514a0a807fbd8461cccb8877)]:
+  - @brifui/select@0.0.5
+  - @brifui/accordion@0.0.4
+  - @brifui/button@0.0.5
+  - @brifui/card@0.0.4
+  - @brifui/checkbox@0.0.4
+  - @brifui/form@0.0.5
+  - @brifui/input@0.0.5
+
 ## 0.0.8
 
 ### Patch Changes

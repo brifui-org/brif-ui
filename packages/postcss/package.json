@@ -1,6 +1,6 @@
 {
   "name": "@brifui/postcss",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PostCSS library for Brif UI.",
   "sideEffects": false,
   "keywords": [
@@ -43,8 +43,8 @@
     "postcss": "^8.4.49"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.1",
-    "@brifui/typescript-config": "^0.0.1",
+    "@brifui/eslint-config": "^0.0.2",
+    "@brifui/typescript-config": "^0.0.2",
     "eslint": "^9.15.0",
     "typescript": "5.5.4"
   },

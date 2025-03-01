@@ -1,6 +1,6 @@
 {
   "name": "@brifui/components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Brif UI components",
   "sideEffects": false,
   "keywords": [
@@ -27,17 +27,17 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/accordion": "^0.0.3",
-    "@brifui/button": "^0.0.4",
-    "@brifui/card": "^0.0.3",
-    "@brifui/checkbox": "^0.0.3",
-    "@brifui/form": "^0.0.4",
-    "@brifui/input": "^0.0.4",
-    "@brifui/select": "^0.0.4"
+    "@brifui/accordion": "^0.0.4",
+    "@brifui/button": "^0.0.5",
+    "@brifui/card": "^0.0.4",
+    "@brifui/checkbox": "^0.0.4",
+    "@brifui/form": "^0.0.5",
+    "@brifui/input": "^0.0.5",
+    "@brifui/select": "^0.0.5"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.1",
-    "@brifui/typescript-config": "^0.0.1",
+    "@brifui/eslint-config": "^0.0.2",
+    "@brifui/typescript-config": "^0.0.2",
     "@microsoft/api-extractor": "^7.49.1",
     "@types/react": "^19.0.5",
     "@types/react-dom": "^19.0.3",

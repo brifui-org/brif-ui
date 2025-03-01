@@ -1,6 +1,6 @@
 {
   "name": "@brifui/form",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Form component - Brif UI",
   "sideEffects": false,
   "keywords": [
@@ -29,17 +29,17 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.3",
-    "@brifui/utils": "^0.0.2",
+    "@brifui/styled": "^0.0.4",
+    "@brifui/utils": "^0.0.3",
     "@radix-ui/react-form": "^0.1.2",
     "radix-ui": "^1.1.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.1",
-    "@brifui/mocks": "^0.0.2",
-    "@brifui/typescript-config": "^0.0.1",
+    "@brifui/eslint-config": "^0.0.2",
+    "@brifui/mocks": "^0.0.3",
+    "@brifui/typescript-config": "^0.0.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.6.1",
