@@ -1,6 +1,6 @@
 {
   "name": "@brifui/card",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Card component - Brif UI",
   "sideEffects": false,
   "keywords": [
@@ -29,15 +29,15 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.2",
-    "@brifui/utils": "^0.0.1",
+    "@brifui/styled": "^0.0.3",
+    "@brifui/utils": "^0.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.0",
-    "@brifui/mocks": "^0.0.1",
-    "@brifui/typescript-config": "^0.0.0",
+    "@brifui/eslint-config": "^0.0.1",
+    "@brifui/mocks": "^0.0.2",
+    "@brifui/typescript-config": "^0.0.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
     "@types/react": "^19",

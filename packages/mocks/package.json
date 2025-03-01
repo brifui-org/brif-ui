@@ -1,6 +1,6 @@
 {
   "name": "@brifui/mocks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mocks library for Brif UI.",
   "type": "module",
   "sideEffects": false,
@@ -34,8 +34,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.0",
-    "@brifui/typescript-config": "^0.0.0",
+    "@brifui/eslint-config": "^0.0.1",
+    "@brifui/typescript-config": "^0.0.1",
     "clean-package": "^2.2.0",
     "eslint": "^9.15.0",
     "typescript": "5.5.4"
