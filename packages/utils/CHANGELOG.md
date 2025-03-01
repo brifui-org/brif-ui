@@ -1,5 +1,11 @@
 # @brifui/utils
 
+## 0.0.5
+
+### Patch Changes
+
+- [#92](https://github.com/brifui-org/brif-ui/pull/92) [`5bce025`](https://github.com/brifui-org/brif-ui/commit/5bce02559136edf820f3f63149f9723785edae0a) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - changed to ESM
+
 ## 0.0.4
 
 ### Patch Changes
