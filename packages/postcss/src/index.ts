@@ -1,4 +1,4 @@
-import { default as pandacss, type PluginOptions } from "@pandacss/postcss";
+import { pandacss, type PluginOptions } from "@pandacss/postcss";
 import type { PluginCreator } from "postcss";
 import path from "node:path";
 

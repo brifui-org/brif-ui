@@ -3,6 +3,7 @@
   "version": "0.0.4",
   "description": "Brif UI components - utils library",
   "sideEffects": false,
+  "type": "module",
   "keywords": [
     "utils",
     "ui"

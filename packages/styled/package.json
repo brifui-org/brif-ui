@@ -36,8 +36,7 @@
     "./jsx": {
       "types": "./dist/jsx/index.d.ts",
       "import": "./dist/jsx/index.mjs"
-    },
-    "./styles.css": "./dist/styles.css"
+    }
   },
   "scripts": {
     "codegen": "panda codegen",
