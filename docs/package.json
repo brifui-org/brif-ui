@@ -10,9 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@brifui/components": "^0.0.6",
-    "@brifui/styled": "^0.0.1",
-    "@brifui/utils": "^0.0.0",
+    "@brifui/components": "^0.0.7",
+    "@brifui/styled": "^0.0.2",
+    "@brifui/utils": "^0.0.1",
     "@icons-pack/react-simple-icons": "^12.0.0",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
@@ -21,10 +21,10 @@
     "react-hook-form": "^7.54.2"
   },
   "devDependencies": {
-    "@brifui/cli": "^0.0.1",
+    "@brifui/cli": "^0.0.2",
     "@brifui/eslint-config": "^0.0.0",
-    "@brifui/theme": "^0.0.1",
-    "@brifui/types": "^0.0.1",
+    "@brifui/theme": "^0.0.2",
+    "@brifui/types": "^0.0.2",
     "@brifui/typescript-config": "^0.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
