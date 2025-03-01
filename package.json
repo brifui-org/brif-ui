@@ -23,7 +23,7 @@
     "commit": "git-cz",
     "after:install": "yarn codegen",
     "version": "changeset version && yarn install",
-    "release": "yarn build && changeset publish && yarn install",
+    "release": "yarn build && changeset publish",
     "changeset:beta": "changeset pre enter beta",
     "create:comp": "plop component"
   },
