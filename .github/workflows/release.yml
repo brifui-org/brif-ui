@@ -31,7 +31,6 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: yarn release
-          version: yarn version
           title: "ci(changesets): :package: version packages"
           commit: 'ci(changesets): version packages'
           setupGitUser: false
