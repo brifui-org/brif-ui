@@ -1,6 +1,6 @@
 {
   "name": "@brifui/button",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Button component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,7 +30,7 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.7",
+    "@brifui/styled": "^0.0.8",
     "@brifui/utils": "^0.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

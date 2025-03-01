@@ -1,5 +1,13 @@
 # @brifui/select
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.8
+  - @brifui/button@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes
