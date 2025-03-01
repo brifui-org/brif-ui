@@ -166,7 +166,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/button@npm:^0.0.4, @brifui/button@workspace:*, @brifui/button@workspace:packages/components/button":
+"@brifui/button@npm:^0.0.4, @brifui/button@workspace:packages/components/button":
   version: 0.0.0-use.local
   resolution: "@brifui/button@workspace:packages/components/button"
   dependencies:
@@ -392,7 +392,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brifui/select@workspace:packages/components/select"
   dependencies:
-    "@brifui/button": "workspace:*"
+    "@brifui/button": "npm:^0.0.4"
     "@brifui/eslint-config": "npm:^0.0.1"
     "@brifui/mocks": "npm:^0.0.2"
     "@brifui/styled": "npm:^0.0.3"
