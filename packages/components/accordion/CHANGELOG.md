@@ -1,5 +1,15 @@
 # @brifui/accordion
 
+## 0.0.4
+
+### Patch Changes
+
+- [#84](https://github.com/brifui-org/brif-ui/pull/84) [`5cf308b`](https://github.com/brifui-org/brif-ui/commit/5cf308b829211a89514a0a807fbd8461cccb8877) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated deps
+
+- Updated dependencies [[`5cf308b`](https://github.com/brifui-org/brif-ui/commit/5cf308b829211a89514a0a807fbd8461cccb8877)]:
+  - @brifui/styled@0.0.4
+  - @brifui/utils@0.0.3
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@brifui/utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Brif UI components - utils library",
   "sideEffects": false,
   "keywords": [
@@ -33,8 +33,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.1",
-    "@brifui/typescript-config": "^0.0.1",
+    "@brifui/eslint-config": "^0.0.2",
+    "@brifui/typescript-config": "^0.0.2",
     "@microsoft/api-extractor": "^7.49.1",
     "@types/react": "^19.0.5",
     "@types/react-dom": "^19.0.3",
