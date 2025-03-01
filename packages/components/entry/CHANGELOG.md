@@ -1,5 +1,20 @@
 # @brifui/components
 
+## 0.0.7
+
+### Patch Changes
+
+- [#78](https://github.com/brifui-org/brif-ui/pull/78) [`b15ef21`](https://github.com/brifui-org/brif-ui/commit/b15ef211d2d3a971e45515ec0295b20d1a52ede9) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - replaced workspace protocol to exlicitly semver range
+
+- Updated dependencies [[`b15ef21`](https://github.com/brifui-org/brif-ui/commit/b15ef211d2d3a971e45515ec0295b20d1a52ede9)]:
+  - @brifui/accordion@0.0.2
+  - @brifui/checkbox@0.0.2
+  - @brifui/button@0.0.3
+  - @brifui/select@0.0.3
+  - @brifui/input@0.0.3
+  - @brifui/card@0.0.2
+  - @brifui/form@0.0.3
+
 ## 0.0.6
 
 ### Patch Changes
