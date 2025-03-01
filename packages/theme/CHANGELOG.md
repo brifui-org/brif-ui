@@ -1,5 +1,14 @@
 # @brifui/theme
 
+## 0.0.6
+
+### Patch Changes
+
+- [#92](https://github.com/brifui-org/brif-ui/pull/92) [`5bce025`](https://github.com/brifui-org/brif-ui/commit/5bce02559136edf820f3f63149f9723785edae0a) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - changed to ESM
+
+- Updated dependencies [[`5bce025`](https://github.com/brifui-org/brif-ui/commit/5bce02559136edf820f3f63149f9723785edae0a)]:
+  - @brifui/postcss@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
