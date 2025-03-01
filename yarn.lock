@@ -372,7 +372,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/postcss@workspace:*, @brifui/postcss@workspace:packages/postcss":
+"@brifui/postcss@npm:^0.0.2, @brifui/postcss@workspace:packages/postcss":
   version: 0.0.0-use.local
   resolution: "@brifui/postcss@workspace:packages/postcss"
   dependencies:
@@ -435,7 +435,7 @@ __metadata:
   resolution: "@brifui/theme@workspace:packages/theme"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.0"
-    "@brifui/postcss": "workspace:*"
+    "@brifui/postcss": "npm:^0.0.2"
     "@brifui/types": "npm:^0.0.2"
     "@brifui/typescript-config": "npm:^0.0.0"
     "@pandacss/dev": "npm:^0.52.0"

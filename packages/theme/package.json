@@ -42,7 +42,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@brifui/postcss": "workspace:*",
+    "@brifui/postcss": "^0.0.2",
     "@pandacss/dev": "^0.52.0",
     "color": "^4.2.3",
     "deepmerge": "^4.3.1",
