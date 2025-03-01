@@ -37,7 +37,7 @@ export default function IntroductionPage() {
               🌈 Brif UI
             </h1>
             <p className={css({ fontSize: "large", color: "text.subtle" })}>
-              A high contrast, bright colors, and bold shapes UI library.
+              A Neobrutalism styled React UI library
             </p>
           </Card.Body>
         </Card>
