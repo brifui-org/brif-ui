@@ -1,6 +1,6 @@
 {
   "name": "@brifui/styled",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Styled system for Brif UI.",
   "sideEffects": false,
   "type": "module",

@@ -10,8 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@brifui/components": "^0.0.10",
-    "@brifui/styled": "^0.0.5",
+    "@brifui/components": "^0.0.11",
+    "@brifui/styled": "^0.0.6",
     "@brifui/utils": "^0.0.4",
     "@icons-pack/react-simple-icons": "^12.0.0",
     "lucide-react": "^0.475.0",
