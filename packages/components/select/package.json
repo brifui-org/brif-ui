@@ -28,7 +28,7 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/button": "workspace:*",
+    "@brifui/button": "^0.0.4",
     "@brifui/styled": "^0.0.3",
     "@brifui/utils": "^0.0.2",
     "@radix-ui/react-select": "^2.1.6",
