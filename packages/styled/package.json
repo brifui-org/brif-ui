@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "Styled system for Brif UI.",
   "sideEffects": false,
+  "type": "module",
   "keywords": [
     "styled",
     "theming",
@@ -18,27 +19,22 @@
   "exports": {
     "./css": {
       "types": "./dist/css/index.d.ts",
-      "require": "./dist/css/index.js",
       "import": "./dist/css/index.mjs"
     },
     "./tokens": {
       "types": "./dist/tokens/index.d.ts",
-      "require": "./dist/tokens/index.js",
       "import": "./dist/tokens/index.mjs"
     },
     "./types": {
       "types": "./dist/types/index.d.ts",
-      "require": "./dist/types/index.js",
       "import": "./dist/types/index.mjs"
     },
     "./patterns": {
       "types": "./dist/patterns/index.d.ts",
-      "require": "./dist/patterns/index.js",
       "import": "./dist/patterns/index.mjs"
     },
     "./jsx": {
       "types": "./dist/jsx/index.d.ts",
-      "require": "./dist/jsx/index.js",
       "import": "./dist/jsx/index.mjs"
     },
     "./styles.css": "./dist/styles.css"
