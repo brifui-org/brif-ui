@@ -1,2 +1,2 @@
-const plugin = require('@brifui/postcss')
-module.exports = plugin.default ?? plugin
+import plugin from '@brifui/postcss'
+export default plugin

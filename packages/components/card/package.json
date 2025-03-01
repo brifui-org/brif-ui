@@ -3,6 +3,7 @@
   "version": "0.0.6",
   "description": "Card component - Brif UI",
   "sideEffects": false,
+  "type": "module",
   "keywords": [
     "card",
     "component",

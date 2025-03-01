@@ -588,7 +588,7 @@ var CAC = class extends EventEmitter {
 var cac = (name = "") => new CAC(name);
 
 // package.json
-var version = "0.0.1";
+var version = "0.0.5";
 
 // src/main.ts
 async function main() {

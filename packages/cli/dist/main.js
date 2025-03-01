@@ -620,7 +620,7 @@ var CAC = class extends import_events.EventEmitter {
 var cac = (name = "") => new CAC(name);
 
 // package.json
-var version = "0.0.1";
+var version = "0.0.5";
 
 // src/commands/codegen.ts
 var import_bundle_n_require = require("bundle-n-require");

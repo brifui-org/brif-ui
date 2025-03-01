@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "Theming library for Brif UI.",
   "sideEffects": false,
+  "type": "module",
   "keywords": [
     "theme",
     "theming",
@@ -12,6 +13,7 @@
     "styled-system",
     "dist",
     "postcss.js",
+    "postcss.cjs",
     "src"
   ],
   "license": "MIT",
@@ -30,7 +32,10 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./postcss": "./postcss.js"
+    "./postcss": {
+      "require": "./postcss.cjs",
+      "import": "./postcss.js"
+    }
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",

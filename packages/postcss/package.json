@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "PostCSS library for Brif UI.",
   "sideEffects": false,
+  "type": "module",
   "keywords": [
     "postcss-plugin",
     "PostCSS",
@@ -23,17 +24,14 @@
     "dev": "tsup src --watch",
     "lint": "eslint ."
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      }
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },

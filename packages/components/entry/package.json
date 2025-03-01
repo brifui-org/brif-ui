@@ -3,6 +3,7 @@
   "version": "0.0.11",
   "description": "Brif UI components",
   "sideEffects": false,
+  "type": "module",
   "keywords": [
     "box",
     "flexbox",

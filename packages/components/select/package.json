@@ -3,6 +3,7 @@
   "version": "0.0.7",
   "description": "Select component - Brif UI",
   "sideEffects": false,
+  "type": "module",
   "keywords": [
     "select",
     "component",
