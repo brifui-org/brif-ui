@@ -1724,6 +1724,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@icons-pack/react-simple-icons@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "@icons-pack/react-simple-icons@npm:12.0.0"
+  peerDependencies:
+    react: ^16.13 || ^17 || ^18 || ^19
+  checksum: 10c0/6a9f7ff6bc231151631234fffdb93cfd96433ca747bdee94105a0111327c3dfd8e30a32639083c1fed274b793ebf002fcec5da8589cdde245b88378545090210
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -5790,6 +5799,7 @@ __metadata:
     "@brifui/types": "workspace:*"
     "@brifui/typescript-config": "workspace:*"
     "@brifui/utils": "workspace:*"
+    "@icons-pack/react-simple-icons": "npm:^12.0.0"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"

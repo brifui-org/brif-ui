@@ -18,15 +18,7 @@ export default function DocsLayout({
         }
       })}
     >
-      <Menu
-        className={css({
-          borderRight: "1px solid {colors.border}",
-          display: {
-            base: "none",
-            lg: "block"
-          }
-        })}
-      ></Menu>
+      <Menu />
       <div
         className={css({
           overflow: "hidden"

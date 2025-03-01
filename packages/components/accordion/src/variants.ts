@@ -1,7 +1,7 @@
 import { RecipeVariantProps, sva } from "@brifui/styled/css";
 
 export const accordionVariants = sva({
-  slots: ["root", "item", "trigger", "content", "icon"],
+  slots: ["root", "item", "trigger", "contentContainer", "content", "icon"],
   base: {
     root: {
       w: "100%",
@@ -25,12 +25,12 @@ export const accordionVariants = sva({
         flex: 1,
         textAlign: "start"
       },
-      '&[data-state="open"]': {
+      _open: {
         '& > [data-item="icon"]': {
           transform: "rotate(180deg)"
         }
       },
-      '&[data-state="closed"]': {
+      _closed: {
         '& > [data-item="icon"]': {
           transform: "rotate(0deg)"
         }
@@ -47,20 +47,23 @@ export const accordionVariants = sva({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      transition: "transform 300ms ease-out"
+      transition: "transform .2s ease"
+    },
+    contentContainer: {
+      bg: "background",
+      overflow: "hidden",
+      willChange: "height",
+      _open: {
+        animation: "accordionSlideDown .2s ease"
+      },
+      _closed: {
+        animation: "accordionSlideUp .2s ease"
+      }
     },
     content: {
       px: 5,
       py: 2,
-      overflow: "hidden",
-      boxSizing: "border-box",
-      borderTop: "2px solid {colors.border}",
-      '&[data-state="open"]': {
-        animation: "accordionSlideDown 300ms ease-out"
-      },
-      '&[data-state="closed"]': {
-        animation: "accordionSlideUp 300ms ease-out"
-      }
+      borderTop: "2px solid {colors.border}"
     }
   },
   variants: {
@@ -82,7 +85,6 @@ export const accordionVariants = sva({
           }
         },
         content: {
-          mb: 2,
           textStyle: "sm"
         }
       },
@@ -103,7 +105,6 @@ export const accordionVariants = sva({
           }
         },
         content: {
-          mb: 4,
           textStyle: "md"
         }
       },
@@ -124,7 +125,6 @@ export const accordionVariants = sva({
           }
         },
         content: {
-          mb: 6,
           textStyle: "lg"
         }
       }

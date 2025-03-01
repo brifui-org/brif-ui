@@ -17,6 +17,7 @@ export default function AccordionDocs() {
         <Page.Preview
           className={css({
             gap: 4,
+            alignItems: "start",
             justifyItems: "center",
             gridTemplateColumns: {
               base: "1fr",

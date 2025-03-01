@@ -104,7 +104,6 @@ const Preview: React.FC<{
         className={cx(
           css({
             py: 6,
-
             display: "grid",
             alignItems: "center"
           }),

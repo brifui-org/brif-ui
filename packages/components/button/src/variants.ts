@@ -151,6 +151,20 @@ export const buttonVariants = cva({
             transform: "translate(-4px, -4px)"
           }
         }
+      },
+      icon: {
+        aspectRatio: "1/1",
+        borderRadius: "component.md",
+        "&:not(:disabled)": {
+          _hover: {
+            boxShadow: "component.md",
+            transform: "translate(-2px, -2px)"
+          },
+          _active: {
+            boxShadow: "component.sm",
+            transform: "translate(0px, 0px)"
+          }
+        }
       }
     },
     fluid: {

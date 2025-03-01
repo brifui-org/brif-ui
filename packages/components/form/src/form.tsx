@@ -55,6 +55,23 @@ const Label: React.FC<FormLabelProps> = ({ className, children, ...props }) => {
   );
 };
 
+export type FormOptinalTextProps = React.ComponentPropsWithRef<"span">;
+const OptionalText: React.FC<FormLabelProps> = ({
+  className,
+  children,
+  ...props
+}) => {
+  const {} = useFormStyles();
+
+  const classes = formVariants({});
+
+  return (
+    <span className={cx(classes.optionalText, className)} {...props}>
+      {children}
+    </span>
+  );
+};
+
 export type FormControlProps = BaseForm.FormControlProps;
 const Control: React.FC<FormControlProps> = ({
   className,
@@ -85,11 +102,12 @@ const Field: React.FC<FormFieldProps> = ({
 }) => {
   const {} = useFormStyles();
 
-  const [labels, controls, errors] = findChildrenByType(
+  const [labels, controls, errors, optionalTexts] = findChildrenByType(
     children,
     Label,
     Control,
-    ErrorMessage
+    ErrorMessage,
+    OptionalText
   );
   const classes = formVariants({});
 
@@ -99,7 +117,10 @@ const Field: React.FC<FormFieldProps> = ({
       className={cx(classes.field, "group", className)}
       {...props}
     >
-      {labels}
+      <div className={classes.fieldLabelContainer}>
+        {labels}
+        {optionalTexts}
+      </div>
       {controls}
       {errors}
     </BaseForm.Field>
@@ -129,5 +150,6 @@ export const Form = {
   Field,
   Control,
   Submit,
-  ErrorMessage
+  ErrorMessage,
+  OptionalText
 };
