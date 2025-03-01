@@ -10,15 +10,21 @@ import { AccordionProvider, useAccordion } from "./context";
 import { AccordionVariantProps, accordionVariants } from "./variants";
 
 export type AccordionContentProps = BaseAccordion.AccordionContentProps;
-const Content: React.FC<AccordionContentProps> = ({ className, ...props }) => {
+const Content: React.FC<AccordionContentProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   const { size } = useAccordion();
   const classes = accordionVariants({ size });
 
   return (
     <BaseAccordion.Content
-      className={cx(classes.content, className)}
+      className={cx(classes.contentContainer, className)}
       {...props}
-    />
+    >
+      <div className={classes.content}>{children}</div>
+    </BaseAccordion.Content>
   );
 };
 

@@ -1,7 +1,16 @@
 import { RecipeVariantProps, sva } from "@brifui/styled/css";
 
 export const formVariants = sva({
-  slots: ["root", "field", "control", "label", "submit", "error"],
+  slots: [
+    "root",
+    "field",
+    "control",
+    "label",
+    "submit",
+    "error",
+    "optionalText",
+    "fieldLabelContainer"
+  ],
   base: {
     root: {
       display: "flex",
@@ -28,6 +37,15 @@ export const formVariants = sva({
       '.group[data-invalid="true"] &': {
         display: "block"
       }
+    },
+    optionalText: {
+      textStyle: "xs",
+      color: "text.subtle"
+    },
+    fieldLabelContainer: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between"
     }
   }
 });

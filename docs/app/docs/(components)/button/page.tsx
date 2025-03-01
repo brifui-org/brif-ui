@@ -1,7 +1,7 @@
 "use client";
 
 import { Page } from "@/components/page";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Atom } from "lucide-react";
 import { Button } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
@@ -20,10 +20,13 @@ export default function ButtonDocs() {
             justifyItems: "center",
             gridTemplateColumns: {
               base: "1fr",
-              md: "1fr 1fr 1fr"
+              md: "1fr 1fr 1fr 1fr"
             }
           })}
         >
+          <Button size="icon">
+            <Atom />
+          </Button>
           <Button size="sm">Solid</Button>
           <Button size="md">Solid</Button>
           <Button size="lg">Solid</Button>

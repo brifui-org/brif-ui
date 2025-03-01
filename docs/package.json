@@ -13,6 +13,7 @@
     "@brifui/components": "workspace:*",
     "@brifui/styled": "workspace:*",
     "@brifui/utils": "workspace:*",
+    "@icons-pack/react-simple-icons": "^12.0.0",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
     "react": "^19.0.0",

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ComponentPropsWithRef } from "react";
+import { useMenu } from "@/app/providers/menu-context";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { css, cx } from "@brifui/styled/css";
@@ -74,6 +75,7 @@ const Item: React.FC<
   ComponentPropsWithRef<"li"> & { title: string; href: string }
 > = ({ title, href, ...props }) => {
   const pathname = usePathname();
+  const { setOpen } = useMenu();
 
   return (
     <li
@@ -98,6 +100,7 @@ const Item: React.FC<
           mb: "px"
         }
       })}
+      onClick={() => setOpen(false)}
       {...props}
     >
       <Link
@@ -146,13 +149,38 @@ const Section: React.FC<ComponentPropsWithRef<"div"> & { title: string }> = ({
 export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
   className
 }) => {
+  const { isOpen } = useMenu();
+
   return (
     <aside
       role="menu"
       className={cx(
         css({
           px: 6,
-          py: 12
+          py: 12,
+          w: "fit-content",
+          bg: "background",
+          minH: "100vh",
+          borderRight: "1px solid {colors.border}",
+          display: "block",
+          position: {
+            base: "fixed",
+            lg: "relative"
+          },
+          top: {
+            base: 59,
+            lg: "unset"
+          },
+          left: {
+            base: 0,
+            lg: "unset"
+          },
+          zIndex: "9999",
+          transition: "transform .3s ease",
+          transform: {
+            base: isOpen ? "translateX(0)" : "translateX(-100%)",
+            lg: "unset"
+          }
         }),
         className
       )}

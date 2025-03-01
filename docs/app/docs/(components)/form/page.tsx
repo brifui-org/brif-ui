@@ -12,7 +12,9 @@ type Inputs = {
 
 export default function FormDocs() {
   const { register, handleSubmit, formState } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    window.alert(JSON.stringify(data));
+  };
 
   return (
     <Page>
@@ -34,9 +36,11 @@ export default function FormDocs() {
         >
           <Form.Root onSubmit={handleSubmit(onSubmit)}>
             <Form.Field invalid={!!formState.errors.username} name="username">
-              <Form.Label>Username or email</Form.Label>
+              <Form.Label>Username</Form.Label>
+              <Form.OptionalText>Optional</Form.OptionalText>
               <Form.Control>
                 <Input
+                  error={!!formState.errors.username}
                   placeholder="Enter your username"
                   {...register("username", {
                     required: {
@@ -55,6 +59,7 @@ export default function FormDocs() {
               <Form.Label>Password</Form.Label>
               <Form.Control>
                 <Input
+                  error={!!formState.errors.password}
                   placeholder="Enter your password"
                   type="password"
                   {...register("password", {

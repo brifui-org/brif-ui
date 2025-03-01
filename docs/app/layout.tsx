@@ -2,6 +2,8 @@ import { BaseLayout } from "@/components/base-layout";
 import type { Metadata } from "next";
 import { Funnel_Display, Geist } from "next/font/google";
 
+import { Providers } from "./providers";
+
 import "./globals.css";
 
 const funnelDisplay = Funnel_Display({
@@ -27,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${funnelDisplay.variable} ${geist.variable}`}>
       <body>
-        <BaseLayout>{children}</BaseLayout>
+        <Providers>
+          <BaseLayout>{children}</BaseLayout>
+        </Providers>
       </body>
     </html>
   );
