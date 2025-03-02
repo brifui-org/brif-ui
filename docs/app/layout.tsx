@@ -1,6 +1,6 @@
 import { BaseLayout } from "@/components/base-layout";
 import type { Metadata } from "next";
-import { Funnel_Display, Geist } from "next/font/google";
+import { Funnel_Display, Geist, Geist_Mono } from "next/font/google";
 
 import { Providers } from "./providers";
 
@@ -12,6 +12,10 @@ const funnelDisplay = Funnel_Display({
 });
 const geist = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"]
+});
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"]
 });
 
@@ -27,7 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${funnelDisplay.variable} ${geist.variable}`}>
+    <html
+      lang="en"
+      className={`${funnelDisplay.variable} ${geist.variable} ${geistMono.variable}`}
+    >
       <body>
         <Providers>
           <BaseLayout>{children}</BaseLayout>

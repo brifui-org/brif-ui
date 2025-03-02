@@ -77,6 +77,11 @@ const MENU = [
         key: "form",
         title: "Form",
         href: "/docs/form"
+      },
+      {
+        key: "table",
+        title: "Table",
+        href: "/docs/table"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }

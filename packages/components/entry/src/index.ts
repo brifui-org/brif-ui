@@ -6,3 +6,4 @@ export * from "@brifui/checkbox";
 export * from "@brifui/accordion";
 export * from "@brifui/form";
 export * from "@brifui/text";
+export * from "@brifui/table";

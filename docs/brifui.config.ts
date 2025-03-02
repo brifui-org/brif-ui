@@ -25,6 +25,9 @@ export default defineConfig({
       },
       body: {
         value: "var(--font-geist-sans)"
+      },
+      mono: {
+        value: "var(--font-geist-mono)"
       }
     }
   }
