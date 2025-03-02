@@ -29,9 +29,16 @@ export const buttonVariants = cva({
       outline: "4px solid {colors.primary}",
       outlineOffset: "2px"
     },
+    /**
+     * Disabled
+     */
     _disabled: {
-      opacity: 0.32,
-      cursor: "not-allowed"
+      cursor: "not-allowed",
+      backgroundColor:
+        "color-mix(in oklab, var(--brif-button-bg-color), white 68%)",
+      borderColor:
+        "color-mix(in oklab, var(--brif-button-border-color), white 68%)",
+      color: "color-mix(in oklab, var(--brif-button-text-color), white 68%)"
     }
   },
   variants: {
@@ -40,6 +47,9 @@ export const buttonVariants = cva({
         bg: "default",
         borderColor: "default",
         color: "default.foreground",
+        "--brif-button-bg-color": "token(colors.default)",
+        "--brif-button-border-color": "token(colors.default)",
+        "--brif-button-text-color": "token(colors.default.foreground)",
         _hover: {
           "&:not(:disabled)": {
             bg: "primary",
@@ -57,6 +67,9 @@ export const buttonVariants = cva({
         bg: "background",
         borderColor: "text",
         color: "text",
+        "--brif-button-bg-color": "token(colors.background)",
+        "--brif-button-border-color": "token(colors.text)",
+        "--brif-button-text-color": "token(colors.text)",
         _hover: {
           "&:not(:disabled)": {
             bg: "background.hover"
@@ -72,6 +85,9 @@ export const buttonVariants = cva({
         bg: "error",
         borderColor: "error",
         color: "error.foreground",
+        "--brif-button-bg-color": "token(colors.error)",
+        "--brif-button-border-color": "token(colors.error)",
+        "--brif-button-text-color": "token(colors.error.foreground)",
         _hover: {
           "&:not(:disabled)": {
             bg: "error.hover",
@@ -89,6 +105,9 @@ export const buttonVariants = cva({
         bg: "warning",
         borderColor: "warning",
         color: "warning.foreground",
+        "--brif-button-bg-color": "token(colors.warning)",
+        "--brif-button-border-color": "token(colors.warning)",
+        "--brif-button-text-color": "token(colors.warning.foreground)",
         _hover: {
           "&:not(:disabled)": {
             bg: "warning.hover",

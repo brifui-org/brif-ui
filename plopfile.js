@@ -29,6 +29,9 @@ module.exports = function main(plop) {
   plop.setHelper("camelCase", (text) => {
     return camelCase(text);
   });
+  plop.setHelper("version", (text) => {
+    return camelCase(text);
+  });
 
   generators.forEach((gen) => {
     plop.setGenerator(gen, {

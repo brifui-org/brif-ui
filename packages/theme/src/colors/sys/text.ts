@@ -8,6 +8,6 @@ export const text: TextColors = {
     value: "{colors.gray.900}"
   },
   disabled: {
-    value: "{colors.gray.700}"
+    value: "color-mix(in oklab, {colors.gray.1000}, white 68%)"
   }
 };

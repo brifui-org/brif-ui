@@ -14,6 +14,6 @@ export const background: BackgroundColors = {
     value: "{colors.gray.300}"
   },
   disabled: {
-    value: "{colors.gray.200}"
+    value: "color-mix(in oklab, {colors.white}, white 68%)"
   }
 };

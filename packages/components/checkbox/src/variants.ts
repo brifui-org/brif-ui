@@ -8,7 +8,6 @@ export const checkboxVariants = sva({
       alignItems: "center",
       transition: "border-color .15s, box-shadow .15s",
       "&[data-disabled]": {
-        opacity: 0.32,
         cursor: "not-allowed"
       }
     },
@@ -33,7 +32,8 @@ export const checkboxVariants = sva({
         bg: "background"
       },
       "&[data-disabled]": {
-        pointerEvents: "none"
+        pointerEvents: "none",
+        borderColor: "border.disabled"
       }
     },
     label: {
@@ -41,6 +41,7 @@ export const checkboxVariants = sva({
       color: "text",
       cursor: "pointer",
       "&[data-disabled]": {
+        color: "text.disabled",
         pointerEvents: "none"
       }
     }
