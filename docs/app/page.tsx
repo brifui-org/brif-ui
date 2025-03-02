@@ -189,7 +189,7 @@ export default function Home() {
                   <p
                     className={css({
                       textStyle: "sm",
-                      color: "text.subtle"
+                      color: "text.muted"
                     })}
                   >
                     @john.doe

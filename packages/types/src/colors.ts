@@ -13,16 +13,17 @@ export type SemanticColorToken = {
 
 export type BorderColors = {
   DEFAULT: Token<string>;
-  subtle: Token<string>;
+  muted: Token<string>;
   disabled: Token<string>;
 };
 export type TextColors = {
   DEFAULT: Token<string>;
-  subtle: Token<string>;
+  muted: Token<string>;
   disabled: Token<string>;
 };
 export type BackgroundColors = {
   DEFAULT: Token<string>;
+  muted: Token<string>;
   hover: Token<string>;
   active: Token<string>;
   disabled: Token<string>;

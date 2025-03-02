@@ -23,7 +23,7 @@ export const formVariants = sva({
       gap: 1
     },
     label: {
-      textStyle: "md",
+      textStyle: "heading.md",
       fontWeight: "semibold",
       '.group[data-invalid="true"] &': {
         color: "error"
@@ -33,14 +33,14 @@ export const formVariants = sva({
       pt: 1,
       display: "none",
       color: "error",
-      textStyle: "xs",
+      textStyle: "text.xs",
       '.group[data-invalid="true"] &': {
         display: "block"
       }
     },
     optionalText: {
-      textStyle: "xs",
-      color: "text.subtle"
+      textStyle: "text.xs",
+      color: "text.muted"
     },
     fieldLabelContainer: {
       display: "flex",

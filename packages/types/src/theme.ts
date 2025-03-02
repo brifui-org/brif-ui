@@ -12,7 +12,8 @@ import {
 } from "./fonts";
 import { ComponentRadii, Radii } from "./radii";
 import { ComponentShadows, Shadows } from "./shadows";
-import { ComponentSizing, Sizing } from "./sizing";
+import { ComponentSizing, ContainerSizing, Sizing } from "./sizing";
+import { ZIndex } from "./z-index";
 
 export type Theme = {
   colors: Colors;
@@ -26,10 +27,12 @@ export type Theme = {
   keyframes: CssKeyframes;
   breakpoints: Breakpoints;
   textStyles: TextStyles;
+  zIndex: ZIndex;
   semanticTokens: {
     colors: SemanticColors;
     sizes: {
       component: ComponentSizing;
+      container: ContainerSizing;
     };
     radii: {
       component: ComponentRadii;

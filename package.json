@@ -22,6 +22,7 @@
     "prepare": "husky",
     "commit": "git-cz",
     "after:install": "yarn codegen",
+    "version": "changeset version && yarn",
     "release": "yarn build && changeset publish",
     "changeset:beta": "changeset pre enter beta",
     "create:comp": "plop component"

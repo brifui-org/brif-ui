@@ -4,7 +4,7 @@ export const text: TextColors = {
   DEFAULT: {
     value: "{colors.gray.1000}"
   },
-  subtle: {
+  muted: {
     value: "{colors.gray.900}"
   },
   disabled: {

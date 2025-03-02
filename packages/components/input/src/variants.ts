@@ -62,7 +62,7 @@ export const inputVariants = sva({
         root: {
           borderRadius: "component.md",
           height: "component.sm",
-          textStyle: "sm",
+          textStyle: "text.sm",
           _focusWithin: {
             boxShadow: "component.sm"
           },
@@ -84,7 +84,7 @@ export const inputVariants = sva({
         root: {
           height: "component.md",
           borderRadius: "component.md",
-          textStyle: "md",
+          textStyle: "text.md",
           _focusWithin: {
             boxShadow: "component.md"
           },
@@ -106,7 +106,7 @@ export const inputVariants = sva({
         root: {
           height: "component.lg",
           borderRadius: "component.lg",
-          textStyle: "lg",
+          textStyle: "text.lg",
           _focusWithin: {
             boxShadow: "component.lg"
           },

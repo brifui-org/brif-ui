@@ -108,7 +108,7 @@ export const buttonVariants = cva({
         borderRadius: "component.md",
         height: "component.sm",
         px: "2",
-        textStyle: "sm",
+        textStyle: "button.xs",
         "&:not(:disabled)": {
           _hover: {
             boxShadow: "component.sm",
@@ -124,7 +124,7 @@ export const buttonVariants = cva({
         height: "component.md",
         px: "2.5",
         borderRadius: "component.md",
-        textStyle: "md",
+        textStyle: "button.sm",
         "&:not(:disabled)": {
           _hover: {
             boxShadow: "component.md",
@@ -140,7 +140,7 @@ export const buttonVariants = cva({
         height: "component.lg",
         px: "3.5",
         borderRadius: "component.lg",
-        textStyle: "lg",
+        textStyle: "button.md",
         "&:not(:disabled)": {
           _hover: {
             boxShadow: "component.lg",

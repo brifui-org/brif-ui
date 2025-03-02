@@ -17,7 +17,7 @@ const Title: React.FC<{
         p: "12",
         borderBottomWidth: "1px",
         borderBottomStyle: "solid",
-        borderBottomColor: !bordered ? "transparent" : "border.subtle"
+        borderBottomColor: !bordered ? "transparent" : "border.muted"
       })}
     >
       <h1
@@ -33,7 +33,7 @@ const Title: React.FC<{
         className={css({
           fontWeight: "medium",
           fontSize: "larger",
-          color: "text.subtle"
+          color: "text.muted"
         })}
       >
         {description}
@@ -59,7 +59,7 @@ const Section: React.FC<{
           flexDirection: "column",
           borderBottomWidth: "1px",
           borderBottomStyle: "solid",
-          borderBottomColor: "border.subtle"
+          borderBottomColor: "border.muted"
         }),
         className
       )}
@@ -82,7 +82,7 @@ const Section: React.FC<{
               fontFamily: "body",
               fontWeight: "medium",
               fontSize: "medium",
-              color: "text.subtle"
+              color: "text.muted"
             })}
           >
             {description}

@@ -6,3 +6,4 @@ export * from "./shadows";
 export * from "./breakpoints";
 export * from "./radii";
 export * from "./sizing";
+export * from "./z-index";
