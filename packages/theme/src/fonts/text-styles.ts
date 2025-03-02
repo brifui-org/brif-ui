@@ -86,6 +86,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["7xl"].value
     }
   },
@@ -93,6 +94,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["6xl"].value
     }
   },
@@ -100,6 +102,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["5xl"].value
     }
   },
@@ -107,6 +110,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["4xl"].value
     }
   },
@@ -114,6 +118,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["3xl"].value
     }
   },
@@ -121,6 +126,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["2xl"].value
     }
   },
@@ -128,6 +134,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["xl"].value
     }
   },
@@ -135,6 +142,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["lg"].value
     }
   },
@@ -142,6 +150,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["md"].value
     }
   },
@@ -149,6 +158,7 @@ const heading: TextStyles["heading"] = {
     value: {
       fontWeight: "semibold",
       letterSpacing: "-0.06em",
+      fontFamily: "heading",
       ...foundation["sm"].value
     }
   }
@@ -157,19 +167,19 @@ const heading: TextStyles["heading"] = {
 const button: TextStyles["button"] = {
   xs: {
     value: {
-      fontWeight: "medium",
+      fontWeight: "semibold",
       ...foundation["xs"].value
     }
   },
   sm: {
     value: {
-      fontWeight: "medium",
+      fontWeight: "semibold",
       ...foundation["sm"].value
     }
   },
   md: {
     value: {
-      fontWeight: "medium",
+      fontWeight: "semibold",
       ...foundation["md"].value
     }
   }

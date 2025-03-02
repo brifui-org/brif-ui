@@ -2,7 +2,7 @@
 
 import { Page } from "@/components/page";
 import { Metadata } from "next";
-import { Card } from "@brifui/components";
+import { Card, Text } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
 export default function IntroductionPage() {
@@ -27,15 +27,15 @@ export default function IntroductionPage() {
               justifyContent: "center"
             })}
           >
-            <h1
+            <Text
+              type="heading.3xl"
+              fontWeight="bold"
               className={css({
-                fontSize: "xx-large",
-                fontWeight: "bold",
                 mb: 2
               })}
             >
               🌈 Brif UI
-            </h1>
+            </Text>
             <p className={css({ fontSize: "large", color: "text.muted" })}>
               A Neobrutalism styled React UI library
             </p>

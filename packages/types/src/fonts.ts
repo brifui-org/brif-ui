@@ -8,6 +8,7 @@ import { Recursive, Token } from "./base";
 export type Fonts = {
   heading: Token<string | string[]>;
   body: Token<string | string[]>;
+  mono: Token<string | string[]>;
 };
 
 export type FontSizes = Recursive<Token<string>>;
