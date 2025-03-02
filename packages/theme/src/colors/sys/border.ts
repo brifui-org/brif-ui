@@ -8,6 +8,6 @@ export const border: BorderColors = {
     value: "{colors.gray.700}"
   },
   disabled: {
-    value: "{colors.gray.800}"
+    value: "color-mix(in oklab, {colors.gray.1000}, white 68%)"
   }
 };

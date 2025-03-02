@@ -14,7 +14,7 @@ export default function TypographyDocs() {
         title="Heading"
         description="Used to introduce pages or sections."
       >
-        <Table.Root>
+        <Table.Root striped>
           <Table.Head>
             <Table.Row>
               <Table.HCell>Example</Table.HCell>
@@ -130,7 +130,7 @@ export default function TypographyDocs() {
         title="Text"
         description="Designed for multiple lines of text, having a higher line height than Label."
       >
-        <Table.Root>
+        <Table.Root striped>
           <Table.Head>
             <Table.Row>
               <Table.HCell>Example</Table.HCell>
@@ -216,7 +216,7 @@ export default function TypographyDocs() {
         title="Button"
         description="Only to be used within components that render buttons."
       >
-        <Table.Root>
+        <Table.Root striped>
           <Table.Head>
             <Table.Row>
               <Table.HCell>Example</Table.HCell>
