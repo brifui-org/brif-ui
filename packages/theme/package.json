@@ -1,6 +1,6 @@
 {
   "name": "@brifui/theme",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Theming library for Brif UI.",
   "sideEffects": false,
   "type": "module",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
-    "@brifui/types": "^0.0.6",
+    "@brifui/types": "^0.0.7",
     "@brifui/typescript-config": "^0.0.3",
     "@types/color": "^4",
     "clean-package": "^2.2.0",
