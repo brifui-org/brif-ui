@@ -1,5 +1,20 @@
 # @brifui/components
 
+## 0.0.16
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/accordion@0.0.11
+  - @brifui/button@0.0.12
+  - @brifui/card@0.0.11
+  - @brifui/checkbox@0.0.11
+  - @brifui/form@0.0.12
+  - @brifui/input@0.0.12
+  - @brifui/select@0.0.12
+  - @brifui/table@0.0.2
+  - @brifui/text@0.0.3
+
 ## 0.0.15
 
 ### Patch Changes

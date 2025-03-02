@@ -1,5 +1,12 @@
 # @brifui/theme
 
+## 0.0.10
+
+### Patch Changes
+
+- [#102](https://github.com/brifui-org/brif-ui/pull/102) [`e9486f2`](https://github.com/brifui-org/brif-ui/commit/e9486f205a90cf0615cb694b989b37c9d4dd76ad) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - - Updated disabled colors
+  - Added sizing tokens
+
 ## 0.0.9
 
 ### Patch Changes

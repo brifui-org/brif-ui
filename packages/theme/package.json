@@ -1,6 +1,6 @@
 {
   "name": "@brifui/theme",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Theming library for Brif UI.",
   "sideEffects": false,
   "type": "module",
