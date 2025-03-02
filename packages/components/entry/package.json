@@ -1,6 +1,6 @@
 {
   "name": "@brifui/components",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Brif UI components",
   "sideEffects": false,
   "type": "module",
@@ -28,15 +28,15 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/accordion": "^0.0.10",
-    "@brifui/button": "^0.0.11",
-    "@brifui/card": "^0.0.10",
-    "@brifui/checkbox": "^0.0.10",
-    "@brifui/form": "^0.0.11",
-    "@brifui/input": "^0.0.11",
-    "@brifui/select": "^0.0.11",
-    "@brifui/table": "^0.0.1",
-    "@brifui/text": "^0.0.2"
+    "@brifui/accordion": "^0.0.11",
+    "@brifui/button": "^0.0.12",
+    "@brifui/card": "^0.0.11",
+    "@brifui/checkbox": "^0.0.11",
+    "@brifui/form": "^0.0.12",
+    "@brifui/input": "^0.0.12",
+    "@brifui/select": "^0.0.12",
+    "@brifui/table": "^0.0.2",
+    "@brifui/text": "^0.0.3"
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
