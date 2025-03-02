@@ -33,7 +33,7 @@ export const selectVariants = sva({
           borderRadius: "component.md"
         },
         item: {
-          fontSize: "small",
+          textStyle: "text.sm",
           borderRadius: "component.md"
         }
       },
@@ -42,7 +42,7 @@ export const selectVariants = sva({
           borderRadius: "component.md"
         },
         item: {
-          fontSize: "small",
+          textStyle: "text.md",
           borderRadius: "component.md"
         }
       },
@@ -51,7 +51,7 @@ export const selectVariants = sva({
           borderRadius: "component.lg"
         },
         item: {
-          fontSize: "medium",
+          textStyle: "text.lg",
           borderRadius: "component.lg"
         }
       }

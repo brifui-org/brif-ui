@@ -9,8 +9,9 @@ import { lineHeights } from "./fonts/line-heights";
 import { textStyles } from "./fonts/text-styles";
 import { componentRadii, radii } from "./radii";
 import { componentShadows, shadows } from "./shadows";
-import { componentSizing, sizing as sizes } from "./sizing";
+import { componentSizing, containerSizing, sizing as sizes } from "./sizing";
 import { spacing } from "./spacing";
+import { zIndex } from "./z-index";
 
 export const preset = definePreset({
   name: "brifui",
@@ -24,12 +25,14 @@ export const preset = definePreset({
       lineHeights,
       sizes,
       radii,
-      shadows
+      shadows,
+      zIndex
     },
     semanticTokens: {
       colors: sys,
       sizes: {
-        component: componentSizing
+        component: componentSizing,
+        container: containerSizing
       },
       shadows: {
         component: componentShadows

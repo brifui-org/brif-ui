@@ -1,12 +1,11 @@
 {
-  "name": "@brifui/components",
-  "version": "0.0.13",
-  "description": "Brif UI components",
+  "name": "@brifui/text",
+  "version": "0.0.0",
+  "description": "Text component - Brif UI",
   "sideEffects": false,
   "type": "module",
   "keywords": [
-    "box",
-    "flexbox",
+    "text",
     "component",
     "ui"
   ],
@@ -19,37 +18,38 @@
     "access": "public"
   },
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
     "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "lint": "eslint ."
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/accordion": "^0.0.8",
-    "@brifui/button": "^0.0.9",
-    "@brifui/card": "^0.0.8",
-    "@brifui/checkbox": "^0.0.8",
-    "@brifui/form": "^0.0.9",
-    "@brifui/input": "^0.0.9",
-    "@brifui/select": "^0.0.9",
-    "@brifui/text": "^0.0.0"
+    "@brifui/styled": "^0.0.8",
+    "@brifui/utils": "^0.0.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
+    "@brifui/mocks": "^0.0.4",
     "@brifui/typescript-config": "^0.0.3",
-    "@microsoft/api-extractor": "^7.49.1",
-    "@types/react": "^19.0.5",
-    "@types/react-dom": "^19.0.3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "^9.15.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "global-jsdom": "^26.0.0",
+    "jsdom": "^26.0.0",
     "typescript": "5.5.4"
   },
   "tsup": {
-    "minify": false,
     "clean": true,
     "target": "es2019",
     "format": [

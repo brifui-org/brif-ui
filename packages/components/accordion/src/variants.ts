@@ -15,7 +15,7 @@ export const accordionVariants = sva({
     },
     trigger: {
       px: 5,
-      bg: "background.active",
+      bg: "background.muted",
       cursor: "pointer",
       display: "flex",
       alignItems: "center",
@@ -73,7 +73,7 @@ export const accordionVariants = sva({
           borderRadius: "component.md"
         },
         trigger: {
-          textStyle: "sm",
+          textStyle: "heading.sm",
           h: "component.sm"
         },
         icon: {
@@ -85,7 +85,7 @@ export const accordionVariants = sva({
           }
         },
         content: {
-          textStyle: "sm"
+          textStyle: "text.sm"
         }
       },
       md: {
@@ -93,7 +93,7 @@ export const accordionVariants = sva({
           borderRadius: "component.md"
         },
         trigger: {
-          textStyle: "md",
+          textStyle: "heading.md",
           h: "component.md"
         },
         icon: {
@@ -105,7 +105,7 @@ export const accordionVariants = sva({
           }
         },
         content: {
-          textStyle: "md"
+          textStyle: "text.md"
         }
       },
       lg: {
@@ -113,7 +113,7 @@ export const accordionVariants = sva({
           borderRadius: "component.lg"
         },
         trigger: {
-          textStyle: "lg",
+          textStyle: "heading.lg",
           h: "component.lg"
         },
         icon: {
@@ -125,7 +125,7 @@ export const accordionVariants = sva({
           }
         },
         content: {
-          textStyle: "lg"
+          textStyle: "text.lg"
         }
       }
     }

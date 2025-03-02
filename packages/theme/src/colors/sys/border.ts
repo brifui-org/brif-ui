@@ -4,7 +4,7 @@ export const border: BorderColors = {
   DEFAULT: {
     value: "{colors.gray.1000}"
   },
-  subtle: {
+  muted: {
     value: "{colors.gray.700}"
   },
   disabled: {

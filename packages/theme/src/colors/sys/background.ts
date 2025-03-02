@@ -4,6 +4,9 @@ export const background: BackgroundColors = {
   DEFAULT: {
     value: "{colors.white}"
   },
+  muted: {
+    value: "{colors.gray.100}"
+  },
   hover: {
     value: "{colors.gray.200}"
   },

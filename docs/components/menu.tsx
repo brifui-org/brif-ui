@@ -24,6 +24,17 @@ const MENU = [
     ]
   },
   {
+    key: "tokens",
+    title: "Tokens",
+    children: [
+      {
+        key: "typography",
+        title: "Typography",
+        href: "/docs/typography"
+      }
+    ]
+  },
+  {
     key: "components",
     title: "Components",
     children: [
@@ -175,7 +186,7 @@ export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
             base: 0,
             lg: "unset"
           },
-          zIndex: "9999",
+          zIndex: "10",
           transition: "transform .3s ease",
           transform: {
             base: isOpen ? "translateX(0)" : "translateX(-100%)",

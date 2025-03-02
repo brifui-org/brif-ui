@@ -33,9 +33,8 @@
       "types": "./dist/patterns/index.d.ts",
       "import": "./dist/patterns/index.mjs"
     },
-    "./jsx": {
-      "types": "./dist/jsx/index.d.ts",
-      "import": "./dist/jsx/index.mjs"
+    "./helpers": {
+      "import": "./dist/helpers.mjs"
     }
   },
   "scripts": {

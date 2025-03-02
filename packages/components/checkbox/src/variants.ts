@@ -49,7 +49,7 @@ export const checkboxVariants = sva({
     size: {
       sm: {
         label: {
-          textStyle: "sm"
+          textStyle: "text.sm"
         },
         indicator: {
           w: "16px",
@@ -68,7 +68,7 @@ export const checkboxVariants = sva({
       },
       md: {
         label: {
-          textStyle: "md"
+          textStyle: "text.md"
         },
         indicator: {
           w: "20px",
@@ -87,7 +87,7 @@ export const checkboxVariants = sva({
       },
       lg: {
         label: {
-          textStyle: "lg"
+          textStyle: "text.lg"
         },
         indicator: {
           w: "24px",
