@@ -1,4 +1,5 @@
 import React from "react";
+import { Toaster } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
 import { Header } from "./header";
@@ -25,6 +26,7 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
         className={css({ flex: 1, display: "flex", flexDirection: "column" })}
       >
         {children}
+        <Toaster />
       </main>
     </div>
   );

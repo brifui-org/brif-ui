@@ -166,6 +166,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/button@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@brifui/button@npm:0.0.11"
+  dependencies:
+    "@brifui/styled": "npm:^0.0.10"
+    "@brifui/utils": "npm:^0.0.5"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+  checksum: 10c0/bedf83f075868a1a796c581116e2f744ee66a7d59637a74f67c8ba5bc522206776ffe7c4fac8a1700777885bdac090b56ebe8d042fdcdc9737c9bf3923842b76
+  languageName: node
+  linkType: hard
+
 "@brifui/button@npm:^0.0.12, @brifui/button@workspace:packages/components/button":
   version: 0.0.0-use.local
   resolution: "@brifui/button@workspace:packages/components/button"
@@ -277,6 +289,7 @@ __metadata:
     "@brifui/select": "npm:^0.0.12"
     "@brifui/table": "npm:^0.0.2"
     "@brifui/text": "npm:^0.0.3"
+    "@brifui/toast": "npm:^0.0.0"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@microsoft/api-extractor": "npm:^7.49.1"
     "@types/react": "npm:^19.0.5"
@@ -416,6 +429,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/styled@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "@brifui/styled@npm:0.0.10"
+  dependencies:
+    "@brifui/theme": "npm:^0.0.9"
+    "@pandacss/dev": "npm:^0.52.0"
+  peerDependencies:
+    "@pandacss/dev": ^0.52.0
+  checksum: 10c0/0bf21cef8bb618fe7a5576361f12ea00149b2016315ee98a56136197ae11a389b44f226712b8d881afc6a5442fe04ecb3c98bc30db972b4fef0321bea60c3419
+  languageName: node
+  linkType: hard
+
 "@brifui/styled@npm:^0.0.11, @brifui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@brifui/styled@workspace:packages/styled"
@@ -493,6 +518,45 @@ __metadata:
     deepmerge: "npm:^4.3.1"
     escalade: "npm:^3.2.0"
     eslint: "npm:^9.15.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/theme@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@brifui/theme@npm:0.0.9"
+  dependencies:
+    "@brifui/postcss": "npm:^0.0.6"
+    "@pandacss/dev": "npm:^0.52.0"
+    color: "npm:^4.2.3"
+    deepmerge: "npm:^4.3.1"
+    escalade: "npm:^3.2.0"
+  checksum: 10c0/4d256d50f3f31f2953d425a7007261571967d0511cf18452eb2f53d0c7abab3c7654a5d9b153fe527bda5037d10aef0322d92d60c514140e5725bd6ed0042168
+  languageName: node
+  linkType: hard
+
+"@brifui/toast@npm:^0.0.0, @brifui/toast@workspace:packages/components/toast":
+  version: 0.0.0-use.local
+  resolution: "@brifui/toast@workspace:packages/components/toast"
+  dependencies:
+    "@brifui/button": "npm:^0.0.11"
+    "@brifui/eslint-config": "npm:^0.0.3"
+    "@brifui/mocks": "npm:^0.0.4"
+    "@brifui/styled": "npm:^0.0.11"
+    "@brifui/typescript-config": "npm:^0.0.3"
+    "@brifui/utils": "npm:^0.0.5"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    lucide-react: "npm:^0.475.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    sonner: "npm:^2.0.1"
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft
@@ -11052,6 +11116,16 @@ __metadata:
     ip-address: "npm:^9.0.5"
     smart-buffer: "npm:^4.2.0"
   checksum: 10c0/d54a52bf9325165770b674a67241143a3d8b4e4c8884560c4e0e078aace2a728dffc7f70150660f51b85797c4e1a3b82f9b7aa25e0a0ceae1a243365da5c51a7
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "sonner@npm:2.0.1"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+    react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+  checksum: 10c0/29e15324109ac19e0c9f2236ad695e2791fcf183264e5a4ffc72acfff28894fb8e80de65a1bf40bcea881fe4d06481b3c533ee3dc6ffafa80a44912e2ebc5cf6
   languageName: node
   linkType: hard
 

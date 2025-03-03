@@ -4,6 +4,7 @@ export const inputVariants = sva({
   slots: ["root", "input", "prefix", "suffix"],
   base: {
     root: {
+      overflow: "hidden",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
