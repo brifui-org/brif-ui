@@ -1,6 +1,6 @@
 {
   "name": "@brifui/input",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Input component - Brif UI",
   "sideEffects": false,
   "type": "module",

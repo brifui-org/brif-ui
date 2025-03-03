@@ -275,7 +275,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.16, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.17, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
@@ -285,11 +285,11 @@ __metadata:
     "@brifui/checkbox": "npm:^0.0.11"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/form": "npm:^0.0.12"
-    "@brifui/input": "npm:^0.0.12"
+    "@brifui/input": "npm:^0.0.13"
     "@brifui/select": "npm:^0.0.12"
     "@brifui/table": "npm:^0.0.2"
     "@brifui/text": "npm:^0.0.3"
-    "@brifui/toast": "npm:^0.0.0"
+    "@brifui/toast": "npm:^0.0.1"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@microsoft/api-extractor": "npm:^7.49.1"
     "@types/react": "npm:^19.0.5"
@@ -345,7 +345,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/input@npm:^0.0.12, @brifui/input@workspace:packages/components/input":
+"@brifui/input@npm:^0.0.13, @brifui/input@workspace:packages/components/input":
   version: 0.0.0-use.local
   resolution: "@brifui/input@workspace:packages/components/input"
   dependencies:
@@ -535,7 +535,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@brifui/toast@npm:^0.0.0, @brifui/toast@workspace:packages/components/toast":
+"@brifui/toast@npm:^0.0.1, @brifui/toast@workspace:packages/components/toast":
   version: 0.0.0-use.local
   resolution: "@brifui/toast@workspace:packages/components/toast"
   dependencies:
@@ -5904,7 +5904,7 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@brifui/cli": "npm:^0.0.9"
-    "@brifui/components": "npm:^0.0.16"
+    "@brifui/components": "npm:^0.0.17"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.11"
     "@brifui/theme": "npm:^0.0.10"

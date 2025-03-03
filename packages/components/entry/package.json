@@ -1,6 +1,6 @@
 {
   "name": "@brifui/components",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Brif UI components",
   "sideEffects": false,
   "type": "module",
@@ -33,11 +33,11 @@
     "@brifui/card": "^0.0.11",
     "@brifui/checkbox": "^0.0.11",
     "@brifui/form": "^0.0.12",
-    "@brifui/input": "^0.0.12",
+    "@brifui/input": "^0.0.13",
     "@brifui/select": "^0.0.12",
     "@brifui/table": "^0.0.2",
     "@brifui/text": "^0.0.3",
-    "@brifui/toast": "^0.0.0"
+    "@brifui/toast": "^0.0.1"
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
