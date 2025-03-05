@@ -1,9 +1,8 @@
 "use client";
 
-import { Avatar } from "@/components/_avatar";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Button, Card, Input } from "@brifui/components";
+import { Avatar, Button, Card, Input } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
 const components: string[] = [
