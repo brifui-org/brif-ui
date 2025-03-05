@@ -1,7 +1,7 @@
 "use client";
 
-import { Avatar } from "@/components/_avatar";
 import { Page } from "@/components/page";
+import { Avatar } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
 export default function AvatarDocs() {
