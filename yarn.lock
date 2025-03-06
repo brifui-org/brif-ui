@@ -307,7 +307,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.18, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.19, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
@@ -320,7 +320,7 @@ __metadata:
     "@brifui/form": "npm:^0.0.12"
     "@brifui/input": "npm:^0.0.13"
     "@brifui/select": "npm:^0.0.12"
-    "@brifui/spinner": "npm:^0.0.0"
+    "@brifui/spinner": "npm:^0.0.1"
     "@brifui/table": "npm:^0.0.2"
     "@brifui/text": "npm:^0.0.3"
     "@brifui/toast": "npm:^0.0.1"
@@ -463,7 +463,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/spinner@npm:^0.0.0, @brifui/spinner@workspace:packages/components/spinner":
+"@brifui/spinner@npm:^0.0.1, @brifui/spinner@workspace:packages/components/spinner":
   version: 0.0.0-use.local
   resolution: "@brifui/spinner@workspace:packages/components/spinner"
   dependencies:
@@ -6023,7 +6023,7 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@brifui/cli": "npm:^0.0.9"
-    "@brifui/components": "npm:^0.0.18"
+    "@brifui/components": "npm:^0.0.19"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.11"
     "@brifui/theme": "npm:^0.0.10"

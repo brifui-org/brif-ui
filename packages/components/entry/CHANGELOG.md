@@ -1,5 +1,14 @@
 # @brifui/components
 
+## 0.0.19
+
+### Patch Changes
+
+- [#108](https://github.com/brifui-org/brif-ui/pull/108) [`e007ca5`](https://github.com/brifui-org/brif-ui/commit/e007ca569989360a0c0a9b6cb254798c5853f064) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - released spinner
+
+- Updated dependencies [[`e007ca5`](https://github.com/brifui-org/brif-ui/commit/e007ca569989360a0c0a9b6cb254798c5853f064)]:
+  - @brifui/spinner@0.0.1
+
 ## 0.0.18
 
 ### Patch Changes
