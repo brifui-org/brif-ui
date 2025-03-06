@@ -4,6 +4,8 @@ import { Page } from "@/components/page";
 import { Avatar } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { loading, size } from "./snippet";
+
 export default function AvatarDocs() {
   return (
     <Page>
@@ -32,7 +34,7 @@ export default function AvatarDocs() {
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{size}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Loading">
@@ -58,7 +60,7 @@ export default function AvatarDocs() {
             src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-1170x780.jpg"
           />
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{loading}</Page.CodePreview>
       </Page.Section>
     </Page>
   );
