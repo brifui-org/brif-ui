@@ -5,6 +5,8 @@ import { ArrowLeft, ArrowRight, Atom } from "lucide-react";
 import { Button } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { disabled, prefixAndSuffix, size, variants } from "./snippet";
+
 export default function ButtonDocs() {
   return (
     <Page>
@@ -31,7 +33,7 @@ export default function ButtonDocs() {
           <Button size="md">Solid</Button>
           <Button size="lg">Solid</Button>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{size}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Variants" description="The default variant is solid">
@@ -51,7 +53,7 @@ export default function ButtonDocs() {
           <Button variant="error">Error</Button>
           <Button variant="warning">Warning</Button>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{variants}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Disabled">
@@ -79,7 +81,7 @@ export default function ButtonDocs() {
             Warning
           </Button>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{disabled}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Prefix and suffix">
@@ -115,7 +117,7 @@ export default function ButtonDocs() {
             </Button.Suffix>
           </Button>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{prefixAndSuffix}</Page.CodePreview>
       </Page.Section>
     </Page>
   );

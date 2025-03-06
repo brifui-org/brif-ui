@@ -1,9 +1,10 @@
 "use client";
 
 import { Page } from "@/components/page";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Accordion } from "@brifui/components";
 import { css } from "@brifui/styled/css";
+
+import { size } from "./snippet";
 
 export default function AccordionDocs() {
   return (
@@ -82,7 +83,7 @@ export default function AccordionDocs() {
             </Accordion.Item>
           </Accordion.Root>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{size}</Page.CodePreview>
       </Page.Section>
     </Page>
   );

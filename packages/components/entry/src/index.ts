@@ -9,3 +9,4 @@ export * from "@brifui/text";
 export * from "@brifui/table";
 export * from "@brifui/toast";
 export * from "@brifui/avatar";
+export * from "@brifui/spinner";

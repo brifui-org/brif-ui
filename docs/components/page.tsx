@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Accordion, Card } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
-import { cq } from "@brifui/styled/patterns";
 
 const Title: React.FC<{
   title: string;
@@ -116,7 +117,9 @@ const Preview: React.FC<{
   );
 };
 
-const CodePreview: React.FC<React.PropsWithChildren> = ({ children }) => {
+const CodePreview: React.FC<{ children?: string }> = ({
+  children = "(num) => num + 1"
+}) => {
   return (
     <Accordion.Root
       className={css({ boxShadow: "component.lg", borderTopRadius: 0 })}
@@ -125,7 +128,18 @@ const CodePreview: React.FC<React.PropsWithChildren> = ({ children }) => {
     >
       <Accordion.Item value="codepreview">
         <Accordion.Trigger>Show code</Accordion.Trigger>
-        <Accordion.Content>{children}</Accordion.Content>
+        <Accordion.Content>
+          <SyntaxHighlighter
+            customStyle={{
+              background: "transparent"
+            }}
+            showLineNumbers
+            language="typescript"
+            style={docco}
+          >
+            {children}
+          </SyntaxHighlighter>
+        </Accordion.Content>
       </Accordion.Item>
     </Accordion.Root>
   );
