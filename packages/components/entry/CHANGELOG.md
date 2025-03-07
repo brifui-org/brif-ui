@@ -1,5 +1,16 @@
 # @brifui/components
 
+## 0.0.23
+
+### Patch Changes
+
+- [#116](https://github.com/brifui-org/brif-ui/pull/116) [`d18c505`](https://github.com/brifui-org/brif-ui/commit/d18c5050016c2288eef733b27930752be46b216b) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added codeblock
+
+- Updated dependencies [[`d18c505`](https://github.com/brifui-org/brif-ui/commit/d18c5050016c2288eef733b27930752be46b216b)]:
+  - @brifui/codeblock@0.0.1
+  - @brifui/tooltip@0.0.2
+  - @brifui/sidebar@0.0.3
+
 ## 0.0.22
 
 ### Patch Changes
