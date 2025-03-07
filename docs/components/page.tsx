@@ -100,7 +100,13 @@ const Preview: React.FC<{
   className?: string;
 }> = ({ children, className }) => {
   return (
-    <Card className={css({ borderBottomRadius: 0, borderBottomWidth: 0 })}>
+    <Card
+      className={css({
+        borderBottomRadius: 0,
+        borderBottomWidth: 0,
+        overflow: "hidden"
+      })}
+    >
       <Card.Body
         className={cx(
           css({
@@ -128,10 +134,13 @@ const CodePreview: React.FC<{ children?: string }> = ({
     >
       <Accordion.Item value="codepreview">
         <Accordion.Trigger>Show code</Accordion.Trigger>
-        <Accordion.Content>
+        <Accordion.Content
+          css={css.raw({ maxH: "500px", maxW: "100%", overflow: "auto" })}
+        >
           <SyntaxHighlighter
             customStyle={{
-              background: "transparent"
+              background: "transparent",
+              overflowX: "visible"
             }}
             showLineNumbers
             language="typescript"

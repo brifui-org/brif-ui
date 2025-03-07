@@ -1,72 +1,84 @@
 "use client";
 
 import React from "react";
-import { css, cx } from "@brifui/styled/css";
-import { findChildrenByType } from "@brifui/utils";
+import { css as _css, cx } from "@brifui/styled/css";
+import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { TableProvider, useTableStyles } from "./context";
 import { TableVariantProps, tableVariants } from "./variants";
 
-export type TableCellProps = React.ComponentPropsWithRef<"td">;
-export const Cell: React.FC<TableCellProps> = ({ className, ...props }) => {
+export type TableCellProps = WithCssProps<React.ComponentPropsWithRef<"td">>;
+export const Cell: React.FC<TableCellProps> = ({
+  css,
+  className,
+  ...props
+}) => {
   const { size, striped, interactive } = useTableStyles();
-  const classes = tableVariants({ size, striped, interactive });
-  return <td className={cx(classes.cell, className)} {...props} />;
+  const raw = tableVariants.raw({ size, striped, interactive });
+  return <td className={cx(_css(raw.cell, css), className)} {...props} />;
 };
 
-export type TableHCellProps = React.ComponentPropsWithRef<"th">;
-export const HCell: React.FC<TableHCellProps> = ({ className, ...props }) => {
+export type TableHCellProps = WithCssProps<React.ComponentPropsWithRef<"th">>;
+export const HCell: React.FC<TableHCellProps> = ({
+  css,
+  className,
+  ...props
+}) => {
   const { size, striped, interactive } = useTableStyles();
-  const classes = tableVariants({ size, striped, interactive });
-  return <th className={cx(classes.hcell, className)} {...props} />;
+  const raw = tableVariants.raw({ size, striped, interactive });
+  return <th className={cx(_css(raw.hcell, css), className)} {...props} />;
 };
 
-export type TableRowProps = React.ComponentPropsWithRef<"tr">;
-export const Row: React.FC<TableRowProps> = ({ className, ...props }) => {
+export type TableRowProps = WithCssProps<React.ComponentPropsWithRef<"tr">>;
+export const Row: React.FC<TableRowProps> = ({ css, className, ...props }) => {
   const { size, striped, interactive } = useTableStyles();
-  const classes = tableVariants({ size, striped, interactive });
-  return <tr className={cx(classes.row, className)} {...props} />;
+  const raw = tableVariants.raw({ size, striped, interactive });
+  return <tr className={cx(_css(raw.row, css), className)} {...props} />;
 };
 
-export type TableBodyProps = React.ComponentPropsWithRef<"tbody">;
+export type TableBodyProps = WithCssProps<React.ComponentPropsWithRef<"tbody">>;
 export const Body: React.FC<TableBodyProps> = ({
+  css,
   className,
   children,
   ...props
 }) => {
   const { size, striped, interactive } = useTableStyles();
-  const classes = tableVariants({ size, striped, interactive });
+  const raw = tableVariants.raw({ size, striped, interactive });
 
   const [rows] = findChildrenByType(children, Row);
 
   return (
-    <tbody className={cx(classes.body, className)} {...props}>
+    <tbody className={cx(_css(raw.body, css), className)} {...props}>
       {rows}
     </tbody>
   );
 };
 
-export type TableHeadProps = React.ComponentPropsWithRef<"thead">;
+export type TableHeadProps = WithCssProps<React.ComponentPropsWithRef<"thead">>;
 export const Head: React.FC<TableHeadProps> = ({
+  css,
   className,
   children,
   ...props
 }) => {
   const { size, striped, interactive } = useTableStyles();
-  const classes = tableVariants({ size, striped, interactive });
+  const raw = tableVariants.raw({ size, striped, interactive });
 
   const [rows] = findChildrenByType(children, Row);
 
   return (
-    <thead className={cx(classes.head, className)} {...props}>
+    <thead className={cx(_css(raw.head, css), className)} {...props}>
       {rows}
     </thead>
   );
 };
 
-export type TableProps = TableVariantProps &
-  React.ComponentPropsWithRef<"table">;
+export type TableProps = WithCssProps<
+  TableVariantProps & React.ComponentPropsWithRef<"table">
+>;
 const Root: React.FC<TableProps> = ({
+  css,
   className,
   children,
   size,
@@ -76,22 +88,22 @@ const Root: React.FC<TableProps> = ({
 }) => {
   const [heads, bodies] = findChildrenByType(children, Head, Body);
 
-  const classes = tableVariants({ size, striped, interactive });
+  const raw = tableVariants.raw({ size, striped, interactive });
 
   return (
     <TableProvider size={size} striped={striped} interactive={interactive}>
-      <div className={cx(classes.root, className)} {...props}>
-        <table className={classes.table}>
+      <div className={cx(_css(raw.root, css), className)} {...props}>
+        <table className={_css(raw.table)}>
           {heads}
           <Body
-            className={css({
+            className={_css({
               h: "12px"
             })}
             aria-hidden="true"
           />
           {bodies}
           <Body
-            className={css({
+            className={_css({
               h: "12px"
             })}
             aria-hidden="true"

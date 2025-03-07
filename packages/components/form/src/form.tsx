@@ -2,39 +2,39 @@
 
 import React from "react";
 import { Form as BaseForm } from "radix-ui";
-import { cx } from "@brifui/styled/css";
-import { findChildrenByType } from "@brifui/utils";
+import { css as _css, cx } from "@brifui/styled/css";
+import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
-import { FormProvider, useFormStyles } from "./context";
+import { FormProvider } from "./context";
 import { FormVariantProps, formVariants } from "./variants";
 
-export type FormErrorMessageProps = React.ComponentPropsWithRef<"span">;
+export type FormErrorMessageProps = WithCssProps<
+  React.ComponentPropsWithRef<"span">
+>;
 const ErrorMessage: React.FC<FormErrorMessageProps> = ({
+  css,
   className,
   ...props
 }) => {
-  const {} = useFormStyles();
+  const raw = formVariants.raw({});
 
-  const classes = formVariants({});
-
-  return <span className={cx(classes.error, className)} {...props} />;
+  return <span className={cx(_css(raw.error, css), className)} {...props} />;
 };
 
-export type FormSubmitProps = BaseForm.FormSubmitProps;
+export type FormSubmitProps = WithCssProps<BaseForm.FormSubmitProps>;
 const Submit: React.FC<FormSubmitProps> = ({
   asChild = true,
+  css,
   className,
   children,
   ...props
 }) => {
-  const {} = useFormStyles();
-
-  const classes = formVariants({});
+  const raw = formVariants.raw({});
 
   return (
     <BaseForm.Submit
       asChild={asChild}
-      className={cx(classes.label, className)}
+      className={cx(_css(raw.submit, css), className)}
       {...props}
     >
       {children}
@@ -42,66 +42,70 @@ const Submit: React.FC<FormSubmitProps> = ({
   );
 };
 
-export type FormLabelProps = BaseForm.FormLabelProps;
-const Label: React.FC<FormLabelProps> = ({ className, children, ...props }) => {
-  const {} = useFormStyles();
-
-  const classes = formVariants({});
+export type FormLabelProps = WithCssProps<BaseForm.FormLabelProps>;
+const Label: React.FC<FormLabelProps> = ({
+  css,
+  className,
+  children,
+  ...props
+}) => {
+  const raw = formVariants.raw({});
 
   return (
-    <BaseForm.Label className={cx(classes.label, className)} {...props}>
+    <BaseForm.Label className={cx(_css(raw.label, css), className)} {...props}>
       {children}
     </BaseForm.Label>
   );
 };
 
-export type FormOptinalTextProps = React.ComponentPropsWithRef<"span">;
+export type FormOptinalTextProps = WithCssProps<
+  React.ComponentPropsWithRef<"span">
+>;
 const OptionalText: React.FC<FormLabelProps> = ({
+  css,
   className,
   children,
   ...props
 }) => {
-  const {} = useFormStyles();
-
-  const classes = formVariants({});
+  const raw = formVariants.raw({});
 
   return (
-    <span className={cx(classes.optionalText, className)} {...props}>
+    <span className={cx(_css(raw.optionalText, css), className)} {...props}>
       {children}
     </span>
   );
 };
 
-export type FormControlProps = BaseForm.FormControlProps;
+export type FormControlProps = WithCssProps<BaseForm.FormControlProps>;
 const Control: React.FC<FormControlProps> = ({
+  css,
   className,
   asChild = true,
   ...props
 }) => {
-  const {} = useFormStyles();
-
-  const classes = formVariants({});
+  const raw = formVariants.raw({});
 
   return (
     <BaseForm.Control
       asChild={asChild}
-      className={cx(classes.control, className)}
+      className={cx(_css(raw.control, css), className)}
       {...props}
     />
   );
 };
 
-export type FormFieldProps = BaseForm.FormFieldProps & {
-  invalid?: boolean;
-};
+export type FormFieldProps = WithCssProps<
+  BaseForm.FormFieldProps & {
+    invalid?: boolean;
+  }
+>;
 const Field: React.FC<FormFieldProps> = ({
+  css,
   children,
   className,
   invalid = false,
   ...props
 }) => {
-  const {} = useFormStyles();
-
   const [labels, controls, errors, optionalTexts] = findChildrenByType(
     children,
     Label,
@@ -109,15 +113,15 @@ const Field: React.FC<FormFieldProps> = ({
     ErrorMessage,
     OptionalText
   );
-  const classes = formVariants({});
+  const raw = formVariants.raw({});
 
   return (
     <BaseForm.Field
       data-invalid={invalid || undefined}
-      className={cx(classes.field, "group", className)}
+      className={cx(_css(raw.field, css), "group", className)}
       {...props}
     >
-      <div className={classes.fieldLabelContainer}>
+      <div className={_css(raw.fieldLabelContainer)}>
         {labels}
         {optionalTexts}
       </div>
@@ -127,15 +131,15 @@ const Field: React.FC<FormFieldProps> = ({
   );
 };
 
-export type FormProps = FormVariantProps & BaseForm.FormProps;
-const Root: React.FC<FormProps> = ({ children, className, ...props }) => {
+export type FormProps = WithCssProps<FormVariantProps & BaseForm.FormProps>;
+const Root: React.FC<FormProps> = ({ css, children, className, ...props }) => {
   const [fields, submits, others] = findChildrenByType(children, Field, Submit);
 
-  const classes = formVariants({});
+  const raw = formVariants.raw({});
 
   return (
     <FormProvider>
-      <BaseForm.Root className={cx(classes.root, className)} {...props}>
+      <BaseForm.Root className={cx(_css(raw.root, css), className)} {...props}>
         {fields}
         {submits}
         {others}

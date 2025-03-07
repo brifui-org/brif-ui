@@ -31,6 +31,7 @@
   "module": "./src/index.ts",
   "dependencies": {
     "@brifui/styled": "^0.0.11",
+    "@brifui/types": "^0.0.7",
     "@brifui/utils": "^0.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

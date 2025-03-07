@@ -10,3 +10,4 @@ export * from "@brifui/table";
 export * from "@brifui/toast";
 export * from "@brifui/avatar";
 export * from "@brifui/spinner";
+export * from "@brifui/sidebar";
