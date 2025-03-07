@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev --concurrency 20",
+    "dev": "turbo dev --concurrency 30",
     "lint": "turbo lint",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",

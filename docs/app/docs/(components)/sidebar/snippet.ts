@@ -1,5 +1,5 @@
 export const defaultSnippet = `
-import { Avatar, Button, Sidebar } from "@brifui/components";
+import { Avatar, Button, Sidebar,useSidebar } from "@brifui/components"
 import {
   Backpack,
   Book,
@@ -10,10 +10,42 @@ import {
   MessageCircle,
   Settings,
   SquareTerminal
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { css } from "@brifui/styled/css";
+} from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { css } from "@brifui/styled/css"
+
+const CollapseButton = () => {
+  const { isOpen, setOpen } = useSidebar()
+
+  return (
+    <div
+      className={css({
+        p: 2
+      })}
+    >
+      <Button
+        size={isOpen ? "md" : "icon"}
+        fluid={isOpen}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        {isOpen && (
+          <>
+            <Button.Prefix>
+              <ChevronsLeft />
+            </Button.Prefix>
+            Collapse
+          </>
+        )}
+        {!isOpen && (
+          <>
+            <ChevronsRight />
+          </>
+        )}
+      </Button>
+    </div>
+  )
+}
 
 const Example = () => (
   <Sidebar.Root
@@ -50,25 +82,35 @@ const Example = () => (
       <Sidebar.Group>
         <Sidebar.GroupLabel>Platform</Sidebar.GroupLabel>
         <Sidebar.Menu>
-          <Sidebar.MenuItem as={Link} href="#" isSelected>
+          <Sidebar.MenuItem
+            as={Link}
+            isSelected
+            href="#"
+            label="Playground"
+          >
             <Sidebar.MenuItemIcon>
               <SquareTerminal />
             </Sidebar.MenuItemIcon>
             <Sidebar.MenuItemLabel>Playground</Sidebar.MenuItemLabel>
           </Sidebar.MenuItem>
-          <Sidebar.MenuItem as={Link} href="#">
+          <Sidebar.MenuItem as={Link} href="#" label="Models">
             <Sidebar.MenuItemIcon>
               <Bot />
             </Sidebar.MenuItemIcon>
             <Sidebar.MenuItemLabel>Models</Sidebar.MenuItemLabel>
           </Sidebar.MenuItem>
-          <Sidebar.MenuItem as={Link} href="#">
+          <Sidebar.MenuItem as={Link} href="#" label="Documentation">
             <Sidebar.MenuItemIcon>
               <Book />
             </Sidebar.MenuItemIcon>
             <Sidebar.MenuItemLabel>Documentation</Sidebar.MenuItemLabel>
           </Sidebar.MenuItem>
-          <Sidebar.MenuItem disabled as={Link} href="#">
+          <Sidebar.MenuItem
+            disabled
+            as={Link}
+            href="#"
+            label="Settings"
+          >
             <Sidebar.MenuItemIcon>
               <Settings />
             </Sidebar.MenuItemIcon>
@@ -80,7 +122,11 @@ const Example = () => (
       <Sidebar.Group>
         <Sidebar.GroupLabel>Projects</Sidebar.GroupLabel>
         <Sidebar.Menu>
-          <Sidebar.MenuItem as={Link} href="#">
+          <Sidebar.MenuItem
+            as={Link}
+            href="#"
+            label="Design Engineering"
+          >
             <Sidebar.MenuItemIcon>
               <Component />
             </Sidebar.MenuItemIcon>
@@ -88,7 +134,11 @@ const Example = () => (
               Design Engineering
             </Sidebar.MenuItemLabel>
           </Sidebar.MenuItem>
-          <Sidebar.MenuItem as={Link} href="#">
+          <Sidebar.MenuItem
+            as={Link}
+            href="#"
+            label="Sales & Marketing"
+          >
             <Sidebar.MenuItemIcon>
               <ChartArea />
             </Sidebar.MenuItemIcon>
@@ -96,19 +146,19 @@ const Example = () => (
               Sales & Marketing
             </Sidebar.MenuItemLabel>
           </Sidebar.MenuItem>
-          <Sidebar.MenuItem as={Link} href="#">
+          <Sidebar.MenuItem as={Link} href="#" label="Travel">
             <Sidebar.MenuItemIcon>
               <Backpack />
             </Sidebar.MenuItemIcon>
             <Sidebar.MenuItemLabel>Travel</Sidebar.MenuItemLabel>
           </Sidebar.MenuItem>
-          <Sidebar.MenuItem as={Link} href="#">
+          <Sidebar.MenuItem as={Link} href="#" label="Support">
             <Sidebar.MenuItemIcon>
               <LifeBuoy />
             </Sidebar.MenuItemIcon>
             <Sidebar.MenuItemLabel>Support</Sidebar.MenuItemLabel>
           </Sidebar.MenuItem>
-          <Sidebar.MenuItem as={Link} href="#">
+          <Sidebar.MenuItem as={Link} href="#" label="Feedback">
             <Sidebar.MenuItemIcon>
               <MessageCircle />
             </Sidebar.MenuItemIcon>
@@ -119,7 +169,7 @@ const Example = () => (
     </Sidebar.Body>
     <Sidebar.Footer>
       <Sidebar.Menu>
-        <Button fluid>Log out</Button>
+        <CollapseButton />
       </Sidebar.Menu>
     </Sidebar.Footer>
   </Sidebar.Root>

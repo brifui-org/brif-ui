@@ -6,6 +6,8 @@ import {
   Book,
   Bot,
   ChartArea,
+  ChevronsLeft,
+  ChevronsRight,
   Component,
   LifeBuoy,
   MessageCircle,
@@ -14,17 +16,49 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Avatar, Button, Sidebar } from "@brifui/components";
+import { Avatar, Button, Sidebar, useSidebar } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
 import { defaultSnippet } from "./snippet";
+
+const CollapseButton = () => {
+  const { isOpen, setOpen } = useSidebar();
+
+  return (
+    <div
+      className={css({
+        p: 2
+      })}
+    >
+      <Button
+        size={isOpen ? "md" : "icon"}
+        fluid={isOpen}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        {isOpen && (
+          <>
+            <Button.Prefix>
+              <ChevronsLeft />
+            </Button.Prefix>
+            Collapse
+          </>
+        )}
+        {!isOpen && (
+          <>
+            <ChevronsRight />
+          </>
+        )}
+      </Button>
+    </div>
+  );
+};
 
 export default function SidebarDocs() {
   return (
     <Page>
       <Page.Title
-        title="Toast"
-        description="A succinct message that is displayed temporarily."
+        title="Sidebar"
+        description="A composable, themeable and customizable sidebar component."
       />
 
       <Page.Section title="Default">
@@ -63,25 +97,35 @@ export default function SidebarDocs() {
               <Sidebar.Group>
                 <Sidebar.GroupLabel>Platform</Sidebar.GroupLabel>
                 <Sidebar.Menu>
-                  <Sidebar.MenuItem as={Link} href="#" isSelected>
+                  <Sidebar.MenuItem
+                    as={Link}
+                    isSelected
+                    href="#"
+                    label="Playground"
+                  >
                     <Sidebar.MenuItemIcon>
                       <SquareTerminal />
                     </Sidebar.MenuItemIcon>
                     <Sidebar.MenuItemLabel>Playground</Sidebar.MenuItemLabel>
                   </Sidebar.MenuItem>
-                  <Sidebar.MenuItem as={Link} href="#">
+                  <Sidebar.MenuItem as={Link} href="#" label="Models">
                     <Sidebar.MenuItemIcon>
                       <Bot />
                     </Sidebar.MenuItemIcon>
                     <Sidebar.MenuItemLabel>Models</Sidebar.MenuItemLabel>
                   </Sidebar.MenuItem>
-                  <Sidebar.MenuItem as={Link} href="#">
+                  <Sidebar.MenuItem as={Link} href="#" label="Documentation">
                     <Sidebar.MenuItemIcon>
                       <Book />
                     </Sidebar.MenuItemIcon>
                     <Sidebar.MenuItemLabel>Documentation</Sidebar.MenuItemLabel>
                   </Sidebar.MenuItem>
-                  <Sidebar.MenuItem disabled as={Link} href="#">
+                  <Sidebar.MenuItem
+                    disabled
+                    as={Link}
+                    href="#"
+                    label="Settings"
+                  >
                     <Sidebar.MenuItemIcon>
                       <Settings />
                     </Sidebar.MenuItemIcon>
@@ -93,7 +137,11 @@ export default function SidebarDocs() {
               <Sidebar.Group>
                 <Sidebar.GroupLabel>Projects</Sidebar.GroupLabel>
                 <Sidebar.Menu>
-                  <Sidebar.MenuItem as={Link} href="#">
+                  <Sidebar.MenuItem
+                    as={Link}
+                    href="#"
+                    label="Design Engineering"
+                  >
                     <Sidebar.MenuItemIcon>
                       <Component />
                     </Sidebar.MenuItemIcon>
@@ -101,7 +149,11 @@ export default function SidebarDocs() {
                       Design Engineering
                     </Sidebar.MenuItemLabel>
                   </Sidebar.MenuItem>
-                  <Sidebar.MenuItem as={Link} href="#">
+                  <Sidebar.MenuItem
+                    as={Link}
+                    href="#"
+                    label="Sales & Marketing"
+                  >
                     <Sidebar.MenuItemIcon>
                       <ChartArea />
                     </Sidebar.MenuItemIcon>
@@ -109,19 +161,19 @@ export default function SidebarDocs() {
                       Sales & Marketing
                     </Sidebar.MenuItemLabel>
                   </Sidebar.MenuItem>
-                  <Sidebar.MenuItem as={Link} href="#">
+                  <Sidebar.MenuItem as={Link} href="#" label="Travel">
                     <Sidebar.MenuItemIcon>
                       <Backpack />
                     </Sidebar.MenuItemIcon>
                     <Sidebar.MenuItemLabel>Travel</Sidebar.MenuItemLabel>
                   </Sidebar.MenuItem>
-                  <Sidebar.MenuItem as={Link} href="#">
+                  <Sidebar.MenuItem as={Link} href="#" label="Support">
                     <Sidebar.MenuItemIcon>
                       <LifeBuoy />
                     </Sidebar.MenuItemIcon>
                     <Sidebar.MenuItemLabel>Support</Sidebar.MenuItemLabel>
                   </Sidebar.MenuItem>
-                  <Sidebar.MenuItem as={Link} href="#">
+                  <Sidebar.MenuItem as={Link} href="#" label="Feedback">
                     <Sidebar.MenuItemIcon>
                       <MessageCircle />
                     </Sidebar.MenuItemIcon>
@@ -132,7 +184,7 @@ export default function SidebarDocs() {
             </Sidebar.Body>
             <Sidebar.Footer>
               <Sidebar.Menu>
-                <Button fluid>Log out</Button>
+                <CollapseButton />
               </Sidebar.Menu>
             </Sidebar.Footer>
           </Sidebar.Root>
