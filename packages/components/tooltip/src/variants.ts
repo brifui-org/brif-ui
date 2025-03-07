@@ -10,7 +10,8 @@ export const tooltipVariants = sva({
       transformOrigin: "var(--radix-tooltip-content-transform-origin)",
       textStyle: "text.sm",
       border: "2px solid {colors.border}",
-      borderRadius: "component.md"
+      borderRadius: "component.md",
+      fontWeight: "medium"
     }
   },
   variants: {
@@ -22,7 +23,7 @@ export const tooltipVariants = sva({
         content: { bg: "warning", color: "warning.foreground" }
       },
       error: {
-        content: { bg: "error", color: "error.foreground" }
+        content: { bg: "error" }
       }
     }
   },

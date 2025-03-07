@@ -12,3 +12,4 @@ export * from "@brifui/avatar";
 export * from "@brifui/spinner";
 export * from "@brifui/sidebar";
 export * from "@brifui/tooltip";
+export * from "@brifui/codeblock";

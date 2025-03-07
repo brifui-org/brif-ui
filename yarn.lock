@@ -297,6 +297,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/codeblock@npm:^0.0.0, @brifui/codeblock@workspace:packages/components/codeblock":
+  version: 0.0.0-use.local
+  resolution: "@brifui/codeblock@workspace:packages/components/codeblock"
+  dependencies:
+    "@brifui/eslint-config": "npm:^0.0.3"
+    "@brifui/mocks": "npm:^0.0.4"
+    "@brifui/styled": "npm:^0.0.11"
+    "@brifui/typescript-config": "npm:^0.0.3"
+    "@brifui/utils": "npm:^0.0.6"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    "@types/react-syntax-highlighter": "npm:^15.5.13"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    react-syntax-highlighter: "npm:^15.6.1"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@brifui/components@npm:^0.0.22, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
@@ -306,6 +331,7 @@ __metadata:
     "@brifui/button": "npm:^0.0.13"
     "@brifui/card": "npm:^0.0.12"
     "@brifui/checkbox": "npm:^0.0.12"
+    "@brifui/codeblock": "npm:^0.0.0"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/form": "npm:^0.0.13"
     "@brifui/input": "npm:^0.0.14"

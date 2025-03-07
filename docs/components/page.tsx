@@ -15,7 +15,10 @@ const Title: React.FC<{
   return (
     <div
       className={css({
-        p: "12",
+        p: {
+          base: "6",
+          lg: "12"
+        },
         borderBottomWidth: "1px",
         borderBottomStyle: "solid",
         borderBottomColor: !bordered ? "transparent" : "border.muted"
@@ -25,7 +28,11 @@ const Title: React.FC<{
         className={css({
           fontFamily: "heading",
           fontWeight: "bold",
-          fontSize: "xxx-large"
+          textStyle: {
+            base: "heading.4xl",
+            lg: "heading.5xl"
+          },
+          mb: ".2em"
         })}
       >
         {title}
@@ -33,7 +40,10 @@ const Title: React.FC<{
       <p
         className={css({
           fontWeight: "medium",
-          fontSize: "larger",
+          textStyle: {
+            base: "text.lg",
+            lg: "text.xl"
+          },
           color: "text.muted"
         })}
       >
@@ -54,7 +64,10 @@ const Section: React.FC<{
     <div
       className={cx(
         css({
-          p: 12,
+          p: {
+            base: "6",
+            lg: "12"
+          },
           gap: 6,
           display: "flex",
           flexDirection: "column",
