@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
-    "@brifui/types": "^0.0.7",
+    "@brifui/types": "^0.0.8",
     "@brifui/typescript-config": "^0.0.3",
     "@types/color": "^4",
     "clean-package": "^2.2.0",

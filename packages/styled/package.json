@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
-    "@brifui/types": "^0.0.7",
+    "@brifui/types": "^0.0.8",
     "@brifui/typescript-config": "^0.0.3",
     "eslint": "^9.15.0",
     "typescript": "5.5.4"
