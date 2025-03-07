@@ -88,7 +88,7 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
           target="_blank"
         >
           <Button size="sm" variant="outline">
-            {download || "Npm"}
+            {download || "npm"}
             <Button.Suffix>
               <SiNpm size={20} />
             </Button.Suffix>

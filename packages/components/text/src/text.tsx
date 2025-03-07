@@ -9,7 +9,7 @@ export interface TextProps
   as?: React.ElementType;
 }
 export const Text: React.FC<WithCssProps<TextProps & TextVariantProps>> = ({
-  as: Tag = "div",
+  as: Tag = "span",
   css,
   type,
   className,
