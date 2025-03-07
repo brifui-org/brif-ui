@@ -1,12 +1,11 @@
 {
-  "name": "@brifui/components",
-  "version": "0.0.19",
-  "description": "Brif UI components",
+  "name": "@brifui/sidebar",
+  "version": "0.0.0",
+  "description": "Sidebar component - Brif UI",
   "sideEffects": false,
   "type": "module",
   "keywords": [
-    "box",
-    "flexbox",
+    "sidebar",
     "component",
     "ui"
   ],
@@ -19,42 +18,38 @@
     "access": "public"
   },
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
     "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "lint": "eslint ."
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/accordion": "^0.0.11",
-    "@brifui/avatar": "^0.0.1",
-    "@brifui/button": "^0.0.12",
-    "@brifui/card": "^0.0.11",
-    "@brifui/checkbox": "^0.0.11",
-    "@brifui/form": "^0.0.12",
-    "@brifui/input": "^0.0.13",
-    "@brifui/select": "^0.0.12",
-    "@brifui/sidebar": "^0.0.0",
-    "@brifui/spinner": "^0.0.1",
-    "@brifui/table": "^0.0.2",
-    "@brifui/text": "^0.0.3",
-    "@brifui/toast": "^0.0.1"
+    "@brifui/styled": "^0.0.11",
+    "@brifui/utils": "^0.0.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
+    "@brifui/mocks": "^0.0.4",
     "@brifui/typescript-config": "^0.0.3",
-    "@microsoft/api-extractor": "^7.49.1",
-    "@types/react": "^19.0.5",
-    "@types/react-dom": "^19.0.3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "^9.15.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "global-jsdom": "^26.0.0",
+    "jsdom": "^26.0.0",
     "typescript": "5.5.4"
   },
   "tsup": {
-    "minify": false,
     "clean": true,
     "target": "es2019",
     "format": [

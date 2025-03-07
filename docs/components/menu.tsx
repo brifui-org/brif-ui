@@ -92,6 +92,11 @@ const MENU = [
         key: "spinner",
         title: "Spinner",
         href: "/docs/spinner"
+      },
+      {
+        key: "sidebar",
+        title: "Sidebar",
+        href: "/docs/sidebar"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }
@@ -186,21 +191,16 @@ export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
           py: 12,
           w: "fit-content",
           bg: "background",
-          minH: "100vh",
+          height: "calc(100vh - 59px)",
+          overflowY: "auto",
           borderRight: "1px solid {colors.border}",
           display: "block",
           position: {
             base: "fixed",
-            lg: "relative"
+            lg: "sticky"
           },
-          top: {
-            base: 59,
-            lg: "unset"
-          },
-          left: {
-            base: 0,
-            lg: "unset"
-          },
+          top: 59,
+          left: 0,
           zIndex: "10",
           transition: "transform .3s ease",
           transform: {

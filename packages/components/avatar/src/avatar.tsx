@@ -1,14 +1,17 @@
 import React from "react";
-import { cx } from "@brifui/styled/css";
+import { css as _css, cx } from "@brifui/styled/css";
+import { WithCssProps } from "@brifui/utils";
 
 import { AvatarVariantProps, avatarVariants } from "./variants";
 
-export type AvatarProps = AvatarVariantProps &
-  React.ComponentPropsWithRef<"div"> & {
-    size?: number;
-    src?: string;
-    loading?: React.ComponentPropsWithRef<"img">["loading"];
-  };
+export type AvatarProps = WithCssProps<
+  AvatarVariantProps &
+    React.ComponentPropsWithRef<"div"> & {
+      size?: number;
+      src?: string;
+      loading?: React.ComponentPropsWithRef<"img">["loading"];
+    }
+>;
 
 export const Avatar: React.FC<AvatarProps> = ({
   src,
@@ -16,11 +19,12 @@ export const Avatar: React.FC<AvatarProps> = ({
   loading = "eager",
   className,
   isLoading,
+  css,
   ...props
 }) => {
   const imgRef = React.useRef<HTMLImageElement>(null);
   const [isInternalLoading, setLoading] = React.useState<boolean>(true);
-  const classes = avatarVariants({ isLoading: isLoading ?? isInternalLoading });
+  const raw = avatarVariants.raw({ isLoading: isLoading ?? isInternalLoading });
 
   React.useEffect(() => {
     if (imgRef.current?.complete) {
@@ -35,7 +39,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           "--size": `${size}px`
         } as React.CSSProperties
       }
-      className={cx(classes.root, className)}
+      className={cx(_css(raw.root, css), className)}
       {...props}
     >
       <img
@@ -46,7 +50,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         width={size}
         height={size}
         loading={loading}
-        className={classes.img}
+        className={_css(raw.img)}
         onLoad={() => {
           setLoading(false);
         }}

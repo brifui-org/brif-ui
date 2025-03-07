@@ -3,54 +3,61 @@
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import { Accordion as BaseAccordion } from "radix-ui";
-import { cx } from "@brifui/styled/css";
-import { findChildrenByType } from "@brifui/utils";
+import { css as _css, cx } from "@brifui/styled/css";
+import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { AccordionProvider, useAccordion } from "./context";
 import { AccordionVariantProps, accordionVariants } from "./variants";
 
-export type AccordionContentProps = BaseAccordion.AccordionContentProps;
+export type AccordionContentProps =
+  WithCssProps<BaseAccordion.AccordionContentProps>;
 const Content: React.FC<AccordionContentProps> = ({
   className,
   children,
+  css,
   ...props
 }) => {
   const { size } = useAccordion();
-  const classes = accordionVariants({ size });
+  const raw = accordionVariants.raw({ size });
 
   return (
-    <BaseAccordion.Content
-      className={cx(classes.contentContainer, className)}
-      {...props}
-    >
-      <div className={classes.content}>{children}</div>
+    <BaseAccordion.Content className={_css(raw.contentContainer)} {...props}>
+      <div className={cx(_css(raw.content, css), className)}>{children}</div>
     </BaseAccordion.Content>
   );
 };
 
-export type AccordionIconProps = React.ComponentPropsWithRef<"div">;
-const Icon: React.FC<AccordionIconProps> = ({ className, ...props }) => {
+export type AccordionIconProps = WithCssProps<
+  React.ComponentPropsWithRef<"div">
+>;
+const Icon: React.FC<AccordionIconProps> = ({ css, className, ...props }) => {
   const { size } = useAccordion();
-  const classes = accordionVariants({ size });
+  const raw = accordionVariants.raw({ size });
 
   return (
-    <div data-item="icon" className={cx(classes.icon, className)} {...props} />
+    <div
+      data-item="icon"
+      className={cx(_css(raw.icon, css), className)}
+      {...props}
+    />
   );
 };
 
-export type AccordionTriggerProps = BaseAccordion.AccordionTriggerProps;
+export type AccordionTriggerProps =
+  WithCssProps<BaseAccordion.AccordionTriggerProps>;
 const Trigger: React.FC<AccordionTriggerProps> = ({
   children,
   className,
+  css,
   ...props
 }) => {
   const { size } = useAccordion();
-  const classes = accordionVariants({ size });
+  const raw = accordionVariants.raw({ size });
   const [icons, others] = findChildrenByType(children, Icon);
 
   return (
     <BaseAccordion.Trigger
-      className={cx(classes.trigger, className)}
+      className={cx(_css(raw.trigger, css), className)}
       {...props}
     >
       <span>{others}</span>
@@ -65,7 +72,7 @@ const Trigger: React.FC<AccordionTriggerProps> = ({
   );
 };
 
-export type AccordionItemProps = BaseAccordion.AccordionItemProps;
+export type AccordionItemProps = WithCssProps<BaseAccordion.AccordionItemProps>;
 const Item: React.FC<AccordionItemProps> = ({ children, ...props }) => {
   const [triggers, contents] = findChildrenByType(children, Trigger, Content);
 
@@ -77,21 +84,26 @@ const Item: React.FC<AccordionItemProps> = ({ children, ...props }) => {
   );
 };
 
-export type AccordionProps = AccordionVariantProps &
-  React.ComponentProps<typeof BaseAccordion.Root>;
+export type AccordionProps = WithCssProps<
+  AccordionVariantProps & React.ComponentProps<typeof BaseAccordion.Root>
+>;
 const Root: React.FC<AccordionProps> = ({
   children,
   className,
   size,
+  css,
   ...props
 }) => {
   const [items] = findChildrenByType(children, Item);
 
-  const classes = accordionVariants({ size });
+  const raw = accordionVariants.raw({ size });
 
   return (
     <AccordionProvider size={size}>
-      <BaseAccordion.Root className={cx(classes.root, className)} {...props}>
+      <BaseAccordion.Root
+        className={cx(_css(raw.root, css), className)}
+        {...props}
+      >
         {items}
       </BaseAccordion.Root>
     </AccordionProvider>

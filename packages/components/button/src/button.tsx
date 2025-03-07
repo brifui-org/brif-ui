@@ -1,19 +1,23 @@
 import React from "react";
-import { css, cx } from "@brifui/styled/css";
-import { findChildrenByType } from "@brifui/utils";
+import { css as _css, cx } from "@brifui/styled/css";
+import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { ButtonVariantProps, buttonVariants } from "./variants";
 
-const Prefix: React.FC<React.ComponentPropsWithRef<"div">> = ({
+const Prefix: React.FC<WithCssProps<React.ComponentPropsWithRef<"div">>> = ({
   className,
+  css,
   ...props
 }) => {
   return (
     <div
       className={cx(
-        css({
-          mr: "px"
-        }),
+        _css(
+          {
+            mr: "px"
+          },
+          css
+        ),
         className
       )}
       {...props}
@@ -21,16 +25,20 @@ const Prefix: React.FC<React.ComponentPropsWithRef<"div">> = ({
   );
 };
 
-const Suffix: React.FC<React.ComponentPropsWithRef<"div">> = ({
+const Suffix: React.FC<WithCssProps<React.ComponentPropsWithRef<"div">>> = ({
   className,
+  css,
   ...props
 }) => {
   return (
     <div
       className={cx(
-        css({
-          ml: "px"
-        }),
+        _css(
+          {
+            ml: "px"
+          },
+          css
+        ),
         className
       )}
       {...props}
@@ -38,13 +46,14 @@ const Suffix: React.FC<React.ComponentPropsWithRef<"div">> = ({
   );
 };
 
-export type ButtonProps = ButtonVariantProps &
-  React.ComponentPropsWithRef<"button">;
+export type ButtonProps = WithCssProps<
+  ButtonVariantProps & React.ComponentPropsWithRef<"button">
+>;
 
 export const Button: React.FC<ButtonProps> & {
   Prefix: typeof Prefix;
   Suffix: typeof Suffix;
-} = ({ children, variant, size, fluid, className, ...props }) => {
+} = ({ children, variant, size, fluid, className, css, ...props }) => {
   const [prefixes, suffixes, others] = findChildrenByType(
     children,
     Prefix,
@@ -54,18 +63,21 @@ export const Button: React.FC<ButtonProps> & {
   return (
     <button
       className={cx(
-        buttonVariants({
-          variant,
-          size,
-          fluid
-        }),
+        _css(
+          buttonVariants.raw({
+            variant,
+            size,
+            fluid
+          }),
+          css
+        ),
         className
       )}
       {...props}
     >
       {prefixes}
       <span
-        className={css({
+        className={_css({
           flex: 1,
           px: "1.5",
           display: "flex",

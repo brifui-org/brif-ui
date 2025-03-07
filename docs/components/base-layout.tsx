@@ -18,7 +18,8 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
         flexDir: "column",
         borderXWidth: "1px",
         borderStyle: "solid",
-        borderColor: "border"
+        borderColor: "border",
+        position: "relative"
       })}
     >
       <Header />

@@ -7,3 +7,4 @@ export * from "./breakpoints";
 export * from "./radii";
 export * from "./sizing";
 export * from "./z-index";
+export * from "./utils";

@@ -9,7 +9,10 @@ import Link from "next/link";
 import { Button } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
-export const Header: React.FC = () => {
+export const Header: React.FC<{ stars?: number; download?: number }> = ({
+  stars = 0,
+  download = 0
+}) => {
   const { setOpen } = useMenu();
 
   return (
@@ -20,7 +23,12 @@ export const Header: React.FC = () => {
         alignItems: "center",
         borderBottomWidth: "1px",
         borderStyle: "solid",
-        borderColor: "border"
+        borderColor: "border",
+        position: "sticky",
+        bg: "background",
+        top: 0,
+        left: 0,
+        zIndex: "10"
       })}
     >
       <div
@@ -69,7 +77,7 @@ export const Header: React.FC = () => {
       >
         <Link href="https://github.com/brifui-org/brif-ui" target="_blank">
           <Button size="sm" variant="outline">
-            1.2k
+            {stars || "Github"}
             <Button.Suffix>
               <SiGithub size={20} />
             </Button.Suffix>
@@ -80,7 +88,7 @@ export const Header: React.FC = () => {
           target="_blank"
         >
           <Button size="sm" variant="outline">
-            1.2k
+            {download || "Npm"}
             <Button.Suffix>
               <SiNpm size={20} />
             </Button.Suffix>
