@@ -1,5 +1,11 @@
 # @brifui/text
 
+## 0.0.5
+
+### Patch Changes
+
+- [#114](https://github.com/brifui-org/brif-ui/pull/114) [`6ae715b`](https://github.com/brifui-org/brif-ui/commit/6ae715b08fb95714a2af577be7f74d411660384d) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - set span as default tag
+
 ## 0.0.4
 
 ### Patch Changes

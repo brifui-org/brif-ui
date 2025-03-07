@@ -297,7 +297,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.21, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.22, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
@@ -313,7 +313,7 @@ __metadata:
     "@brifui/sidebar": "npm:^0.0.2"
     "@brifui/spinner": "npm:^0.0.2"
     "@brifui/table": "npm:^0.0.3"
-    "@brifui/text": "npm:^0.0.4"
+    "@brifui/text": "npm:^0.0.5"
     "@brifui/toast": "npm:^0.0.2"
     "@brifui/tooltip": "npm:^0.0.1"
     "@brifui/typescript-config": "npm:^0.0.3"
@@ -541,7 +541,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/text@npm:^0.0.4, @brifui/text@workspace:packages/components/text":
+"@brifui/text@npm:^0.0.5, @brifui/text@workspace:packages/components/text":
   version: 0.0.0-use.local
   resolution: "@brifui/text@workspace:packages/components/text"
   dependencies:
@@ -6041,7 +6041,7 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@brifui/cli": "npm:^0.0.9"
-    "@brifui/components": "npm:^0.0.21"
+    "@brifui/components": "npm:^0.0.22"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.11"
     "@brifui/theme": "npm:^0.0.10"

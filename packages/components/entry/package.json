@@ -1,6 +1,6 @@
 {
   "name": "@brifui/components",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Brif UI components",
   "sideEffects": false,
   "type": "module",
@@ -39,7 +39,7 @@
     "@brifui/sidebar": "^0.0.2",
     "@brifui/spinner": "^0.0.2",
     "@brifui/table": "^0.0.3",
-    "@brifui/text": "^0.0.4",
+    "@brifui/text": "^0.0.5",
     "@brifui/toast": "^0.0.2",
     "@brifui/tooltip": "^0.0.1"
   },
