@@ -297,7 +297,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/codeblock@npm:^0.0.0, @brifui/codeblock@workspace:packages/components/codeblock":
+"@brifui/codeblock@npm:^0.0.1, @brifui/codeblock@workspace:packages/components/codeblock":
   version: 0.0.0-use.local
   resolution: "@brifui/codeblock@workspace:packages/components/codeblock"
   dependencies:
@@ -322,7 +322,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.22, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.23, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
@@ -331,17 +331,17 @@ __metadata:
     "@brifui/button": "npm:^0.0.13"
     "@brifui/card": "npm:^0.0.12"
     "@brifui/checkbox": "npm:^0.0.12"
-    "@brifui/codeblock": "npm:^0.0.0"
+    "@brifui/codeblock": "npm:^0.0.1"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/form": "npm:^0.0.13"
     "@brifui/input": "npm:^0.0.14"
     "@brifui/select": "npm:^0.0.13"
-    "@brifui/sidebar": "npm:^0.0.2"
+    "@brifui/sidebar": "npm:^0.0.3"
     "@brifui/spinner": "npm:^0.0.2"
     "@brifui/table": "npm:^0.0.3"
     "@brifui/text": "npm:^0.0.5"
     "@brifui/toast": "npm:^0.0.2"
-    "@brifui/tooltip": "npm:^0.0.1"
+    "@brifui/tooltip": "npm:^0.0.2"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@microsoft/api-extractor": "npm:^7.49.1"
     "@types/react": "npm:^19.0.5"
@@ -481,14 +481,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/sidebar@npm:^0.0.2, @brifui/sidebar@workspace:packages/components/sidebar":
+"@brifui/sidebar@npm:^0.0.3, @brifui/sidebar@workspace:packages/components/sidebar":
   version: 0.0.0-use.local
   resolution: "@brifui/sidebar@workspace:packages/components/sidebar"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.4"
     "@brifui/styled": "npm:^0.0.11"
-    "@brifui/tooltip": "npm:^0.0.1"
+    "@brifui/tooltip": "npm:^0.0.2"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@brifui/utils": "npm:^0.0.6"
     "@testing-library/dom": "npm:^10.4.0"
@@ -635,7 +635,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/tooltip@npm:^0.0.1, @brifui/tooltip@workspace:packages/components/tooltip":
+"@brifui/tooltip@npm:^0.0.2, @brifui/tooltip@workspace:packages/components/tooltip":
   version: 0.0.0-use.local
   resolution: "@brifui/tooltip@workspace:packages/components/tooltip"
   dependencies:
@@ -6067,7 +6067,7 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@brifui/cli": "npm:^0.0.9"
-    "@brifui/components": "npm:^0.0.22"
+    "@brifui/components": "npm:^0.0.23"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.11"
     "@brifui/theme": "npm:^0.0.10"
