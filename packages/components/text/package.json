@@ -1,6 +1,6 @@
 {
   "name": "@brifui/text",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Text component - Brif UI",
   "sideEffects": false,
   "type": "module",
