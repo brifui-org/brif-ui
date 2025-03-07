@@ -40,7 +40,8 @@
     "@brifui/spinner": "^0.0.2",
     "@brifui/table": "^0.0.3",
     "@brifui/text": "^0.0.4",
-    "@brifui/toast": "^0.0.2"
+    "@brifui/toast": "^0.0.2",
+    "@brifui/tooltip": "^0.0.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",

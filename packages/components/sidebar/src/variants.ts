@@ -29,20 +29,24 @@ export const sidebarVariants = sva({
       bg: "background",
       display: "flex",
       flexDirection: "column",
-      overflow: "auto",
-      borderRight: "2px solid {colors.border}"
+      overflowX: "hidden",
+      overflowY: "auto",
+      scrollbar: "hidden",
+      borderRight: "2px solid {colors.border}",
+      willChange: "width",
+      transition: "width .3s ease"
     },
     sidebar: {
+      flex: 1,
       w: "100%",
       h: "100%",
-      flex: 1,
       display: "flex",
       flexDirection: "column"
     },
     header: {
       p: 2,
       gap: 2,
-      w: "100%",
+      w: `var(${cssVars.width.expand})`,
       display: "flex",
       flexDirection: "column",
       position: "sticky",
@@ -53,7 +57,7 @@ export const sidebarVariants = sva({
     body: {
       p: 2,
       gap: 2,
-      w: "100%",
+      w: `var(${cssVars.width.expand})`,
       flex: 1,
       display: "flex",
       flexDirection: "column"
@@ -61,7 +65,7 @@ export const sidebarVariants = sva({
     footer: {
       p: 2,
       gap: 2,
-      w: "100%",
+      w: `var(${cssVars.width.expand})`,
       display: "flex",
       flexDirection: "column",
       position: "sticky",
@@ -78,17 +82,31 @@ export const sidebarVariants = sva({
     menuItem: {
       p: 2,
       gap: 2,
+      w: "100%",
       display: "flex",
       alignItems: "center",
       borderRadius: "component.md",
       '&:not([aria-selected="true"]):not([aria-disabled="true"])': {
         _hover: {
           background: "background.hover"
+        },
+        _focusVisible: {
+          outline: "none",
+          background: "background.hover"
+        }
+      },
+      '&:not([aria-disabled="true"])': {
+        _focusVisible: {
+          outline: "4px solid {colors.primary}"
         }
       },
       '&[aria-disabled="true"]': {
         opacity: 0.32,
-        cursor: "not-allowed"
+        cursor: "not-allowed",
+        outline: "none"
+      },
+      '&[data-state="collapsed"]': {
+        maxW: `calc(var(${cssVars.width.collapsed}) - 4 * {spacing.2})`
       },
       _selected: {
         color: "primary.foreground",

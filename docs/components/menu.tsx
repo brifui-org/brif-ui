@@ -89,6 +89,11 @@ const MENU = [
         href: "/docs/toast"
       },
       {
+        key: "tooltip",
+        title: "Tooltip",
+        href: "/docs/tooltip"
+      },
+      {
         key: "spinner",
         title: "Spinner",
         href: "/docs/spinner"
