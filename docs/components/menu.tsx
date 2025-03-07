@@ -28,6 +28,11 @@ const MENU = [
     title: "Tokens",
     children: [
       {
+        key: "colors",
+        title: "Colors",
+        href: "/docs/colors"
+      },
+      {
         key: "typography",
         title: "Typography",
         href: "/docs/typography"
@@ -194,6 +199,7 @@ export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
         css({
           px: 6,
           py: 12,
+          scrollbar: "hidden",
           w: "fit-content",
           bg: "background",
           height: "calc(100vh - 59px)",

@@ -130,20 +130,6 @@ export const variants = cva({
       }
     },
     {
-      type: [
-        "text.2xl",
-        "text.xl",
-        "text.lg",
-        "text.md",
-        "text.sm",
-        "text.3xl",
-        "text.xs"
-      ],
-      css: {
-        fontWeight: "normal"
-      }
-    },
-    {
       type: ["button.md", "button.sm", "button.xs"],
       css: {
         fontWeight: "semibold"

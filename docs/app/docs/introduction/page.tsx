@@ -1,7 +1,7 @@
 "use client";
 
+import { InlineLink } from "@/components/inline-link";
 import { Page } from "@/components/page";
-import { Metadata } from "next";
 import { Card, Text } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
@@ -42,6 +42,35 @@ export default function IntroductionPage() {
           </Card.Body>
         </Card>
       </Page.Title>
+
+      <Page.Section title="What is BrifUI?">
+        <Text as="p">
+          BrifUI is a UI library for React that helps you build beautiful and
+          accessible user interfaces. Created on top of{" "}
+          <InlineLink target="_blank" href="https://panda-css.com/">
+            Panda CSS
+          </InlineLink>{" "}
+          and{" "}
+          <InlineLink href="https://www.radix-ui.com/" target="_blank">
+            Radix UI
+          </InlineLink>
+          .
+        </Text>
+      </Page.Section>
+
+      <Page.Section title="Contributing">
+        <Text>
+          We are very welcome any contributon to{" "}
+          <InlineLink href="/" target="_blank">
+            BrifUI
+          </InlineLink>
+          . Please take a look at our{" "}
+          <InlineLink href="/" target="_blank">
+            contribution guideline
+          </InlineLink>
+          before you contribute to this project.
+        </Text>
+      </Page.Section>
     </Page>
   );
 }
