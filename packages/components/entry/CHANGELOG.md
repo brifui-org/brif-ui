@@ -1,5 +1,26 @@
 # @brifui/components
 
+## 0.0.20
+
+### Patch Changes
+
+- [#110](https://github.com/brifui-org/brif-ui/pull/110) [`85cfa10`](https://github.com/brifui-org/brif-ui/commit/85cfa10cca6ad3b3de2d48004e8517068c91df33) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added css support
+
+- Updated dependencies [[`85cfa10`](https://github.com/brifui-org/brif-ui/commit/85cfa10cca6ad3b3de2d48004e8517068c91df33)]:
+  - @brifui/accordion@0.0.12
+  - @brifui/checkbox@0.0.12
+  - @brifui/spinner@0.0.2
+  - @brifui/avatar@0.0.2
+  - @brifui/button@0.0.13
+  - @brifui/select@0.0.13
+  - @brifui/input@0.0.14
+  - @brifui/table@0.0.3
+  - @brifui/card@0.0.12
+  - @brifui/form@0.0.13
+  - @brifui/text@0.0.4
+  - @brifui/sidebar@0.0.1
+  - @brifui/toast@0.0.2
+
 ## 0.0.19
 
 ### Patch Changes

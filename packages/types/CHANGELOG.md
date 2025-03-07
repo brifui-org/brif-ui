@@ -1,5 +1,11 @@
 # @brifui/types
 
+## 0.0.8
+
+### Patch Changes
+
+- [#110](https://github.com/brifui-org/brif-ui/pull/110) [`85cfa10`](https://github.com/brifui-org/brif-ui/commit/85cfa10cca6ad3b3de2d48004e8517068c91df33) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added css support
+
 ## 0.0.7
 
 ### Patch Changes

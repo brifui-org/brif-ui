@@ -1,5 +1,13 @@
 # @brifui/toast
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [[`85cfa10`](https://github.com/brifui-org/brif-ui/commit/85cfa10cca6ad3b3de2d48004e8517068c91df33)]:
+  - @brifui/button@0.0.13
+  - @brifui/utils@0.0.6
+
 ## 0.0.1
 
 ### Patch Changes
