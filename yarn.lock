@@ -270,7 +270,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/cli@npm:^0.0.9, @brifui/cli@workspace:packages/cli":
+"@brifui/cli@npm:^0.0.10, @brifui/cli@workspace:packages/cli":
   version: 0.0.0-use.local
   resolution: "@brifui/cli@workspace:packages/cli"
   dependencies:
@@ -6067,7 +6067,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
   dependencies:
-    "@brifui/cli": "npm:^0.0.9"
+    "@brifui/cli": "npm:^0.0.10"
     "@brifui/components": "npm:^0.0.24"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.11"
