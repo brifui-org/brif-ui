@@ -5,7 +5,7 @@ export const tableVariants = sva({
   base: {
     root: {
       border: "2px solid {colors.border}",
-      overflow: "hidden"
+      overflow: "auto"
     },
     table: {
       w: "100%",
@@ -21,6 +21,7 @@ export const tableVariants = sva({
     },
     hcell: {
       px: 2,
+      whiteSpace: "nowrap",
       transition: "background-color .2s ease",
       textAlign: "left",
       color: "text.muted",
@@ -32,6 +33,7 @@ export const tableVariants = sva({
     },
     cell: {
       px: 2,
+      whiteSpace: "nowrap",
       transition: "background-color .3s ease",
       textAlign: "left",
       "&:last-child": {
