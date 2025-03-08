@@ -35,11 +35,12 @@ __export(codegen_exports, {
 module.exports = __toCommonJS(codegen_exports);
 var import_chalk2 = __toESM(require("chalk"));
 var import_node_child_process = require("child_process");
+var import_dev = require("@pandacss/dev");
 
 // package.json
 var dependencies = {
   "@clack/prompts": "0.9.1",
-  "@pandacss/dev": "^0.52.0",
+  "@pandacss/dev": "^0.53.1",
   "bundle-n-require": "^1.1.1",
   chalk: "4.1.2",
   escalade: "^3.2.0",
@@ -64,19 +65,21 @@ var logger = {
 // src/commands/codegen.ts
 var pandaVersion = dependencies["@pandacss/dev"].slice(1);
 async function codegen() {
-  logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
-  (0, import_node_child_process.execSync)(
-    `npx --package=@pandacss/dev@${pandaVersion} -- panda codegen --config brifui.config.ts`
-  );
-  logger.log(
-    `${import_chalk2.default.blue("@brifui/styled/dist/css")}: the css function to author styles`
-  );
-  logger.log(
-    `${import_chalk2.default.blue("@brifui/styled/dist/tokens")}: the css variables and js function to query your tokens`
-  );
-  logger.log(
-    `${import_chalk2.default.blue("@brifui/styled/dist/patterns")}: functions to implement and apply common layout patterns`
-  );
+  try {
+    logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
+    (0, import_node_child_process.execSync)(`npx panda codegen --config brifui.config.ts`);
+    logger.log(
+      `${import_chalk2.default.blue("@brifui/styled/dist/css")}: the css function to author styles`
+    );
+    logger.log(
+      `${import_chalk2.default.blue("@brifui/styled/dist/tokens")}: the css variables and js function to query your tokens`
+    );
+    logger.log(
+      `${import_chalk2.default.blue("@brifui/styled/dist/patterns")}: functions to implement and apply common layout patterns`
+    );
+  } catch (err) {
+    logger.error("Failed to run codegen command", err);
+  }
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
