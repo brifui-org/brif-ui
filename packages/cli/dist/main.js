@@ -621,28 +621,50 @@ var cac = (name = "") => new CAC(name);
 
 // package.json
 var version = "0.0.9";
+var dependencies = {
+  "@clack/prompts": "0.9.1",
+  "@pandacss/dev": "^0.52.0",
+  "bundle-n-require": "^1.1.1",
+  chalk: "4.1.2",
+  escalade: "^3.2.0",
+  "fast-glob": "^3.3.3",
+  "find-up": "^7.0.0",
+  minimatch: "^10.0.1"
+};
 
 // src/commands/codegen.ts
-var import_bundle_n_require = require("bundle-n-require");
-var import_sync = __toESM(require("escalade/sync"));
-var import_minimatch = require("minimatch");
+var import_chalk2 = __toESM(require("chalk"));
 var import_node_child_process = require("child_process");
-function isBrifConfig(file) {
-  return (0, import_minimatch.minimatch)(file, "{brifui,brifui}.config.{ts,js,cjs,mjs}");
-}
-function findConfig() {
-  const configPath = (0, import_sync.default)(
-    process.cwd(),
-    (_dir, paths) => paths.find(isBrifConfig)
-  );
-  return configPath;
-}
+
+// src/utils/logger.ts
+var import_chalk = __toESM(require("chalk"));
+var PREFIX = import_chalk.default.bgBlack.yellow("[BrifUI]");
+var logger = {
+  log: (...args) => console.log(PREFIX, import_chalk.default.bgBlue.white("[INFO]"), ...args),
+  warning: (...args) => console.log(PREFIX, "[WARN]", import_chalk.default.yellow(...args)),
+  error: (...args) => console.log(PREFIX, "[ERR]", import_chalk.default.red(...args)),
+  debug: (...args) => {
+    if (!process.env.BRIF_DEBUG) return;
+    console.log(PREFIX, import_chalk.default.bgGrey.black("[DEBUG]"), ...args);
+  }
+};
+
+// src/commands/codegen.ts
+var pandaVersion = dependencies["@pandacss/dev"].slice(1);
 async function codegen() {
-  const configPath = findConfig();
-  await (0, import_bundle_n_require.bundleNRequire)(configPath, {
-    interopDefault: true
-  });
-  (0, import_node_child_process.execSync)("npx panda codegen --config brifui.config.ts");
+  logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
+  (0, import_node_child_process.execSync)(
+    `npx --package=@pandacss/dev@${pandaVersion} -- panda codegen --config brifui.config.ts`
+  );
+  logger.log(
+    `${import_chalk2.default.blue("@brifui/styled/dist/css")}: the css function to author styles`
+  );
+  logger.log(
+    `${import_chalk2.default.blue("@brifui/styled/dist/tokens")}: the css variables and js function to query your tokens`
+  );
+  logger.log(
+    `${import_chalk2.default.blue("@brifui/styled/dist/patterns")}: functions to implement and apply common layout patterns`
+  );
 }
 
 // src/main.ts

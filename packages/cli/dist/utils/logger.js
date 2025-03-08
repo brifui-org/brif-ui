@@ -27,28 +27,12 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/commands/codegen.ts
-var codegen_exports = {};
-__export(codegen_exports, {
-  codegen: () => codegen
-});
-module.exports = __toCommonJS(codegen_exports);
-var import_chalk2 = __toESM(require("chalk"));
-var import_node_child_process = require("child_process");
-
-// package.json
-var dependencies = {
-  "@clack/prompts": "0.9.1",
-  "@pandacss/dev": "^0.52.0",
-  "bundle-n-require": "^1.1.1",
-  chalk: "4.1.2",
-  escalade: "^3.2.0",
-  "fast-glob": "^3.3.3",
-  "find-up": "^7.0.0",
-  minimatch: "^10.0.1"
-};
-
 // src/utils/logger.ts
+var logger_exports = {};
+__export(logger_exports, {
+  logger: () => logger
+});
+module.exports = __toCommonJS(logger_exports);
 var import_chalk = __toESM(require("chalk"));
 var PREFIX = import_chalk.default.bgBlack.yellow("[BrifUI]");
 var logger = {
@@ -60,25 +44,7 @@ var logger = {
     console.log(PREFIX, import_chalk.default.bgGrey.black("[DEBUG]"), ...args);
   }
 };
-
-// src/commands/codegen.ts
-var pandaVersion = dependencies["@pandacss/dev"].slice(1);
-async function codegen() {
-  logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
-  (0, import_node_child_process.execSync)(
-    `npx --package=@pandacss/dev@${pandaVersion} -- panda codegen --config brifui.config.ts`
-  );
-  logger.log(
-    `${import_chalk2.default.blue("@brifui/styled/dist/css")}: the css function to author styles`
-  );
-  logger.log(
-    `${import_chalk2.default.blue("@brifui/styled/dist/tokens")}: the css variables and js function to query your tokens`
-  );
-  logger.log(
-    `${import_chalk2.default.blue("@brifui/styled/dist/patterns")}: functions to implement and apply common layout patterns`
-  );
-}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  codegen
+  logger
 });

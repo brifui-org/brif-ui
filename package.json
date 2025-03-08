@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "turbo build",
+    "build:cli": "turbo build --filter=\"@brifui/cli\"",
     "dev": "turbo dev --concurrency 30",
     "lint": "turbo lint",
     "test": "turbo run test",
