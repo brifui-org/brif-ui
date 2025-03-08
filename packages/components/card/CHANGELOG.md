@@ -1,5 +1,13 @@
 # @brifui/card
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [[`1336ff9`](https://github.com/brifui-org/brif-ui/commit/1336ff9dd99899e54da1bd4bfa77168c14c4e662)]:
+  - @brifui/styled@0.0.12
+  - @brifui/utils@0.0.7
+
 ## 0.0.12
 
 ### Patch Changes
