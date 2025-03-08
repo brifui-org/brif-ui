@@ -1,6 +1,7 @@
 import {
-  codegen
-} from "./chunk-52FHM3CF.mjs";
+  codegen,
+  version
+} from "./chunk-FUZYPR2C.mjs";
 
 // ../../node_modules/cac/dist/index.mjs
 import { EventEmitter } from "events";
@@ -586,9 +587,6 @@ var CAC = class extends EventEmitter {
   }
 };
 var cac = (name = "") => new CAC(name);
-
-// package.json
-var version = "0.0.9";
 
 // src/main.ts
 async function main() {
