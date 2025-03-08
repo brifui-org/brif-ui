@@ -1,5 +1,11 @@
 # @brifui/cli
 
+## 0.0.12
+
+### Patch Changes
+
+- [#124](https://github.com/brifui-org/brif-ui/pull/124) [`cecdd73`](https://github.com/brifui-org/brif-ui/commit/cecdd735791d6b2064ebba268bd42e3f4ef72b05) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated command
+
 ## 0.0.11
 
 ### Patch Changes

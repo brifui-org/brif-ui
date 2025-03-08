@@ -1,5 +1,12 @@
 # @brifui/theme
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies [[`cecdd73`](https://github.com/brifui-org/brif-ui/commit/cecdd735791d6b2064ebba268bd42e3f4ef72b05)]:
+  - @brifui/postcss@0.0.7
+
 ## 0.0.11
 
 ### Patch Changes
