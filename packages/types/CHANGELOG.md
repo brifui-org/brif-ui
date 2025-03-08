@@ -1,5 +1,11 @@
 # @brifui/types
 
+## 0.0.9
+
+### Patch Changes
+
+- [#122](https://github.com/brifui-org/brif-ui/pull/122) [`1336ff9`](https://github.com/brifui-org/brif-ui/commit/1336ff9dd99899e54da1bd4bfa77168c14c4e662) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - bumped panda to 0.53.1
+
 ## 0.0.8
 
 ### Patch Changes

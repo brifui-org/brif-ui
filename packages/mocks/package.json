@@ -1,6 +1,6 @@
 {
   "name": "@brifui/mocks",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Mocks library for Brif UI.",
   "type": "module",
   "sideEffects": false,
