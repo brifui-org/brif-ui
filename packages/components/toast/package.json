@@ -1,6 +1,6 @@
 {
   "name": "@brifui/toast",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Toast component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,9 +30,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/button": "^0.0.14",
-    "@brifui/styled": "^0.0.12",
-    "@brifui/utils": "^0.0.7",
+    "@brifui/button": "^0.0.15",
+    "@brifui/styled": "^0.0.13",
+    "@brifui/utils": "^0.0.8",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
