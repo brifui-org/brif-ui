@@ -29,7 +29,7 @@
     "./setup": "./src/setup.ts"
   },
   "peerDependencies": {
-    "@pandacss/dev": "^0.52.0",
+    "@pandacss/dev": "^0.53.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -41,7 +41,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@pandacss/dev": "^0.52.0",
+    "@pandacss/dev": "^0.53.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
