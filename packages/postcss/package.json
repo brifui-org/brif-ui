@@ -37,7 +37,7 @@
   },
   "author": "Thinh Trinh Duc <thinh.duc.trinh@gmail.com>",
   "peerDependencies": {
-    "@pandacss/postcss": "^0.52.0",
+    "@pandacss/postcss": "^0.53.1",
     "postcss": "^8.4.49"
   },
   "devDependencies": {
@@ -47,7 +47,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@pandacss/postcss": "^0.52.0",
+    "@pandacss/postcss": "^0.53.1",
     "postcss": "^8.4.49"
   },
   "tsup": {

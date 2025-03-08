@@ -6,7 +6,7 @@ import { CodeSquare } from "lucide-react";
 import { Card, Codeblock, Text } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
-const step1 = `npm install @brifui/components @brifui/styled --save
+const step1 = `npm install @brifui/components @brifui/styled @pandacss/dev --save
 npm install @brifui/theme @brifui/cli --save-dev`;
 
 const step2 = `import { defineConfig } from "@brifui/theme"
