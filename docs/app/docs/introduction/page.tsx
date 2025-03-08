@@ -67,7 +67,7 @@ export default function IntroductionPage() {
           . Please take a look at our{" "}
           <InlineLink href="/" target="_blank">
             contribution guideline
-          </InlineLink>
+          </InlineLink>{" "}
           before you contribute to this project.
         </Text>
       </Page.Section>

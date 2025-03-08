@@ -43,8 +43,7 @@ export const Example = () => (
   })}>
     Solid
   </Button>
-)
-`;
+)`;
 
 export default function InstallationPage() {
   return (
@@ -198,6 +197,7 @@ export const RootComponent = () => {
           </Card.Body>
         </Card>
       </Page.Section>
+      <Page.Section title="FAQ"></Page.Section>
     </Page>
   );
 }

@@ -9,9 +9,9 @@ export const codeblockVariants = sva({
       }
     },
     line: {
+      pr: 2,
       cursor: "default",
       display: "block",
-      w: "100%",
       _highlighted: {
         background:
           "color-mix(in oklab, {colors.primary} 20%, transparent 100%)",
@@ -31,7 +31,7 @@ export const codeblockVariants = sva({
     },
     content: {
       '&[class*="language-"],code[class*="language-"]': {
-        display: "block",
+        tabSize: 4,
         color: "text",
         fontFamily: "mono",
         direction: "ltr",
@@ -40,11 +40,11 @@ export const codeblockVariants = sva({
         wordSpacing: "normal",
         wordBreak: "normal",
         textStyle: "text.sm",
-        tabSize: 4,
-        hyphens: "none",
-        w: "100%"
+        hyphens: "none"
       },
       '&>code[class*="language-"]': {
+        w: "100%",
+        display: "inline-block",
         textStyle: "text.sm"
       },
       /**
@@ -52,6 +52,7 @@ export const codeblockVariants = sva({
        */
       '&[class*="language-"]': {
         py: "1",
+        display: "block",
         overflow: "auto",
         backgroundColor: "background"
       },

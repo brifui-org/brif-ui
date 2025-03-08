@@ -117,7 +117,7 @@ const Preview: React.FC<{
       className={css({
         borderBottomRadius: 0,
         borderBottomWidth: 0,
-        overflow: "hidden"
+        overflow: "auto"
       })}
     >
       <Card.Body
