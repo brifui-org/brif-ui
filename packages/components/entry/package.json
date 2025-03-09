@@ -30,6 +30,7 @@
   "dependencies": {
     "@brifui/accordion": "^0.0.17",
     "@brifui/avatar": "^0.0.7",
+    "@brifui/badge": "^0.0.0",
     "@brifui/button": "^0.0.18",
     "@brifui/card": "^0.0.17",
     "@brifui/checkbox": "^0.0.17",

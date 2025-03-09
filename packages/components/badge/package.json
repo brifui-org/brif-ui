@@ -1,11 +1,11 @@
 {
-  "name": "@brifui/{{componentName}}",
+  "name": "@brifui/badge",
   "version": "0.0.0",
-  "description": "{{capitalize componentName}} component - Brif UI",
+  "description": "Badge component - Brif UI",
   "sideEffects": false,
   "type": "module",
   "keywords": [
-    "{{componentName}}",
+    "badge",
     "component",
     "ui"
   ],

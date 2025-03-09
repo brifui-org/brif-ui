@@ -7,16 +7,22 @@ import { Menu, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@brifui/components";
+import { usePathname } from "next/navigation";
+import { Badge, Button } from "@brifui/components";
 import { css } from "@brifui/styled/css";
+
+import { dependencies } from "../package.json";
+
+const CURRENT_VERSION = dependencies["@brifui/components"].slice(1);
 
 export const Header: React.FC<{ stars?: number; download?: number }> = ({
   stars = 0,
   download = 0
 }) => {
-  const [mounted, setMounted] = useState(false);
   const { setOpen } = useMenu();
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -53,18 +59,20 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
           }
         })}
       >
-        <Button
-          className={css({
-            display: {
-              lg: "none"
-            }
-          })}
-          size="icon"
-          variant="outline"
-          onClick={() => setOpen((prev) => !prev)}
-        >
-          <Menu size={18} />
-        </Button>
+        {pathname !== "/" && (
+          <Button
+            className={css({
+              display: {
+                lg: "none"
+              }
+            })}
+            size="icon"
+            variant="outline"
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            <Menu size={18} />
+          </Button>
+        )}
         <Link href="/">
           <Image
             quality={100}
@@ -74,6 +82,9 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
             height={42}
           />
         </Link>
+        <Badge suppressHydrationWarning size="sm">
+          {CURRENT_VERSION}
+        </Badge>
       </div>
       <div
         className={css({
@@ -84,22 +95,64 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
         })}
       >
         <Link href="https://github.com/brifui-org/brif-ui" target="_blank">
-          <Button size="sm" variant="outline">
+          <Button
+            css={css.raw({
+              display: {
+                base: "none",
+                lg: "flex"
+              }
+            })}
+            size="sm"
+            variant="outline"
+          >
             {stars || "Github"}
             <Button.Suffix>
-              <SiGithub size={20} />
+              <SiGithub size={16} />
             </Button.Suffix>
+          </Button>
+          <Button
+            css={css.raw({
+              display: {
+                base: "flex",
+                lg: "none"
+              }
+            })}
+            size="icon"
+            variant="outline"
+          >
+            <SiGithub size={16} />
           </Button>
         </Link>
         <Link
           href="https://www.npmjs.com/package/@brifui/components"
           target="_blank"
         >
-          <Button size="sm" variant="outline">
+          <Button
+            css={css.raw({
+              display: {
+                base: "none",
+                lg: "flex"
+              }
+            })}
+            size="sm"
+            variant="outline"
+          >
             {download || "npm"}
             <Button.Suffix>
-              <SiNpm size={20} />
+              <SiNpm size={16} />
             </Button.Suffix>
+          </Button>
+          <Button
+            css={css.raw({
+              display: {
+                base: "flex",
+                lg: "none"
+              }
+            })}
+            size="icon"
+            variant="outline"
+          >
+            <SiNpm size={16} />
           </Button>
         </Link>
         <Button
