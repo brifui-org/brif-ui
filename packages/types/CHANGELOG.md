@@ -1,5 +1,11 @@
 # @brifui/types
 
+## 0.0.12
+
+### Patch Changes
+
+- [#135](https://github.com/brifui-org/brif-ui/pull/135) [`a365dca`](https://github.com/brifui-org/brif-ui/commit/a365dca638ac90111f65b81b1e2545d9757bfbdd) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added themes variant configuration support
+
 ## 0.0.11
 
 ### Patch Changes

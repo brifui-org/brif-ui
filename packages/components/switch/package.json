@@ -1,6 +1,6 @@
 {
   "name": "@brifui/switch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Switch component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,8 +30,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.17",
-    "@brifui/utils": "^0.0.12",
+    "@brifui/styled": "^0.0.18",
+    "@brifui/utils": "^0.0.13",
     "@radix-ui/react-switch": "^1.1.3",
     "radix-ui": "^1.1.3",
     "react": "^19.0.0",
