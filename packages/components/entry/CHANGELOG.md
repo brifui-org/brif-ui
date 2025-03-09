@@ -1,5 +1,30 @@
 # @brifui/components
 
+## 0.0.30
+
+### Patch Changes
+
+- [#133](https://github.com/brifui-org/brif-ui/pull/133) [`093c168`](https://github.com/brifui-org/brif-ui/commit/093c168f741e5aad5bd3d6ab241ba83971991126) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added badge
+
+- Updated dependencies [[`093c168`](https://github.com/brifui-org/brif-ui/commit/093c168f741e5aad5bd3d6ab241ba83971991126)]:
+  - @brifui/badge@0.0.1
+  - @brifui/accordion@0.0.18
+  - @brifui/avatar@0.0.8
+  - @brifui/button@0.0.19
+  - @brifui/card@0.0.18
+  - @brifui/checkbox@0.0.18
+  - @brifui/codeblock@0.0.8
+  - @brifui/form@0.0.19
+  - @brifui/input@0.0.20
+  - @brifui/select@0.0.19
+  - @brifui/sidebar@0.0.9
+  - @brifui/spinner@0.0.8
+  - @brifui/switch@0.0.2
+  - @brifui/table@0.0.10
+  - @brifui/text@0.0.11
+  - @brifui/toast@0.0.8
+  - @brifui/tooltip@0.0.8
+
 ## 0.0.29
 
 ### Patch Changes

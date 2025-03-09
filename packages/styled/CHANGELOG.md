@@ -1,5 +1,12 @@
 # @brifui/styled
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies [[`093c168`](https://github.com/brifui-org/brif-ui/commit/093c168f741e5aad5bd3d6ab241ba83971991126)]:
+  - @brifui/theme@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes

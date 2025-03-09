@@ -1,5 +1,11 @@
 # @brifui/theme
 
+## 0.0.16
+
+### Patch Changes
+
+- [#133](https://github.com/brifui-org/brif-ui/pull/133) [`093c168`](https://github.com/brifui-org/brif-ui/commit/093c168f741e5aad5bd3d6ab241ba83971991126) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added badge
+
 ## 0.0.15
 
 ### Patch Changes
