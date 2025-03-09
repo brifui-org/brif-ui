@@ -22,6 +22,9 @@ export const preset = definePreset({
     light,
     dark
   },
+  conditions: {
+    dark: '[data-panda-theme="dark"] &'
+  },
   globalCss: {
     html: {
       color: "{colors.text}",

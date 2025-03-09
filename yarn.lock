@@ -200,6 +200,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/badge@npm:^0.0.0, @brifui/badge@workspace:packages/components/badge":
+  version: 0.0.0-use.local
+  resolution: "@brifui/badge@workspace:packages/components/badge"
+  dependencies:
+    "@brifui/eslint-config": "npm:^0.0.3"
+    "@brifui/mocks": "npm:^0.0.5"
+    "@brifui/styled": "npm:^0.0.16"
+    "@brifui/typescript-config": "npm:^0.0.3"
+    "@brifui/utils": "npm:^0.0.11"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@brifui/button@npm:^0.0.18, @brifui/button@workspace:packages/components/button":
   version: 0.0.0-use.local
   resolution: "@brifui/button@workspace:packages/components/button"
@@ -329,6 +352,7 @@ __metadata:
   dependencies:
     "@brifui/accordion": "npm:^0.0.17"
     "@brifui/avatar": "npm:^0.0.7"
+    "@brifui/badge": "npm:^0.0.0"
     "@brifui/button": "npm:^0.0.18"
     "@brifui/card": "npm:^0.0.17"
     "@brifui/checkbox": "npm:^0.0.17"
