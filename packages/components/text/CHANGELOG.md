@@ -1,5 +1,13 @@
 # @brifui/text
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.15
+  - @brifui/utils@0.0.10
+
 ## 0.0.8
 
 ### Patch Changes

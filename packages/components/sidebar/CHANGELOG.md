@@ -1,5 +1,14 @@
 # @brifui/sidebar
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies [[`b2bb7d3`](https://github.com/brifui-org/brif-ui/commit/b2bb7d30d17b4bacc5716964f24da9f522a34be6)]:
+  - @brifui/tooltip@0.0.6
+  - @brifui/styled@0.0.15
+  - @brifui/utils@0.0.10
+
 ## 0.0.6
 
 ### Patch Changes
