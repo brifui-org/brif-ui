@@ -1,6 +1,6 @@
 {
   "name": "@brifui/avatar",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Avatar component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,9 +30,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.14",
+    "@brifui/styled": "^0.0.15",
     "@brifui/types": "^0.0.10",
-    "@brifui/utils": "^0.0.9",
+    "@brifui/utils": "^0.0.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

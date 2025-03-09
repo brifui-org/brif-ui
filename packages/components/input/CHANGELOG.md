@@ -1,5 +1,15 @@
 # @brifui/input
 
+## 0.0.18
+
+### Patch Changes
+
+- [#128](https://github.com/brifui-org/brif-ui/pull/128) [`b2bb7d3`](https://github.com/brifui-org/brif-ui/commit/b2bb7d30d17b4bacc5716964f24da9f522a34be6) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated dark tokens
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.15
+  - @brifui/utils@0.0.10
+
 ## 0.0.17
 
 ### Patch Changes
