@@ -1,6 +1,6 @@
 {
   "name": "@brifui/types",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Types library for Brif UI.",
   "type": "module",
   "sideEffects": false,
