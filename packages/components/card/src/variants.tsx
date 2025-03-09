@@ -5,9 +5,7 @@ export const cardVariants = sva({
   base: {
     root: {
       bg: "background",
-      borderWidth: "2px",
-      borderStyle: "solid",
-      borderColor: "border",
+      border: "2px solid {colors.border}",
       borderRadius: "component.lg"
     },
     header: {
@@ -34,17 +32,17 @@ export const cardVariants = sva({
     shadow: {
       sm: {
         root: {
-          boxShadow: "sm"
+          boxShadow: "component.sm"
         }
       },
       md: {
         root: {
-          boxShadow: "md"
+          boxShadow: "component.md"
         }
       },
       lg: {
         root: {
-          boxShadow: "lg"
+          boxShadow: "component.lg"
         }
       }
     }

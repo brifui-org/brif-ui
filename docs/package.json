@@ -15,6 +15,7 @@
     "@brifui/styled": "^0.0.13",
     "@brifui/utils": "^0.0.8",
     "@icons-pack/react-simple-icons": "^12.0.0",
+    "@pandacss/dev": "^0.53.1",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
     "react": "^19.0.0",

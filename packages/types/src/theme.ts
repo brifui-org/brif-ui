@@ -1,6 +1,6 @@
 import { CssKeyframes } from "@pandacss/dev";
 
-import { DeepPartial } from "./base";
+import { DeepPartial, Recursive, Token } from "./base";
 import { Breakpoints } from "./breakpoints";
 import { Colors, SemanticColors } from "./colors";
 import {
@@ -16,18 +16,18 @@ import { ComponentSizing, ContainerSizing, Sizing } from "./sizing";
 import { ZIndex } from "./z-index";
 
 export type Theme = {
-  colors: Colors;
-  fonts: Fonts;
-  fontSizes: FontSizes;
-  fontWeights: FontWeights;
-  lineHeights: LineHeights;
-  sizes: Sizing;
-  radii: Radii;
-  shadows: Shadows;
-  keyframes: CssKeyframes;
-  breakpoints: Breakpoints;
-  textStyles: TextStyles;
-  zIndex: ZIndex;
+  tokens: {
+    colors: Colors;
+    fonts: Fonts;
+    fontSizes: FontSizes;
+    fontWeights: FontWeights;
+    lineHeights: LineHeights;
+    sizes: Sizing;
+    radii: Radii;
+    shadows: Shadows;
+    spacing: Recursive<Token<string>>;
+    zIndex: ZIndex;
+  };
   semanticTokens: {
     colors: SemanticColors;
     sizes: {
@@ -37,10 +37,13 @@ export type Theme = {
     radii: {
       component: ComponentRadii;
     };
-    shadow: {
+    shadows: {
       component: ComponentShadows;
     };
   };
+  keyframes: CssKeyframes;
+  breakpoints: Breakpoints;
+  textStyles: TextStyles;
 };
 export interface ExtendableTheme extends DeepPartial<Theme> {
   extends?: DeepPartial<Theme> | undefined;

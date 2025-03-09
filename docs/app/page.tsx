@@ -37,7 +37,7 @@ export default function Home() {
           },
           borderBottom: "1px solid {colors.border}",
           flex: 1,
-          bg: 'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 48% ), linear-gradient( -90deg, rgba(255, 180, 31, 0.25) 0%, rgba(255, 122, 69, 0.25) 25%, rgba(229, 75, 102, 0.25) 50%, rgba(173, 55, 124, 0.25) 75%, rgba(99, 52, 126, 0.25) 100% ), url("/noise.png")'
+          bg: 'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 48% ), linear-gradient( -90deg, rgba(255, 180, 31, 0.25) 0%, rgba(255, 122, 69, 0.25) 25%, rgba(229, 75, 102, 0.25) 50%, rgba(173, 55, 124, 0.25) 75%, rgba(99, 52, 126, 0.25) 100% ), url("/noise.png")'
         })}
       >
         <div
@@ -80,7 +80,7 @@ export default function Home() {
             <br />A beautiful UI components built with{" "}
             <span
               className={css({
-                border: "1px solid transparent",
+                border: "2px solid transparent",
                 borderColor: "border",
                 borderRadius: "component.md",
                 boxShadow: "component.md",
@@ -95,7 +95,7 @@ export default function Home() {
             and{" "}
             <span
               className={css({
-                border: "1px solid transparent",
+                border: "2px solid transparent",
                 borderColor: "border",
                 borderRadius: "component.md",
                 boxShadow: "component.md",
@@ -264,7 +264,7 @@ export default function Home() {
             height: "100%",
             w: "1/4",
             backgroundImage:
-              "linear-gradient(to right, hsl(0 0% 100%), hsl(0 0% 100% / 0))",
+              "linear-gradient(to right, {colors.background}, hsl(0 0% 100% / 0))",
             zIndex: 9999
           })}
         />
@@ -311,7 +311,7 @@ export default function Home() {
             height: "100%",
             w: "1/4",
             backgroundImage:
-              "linear-gradient(to left, hsl(0 0% 100%), hsl(0 0% 100% / 0))",
+              "linear-gradient(to left, {colors.background}, hsl(0 0% 100% / 0))",
             zIndex: 9999
           })}
         />

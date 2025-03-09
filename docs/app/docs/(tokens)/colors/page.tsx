@@ -277,6 +277,22 @@ export default function ColorsDocs() {
             <ColorPreview css={css.raw({ background: "text.muted" })}>
               muted
             </ColorPreview>
+            <ColorPreview
+              css={css.raw({
+                background: "text.hover",
+                color: "default.foreground"
+              })}
+            >
+              hover
+            </ColorPreview>
+            <ColorPreview
+              css={css.raw({
+                background: "text.active",
+                color: "default.foreground"
+              })}
+            >
+              active
+            </ColorPreview>
             <ColorPreview css={css.raw({ background: "text.disabled" })}>
               disabled
             </ColorPreview>
@@ -291,13 +307,39 @@ export default function ColorsDocs() {
             <ColorPreview
               css={css.raw({
                 background: "border",
-                color: "default.foreground"
+                color: {
+                  base: "default.foreground",
+                  _dark: "text"
+                }
               })}
             >
               default
             </ColorPreview>
-            <ColorPreview css={css.raw({ background: "border.muted" })}>
+            <ColorPreview
+              css={css.raw({
+                background: "border.muted"
+              })}
+            >
               muted
+            </ColorPreview>
+            <ColorPreview
+              css={css.raw({
+                background: "border.hover",
+                color: {
+                  base: "background",
+                  _dark: "text"
+                }
+              })}
+            >
+              hover
+            </ColorPreview>
+            <ColorPreview
+              css={css.raw({
+                background: "border.active",
+                color: "background"
+              })}
+            >
+              active
             </ColorPreview>
             <ColorPreview css={css.raw({ background: "border.disabled" })}>
               disabled
@@ -338,18 +380,26 @@ export default function ColorsDocs() {
             <ColorPreview
               css={css.raw({
                 background: "primary",
-                color: "default.foreground"
+                color: "primary.foreground"
               })}
             >
               default
             </ColorPreview>
-            <ColorPreview css={css.raw({ background: "primary.foreground" })}>
+            <ColorPreview
+              css={css.raw({
+                background: "primary.foreground",
+                color: {
+                  base: "text",
+                  _dark: "background"
+                }
+              })}
+            >
               foreground
             </ColorPreview>
             <ColorPreview
               css={css.raw({
                 background: "primary.hover",
-                color: "default.foreground"
+                color: "primary.foreground"
               })}
             >
               hover
@@ -357,7 +407,7 @@ export default function ColorsDocs() {
             <ColorPreview
               css={css.raw({
                 background: "primary.active",
-                color: "default.foreground"
+                color: "primary.foreground"
               })}
             >
               active
@@ -410,7 +460,15 @@ export default function ColorsDocs() {
             >
               default
             </ColorPreview>
-            <ColorPreview css={css.raw({ background: "error.foreground" })}>
+            <ColorPreview
+              css={css.raw({
+                background: "error.foreground",
+                color: {
+                  base: "text",
+                  _dark: "background"
+                }
+              })}
+            >
               foreground
             </ColorPreview>
             <ColorPreview

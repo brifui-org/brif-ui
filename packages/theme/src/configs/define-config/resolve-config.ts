@@ -1,19 +1,21 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import deepmerge from "deepmerge";
-import { Config } from "@brifui/types";
+import { Config, Theme } from "@brifui/types";
 
-import { breakpoints } from "../../breakpoints";
-import { ref, sys } from "../../colors";
-import { fonts } from "../../fonts";
-import { keyframes } from "../../keyframes";
-
-const defaultConfig = {
-  colors: {
-    sys,
-    ref
-  },
+import {
+  breakpoints,
   keyframes,
-  fonts,
-  breakpoints
+  semanticTokens,
+  textStyles,
+  tokens
+} from "../../tokens";
+
+const defaultConfig: Theme = {
+  tokens: tokens.light,
+  semanticTokens: semanticTokens.light,
+  keyframes,
+  breakpoints,
+  textStyles
 } as const;
 
 export const resolveConfig = (

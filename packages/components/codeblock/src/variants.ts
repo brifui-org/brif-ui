@@ -32,10 +32,11 @@ export const codeblockVariants = sva({
     content: {
       '&[class*="language-"],code[class*="language-"]': {
         tabSize: 4,
-        color: "text",
+        color: "{colors.text} !important",
         fontFamily: "mono",
         direction: "ltr",
         textAlign: "left",
+        textShadow: "none !important",
         whiteSpace: "pre",
         wordSpacing: "normal",
         wordBreak: "normal",

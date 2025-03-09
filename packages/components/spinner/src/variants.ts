@@ -6,9 +6,9 @@ export const spinnerVariants = sva({
     spinner: {
       display: "inline-block",
       boxSizing: "border-box",
-      border: "5px solid {colors.background.hover}",
+      border: "5px solid {colors.background.muted}",
       borderRadius: "50%",
-      borderBottomColor: "border",
+      borderBottomColor: "text",
       animation: "spin 1s linear infinite"
     }
   },

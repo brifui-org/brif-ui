@@ -8,6 +8,19 @@ export default defineConfig({
   ],
   theme: {
     extends: {
+      tokens: {
+        fonts: {
+          heading: {
+            value: "var(--font-funnel-display)"
+          },
+          body: {
+            value: "var(--font-geist-sans)"
+          },
+          mono: {
+            value: "var(--font-geist-mono)"
+          }
+        }
+      },
       keyframes: {
         marquee: {
           "0%": {
@@ -17,17 +30,6 @@ export default defineConfig({
             transform: "translateX(calc(-100% - 1rem))"
           }
         }
-      }
-    },
-    fonts: {
-      heading: {
-        value: "var(--font-funnel-display)"
-      },
-      body: {
-        value: "var(--font-geist-sans)"
-      },
-      mono: {
-        value: "var(--font-geist-mono)"
       }
     }
   }
