@@ -80,7 +80,7 @@ export default function InputDocs() {
           <Input size="sm" placeholder="Default" disabled />
           <Input size="md" placeholder="Default" disabled />
           <Input size="lg" placeholder="Default" disabled />
-          <Input placeholder="Default" disabled>
+          <Input placeholder="Default" value="Default input" disabled>
             <Input.Prefix>
               <ArrowUpCircleIcon color="currentColor" size={16} />
             </Input.Prefix>

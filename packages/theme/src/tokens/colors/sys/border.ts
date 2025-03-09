@@ -14,24 +14,24 @@ export const border: BorderColors = {
     value: "{colors.gray.700}"
   },
   disabled: {
-    value: "color-mix(in oklab, {colors.gray.1000}, white 68%)"
+    value: "color-mix(in oklab, {colors.gray.1000}, {colors.background} 68%)"
   }
 };
 
 export const darkBorder: BorderColors = {
   DEFAULT: {
-    value: "{colors.gray.300}"
-  },
-  muted: {
-    value: "{colors.gray.500}"
+    value: "{colors.black}"
   },
   hover: {
-    value: "{colors.gray.500}"
+    value: "{colors.black}"
   },
   active: {
-    value: "{colors.gray.1000}"
+    value: "{colors.black}"
+  },
+  muted: {
+    value: "{colors.gray.100}"
   },
   disabled: {
-    value: "{colors.gray.500}"
+    value: "color-mix(in oklab, {colors.border}, {colors.background} 68%)"
   }
 };

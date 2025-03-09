@@ -71,7 +71,7 @@ const Section: React.FC<{
           gap: 6,
           display: "flex",
           flexDirection: "column",
-          borderBottomWidth: "1px",
+          borderBottomWidth: "2px",
           borderBottomStyle: "solid",
           borderBottomColor: "border.muted"
         }),

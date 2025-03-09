@@ -5,7 +5,7 @@ export const warning: WarningColors = {
     value: "{colors.amber.800}"
   },
   foreground: {
-    value: "{colors.gray.1000}"
+    value: "{colors.text}"
   },
   hover: {
     value: "color-mix(in hsl, {colors.amber.800}, {colors.text} 10%)"

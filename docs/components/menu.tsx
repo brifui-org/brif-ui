@@ -143,7 +143,7 @@ const Item: React.FC<
           fontWeight: 600
         },
         "&:not(:last-child)": {
-          mb: "px"
+          mb: 1
         }
       })}
       onClick={() => setOpen(false)}
@@ -152,7 +152,7 @@ const Item: React.FC<
       <Link
         className={css({
           px: 3,
-          py: 2,
+          py: 1,
           w: "100%",
           display: "inline-block"
         })}
@@ -182,7 +182,7 @@ const Section: React.FC<ComponentPropsWithRef<"div"> & { title: string }> = ({
         className={css({
           textStyle: "md",
           fontWeight: "semibold",
-          mb: 1
+          mb: 2
         })}
       >
         {title}
@@ -209,7 +209,7 @@ export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
           bg: "background",
           height: "calc(100vh - 59px)",
           overflowY: "auto",
-          borderRight: "1px solid {colors.border}",
+          borderRight: "2px solid {colors.border}",
           display: "block",
           position: {
             base: "fixed",

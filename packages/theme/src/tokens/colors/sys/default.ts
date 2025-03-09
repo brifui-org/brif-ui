@@ -23,9 +23,9 @@ export const darkDefaultColors: DefaultColors = {
     value: "{colors.gray.100}"
   },
   hover: {
-    value: "{colors.gray.500}"
+    value: "{colors.gray.600}"
   },
   active: {
-    value: "{colors.gray.300}"
+    value: "{colors.gray.800}"
   }
 };

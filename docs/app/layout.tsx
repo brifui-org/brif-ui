@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      // data-panda-theme="dark"
+      data-panda-theme="dark"
       className={`${funnelDisplay.variable} ${geist.variable} ${geistMono.variable}`}
     >
       <body>

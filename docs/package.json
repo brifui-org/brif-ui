@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "codegen": "BRIF_DEBUG=true brif codegen",
-    "dev": "rm -rf .next && next dev --turbo",
+    "dev": "PANDA_DEBUG=* rm -rf .next && next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

@@ -14,24 +14,24 @@ export const background: BackgroundColors = {
     value: "{colors.gray.300}"
   },
   disabled: {
-    value: "color-mix(in oklab, {colors.white}, white 68%)"
+    value: "color-mix(in oklab, {colors.background}, white 68%)"
   }
 };
 
 export const darkBackground: BackgroundColors = {
   DEFAULT: {
-    value: "{colors.black}"
+    value: "{colors.gray.300}"
   },
   muted: {
-    value: "#0A0A0A"
+    value: "{colors.gray.500}"
   },
   hover: {
-    value: "{colors.gray.500}"
+    value: "{colors.gray.600}"
   },
   active: {
-    value: "{colors.gray.500}"
+    value: "{colors.gray.700}"
   },
   disabled: {
-    value: "{colors.background.muted}"
+    value: "color-mix(in oklab, {colors.background}, white 32%)"
   }
 };

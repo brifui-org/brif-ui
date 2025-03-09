@@ -37,7 +37,11 @@ export default function Home() {
           },
           borderBottom: "1px solid {colors.border}",
           flex: 1,
-          bg: 'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 48% ), linear-gradient( -90deg, rgba(255, 180, 31, 0.25) 0%, rgba(255, 122, 69, 0.25) 25%, rgba(229, 75, 102, 0.25) 50%, rgba(173, 55, 124, 0.25) 75%, rgba(99, 52, 126, 0.25) 100% ), url("/noise.png")'
+          bg: {
+            base: 'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 58%), linear-gradient( -90deg, rgba(255, 180, 31, 0.25) 0%, rgba(255, 122, 69, 0.25) 25%, rgba(229, 75, 102, 0.25) 50%, rgba(173, 55, 124, 0.25) 75%, rgba(99, 52, 126, 0.25) 100% ), url("/noise.png")',
+            _dark:
+              'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 63%), linear-gradient( -90deg, rgba(255, 180, 31, 0.45) 0%, rgba(255, 122, 69, 0.45) 25%, rgba(229, 75, 102, 0.45) 50%, rgba(173, 55, 124, 0.45) 75%, rgba(99, 52, 126, 0.45) 100% ), url("/noise-dark.png")'
+          }
         })}
       >
         <div
