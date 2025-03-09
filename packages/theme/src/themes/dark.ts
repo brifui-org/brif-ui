@@ -1,8 +1,16 @@
-import { ExtendableTheme } from "@brifui/types";
+import { DeepPartial, Theme } from "@brifui/types";
 
-import { semanticTokens, tokens } from "../tokens";
+import { ref, sys } from "../tokens/colors";
+import { darkComponentShadows } from "../tokens/shadows";
 
-export const dark: Pick<ExtendableTheme, "tokens" | "semanticTokens"> = {
-  tokens: tokens.dark,
-  semanticTokens: semanticTokens.dark
-};
+export const dark = {
+  tokens: {
+    colors: ref.dark
+  },
+  semanticTokens: {
+    colors: sys.dark,
+    shadows: {
+      component: darkComponentShadows
+    }
+  }
+} as const satisfies DeepPartial<Theme>;

@@ -1,28 +1,26 @@
 import { definePreset } from "@pandacss/dev";
 
-import { dark } from "../themes";
+import { dark, light } from "../themes";
 import {
+  baseSemanticTokens,
+  baseTokens,
   breakpoints,
   keyframes,
-  semanticTokens,
-  textStyles,
-  tokens
+  textStyles
 } from "../tokens";
 
 export const preset = definePreset({
   name: "brifui",
   theme: {
-    tokens: tokens.light,
-    semanticTokens: semanticTokens.light,
+    tokens: baseTokens,
+    semanticTokens: baseSemanticTokens,
     keyframes,
     breakpoints,
     textStyles
   },
   themes: {
+    light,
     dark
-  },
-  conditions: {
-    dark: '[data-panda-theme="dark"] &'
   },
   globalCss: {
     html: {
@@ -34,6 +32,6 @@ export const preset = definePreset({
     }
   },
   staticCss: {
-    themes: ["dark"]
+    themes: ["dark", "light"]
   }
 });
