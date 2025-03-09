@@ -8,7 +8,7 @@ import { css, cx } from "@brifui/styled/css";
 
 const Title: React.FC<{
   title: string;
-  description: string;
+  description: React.ReactNode;
   bordered?: boolean;
   children?: React.ReactNode;
 }> = ({ title, bordered = true, description, children }) => {

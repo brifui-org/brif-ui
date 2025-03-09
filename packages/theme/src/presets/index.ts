@@ -1,6 +1,5 @@
 import { definePreset } from "@pandacss/dev";
 
-import { dark, light } from "../themes";
 import {
   baseSemanticTokens,
   baseTokens,
@@ -18,13 +17,6 @@ export const preset = definePreset({
     breakpoints,
     textStyles
   },
-  themes: {
-    light,
-    dark
-  },
-  conditions: {
-    dark: '[data-panda-theme="dark"] &'
-  },
   globalCss: {
     html: {
       color: "{colors.text}",
@@ -33,8 +25,5 @@ export const preset = definePreset({
       "--global-font-heading": "{fonts.heading}",
       "--global-font-body": "{fonts.body}"
     }
-  },
-  staticCss: {
-    themes: ["dark", "light"]
   }
 });

@@ -4,7 +4,7 @@ import path from "node:path";
 import { Config } from "@brifui/types";
 
 import { preset } from "../../presets";
-import { resolveConfig } from "./resolve-config";
+import { resolveConfig, resolveThemeVariantConfig } from "./resolve-config";
 
 function findStyledPackage() {
   const nodeModules: string[] = [];
@@ -39,10 +39,24 @@ export const defineConfig = (configs: Config = {}) => {
 
   const styledPackagePath = findStyledPackage();
 
+  const resolvedThemes = resolveThemeVariantConfig(configs);
+  const themeKeys = Object.keys(resolvedThemes);
+  const themeConditions = themeKeys.reduce<Record<string, string>>(
+    (conditions, themeKey) => {
+      conditions[themeKey] = `[data-panda-theme="${themeKey}"] &`;
+      return conditions;
+    },
+    {}
+  );
+
   return _defineConfig({
     prefix: "brif",
     preflight: true,
     include,
+    themes: resolvedThemes,
+    conditions: {
+      ...themeConditions
+    },
     theme: {
       tokens: resolveConfig(configs, "tokens"),
       semanticTokens: resolveConfig(configs, "semanticTokens"),
@@ -51,6 +65,9 @@ export const defineConfig = (configs: Config = {}) => {
     },
     presets: [preset],
     importMap: "@brifui/styled",
+    staticCss: {
+      themes: themeKeys
+    },
     outdir: path.relative(process.cwd(), styledPackagePath!)
   });
 };

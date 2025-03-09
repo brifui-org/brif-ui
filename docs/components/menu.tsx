@@ -33,6 +33,11 @@ const MENU = [
         href: "/docs/colors"
       },
       {
+        key: "configuration",
+        title: "Configuration",
+        href: "/docs/configuration"
+      },
+      {
         key: "typography",
         title: "Typography",
         href: "/docs/typography"
