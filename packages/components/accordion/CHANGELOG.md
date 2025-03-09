@@ -1,5 +1,14 @@
 # @brifui/accordion
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies [[`ec21cba`](https://github.com/brifui-org/brif-ui/commit/ec21cba5d415145d5564cbf1d72612be7337d489)]:
+  - @brifui/types@0.0.11
+  - @brifui/styled@0.0.16
+  - @brifui/utils@0.0.11
+
 ## 0.0.16
 
 ### Patch Changes

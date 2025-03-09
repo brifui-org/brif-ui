@@ -1,5 +1,15 @@
 # @brifui/card
 
+## 0.0.17
+
+### Patch Changes
+
+- [#130](https://github.com/brifui-org/brif-ui/pull/130) [`ec21cba`](https://github.com/brifui-org/brif-ui/commit/ec21cba5d415145d5564cbf1d72612be7337d489) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added Switch component
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.16
+  - @brifui/utils@0.0.11
+
 ## 0.0.16
 
 ### Patch Changes
