@@ -62,4 +62,8 @@ export type Config = {
    * The theme configuration for your project.
    */
   theme?: ExtendableTheme;
+  /**
+   * The theme variants for your project.
+   */
+  themes?: Record<string, Pick<PartialTheme, "tokens" | "semanticTokens">>;
 };

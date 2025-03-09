@@ -32,5 +32,55 @@ export default defineConfig({
         }
       }
     }
+  },
+  themes: {
+    purple: {
+      semanticTokens: {
+        colors: {
+          primary: {
+            DEFAULT: {
+              value: "{colors.purple.700}"
+            },
+            foreground: {
+              value: "{colors.gray.100}"
+            },
+            hover: {
+              value: "{colors.purple.600}"
+            },
+            active: {
+              value: "{colors.purple.800}"
+            },
+            disabled: {
+              value:
+                "color-mix(in oklab, {colors.primary}, {colors.background} 68%)"
+            }
+          }
+        }
+      }
+    },
+    amber: {
+      semanticTokens: {
+        colors: {
+          primary: {
+            DEFAULT: {
+              value: "{colors.amber.700}"
+            },
+            foreground: {
+              value: "{colors.gray.100}"
+            },
+            hover: {
+              value: "{colors.amber.600}"
+            },
+            active: {
+              value: "{colors.amber.800}"
+            },
+            disabled: {
+              value:
+                "color-mix(in oklab, {colors.primary}, {colors.background} 68%)"
+            }
+          }
+        }
+      }
+    }
   }
 });
