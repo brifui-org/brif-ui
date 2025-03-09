@@ -12,6 +12,9 @@ export const warning: WarningColors = {
   },
   active: {
     value: "color-mix(in hsl, {colors.amber.800}, {colors.text} 20%)"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.warning}, {colors.background} 68%)"
   }
 };
 
@@ -27,5 +30,8 @@ export const darkWarning: WarningColors = {
   },
   active: {
     value: "color-mix(in hsl, {colors.amber.800}, {colors.text} 20%)"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.warning}, {colors.background} 68%)"
   }
 };

@@ -4,11 +4,13 @@ import { WithCssProps } from "@brifui/utils";
 
 import { TextVariantProps, variants } from "./variants";
 
-export interface TextProps
-  extends Omit<React.HTMLAttributes<HTMLOrSVGElement>, "type"> {
-  as?: React.ElementType;
-}
-export const Text: React.FC<WithCssProps<TextProps & TextVariantProps>> = ({
+export type TextProps<T extends React.ElementType> = WithCssProps<
+  React.ComponentProps<T> & {
+    as?: T;
+  } & TextVariantProps
+>;
+
+export function Text<T extends React.ElementType = "span">({
   as: Tag = "span",
   css,
   type,
@@ -17,7 +19,7 @@ export const Text: React.FC<WithCssProps<TextProps & TextVariantProps>> = ({
   color,
   mono,
   ...props
-}) => {
+}: TextProps<T>) {
   return (
     <Tag
       className={cx(
@@ -27,4 +29,4 @@ export const Text: React.FC<WithCssProps<TextProps & TextVariantProps>> = ({
       {...props}
     />
   );
-};
+}

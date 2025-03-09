@@ -16,7 +16,7 @@ export const checkboxVariants = sva({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      borderWidth: "1px",
+      borderWidth: "2px",
       borderStyle: "solid",
       borderColor: "border",
       transition: "border-color .15s, box-shadow .15s",

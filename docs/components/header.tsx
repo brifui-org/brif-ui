@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useMenu } from "@/app/providers/menu-context";
 import { SiGithub, SiNpm } from "@icons-pack/react-simple-icons";
-import { Menu } from "lucide-react";
+import { Menu, MoonIcon, SunIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@brifui/components";
@@ -13,7 +14,13 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
   stars = 0,
   download = 0
 }) => {
+  const [mounted, setMounted] = useState(false);
   const { setOpen } = useMenu();
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header
@@ -28,7 +35,8 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
         bg: "background",
         top: 0,
         left: 0,
-        zIndex: "10"
+        zIndex: "10",
+        boxSizing: "border-box"
       })}
     >
       <div
@@ -94,6 +102,18 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
             </Button.Suffix>
           </Button>
         </Link>
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={() =>
+            setTheme((prev) => (prev === "light" ? "dark" : "light"))
+          }
+        >
+          <div style={{ width: "16px" }}>
+            {mounted && theme === "dark" && <SunIcon size={16} />}
+            {mounted && theme === "light" && <MoonIcon size={16} />}
+          </div>
+        </Button>
       </div>
     </header>
   );

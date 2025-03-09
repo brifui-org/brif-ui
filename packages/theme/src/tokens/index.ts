@@ -1,4 +1,4 @@
-import { Theme } from "@brifui/types";
+import { ExtendableTheme, Theme } from "@brifui/types";
 
 import { breakpoints } from "./breakpoints";
 import { ref, sys } from "./colors";
@@ -26,13 +26,12 @@ const baseTokens: Omit<Theme["tokens"], "colors"> = {
   zIndex
 } as const;
 
-const tokens: Record<"light" | "dark", Theme["tokens"]> = {
+const tokens: Record<"light" | "dark", ExtendableTheme["tokens"]> = {
   light: {
     ...baseTokens,
     colors: ref.light
   },
   dark: {
-    ...baseTokens,
     colors: ref.dark
   }
 } as const;

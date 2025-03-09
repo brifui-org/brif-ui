@@ -12,6 +12,9 @@ export const error: ErrorColors = {
   },
   active: {
     value: "color-mix(in hsl, {colors.red.800}, {colors.text} 20%)"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.error}, {colors.background} 68%)"
   }
 };
 
@@ -27,5 +30,8 @@ export const darkError: ErrorColors = {
   },
   active: {
     value: "color-mix(in hsl, {colors.red.800}, {colors.text} 20%)"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.error}, {colors.background} 68%)"
   }
 };

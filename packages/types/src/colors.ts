@@ -9,29 +9,11 @@ export type SemanticColorToken = {
   foreground: Token<string>;
   hover: Token<string>;
   active: Token<string>;
-};
-
-export type BorderColors = {
-  DEFAULT: Token<string>;
-  muted: Token<string>;
-  hover: Token<string>;
-  active: Token<string>;
   disabled: Token<string>;
 };
-export type TextColors = {
-  DEFAULT: Token<string>;
-  muted: Token<string>;
-  hover: Token<string>;
-  active: Token<string>;
-  disabled: Token<string>;
-};
-export type BackgroundColors = {
-  DEFAULT: Token<string>;
-  muted: Token<string>;
-  hover: Token<string>;
-  active: Token<string>;
-  disabled: Token<string>;
-};
+export type BorderColors = SemanticColorToken;
+export type TextColors = SemanticColorToken;
+export type BackgroundColors = SemanticColorToken;
 export type DefaultColors = SemanticColorToken;
 export type PrimaryColors = SemanticColorToken;
 export type ErrorColors = SemanticColorToken;

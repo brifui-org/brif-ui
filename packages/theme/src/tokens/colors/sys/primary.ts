@@ -12,6 +12,9 @@ export const primary: PrimaryColors = {
   },
   active: {
     value: "{colors.blue.800}"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.primary}, {colors.background} 68%)"
   }
 };
 
@@ -27,5 +30,8 @@ export const darkPrimary: PrimaryColors = {
   },
   active: {
     value: "{colors.blue.800}"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.primary}, {colors.background} 68%)"
   }
 };

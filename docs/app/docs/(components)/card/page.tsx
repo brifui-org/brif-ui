@@ -34,7 +34,7 @@ export default function CardDocs() {
         </div>
       </Page.Section>
 
-      <Page.Section title="Default" description="Default shadow is large">
+      <Page.Section title="Bordered">
         <Card bordered>
           <Card.Header>Header</Card.Header>
           <Card.Body className={css({ py: 6 })}>Body</Card.Body>
