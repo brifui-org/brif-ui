@@ -1,6 +1,6 @@
 {
   "name": "@brifui/styled",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Styled system for Brif UI.",
   "sideEffects": false,
   "type": "module",
@@ -49,13 +49,13 @@
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
-    "@brifui/types": "^0.0.10",
+    "@brifui/types": "^0.0.11",
     "@brifui/typescript-config": "^0.0.3",
     "eslint": "^9.15.0",
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@brifui/theme": "^0.0.14",
+    "@brifui/theme": "^0.0.15",
     "@pandacss/dev": "^0.53.1"
   }
 }

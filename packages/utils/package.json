@@ -1,6 +1,6 @@
 {
   "name": "@brifui/utils",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Brif UI components - utils library",
   "sideEffects": false,
   "type": "module",
@@ -26,8 +26,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.15",
-    "@brifui/types": "^0.0.10",
+    "@brifui/styled": "^0.0.16",
+    "@brifui/types": "^0.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

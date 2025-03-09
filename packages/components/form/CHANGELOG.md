@@ -1,5 +1,13 @@
 # @brifui/form
 
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.16
+  - @brifui/utils@0.0.11
+
 ## 0.0.17
 
 ### Patch Changes

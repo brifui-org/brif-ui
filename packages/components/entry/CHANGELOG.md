@@ -1,5 +1,29 @@
 # @brifui/components
 
+## 0.0.29
+
+### Patch Changes
+
+- [#130](https://github.com/brifui-org/brif-ui/pull/130) [`ec21cba`](https://github.com/brifui-org/brif-ui/commit/ec21cba5d415145d5564cbf1d72612be7337d489) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added Switch component
+
+- Updated dependencies [[`ec21cba`](https://github.com/brifui-org/brif-ui/commit/ec21cba5d415145d5564cbf1d72612be7337d489)]:
+  - @brifui/checkbox@0.0.17
+  - @brifui/card@0.0.17
+  - @brifui/text@0.0.10
+  - @brifui/accordion@0.0.17
+  - @brifui/avatar@0.0.7
+  - @brifui/button@0.0.18
+  - @brifui/codeblock@0.0.7
+  - @brifui/form@0.0.18
+  - @brifui/input@0.0.19
+  - @brifui/select@0.0.18
+  - @brifui/sidebar@0.0.8
+  - @brifui/spinner@0.0.7
+  - @brifui/switch@0.0.1
+  - @brifui/table@0.0.9
+  - @brifui/toast@0.0.7
+  - @brifui/tooltip@0.0.7
+
 ## 0.0.28
 
 ### Patch Changes
