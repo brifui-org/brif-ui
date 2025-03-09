@@ -1,5 +1,11 @@
 # @brifui/cli
 
+## 0.0.13
+
+### Patch Changes
+
+- [#126](https://github.com/brifui-org/brif-ui/pull/126) [`2058e4f`](https://github.com/brifui-org/brif-ui/commit/2058e4f4fc43139d9b13322c5c50b49f43dc2f28) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added dark mode
+
 ## 0.0.12
 
 ### Patch Changes
