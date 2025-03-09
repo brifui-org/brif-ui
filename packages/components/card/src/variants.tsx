@@ -22,10 +22,10 @@ export const cardVariants = sva({
     bordered: {
       true: {
         header: {
-          borderBottom: "1px solid {colors.border}"
+          borderBottom: "2px solid {colors.border}"
         },
         footer: {
-          borderTop: "1px solid {colors.border}"
+          borderTop: "2px solid {colors.border}"
         }
       }
     },

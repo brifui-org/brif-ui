@@ -112,6 +112,11 @@ const MENU = [
         key: "codeblock",
         title: "Codeblock",
         href: "/docs/codeblock"
+      },
+      {
+        key: "switch",
+        title: "Switch",
+        href: "/docs/switch"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }

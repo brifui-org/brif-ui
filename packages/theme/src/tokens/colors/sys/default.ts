@@ -12,6 +12,9 @@ export const defaultColors: DefaultColors = {
   },
   active: {
     value: "{colors.gray.800}"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.default}, {colors.background} 68%)"
   }
 };
 
@@ -27,5 +30,8 @@ export const darkDefaultColors: DefaultColors = {
   },
   active: {
     value: "{colors.gray.800}"
+  },
+  disabled: {
+    value: "color-mix(in oklab, {colors.default}, {colors.background} 68%)"
   }
 };

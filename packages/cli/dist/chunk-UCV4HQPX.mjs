@@ -8,7 +8,7 @@ import { execSync } from "node:child_process";
 import "@pandacss/dev";
 
 // package.json
-var version = "0.0.13";
+var version = "0.0.14";
 var dependencies = {
   "@clack/prompts": "0.9.1",
   "@pandacss/dev": "^0.53.1",
