@@ -1,6 +1,6 @@
 {
   "name": "@brifui/select",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Select component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -29,9 +29,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/button": "^0.0.15",
-    "@brifui/styled": "^0.0.13",
-    "@brifui/utils": "^0.0.8",
+    "@brifui/button": "^0.0.16",
+    "@brifui/styled": "^0.0.14",
+    "@brifui/utils": "^0.0.9",
     "@radix-ui/react-select": "^2.1.6",
     "lucide-react": "^0.475.0",
     "radix-ui": "^1.1.3",
