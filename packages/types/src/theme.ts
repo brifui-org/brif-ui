@@ -45,8 +45,11 @@ export type Theme = {
   breakpoints: Breakpoints;
   textStyles: TextStyles;
 };
-export interface ExtendableTheme extends DeepPartial<Theme> {
-  extends?: DeepPartial<Theme> | undefined;
+
+export type PartialTheme = DeepPartial<Theme>;
+
+export interface ExtendableTheme extends PartialTheme {
+  extends?: PartialTheme;
 }
 
 export type Config = {

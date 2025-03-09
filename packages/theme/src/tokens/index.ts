@@ -1,4 +1,4 @@
-import { ExtendableTheme, Theme } from "@brifui/types";
+import { Theme } from "@brifui/types";
 
 import { breakpoints } from "./breakpoints";
 import { ref, sys } from "./colors";
@@ -9,12 +9,13 @@ import { lineHeights } from "./fonts/line-heights";
 import { textStyles } from "./fonts/text-styles";
 import { keyframes } from "./keyframes";
 import { componentRadii, radii } from "./radii";
-import { componentShadows, darkComponentShadows, shadows } from "./shadows";
+import { componentShadows, shadows } from "./shadows";
 import { componentSizing, containerSizing, sizing as sizes } from "./sizing";
 import { spacing } from "./spacing";
 import { zIndex } from "./z-index";
 
-const baseTokens: Omit<Theme["tokens"], "colors"> = {
+const baseTokens: Theme["tokens"] = {
+  colors: ref.light,
   spacing,
   fonts,
   fontSizes,
@@ -26,41 +27,18 @@ const baseTokens: Omit<Theme["tokens"], "colors"> = {
   zIndex
 } as const;
 
-const tokens: Record<"light" | "dark", ExtendableTheme["tokens"]> = {
-  light: {
-    ...baseTokens,
-    colors: ref.light
+const baseSemanticTokens: Theme["semanticTokens"] = {
+  colors: sys.light,
+  sizes: {
+    component: componentSizing,
+    container: containerSizing
   },
-  dark: {
-    colors: ref.dark
+  shadows: {
+    component: componentShadows
+  },
+  radii: {
+    component: componentRadii
   }
 } as const;
 
-const baseSemanticTokens: Omit<Theme["semanticTokens"], "colors" | "shadows"> =
-  {
-    sizes: {
-      component: componentSizing,
-      container: containerSizing
-    },
-    radii: {
-      component: componentRadii
-    }
-  } as const;
-const semanticTokens: Record<"light" | "dark", Theme["semanticTokens"]> = {
-  light: {
-    ...baseSemanticTokens,
-    shadows: {
-      component: componentShadows
-    },
-    colors: sys.light
-  },
-  dark: {
-    ...baseSemanticTokens,
-    shadows: {
-      component: darkComponentShadows
-    },
-    colors: sys.dark
-  }
-} as const;
-
-export { tokens, semanticTokens, keyframes, breakpoints, textStyles };
+export { keyframes, breakpoints, textStyles, baseTokens, baseSemanticTokens };

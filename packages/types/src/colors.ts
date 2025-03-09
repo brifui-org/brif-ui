@@ -4,6 +4,9 @@ import { Recursive, Token } from "./base";
  * Colors
  */
 export type ColorToken = Recursive<Token<string>>;
+export type WithMutedColor<T> = T & {
+  muted: Token<string>;
+};
 export type SemanticColorToken = {
   DEFAULT: Token<string>;
   foreground: Token<string>;
@@ -11,9 +14,14 @@ export type SemanticColorToken = {
   active: Token<string>;
   disabled: Token<string>;
 };
-export type BorderColors = SemanticColorToken;
-export type TextColors = SemanticColorToken;
-export type BackgroundColors = SemanticColorToken;
+export type BorderColors = WithMutedColor<
+  Omit<SemanticColorToken, "foreground">
+>;
+export type TextColors = WithMutedColor<Omit<SemanticColorToken, "foreground">>;
+export type BackgroundColors = WithMutedColor<
+  Omit<SemanticColorToken, "foreground">
+>;
+
 export type DefaultColors = SemanticColorToken;
 export type PrimaryColors = SemanticColorToken;
 export type ErrorColors = SemanticColorToken;

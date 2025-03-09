@@ -3,16 +3,16 @@ import deepmerge from "deepmerge";
 import { Config, Theme } from "@brifui/types";
 
 import {
+  baseSemanticTokens,
+  baseTokens,
   breakpoints,
   keyframes,
-  semanticTokens,
-  textStyles,
-  tokens
+  textStyles
 } from "../../tokens";
 
 const defaultConfig: Theme = {
-  tokens: tokens.light,
-  semanticTokens: semanticTokens.light,
+  tokens: baseTokens,
+  semanticTokens: baseSemanticTokens,
   keyframes,
   breakpoints,
   textStyles
