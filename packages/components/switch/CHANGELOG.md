@@ -1,5 +1,13 @@
 # @brifui/switch
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.17
+  - @brifui/utils@0.0.12
+
 ## 0.0.1
 
 ### Patch Changes

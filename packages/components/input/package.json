@@ -1,6 +1,6 @@
 {
   "name": "@brifui/input",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Input component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,8 +30,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.16",
-    "@brifui/utils": "^0.0.11",
+    "@brifui/styled": "^0.0.17",
+    "@brifui/utils": "^0.0.12",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
