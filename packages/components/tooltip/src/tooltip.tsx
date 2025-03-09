@@ -64,7 +64,7 @@ const Content: React.FC<TooltipContentProps> = ({
       className={cx(_css(raw.content, css), className)}
       {...props}
     >
-      <BaseTooltip.Arrow className={_css({ fill: "text" })} />
+      <BaseTooltip.Arrow className={_css({ fill: "border" })} />
       {children}
     </BaseTooltip.Content>
   );

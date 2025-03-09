@@ -21,7 +21,7 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
         px: "6",
         display: "flex",
         alignItems: "center",
-        borderBottomWidth: "1px",
+        borderBottomWidth: "2px",
         borderStyle: "solid",
         borderColor: "border",
         position: "sticky",
@@ -38,10 +38,10 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
           display: "flex",
           alignItems: "center",
           w: {
-            lg: "calc(201px + {spacing.6})"
+            lg: "calc(202px + {spacing.6})"
           },
           borderRight: {
-            lg: "1px solid {colors.border}"
+            lg: "2px solid {colors.border}"
           }
         })}
       >

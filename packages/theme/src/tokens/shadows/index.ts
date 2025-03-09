@@ -29,15 +29,15 @@ export const componentShadows: ComponentShadows = {
 
 export const darkComponentShadows: ComponentShadows = {
   sm: {
-    DEFAULT: { value: "{shadows.sm} {colors.gray.200}" },
+    DEFAULT: { value: "{shadows.sm} {colors.black}" },
     error: { value: "{shadows.sm} {colors.error}" }
   },
   md: {
-    DEFAULT: { value: "{shadows.md} {colors.gray.200}" },
+    DEFAULT: { value: "{shadows.md} {colors.black}" },
     error: { value: "{shadows.md} {colors.error}" }
   },
   lg: {
-    DEFAULT: { value: "{shadows.lg} {colors.gray.200}" },
+    DEFAULT: { value: "{shadows.lg} {colors.black}" },
     error: { value: "{shadows.lg} {colors.error}" }
   }
 };

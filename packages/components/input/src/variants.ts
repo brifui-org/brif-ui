@@ -17,8 +17,10 @@ export const inputVariants = sva({
       borderColor: "border",
       '&:not([aria-invalid="true"])': {
         "&:not(:focus-within)": {
-          _hover: {
-            borderColor: "border.hover"
+          "&:not(:has(input:disabled))": {
+            _hover: {
+              borderColor: "border.hover"
+            }
           }
         },
         _focusWithin: {

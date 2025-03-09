@@ -1,7 +1,7 @@
 import {
   codegen,
   version
-} from "./chunk-AGCF3JQQ.mjs";
+} from "./chunk-CGEYVEJA.mjs";
 
 // ../../node_modules/cac/dist/index.mjs
 import { EventEmitter } from "events";

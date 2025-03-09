@@ -14,7 +14,7 @@ export const text: TextColors = {
     value: "{colors.gray.1000}"
   },
   disabled: {
-    value: "color-mix(in oklab, {colors.gray.1000}, white 68%)"
+    value: "color-mix(in oklab, {colors.gray.1000}, {colors.background} 68%)"
   }
 };
 
@@ -32,6 +32,6 @@ export const darkText: TextColors = {
     value: "{colors.gray.1000}"
   },
   disabled: {
-    value: "color-mix(in oklab, {colors.gray.1000}, black 68%)"
+    value: "color-mix(in oklab, {colors.gray.1000}, {colors.background} 32%)"
   }
 };

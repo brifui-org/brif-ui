@@ -16,7 +16,7 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
         minH: "screen",
         display: "flex",
         flexDir: "column",
-        borderXWidth: "1px",
+        borderXWidth: "2px",
         borderStyle: "solid",
         borderColor: "border",
         position: "relative"
