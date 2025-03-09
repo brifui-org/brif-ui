@@ -6,7 +6,7 @@ export const buttonVariants = cva({
     width: "max-content",
     alignItems: "center",
     justifyContent: "center",
-    transition: "border-color .15s, box-shadow .15s, transform .15s",
+    transition: "box-shadow .15s, transform .15s",
     borderWidth: "2px",
     borderStyle: "solid",
     /**
@@ -35,10 +35,11 @@ export const buttonVariants = cva({
     _disabled: {
       cursor: "not-allowed",
       backgroundColor:
-        "color-mix(in oklab, var(--brif-button-bg-color), white 68%)",
+        "color-mix(in oklab, var(--brif-button-bg-color), {colors.background} 68%)",
       borderColor:
-        "color-mix(in oklab, var(--brif-button-border-color), white 68%)",
-      color: "color-mix(in oklab, var(--brif-button-text-color), white 68%)"
+        "color-mix(in oklab, var(--brif-button-border-color), {colors.background} 68%)",
+      color:
+        "color-mix(in oklab, var(--brif-button-text-color), {colors.background} 68%)"
     }
   },
   variants: {
@@ -53,7 +54,7 @@ export const buttonVariants = cva({
         _hover: {
           "&:not(:disabled)": {
             bg: "primary",
-            borderColor: "default",
+            borderColor: "border",
             color: "primary.foreground"
           }
         },
@@ -65,7 +66,7 @@ export const buttonVariants = cva({
       },
       outline: {
         bg: "background",
-        borderColor: "text",
+        borderColor: "border",
         color: "text",
         "--brif-button-bg-color": "token(colors.background)",
         "--brif-button-border-color": "token(colors.text)",

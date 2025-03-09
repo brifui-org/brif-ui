@@ -3,7 +3,7 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { Accordion, Card } from "@brifui/components";
+import { Accordion, Card, Codeblock } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
 const Title: React.FC<{
@@ -114,9 +114,11 @@ const Preview: React.FC<{
 }> = ({ children, className }) => {
   return (
     <Card
-      className={css({
-        borderBottomRadius: 0,
-        borderBottomWidth: 0,
+      css={css.raw({
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
+        borderBottomWidth: "0px",
+        borderBottom: "none",
         overflow: "auto"
       })}
     >
@@ -150,17 +152,9 @@ const CodePreview: React.FC<{ children?: string }> = ({
         <Accordion.Content
           css={css.raw({ maxH: "500px", maxW: "100%", overflow: "auto" })}
         >
-          <SyntaxHighlighter
-            customStyle={{
-              background: "transparent",
-              overflowX: "visible"
-            }}
-            showLineNumbers
-            language="typescript"
-            style={docco}
-          >
-            {children}
-          </SyntaxHighlighter>
+          <Codeblock.Root>
+            <Codeblock.Content language="tsx">{children}</Codeblock.Content>
+          </Codeblock.Root>
         </Accordion.Content>
       </Accordion.Item>
     </Accordion.Root>

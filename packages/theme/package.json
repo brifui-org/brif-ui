@@ -32,6 +32,9 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./presets": "./src/presets/index.ts",
+    "./tokens": "./src/tokens/index.ts",
+    "./themes": "./src/themes/index.ts",
     "./postcss": {
       "require": "./postcss.cjs",
       "import": "./postcss.js"

@@ -9,7 +9,7 @@ export const tooltipVariants = sva({
       maxH: "var(--radix-tooltip-content-available-height)",
       transformOrigin: "var(--radix-tooltip-content-transform-origin)",
       textStyle: "text.sm",
-      border: "2px solid {colors.border}",
+      border: "2px solid {colors.text}",
       borderRadius: "component.md",
       fontWeight: "medium"
     }

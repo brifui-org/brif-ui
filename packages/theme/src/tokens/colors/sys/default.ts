@@ -14,3 +14,18 @@ export const defaultColors: DefaultColors = {
     value: "{colors.gray.800}"
   }
 };
+
+export const darkDefaultColors: DefaultColors = {
+  DEFAULT: {
+    value: "{colors.gray.1000}"
+  },
+  foreground: {
+    value: "{colors.gray.100}"
+  },
+  hover: {
+    value: "{colors.gray.500}"
+  },
+  active: {
+    value: "{colors.gray.300}"
+  }
+};

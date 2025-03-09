@@ -62,7 +62,9 @@ export default function SidebarDocs() {
       />
 
       <Page.Section title="Default">
-        <Page.Preview className={css({ p: 0, overflow: "hidden" })}>
+        <Page.Preview
+          className={css({ p: "0px !important", overflow: "hidden" })}
+        >
           <Sidebar.Root
             css={css.raw({
               h: "450px"

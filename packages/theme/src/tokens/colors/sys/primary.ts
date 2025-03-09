@@ -14,3 +14,18 @@ export const primary: PrimaryColors = {
     value: "{colors.blue.800}"
   }
 };
+
+export const darkPrimary: PrimaryColors = {
+  DEFAULT: {
+    value: "{colors.blue.700}"
+  },
+  foreground: {
+    value: "{colors.text}"
+  },
+  hover: {
+    value: "{colors.blue.600}"
+  },
+  active: {
+    value: "{colors.blue.800}"
+  }
+};

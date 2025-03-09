@@ -6077,6 +6077,7 @@ __metadata:
     "@brifui/typescript-config": "npm:^0.0.3"
     "@brifui/utils": "npm:^0.0.8"
     "@icons-pack/react-simple-icons": "npm:^12.0.0"
+    "@pandacss/dev": "npm:^0.53.1"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
