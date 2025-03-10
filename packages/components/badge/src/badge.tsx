@@ -18,7 +18,7 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <div className={cx(_css(raw.root, css), className)} {...props}>
-      <span className={_css(raw.label, css)}>{children}</span>
+      <span className={_css(raw.label)}>{children}</span>
     </div>
   );
 };

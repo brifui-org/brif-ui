@@ -5,6 +5,7 @@ export const badgeVariants = sva({
   base: {
     root: {
       px: 1,
+      w: "fit-content",
       bg: "background.muted",
       color: "text",
       display: "flex",

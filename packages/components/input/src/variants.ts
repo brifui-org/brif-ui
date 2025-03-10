@@ -11,7 +11,7 @@ export const inputVariants = sva({
       background: "background",
       color: "text",
       fontFamily: "body",
-      transition: "border-color .15s, box-shadow .15s",
+      transition: "box-shadow .15s",
       borderWidth: "2px",
       borderStyle: "solid",
       borderColor: "border",
@@ -22,10 +22,11 @@ export const inputVariants = sva({
               borderColor: "border.hover"
             }
           }
-        },
-        _focusWithin: {
-          borderColor: "border"
         }
+      },
+      _focusWithin: {
+        borderColor: "border",
+        outline: "2px solid {colors.primary}"
       },
       "&:has(input:disabled)": {
         bg: "background.disabled",
@@ -71,13 +72,7 @@ export const inputVariants = sva({
         root: {
           borderRadius: "component.md",
           height: "component.sm",
-          textStyle: "text.sm",
-          _focusWithin: {
-            boxShadow: "component.sm"
-          },
-          '&[aria-invalid="true"]:focus-within': {
-            boxShadow: "component.sm.error"
-          }
+          textStyle: "text.sm"
         },
         input: {
           px: 2
@@ -93,13 +88,7 @@ export const inputVariants = sva({
         root: {
           height: "component.md",
           borderRadius: "component.md",
-          textStyle: "text.md",
-          _focusWithin: {
-            boxShadow: "component.md"
-          },
-          '&[aria-invalid="true"]:focus-within': {
-            boxShadow: "component.md.error"
-          }
+          textStyle: "text.md"
         },
         input: {
           px: 2.5
@@ -115,13 +104,7 @@ export const inputVariants = sva({
         root: {
           height: "component.lg",
           borderRadius: "component.lg",
-          textStyle: "text.lg",
-          _focusWithin: {
-            boxShadow: "component.lg"
-          },
-          '&[aria-invalid="true"]:focus-within': {
-            boxShadow: "component.lg.error"
-          }
+          textStyle: "text.lg"
         },
         input: {
           px: 3.5

@@ -13,7 +13,7 @@ export default function InputDocs() {
         description="Retrieve text input from a user."
       />
 
-      <Page.Section title="Default" description="Default shadow is large">
+      <Page.Section title="Size" description="Default size is medium">
         <Page.Preview
           className={css({
             gap: 4,

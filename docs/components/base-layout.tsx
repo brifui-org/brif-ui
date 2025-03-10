@@ -13,7 +13,7 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
         mx: "auto",
         w: "100%",
         maxW: "1280px",
-        minH: "screen",
+        minH: "100svh",
         display: "flex",
         flexDir: "column",
         borderXWidth: "2px",
@@ -24,7 +24,11 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
     >
       <Header />
       <main
-        className={css({ flex: 1, display: "flex", flexDirection: "column" })}
+        className={css({
+          flex: 1,
+          display: "flex",
+          flexDirection: "column"
+        })}
       >
         {children}
         <Toaster />

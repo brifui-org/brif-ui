@@ -368,6 +368,7 @@ __metadata:
     "@brifui/switch": "npm:^0.0.4"
     "@brifui/table": "npm:^0.0.12"
     "@brifui/text": "npm:^0.0.13"
+    "@brifui/textarea": "npm:^0.0.0"
     "@brifui/toast": "npm:^0.0.10"
     "@brifui/tooltip": "npm:^0.0.10"
     "@brifui/typescript-config": "npm:^0.0.3"
@@ -557,6 +558,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/styled@npm:^0.0.18":
+  version: 0.0.18
+  resolution: "@brifui/styled@npm:0.0.18"
+  dependencies:
+    "@brifui/theme": "npm:^0.0.17"
+    "@pandacss/dev": "npm:^0.53.1"
+  peerDependencies:
+    "@pandacss/dev": ^0.53.1
+  checksum: 10c0/f563cf8d01c4c11d0d989493a55776caf8a90de109f03b1b4866e9d9219a58b3fb7b1d3c59b16b34aea9884a3c7fe81357c2a31020e76abbc20b18f5a58d476f
+  languageName: node
+  linkType: hard
+
 "@brifui/styled@npm:^0.0.19, @brifui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@brifui/styled@workspace:packages/styled"
@@ -644,6 +657,43 @@ __metadata:
     typescript: "npm:5.5.4"
   languageName: unknown
   linkType: soft
+
+"@brifui/textarea@npm:^0.0.0, @brifui/textarea@workspace:packages/components/textarea":
+  version: 0.0.0-use.local
+  resolution: "@brifui/textarea@workspace:packages/components/textarea"
+  dependencies:
+    "@brifui/eslint-config": "npm:^0.0.3"
+    "@brifui/mocks": "npm:^0.0.5"
+    "@brifui/styled": "npm:^0.0.18"
+    "@brifui/typescript-config": "npm:^0.0.3"
+    "@brifui/utils": "npm:^0.0.13"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/theme@npm:^0.0.17":
+  version: 0.0.17
+  resolution: "@brifui/theme@npm:0.0.17"
+  dependencies:
+    "@brifui/postcss": "npm:^0.0.7"
+    "@pandacss/dev": "npm:^0.53.1"
+    color: "npm:^4.2.3"
+    deepmerge: "npm:^4.3.1"
+    escalade: "npm:^3.2.0"
+  checksum: 10c0/90406de301df6b367b5261060e6ec969512a82792f160c3d2eaaa85e7f6411b270435f6c464510faa09c098a0c678a466afdd0edd0f96d1a9166b39d7bf50e89
+  languageName: node
+  linkType: hard
 
 "@brifui/theme@npm:^0.0.18, @brifui/theme@workspace:packages/theme":
   version: 0.0.0-use.local
@@ -741,6 +791,21 @@ __metadata:
   resolution: "@brifui/typescript-config@workspace:packages/typescript-config"
   languageName: unknown
   linkType: soft
+
+"@brifui/utils@npm:^0.0.13":
+  version: 0.0.13
+  resolution: "@brifui/utils@npm:0.0.13"
+  dependencies:
+    "@brifui/styled": "npm:^0.0.18"
+    "@brifui/types": "npm:^0.0.12"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+  peerDependencies:
+    react: ^19.0.0
+    react-dom: ^19.0.0
+  checksum: 10c0/b11738dd7f3e805e82d06620c56367c7eb94f3fcfcbdb0ca2df5b438dce649ffa83825ccf4de6e0390f6baa5cb34ebdba793623ac1f985aa6b67bb2a6a94f571
+  languageName: node
+  linkType: hard
 
 "@brifui/utils@npm:^0.0.14, @brifui/utils@workspace:packages/utils":
   version: 0.0.0-use.local

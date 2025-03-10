@@ -1,11 +1,11 @@
 {
-  "name": "@brifui/{{componentName}}",
+  "name": "@brifui/textarea",
   "version": "0.0.0",
-  "description": "{{capitalize componentName}} component - Brif UI",
+  "description": "Textarea component - Brif UI",
   "sideEffects": false,
   "type": "module",
   "keywords": [
-    "{{componentName}}",
+    "textarea",
     "component",
     "ui"
   ],
