@@ -5700,12 +5700,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"components-3a4e96@workspace:packages/components":
-  version: 0.0.0-use.local
-  resolution: "components-3a4e96@workspace:packages/components"
-  languageName: unknown
-  linkType: soft
-
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"

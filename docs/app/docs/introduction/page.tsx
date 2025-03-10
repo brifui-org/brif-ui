@@ -5,6 +5,38 @@ import { Page } from "@/components/page";
 import { Card, Text } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+const bgGradient = css({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  w: "100%",
+  h: "100%",
+  backgroundColor: "{colors.blue.900}",
+  _before: {
+    top: 0,
+    left: 0,
+    w: "100%",
+    h: "100%",
+    content: "''",
+    pointerEvents: "none",
+    position: "absolute",
+    backgroundImage:
+      "radial-gradient(88% 100% at top,hsla(0,0%,100%,.5),hsla(0,0%,100%,0))"
+  },
+  _after: {
+    top: 0,
+    left: 0,
+    w: "100%",
+    h: "100%",
+    content: "''",
+    pointerEvents: "none",
+    position: "absolute",
+    backgroundImage: "url(/noise.webp)",
+    backgroundSize: "30%",
+    opacity: 0.2
+  }
+});
+
 export default function IntroductionPage() {
   return (
     <Page>
@@ -14,12 +46,7 @@ export default function IntroductionPage() {
       >
         <Card
           className={css({
-            mt: "12",
-            bg: {
-              base: 'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 67% ), linear-gradient(to right,rgb(26, 42, 108, .65),rgb(178, 31, 31, .65),rgba(253, 187, 45, .65)), url("/noise.png")',
-              _dark:
-                'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 67% ), linear-gradient(to right,rgb(26, 42, 108, .45),rgb(178, 31, 31, .45),rgba(253, 187, 45, .45)), url("/noise-dark.png")'
-            }
+            mt: "12"
           })}
         >
           <Card.Body
@@ -27,20 +54,37 @@ export default function IntroductionPage() {
               p: 6,
               h: 150,
               display: "flex",
+              position: "relative",
               flexDirection: "column",
-              justifyContent: "center"
+              justifyContent: "center",
+              overflow: "hidden"
             })}
           >
+            <div className={bgGradient} />
             <Text
               type="heading.3xl"
               fontWeight="bold"
-              className={css({
-                mb: 2
+              css={css.raw({
+                mb: 2,
+                zIndex: 1,
+                color: {
+                  base: "background",
+                  _dark: "text"
+                }
               })}
             >
               🌈 Brif UI
             </Text>
-            <p className={css({ fontSize: "large", color: "text.muted" })}>
+            <p
+              className={css({
+                fontSize: "large",
+                color: {
+                  base: "background",
+                  _dark: "text"
+                },
+                zIndex: 1
+              })}
+            >
               A Neobrutalism styled React UI library
             </p>
           </Card.Body>
