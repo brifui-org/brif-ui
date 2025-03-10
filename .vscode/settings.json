@@ -12,5 +12,5 @@
   "typescript.tsserver.enableTracing": true,
   "[mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
 }

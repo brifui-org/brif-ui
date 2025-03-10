@@ -3,4 +3,4 @@ import { userEvent } from "@testing-library/user-event";
 
 import { Avatar } from "./avatar";
 
-describe("Avatar", () => {})
+describe.skip("Avatar", () => {});

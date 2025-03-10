@@ -3,4 +3,4 @@ import { userEvent } from "@testing-library/user-event";
 
 import { Switch } from "./switch";
 
-describe("Switch", () => {})
+describe.skip("Switch", () => {});

@@ -44,7 +44,8 @@
     "eslint": "^9.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "vitest": "^2.1.8"
   },
   "tsup": {
     "minify": false,
