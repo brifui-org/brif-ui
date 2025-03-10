@@ -2,7 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Avatar, Button, Card, Input } from "@brifui/components";
+import { Avatar, Badge, Button, Card, Input } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
 const bgGradient = css.raw({
@@ -85,6 +85,9 @@ export default function Home() {
             flexDirection: "column"
           })}
         >
+          <Badge css={css.raw({ mb: 4 })}>
+            BrifUI is still in BETA - stay tuned 👋
+          </Badge>
           <h1
             className={css({
               mb: 4,

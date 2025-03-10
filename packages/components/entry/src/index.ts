@@ -15,3 +15,4 @@ export * from "@brifui/tooltip";
 export * from "@brifui/codeblock";
 export * from "@brifui/switch";
 export * from "@brifui/badge";
+export * from "@brifui/textarea";

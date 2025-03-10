@@ -368,6 +368,7 @@ __metadata:
     "@brifui/switch": "npm:^0.0.3"
     "@brifui/table": "npm:^0.0.11"
     "@brifui/text": "npm:^0.0.12"
+    "@brifui/textarea": "npm:^0.0.0"
     "@brifui/toast": "npm:^0.0.9"
     "@brifui/tooltip": "npm:^0.0.9"
     "@brifui/typescript-config": "npm:^0.0.3"
@@ -642,6 +643,30 @@ __metadata:
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:5.5.4"
+  languageName: unknown
+  linkType: soft
+
+"@brifui/textarea@npm:^0.0.0, @brifui/textarea@workspace:packages/components/textarea":
+  version: 0.0.0-use.local
+  resolution: "@brifui/textarea@workspace:packages/components/textarea"
+  dependencies:
+    "@brifui/eslint-config": "npm:^0.0.3"
+    "@brifui/mocks": "npm:^0.0.5"
+    "@brifui/styled": "npm:^0.0.18"
+    "@brifui/typescript-config": "npm:^0.0.3"
+    "@brifui/utils": "npm:^0.0.13"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
   languageName: unknown
   linkType: soft
 

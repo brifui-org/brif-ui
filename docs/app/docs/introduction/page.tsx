@@ -11,7 +11,7 @@ const bgGradient = css({
   left: 0,
   w: "100%",
   h: "100%",
-  backgroundColor: "{colors.blue.900}",
+  backgroundColor: "#0068d6",
   _before: {
     top: 0,
     left: 0,
