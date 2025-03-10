@@ -620,7 +620,7 @@ var CAC = class extends import_events.EventEmitter {
 var cac = (name = "") => new CAC(name);
 
 // package.json
-var version = "0.0.16";
+var version = "0.0.17";
 var dependencies = {
   "@clack/prompts": "0.9.1",
   "@pandacss/dev": "^0.53.1",

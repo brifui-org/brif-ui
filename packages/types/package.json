@@ -34,7 +34,8 @@
     "@brifui/typescript-config": "^0.0.3",
     "clean-package": "^2.2.0",
     "eslint": "^9.15.0",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "vitest": "^2.1.8"
   },
   "dependencies": {
     "@pandacss/dev": "^0.53.1",

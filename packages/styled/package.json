@@ -52,7 +52,8 @@
     "@brifui/types": "^0.0.12",
     "@brifui/typescript-config": "^0.0.3",
     "eslint": "^9.15.0",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "vitest": "^2.1.8"
   },
   "dependencies": {
     "@brifui/theme": "^0.0.17",

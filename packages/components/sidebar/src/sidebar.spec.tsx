@@ -3,4 +3,4 @@ import { userEvent } from "@testing-library/user-event";
 
 import { Sidebar } from "./sidebar";
 
-describe("Sidebar", () => {})
+describe.skip("Sidebar", () => {});

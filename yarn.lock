@@ -173,6 +173,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
   languageName: unknown
   linkType: soft
 
@@ -313,6 +314,7 @@ __metadata:
     minimatch: "npm:^10.0.1"
     typescript: "npm:5.5.4"
     update-notifier: "npm:^7.3.1"
+    vitest: "npm:^2.1.8"
   peerDependencies:
     "@pandacss/dev": ^0.53.1
   bin:
@@ -475,6 +477,7 @@ __metadata:
     eslint: "npm:^9.15.0"
     postcss: "npm:^8.4.49"
     typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
   peerDependencies:
     "@pandacss/postcss": ^0.53.1
     postcss: ^8.4.49
@@ -565,6 +568,7 @@ __metadata:
     "@pandacss/dev": "npm:^0.53.1"
     eslint: "npm:^9.15.0"
     typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
   peerDependencies:
     "@pandacss/dev": ^0.53.1
   languageName: unknown
@@ -657,6 +661,7 @@ __metadata:
     escalade: "npm:^3.2.0"
     eslint: "npm:^9.15.0"
     typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
   languageName: unknown
   linkType: soft
 
@@ -723,6 +728,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
   peerDependencies:
     "@pandacss/dev": ^0.53.1
     react: ^19.0.0
@@ -751,6 +757,7 @@ __metadata:
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
   peerDependencies:
     react: ^19.0.0
     react-dom: ^19.0.0
@@ -5692,6 +5699,12 @@ __metadata:
   checksum: 10c0/78bd4dd4ed311a79bd264c9e13c36ed564cde657f1390e699e0f04b8eee1fc06ffb8698ce2dfb5fbe7342d509579c82d4e248f08915b708f77f7b72234086cc3
   languageName: node
   linkType: hard
+
+"components-3a4e96@workspace:packages/components":
+  version: 0.0.0-use.local
+  resolution: "components-3a4e96@workspace:packages/components"
+  languageName: unknown
+  linkType: soft
 
 "concat-map@npm:0.0.1":
   version: 0.0.1
