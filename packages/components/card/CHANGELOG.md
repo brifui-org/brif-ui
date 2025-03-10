@@ -1,5 +1,15 @@
 # @brifui/card
 
+## 0.0.20
+
+### Patch Changes
+
+- [#138](https://github.com/brifui-org/brif-ui/pull/138) [`c1f24ee`](https://github.com/brifui-org/brif-ui/commit/c1f24ee9c8a8740003e4a8b2c959e534dbec70da) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - fixed incorrect theme colors
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.19
+  - @brifui/utils@0.0.14
+
 ## 0.0.19
 
 ### Patch Changes

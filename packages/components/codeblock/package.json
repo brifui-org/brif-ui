@@ -1,6 +1,6 @@
 {
   "name": "@brifui/codeblock",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Codeblock component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,8 +30,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.18",
-    "@brifui/utils": "^0.0.13",
+    "@brifui/styled": "^0.0.19",
+    "@brifui/utils": "^0.0.14",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-syntax-highlighter": "^15.6.1"
