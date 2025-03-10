@@ -6,7 +6,8 @@ export const cardVariants = sva({
     root: {
       bg: "background",
       border: "2px solid {colors.border}",
-      borderRadius: "component.lg"
+      borderRadius: "component.lg",
+      overflow: "hidden"
     },
     header: {
       p: 4

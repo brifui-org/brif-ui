@@ -5,6 +5,39 @@ import Link from "next/link";
 import { Avatar, Button, Card, Input } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
+const bgGradient = css.raw({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  w: "100%",
+  h: "100%",
+  backgroundColor: "{colors.purple.700}",
+  _before: {
+    top: 0,
+    left: 0,
+    w: "100%",
+    h: "100%",
+    content: "''",
+    pointerEvents: "none",
+    position: "absolute",
+    backgroundImage:
+      "radial-gradient(88% 100% at top,hsla(0,0%,100%,.5),hsla(0,0%,100%,0))"
+  },
+  _after: {
+    top: 0,
+    left: 0,
+    w: "100%",
+    h: "100%",
+    content: "''",
+    pointerEvents: "none",
+    position: "absolute",
+    backgroundImage: "url(/noise.webp)",
+    backgroundSize: "30%",
+    opacity: 0.2
+  },
+  zIndex: -1
+});
+
 const components: string[] = [
   "card",
   "button",
@@ -37,13 +70,10 @@ export default function Home() {
           },
           borderBottom: "1px solid {colors.border}",
           flex: 1,
-          bg: {
-            base: 'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 67% ), linear-gradient(to right,rgb(26, 42, 108, .75),rgb(178, 31, 31, .65),rgba(253, 187, 45, .65)), url("/noise.png")',
-            _dark:
-              'linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, {colors.background} 67% ), linear-gradient(to right,rgb(26, 42, 108, .65),rgb(178, 31, 31, .55),rgba(253, 187, 45, .55)), url("/noise-dark.png")'
-          }
+          position: "relative"
         })}
       >
+        <div className={css(bgGradient)} />
         <div
           className={css({
             px: 4,
@@ -59,12 +89,15 @@ export default function Home() {
             className={css({
               mb: 4,
               fontSize: {
-                base: "2.05rem",
+                base: "2.5rem",
                 md: "2.65rem"
               },
               fontFamily: "heading",
               fontWeight: "600",
-              lineHeight: "1.47"
+              lineHeight: {
+                base: "1.5",
+                md: "1.47"
+              }
             })}
           >
             Meet{" "}
@@ -76,7 +109,8 @@ export default function Home() {
                 boxShadow: "component.md",
                 px: 6,
                 py: 0,
-                bg: "amber.700"
+                bg: "warning",
+                color: "warning.foreground"
               })}
             >
               Brif
@@ -185,7 +219,10 @@ export default function Home() {
               >
                 <div>
                   <div
-                    className={css({ fontWeight: "semibold", textStyle: "md" })}
+                    className={css({
+                      fontWeight: "semibold",
+                      textStyle: "md"
+                    })}
                   >
                     John Doe
                   </div>
