@@ -44,7 +44,8 @@
     }
   },
   "scripts": {
-    "codegen": "panda codegen",
+    "build:cjs": "rslib build",
+    "codegen": "panda codegen && yarn run build:cjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint ."
   },
