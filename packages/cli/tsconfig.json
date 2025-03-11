@@ -1,5 +1,9 @@
 {
   "extends": "@brifui/typescript-config/base.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "ESNext"
+  },
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"]
 }

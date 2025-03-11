@@ -51,11 +51,11 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
+    "@brifui/node": "^0.0.0",
     "@brifui/postcss": "^0.0.7",
     "@pandacss/dev": "^0.53.1",
     "color": "^4.2.3",
-    "deepmerge": "^4.3.1",
-    "escalade": "^3.2.0"
+    "deepmerge": "^4.3.1"
   },
   "tsup": {
     "clean": true,

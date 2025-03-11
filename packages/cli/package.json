@@ -2,6 +2,7 @@
   "name": "@brifui/cli",
   "version": "0.0.17",
   "description": "CLI tool for Brif UI.",
+  "type": "module",
   "sideEffects": false,
   "keywords": [
     "theme",
@@ -16,8 +17,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "brif": "bin.js",
@@ -46,8 +47,10 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
+    "@brifui/node": "^0.0.0",
     "@clack/prompts": "0.9.1",
     "@pandacss/dev": "^0.53.1",
+    "@rslib/core": "^0.5.4",
     "bundle-n-require": "^1.1.1",
     "chalk": "4.1.2",
     "escalade": "^3.2.0",

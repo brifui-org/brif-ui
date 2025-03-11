@@ -1,41 +1,55 @@
+import {
+  logger
+} from "./chunk-ZAEQWZ4Z.js";
+
+// src/commands/codegen.ts
 import { build } from "@rslib/core";
 import chalk from "chalk";
 import { execSync } from "node:child_process";
 import path from "node:path";
 import { locatePackage } from "@brifui/node";
-
 import "@pandacss/dev";
 
-import { dependencies } from "../../package.json";
-import { logger } from "../utils/logger";
+// package.json
+var version = "0.0.17";
+var dependencies = {
+  "@brifui/node": "^0.0.0",
+  "@clack/prompts": "0.9.1",
+  "@pandacss/dev": "^0.53.1",
+  "@rslib/core": "^0.5.4",
+  "bundle-n-require": "^1.1.1",
+  chalk: "4.1.2",
+  escalade: "^3.2.0",
+  "fast-glob": "^3.3.3",
+  "find-up": "^7.0.0",
+  minimatch: "^10.0.1"
+};
 
-const pandaVersion = dependencies["@pandacss/dev"].slice(1);
-
-const modulesToTranspile = {
+// src/commands/codegen.ts
+var pandaVersion = dependencies["@pandacss/dev"].slice(1);
+var modulesToTranspile = {
   css: "./dist/css/**",
   jsx: "./dist/jsx/**",
   patterns: "./dist/patterns/**",
   themes: "./dist/themes/**",
   tokens: "./dist/tokens/**"
-} as const;
-
-export async function codegen() {
+};
+async function codegen() {
   try {
     const styledPackagePath = locatePackage("styled");
     if (!styledPackagePath) {
       throw new Error("Failed to locate @brifui/styled package");
     }
-    const resolveStyledPath = (p: string) => path.resolve(styledPackagePath, p);
-
+    const resolveStyledPath = (p) => path.resolve(styledPackagePath, p);
     logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
     execSync(`npx panda codegen --config brifui.config.ts`);
     await build({
       lib: [
-        ...(Object.keys(modulesToTranspile).map((k) => ({
+        ...Object.keys(modulesToTranspile).map((k) => ({
           source: {
             entry: {
               index: resolveStyledPath(
-                modulesToTranspile[k as keyof typeof modulesToTranspile]
+                modulesToTranspile[k]
               )
             }
           },
@@ -48,7 +62,7 @@ export async function codegen() {
           },
           bundle: false,
           format: "cjs"
-        })) as object[]),
+        })),
         {
           source: {
             entry: {
@@ -67,7 +81,6 @@ export async function codegen() {
         }
       ]
     });
-
     logger.log(
       `${chalk.blue("@brifui/styled/dist/css")}: the css function to author styles`
     );
@@ -82,3 +95,8 @@ export async function codegen() {
     console.error(err);
   }
 }
+
+export {
+  version,
+  codegen
+};

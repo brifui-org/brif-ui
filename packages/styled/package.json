@@ -10,7 +10,8 @@
     "ui"
   ],
   "files": [
-    "dist"
+    "dist",
+    "distcjs"
   ],
   "license": "MIT",
   "publishConfig": {
@@ -19,22 +20,27 @@
   "exports": {
     "./css": {
       "types": "./dist/css/index.d.ts",
-      "import": "./dist/css/index.mjs"
+      "import": "./dist/css/index.mjs",
+      "require": "./distcjs/css/index.cjs"
     },
     "./tokens": {
       "types": "./dist/tokens/index.d.ts",
-      "import": "./dist/tokens/index.mjs"
+      "import": "./dist/tokens/index.mjs",
+      "require": "./distcjs/tokens/index.cjs"
     },
     "./types": {
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/types/index.mjs"
+      "import": "./dist/types/index.mjs",
+      "require": "./distcjs/types/index.cjs"
     },
     "./patterns": {
       "types": "./dist/patterns/index.d.ts",
-      "import": "./dist/patterns/index.mjs"
+      "import": "./dist/patterns/index.mjs",
+      "require": "./distcjs/patterns/index.cjs"
     },
     "./helpers": {
-      "import": "./dist/helpers.mjs"
+      "import": "./dist/helpers.mjs",
+      "require": "./distcjs/helpers.cjs"
     }
   },
   "scripts": {
@@ -51,6 +57,7 @@
     "@brifui/eslint-config": "^0.0.3",
     "@brifui/types": "^0.0.12",
     "@brifui/typescript-config": "^0.0.3",
+    "@rslib/core": "^0.5.4",
     "eslint": "^9.15.0",
     "typescript": "5.5.4",
     "vitest": "^2.1.8"
