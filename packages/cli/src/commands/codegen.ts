@@ -4,8 +4,6 @@ import { execSync } from "node:child_process";
 import path from "node:path";
 import { locatePackage } from "@brifui/node";
 
-import "@pandacss/dev";
-
 import { dependencies } from "../../package.json";
 import { logger } from "../utils/logger";
 
