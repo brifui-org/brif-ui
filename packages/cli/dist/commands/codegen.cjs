@@ -38,7 +38,6 @@ var import_chalk2 = __toESM(require("chalk"), 1);
 var import_node_child_process = require("child_process");
 var import_node_path = __toESM(require("path"), 1);
 var import_node = require("@brifui/node");
-var import_dev = require("@pandacss/dev");
 
 // package.json
 var dependencies = {

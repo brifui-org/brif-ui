@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "tsup src --dts",
-    "dev": "tsup src --watch",
+    "dev": "tsup src --dts --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."

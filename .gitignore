@@ -36,6 +36,7 @@ build
 dist
 distcjs
 !packages/cli/dist
+!packages/cli/node
 .install-state.gz
 *.buildinfo
 

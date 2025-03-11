@@ -8,7 +8,6 @@ import chalk from "chalk";
 import { execSync } from "node:child_process";
 import path from "node:path";
 import { locatePackage } from "@brifui/node";
-import "@pandacss/dev";
 
 // package.json
 var version = "0.0.17";
