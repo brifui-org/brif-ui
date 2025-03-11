@@ -1,5 +1,28 @@
 # @brifui/components
 
+## 0.0.34
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/accordion@0.0.21
+  - @brifui/avatar@0.0.11
+  - @brifui/badge@0.0.5
+  - @brifui/button@0.0.22
+  - @brifui/card@0.0.21
+  - @brifui/checkbox@0.0.21
+  - @brifui/codeblock@0.0.11
+  - @brifui/form@0.0.22
+  - @brifui/input@0.0.24
+  - @brifui/select@0.0.22
+  - @brifui/sidebar@0.0.12
+  - @brifui/spinner@0.0.11
+  - @brifui/switch@0.0.5
+  - @brifui/table@0.0.13
+  - @brifui/text@0.0.14
+  - @brifui/toast@0.0.11
+  - @brifui/tooltip@0.0.11
+
 ## 0.0.33
 
 ### Patch Changes

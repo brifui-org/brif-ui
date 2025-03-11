@@ -1,6 +1,6 @@
 {
   "name": "@brifui/accordion",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Accordion component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,9 +30,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.19",
+    "@brifui/styled": "^0.0.20",
     "@brifui/types": "^0.0.12",
-    "@brifui/utils": "^0.0.14",
+    "@brifui/utils": "^0.0.15",
     "@radix-ui/react-accordion": "^1.2.3",
     "lucide-react": "^0.475.0",
     "radix-ui": "^1.1.3",

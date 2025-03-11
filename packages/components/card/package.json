@@ -1,6 +1,6 @@
 {
   "name": "@brifui/card",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Card component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,8 +30,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.19",
-    "@brifui/utils": "^0.0.14",
+    "@brifui/styled": "^0.0.20",
+    "@brifui/utils": "^0.0.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

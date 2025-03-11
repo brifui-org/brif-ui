@@ -1,5 +1,14 @@
 # @brifui/theme
 
+## 0.0.19
+
+### Patch Changes
+
+- [#142](https://github.com/brifui-org/brif-ui/pull/142) [`75e3e98`](https://github.com/brifui-org/brif-ui/commit/75e3e98212ce4c30442827d1195dd8b48572e74b) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - supports styled to be imported as CJS
+
+- Updated dependencies [[`75e3e98`](https://github.com/brifui-org/brif-ui/commit/75e3e98212ce4c30442827d1195dd8b48572e74b)]:
+  - @brifui/node@0.0.1
+
 ## 0.0.18
 
 ### Patch Changes
