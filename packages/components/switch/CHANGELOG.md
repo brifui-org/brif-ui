@@ -1,5 +1,13 @@
 # @brifui/switch
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [[`4aa7b44`](https://github.com/brifui-org/brif-ui/commit/4aa7b44b68988dda525a04e03e2f23473298d31b)]:
+  - @brifui/styled@0.0.21
+  - @brifui/utils@0.0.16
+
 ## 0.0.5
 
 ### Patch Changes

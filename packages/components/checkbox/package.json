@@ -1,6 +1,6 @@
 {
   "name": "@brifui/checkbox",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Checkbox component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -29,8 +29,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.20",
-    "@brifui/utils": "^0.0.15",
+    "@brifui/styled": "^0.0.21",
+    "@brifui/utils": "^0.0.16",
     "@radix-ui/react-checkbox": "^1.1.4",
     "lucide-react": "^0.475.0",
     "radix-ui": "^1.1.3",

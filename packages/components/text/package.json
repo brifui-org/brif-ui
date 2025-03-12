@@ -1,6 +1,6 @@
 {
   "name": "@brifui/text",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Text component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,8 +30,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.20",
-    "@brifui/utils": "^0.0.15",
+    "@brifui/styled": "^0.0.21",
+    "@brifui/utils": "^0.0.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
