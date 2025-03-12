@@ -1,5 +1,14 @@
 # @brifui/sidebar
 
+## 0.0.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.23
+  - @brifui/tooltip@0.0.14
+  - @brifui/utils@0.0.18
+
 ## 0.0.14
 
 ### Patch Changes

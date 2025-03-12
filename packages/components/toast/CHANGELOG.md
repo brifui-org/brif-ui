@@ -1,5 +1,16 @@
 # @brifui/toast
 
+## 0.0.14
+
+### Patch Changes
+
+- [#150](https://github.com/brifui-org/brif-ui/pull/150) [`d87a45c`](https://github.com/brifui-org/brif-ui/commit/d87a45c4856d3a1e0b73a4d5f874b1c10dc0f406) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - fixed lucide react cjs import
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.23
+  - @brifui/button@0.0.25
+  - @brifui/utils@0.0.18
+
 ## 0.0.13
 
 ### Patch Changes
