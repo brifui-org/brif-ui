@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu } from "@/components/menu";
+import { BaseLayout } from "@/components/base-layout";
 import { css } from "@brifui/styled/css";
 
 export default function DocsLayout({
@@ -8,17 +8,7 @@ export default function DocsLayout({
   children?: React.ReactNode;
 }) {
   return (
-    <div
-      className={css({
-        flex: 1,
-        display: "grid",
-        gridTemplateColumns: {
-          base: "1fr",
-          lg: "auto 1fr"
-        }
-      })}
-    >
-      <Menu />
+    <BaseLayout>
       <div
         className={css({
           overflow: "hidden"
@@ -26,6 +16,6 @@ export default function DocsLayout({
       >
         {children}
       </div>
-    </div>
+    </BaseLayout>
   );
 }

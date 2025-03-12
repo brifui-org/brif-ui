@@ -3,8 +3,9 @@ import semver from "semver";
 import fs from "node:fs";
 import path from "node:path";
 
-// Define the path to the packages directory
+// Define paths to check
 const packagesDir = path.resolve(__dirname, "../packages");
+const plopDir = path.resolve(__dirname, "../plop");
 
 // Function to get package version from package.json
 function getPackageVersion(
@@ -59,6 +60,51 @@ function findPackageJsonFiles(
   }
 
   return packageInfos;
+}
+
+// Function to recursively find all package.json files
+function findAllPackageJsonFiles(dir: string, paths: string[] = []): string[] {
+  if (!fs.existsSync(dir)) {
+    return paths;
+  }
+
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const entryPath = path.join(dir, entry.name);
+
+    if (entry.isDirectory() && entry.name !== "node_modules") {
+      findAllPackageJsonFiles(entryPath, paths);
+    } else if (entry.name === "package.json") {
+      paths.push(entryPath);
+    }
+  }
+
+  return paths;
+}
+
+// Function to recursively find all template files containing package.json content
+function findPackageJsonTemplates(dir: string, paths: string[] = []): string[] {
+  if (!fs.existsSync(dir)) {
+    return paths;
+  }
+
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const entryPath = path.join(dir, entry.name);
+
+    if (entry.isDirectory() && entry.name !== "node_modules") {
+      findPackageJsonTemplates(entryPath, paths);
+    } else if (
+      entry.name === "package.json.hbs" ||
+      (entry.name.endsWith(".hbs") && entry.name.includes("package"))
+    ) {
+      paths.push(entryPath);
+    }
+  }
+
+  return paths;
 }
 
 // Function to check and update dependencies in a package.json file
@@ -123,6 +169,60 @@ function updateDependencies(
   }
 }
 
+// Function to update dependencies in a handlebar template file
+function updateDependenciesInTemplate(
+  templatePath: string,
+  latestVersions: Map<string, string>
+): boolean {
+  try {
+    // Read template file as string
+    let template = fs.readFileSync(templatePath, "utf-8");
+    let hasUpdates = false;
+
+    // Replace versions in the template
+    latestVersions.forEach((version, packageName) => {
+      // Match @brifui packages with version strings in a way that works with handlebar templates
+      const regex = new RegExp(
+        `("${packageName}"\\s*:\\s*")([~^]?\\d+\\.\\d+\\.\\d+)(")`
+      );
+      const matches = template.match(regex);
+
+      if (matches) {
+        const currentVersion = matches[2].replace(/[\^~]/, "");
+        if (currentVersion !== version) {
+          // Keep the version prefix (^ or ~)
+          const prefix = matches[2].startsWith("^")
+            ? "^"
+            : matches[2].startsWith("~")
+              ? "~"
+              : "";
+
+          // Replace the version in the template
+          template = template.replace(regex, `$1${prefix}${version}$3`);
+
+          console.log(
+            `  ${chalk.blue("→")} Updated ${chalk.cyan(packageName)} in template: ${chalk.red(matches[2])} → ${chalk.green(`${prefix}${version}`)}`
+          );
+          hasUpdates = true;
+        }
+      }
+    });
+
+    // Write back the updated template
+    if (hasUpdates) {
+      fs.writeFileSync(templatePath, template);
+    }
+
+    return hasUpdates;
+  } catch (error) {
+    console.error(
+      `Error updating dependencies in template ${templatePath}:`,
+      error
+    );
+    return false;
+  }
+}
+
 // Function to check versions of all packages
 function checkPackageVersions(): void {
   console.log(chalk.cyan.bold("Checking @brifui package versions...\n"));
@@ -173,44 +273,82 @@ function checkPackageVersions(): void {
       `\n${chalk.magenta.bold("Total @brifui packages found:")} ${chalk.white.bgMagenta(` ${packages.length} `)}`
     );
 
-    // Now check and update dependencies
+    // Now check and update dependencies for packages and plop templates
     console.log(
       chalk.cyan.bold("\nChecking for dependency version mismatches...")
     );
 
-    // Find all package.json files again to process their dependencies
-    const packageJsonPaths: string[] = [];
-    (function findAllPackageJsonFiles(dir: string) {
-      const entries = fs.readdirSync(dir, { withFileTypes: true });
+    // Get all package.json files and template files
+    const packagePaths = findAllPackageJsonFiles(packagesDir);
+    const plopPaths = findAllPackageJsonFiles(plopDir);
+    const templatePaths = findPackageJsonTemplates(plopDir);
+    const allPaths = [...packagePaths, ...plopPaths];
 
-      for (const entry of entries) {
-        const entryPath = path.join(dir, entry.name);
-
-        if (entry.isDirectory() && entry.name !== "node_modules") {
-          findAllPackageJsonFiles(entryPath);
-        } else if (entry.name === "package.json") {
-          packageJsonPaths.push(entryPath);
-        }
-      }
-    })(packagesDir);
+    console.log(
+      `\n${chalk.blue.bold("Locations to check:")} Packages: ${packagePaths.length}, Plop package.json: ${plopPaths.length}, Handlebars templates: ${templatePaths.length}`
+    );
 
     // Process each package.json file
     let totalUpdates = 0;
-    let packagesUpdated = 0;
+    let filesUpdated = 0;
 
-    packageJsonPaths.forEach((packageJsonPath) => {
-      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
-
-      // Only process @brifui packages
-      if (packageJson.name && packageJson.name.startsWith("@brifui")) {
-        console.log(
-          `\n${chalk.yellow.bold(packageJson.name)} ${chalk.dim(`(${packageJson.version})`)}`
+    // Update regular package.json files
+    allPaths.forEach((packageJsonPath) => {
+      try {
+        const packageJson = JSON.parse(
+          fs.readFileSync(packageJsonPath, "utf-8")
         );
+        const displayPath = packageJsonPath.includes("plop")
+          ? chalk.blue(
+              `[TEMPLATE] ${path.relative(process.cwd(), packageJsonPath)}`
+            )
+          : chalk.yellow.bold(
+              packageJson.name || path.relative(process.cwd(), packageJsonPath)
+            );
 
-        const updated = updateDependencies(packageJsonPath, latestVersions);
+        const isTemplate = packageJsonPath.includes("plop");
+        const shouldProcess =
+          isTemplate ||
+          (packageJson.name && packageJson.name.startsWith("@brifui"));
+
+        if (shouldProcess) {
+          const version = packageJson.version
+            ? chalk.dim(`(${packageJson.version})`)
+            : "";
+          console.log(`\n${displayPath} ${version}`);
+
+          const updated = updateDependencies(packageJsonPath, latestVersions);
+          if (updated) {
+            totalUpdates++;
+            filesUpdated++;
+          } else {
+            console.log(
+              "  " +
+                chalk.green("✓") +
+                " All dependencies are using the latest versions"
+            );
+          }
+        }
+      } catch (error) {
+        console.error(`Error processing ${packageJsonPath}:`, error);
+      }
+    });
+
+    // Process handlebars templates
+    if (templatePaths.length > 0) {
+      console.log(chalk.cyan.bold("\nChecking handlebars templates:"));
+
+      templatePaths.forEach((templatePath) => {
+        const relativePath = path.relative(process.cwd(), templatePath);
+        console.log(`\n${chalk.blue(`[TEMPLATE] ${relativePath}`)}`);
+
+        const updated = updateDependenciesInTemplate(
+          templatePath,
+          latestVersions
+        );
         if (updated) {
           totalUpdates++;
-          packagesUpdated++;
+          filesUpdated++;
         } else {
           console.log(
             "  " +
@@ -218,13 +356,13 @@ function checkPackageVersions(): void {
               " All dependencies are using the latest versions"
           );
         }
-      }
-    });
+      });
+    }
 
     // Summary of updates
     if (totalUpdates > 0) {
       console.log(
-        `\n${chalk.blue.bold("Summary:")} Updated dependencies in ${chalk.white.bgBlue(` ${packagesUpdated} `)} packages`
+        `\n${chalk.blue.bold("Summary:")} Updated dependencies in ${chalk.white.bgBlue(` ${filesUpdated} `)} files`
       );
     } else {
       console.log(`\n${chalk.green.bold("All dependencies are up to date!")}`);

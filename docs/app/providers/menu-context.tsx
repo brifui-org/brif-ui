@@ -18,7 +18,7 @@ const MenuContext = createContext<{
 });
 
 export const MenuProvider = ({ children }: PropsWithChildren) => {
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <MenuContext.Provider

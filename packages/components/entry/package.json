@@ -37,6 +37,7 @@
     "@brifui/codeblock": "^0.0.14",
     "@brifui/form": "^0.0.25",
     "@brifui/input": "^0.0.27",
+    "@brifui/radio": "^0.0.0",
     "@brifui/select": "^0.0.25",
     "@brifui/sidebar": "^0.0.15",
     "@brifui/spinner": "^0.0.14",

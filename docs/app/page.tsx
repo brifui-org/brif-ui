@@ -1,5 +1,6 @@
 "use client";
 
+import { LandingPageLayout } from "@/components/landing-page-layout";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Avatar, Badge, Button, Card, Input } from "@brifui/components";
@@ -55,10 +56,11 @@ const components: string[] = [
 
 export default function Home() {
   return (
-    <>
+    <LandingPageLayout>
       <section
         className={css({
-          py: {
+          flex: 1,
+          pt: {
             base: 12,
             md: 24
           },
@@ -69,7 +71,6 @@ export default function Home() {
             md: "1fr 1fr"
           },
           borderBottom: "1px solid {colors.border}",
-          flex: 1,
           position: "relative"
         })}
       >
@@ -360,6 +361,6 @@ export default function Home() {
           })}
         />
       </section>
-    </>
+    </LandingPageLayout>
   );
 }

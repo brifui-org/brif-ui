@@ -15,10 +15,11 @@ import { dependencies } from "../package.json";
 
 const CURRENT_VERSION = dependencies["@brifui/components"].slice(1);
 
-export const Header: React.FC<{ stars?: number; download?: number }> = ({
-  stars = 0,
-  download = 0
-}) => {
+export const Header: React.FC<{
+  stars?: number;
+  download?: number;
+  alwaysShow?: boolean;
+}> = ({ stars = 0, download = 0, alwaysShow = true }) => {
   const { setOpen } = useMenu();
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
@@ -31,7 +32,10 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
   return (
     <header
       className={css({
+        h: "60px",
         px: "6",
+        top: 0,
+        left: 0,
         display: "flex",
         alignItems: "center",
         borderBottomWidth: "2px",
@@ -39,52 +43,48 @@ export const Header: React.FC<{ stars?: number; download?: number }> = ({
         borderColor: "border",
         position: "sticky",
         bg: "background",
-        top: 0,
-        left: 0,
-        zIndex: "10",
-        boxSizing: "border-box"
+        zIndex: "30"
       })}
     >
       <div
         className={css({
           py: "2",
           gap: 2,
-          display: "flex",
-          alignItems: "center",
-          w: {
-            lg: "calc(202px + {spacing.6})"
+          display: {
+            base: "flex",
+            lg: alwaysShow ? "flex" : "none"
           },
-          borderRight: {
-            lg: "2px solid {colors.border}"
-          }
+          alignItems: "center"
         })}
       >
-        {pathname !== "/" && (
-          <Button
-            className={css({
-              display: {
-                lg: "none"
-              }
-            })}
-            size="icon"
-            variant="outline"
-            onClick={() => setOpen((prev) => !prev)}
-          >
-            <Menu size={18} />
-          </Button>
-        )}
-        <Link href="/">
-          <Image
-            quality={100}
-            alt="Brif UI logo"
-            src="/logo.png"
-            width={42}
-            height={42}
-          />
-        </Link>
-        <Badge suppressHydrationWarning size="sm">
-          {CURRENT_VERSION}
-        </Badge>
+        <>
+          {pathname !== "/" && (
+            <Button
+              className={css({
+                display: {
+                  lg: "none"
+                }
+              })}
+              size="icon"
+              variant="outline"
+              onClick={() => setOpen((prev) => !prev)}
+            >
+              <Menu size={18} />
+            </Button>
+          )}
+          <Link href="/">
+            <Image
+              quality={100}
+              alt="Brif UI logo"
+              src="/logo.png"
+              width={42}
+              height={42}
+            />
+          </Link>
+          <Badge suppressHydrationWarning size="sm">
+            {CURRENT_VERSION}
+          </Badge>
+        </>
       </div>
       <div
         className={css({
