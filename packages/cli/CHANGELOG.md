@@ -1,5 +1,11 @@
 # @brifui/cli
 
+## 0.0.20
+
+### Patch Changes
+
+- [#148](https://github.com/brifui-org/brif-ui/pull/148) [`ce2e017`](https://github.com/brifui-org/brif-ui/commit/ce2e0178d1119fe9aed587e9f238872736e45d04) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - fixed lucide react cjs import
+
 ## 0.0.19
 
 ### Patch Changes
