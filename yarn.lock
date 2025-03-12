@@ -419,8 +419,8 @@ __metadata:
   peerDependencies:
     "@pandacss/dev": ^0.53.1
   bin:
-    brif: bin.js
-    brifui: bin.js
+    brif: ./.bin/bin.js
+    brifui: ./.bin/bin.js
   languageName: unknown
   linkType: soft
 

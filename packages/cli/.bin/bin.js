@@ -13,7 +13,7 @@ if (enableCompileCache) {
 }
 
 async function main() {
-  const { main : runCLI } = await import('./dist/index.js');
+  const { main : runCLI } = await import('../dist/index.js');
 
   try {
     runCLI();
