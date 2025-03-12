@@ -1,5 +1,12 @@
 # @brifui/styled
 
+## 0.0.22
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/theme@0.0.20
+
 ## 0.0.21
 
 ### Patch Changes
