@@ -1,5 +1,11 @@
 # @brifui/cli
 
+## 0.0.19
+
+### Patch Changes
+
+- [#146](https://github.com/brifui-org/brif-ui/pull/146) [`4aa7b44`](https://github.com/brifui-org/brif-ui/commit/4aa7b44b68988dda525a04e03e2f23473298d31b) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - improved styled transpile step
+
 ## 0.0.18
 
 ### Patch Changes
