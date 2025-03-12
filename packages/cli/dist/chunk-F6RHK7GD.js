@@ -10,9 +10,9 @@ import path from "node:path";
 import { locatePackage } from "@brifui/node";
 
 // package.json
-var version = "0.0.17";
+var version = "0.0.18";
 var dependencies = {
-  "@brifui/node": "^0.0.0",
+  "@brifui/node": "^0.0.1",
   "@clack/prompts": "0.9.1",
   "@pandacss/dev": "^0.53.1",
   "@rslib/core": "^0.5.4",
@@ -26,13 +26,6 @@ var dependencies = {
 
 // src/commands/codegen.ts
 var pandaVersion = dependencies["@pandacss/dev"].slice(1);
-var modulesToTranspile = {
-  css: "./dist/css/**",
-  jsx: "./dist/jsx/**",
-  patterns: "./dist/patterns/**",
-  themes: "./dist/themes/**",
-  tokens: "./dist/tokens/**"
-};
 async function codegen() {
   try {
     const styledPackagePath = locatePackage("styled");
@@ -44,28 +37,10 @@ async function codegen() {
     execSync(`npx panda codegen --config brifui.config.ts`);
     await build({
       lib: [
-        ...Object.keys(modulesToTranspile).map((k) => ({
-          source: {
-            entry: {
-              index: resolveStyledPath(
-                modulesToTranspile[k]
-              )
-            }
-          },
-          output: {
-            target: "node",
-            cleanDistPath: false,
-            distPath: {
-              root: resolveStyledPath(`./distcjs/${k}`)
-            }
-          },
-          bundle: false,
-          format: "cjs"
-        })),
         {
           source: {
             entry: {
-              index: resolveStyledPath("./dist/helpers.mjs")
+              index: resolveStyledPath("./dist/**")
             }
           },
           output: {
