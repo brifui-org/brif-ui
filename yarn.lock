@@ -393,7 +393,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/cli@npm:^0.0.22, @brifui/cli@workspace:packages/cli":
+"@brifui/cli@npm:^0.0.23, @brifui/cli@workspace:packages/cli":
   version: 0.0.0-use.local
   resolution: "@brifui/cli@workspace:packages/cli"
   dependencies:
@@ -449,7 +449,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.37, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.38, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
@@ -462,8 +462,8 @@ __metadata:
     "@brifui/codeblock": "npm:^0.0.14"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/form": "npm:^0.0.25"
-    "@brifui/input": "npm:^0.0.27"
-    "@brifui/radio": "npm:^0.0.0"
+    "@brifui/input": "npm:^0.0.28"
+    "@brifui/radio": "npm:^0.0.1"
     "@brifui/select": "npm:^0.0.25"
     "@brifui/sidebar": "npm:^0.0.15"
     "@brifui/spinner": "npm:^0.0.14"
@@ -528,7 +528,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/input@npm:^0.0.27, @brifui/input@workspace:packages/components/input":
+"@brifui/input@npm:^0.0.28, @brifui/input@workspace:packages/components/input":
   version: 0.0.0-use.local
   resolution: "@brifui/input@workspace:packages/components/input"
   dependencies:
@@ -607,7 +607,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/radio@npm:^0.0.0, @brifui/radio@workspace:packages/components/radio":
+"@brifui/radio@npm:^0.0.1, @brifui/radio@workspace:packages/components/radio":
   version: 0.0.0-use.local
   resolution: "@brifui/radio@workspace:packages/components/radio"
   dependencies:
@@ -6774,8 +6774,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
   dependencies:
-    "@brifui/cli": "npm:^0.0.22"
-    "@brifui/components": "npm:^0.0.37"
+    "@brifui/cli": "npm:^0.0.23"
+    "@brifui/components": "npm:^0.0.38"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.23"
     "@brifui/theme": "npm:^0.0.21"

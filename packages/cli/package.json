@@ -1,6 +1,6 @@
 {
   "name": "@brifui/cli",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "CLI tool for Brif UI.",
   "type": "module",
   "sideEffects": false,
