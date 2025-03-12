@@ -36,12 +36,37 @@ module.exports = __toCommonJS(codegen_exports);
 var import_core = require("@rslib/core");
 var import_chalk2 = __toESM(require("chalk"), 1);
 var import_node_child_process = require("child_process");
+var import_node_path2 = __toESM(require("path"), 1);
+
+// ../node/src/locate-package.ts
+var import_sync = __toESM(require("escalade/sync"), 1);
 var import_node_path = __toESM(require("path"), 1);
-var import_node = require("@brifui/node");
+function locatePackage(packageName) {
+  const nodeModules = [];
+  (0, import_sync.default)(process.cwd(), (__dir, paths) => {
+    if (paths.includes("node_modules")) {
+      nodeModules.push(import_node_path.default.join(__dir, "node_modules"));
+    }
+  });
+  while (nodeModules.length) {
+    const first = nodeModules.shift();
+    if (!first) continue;
+    const configPath = (0, import_sync.default)(first, (__dir, paths) => {
+      if (paths.includes("@brifui")) {
+        nodeModules.push(import_node_path.default.join(__dir, "@brifui"));
+      } else if (__dir.endsWith("@brifui") && paths.find((path3) => path3 === packageName)) {
+        return import_node_path.default.join(__dir, packageName);
+      }
+      return "";
+    });
+    if (configPath) {
+      return configPath;
+    }
+  }
+}
 
 // package.json
 var dependencies = {
-  "@brifui/node": "^0.0.1",
   "@clack/prompts": "0.9.1",
   "@pandacss/dev": "^0.53.1",
   "@rslib/core": "^0.5.4",
@@ -70,11 +95,11 @@ var logger = {
 var pandaVersion = dependencies["@pandacss/dev"].slice(1);
 async function codegen() {
   try {
-    const styledPackagePath = (0, import_node.locatePackage)("styled");
+    const styledPackagePath = locatePackage("styled");
     if (!styledPackagePath) {
       throw new Error("Failed to locate @brifui/styled package");
     }
-    const resolveStyledPath = (p) => import_node_path.default.resolve(styledPackagePath, p);
+    const resolveStyledPath = (p) => import_node_path2.default.resolve(styledPackagePath, p);
     logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
     (0, import_node_child_process.execSync)(`npx panda codegen --config brifui.config.ts`);
     await (0, import_core.build)({

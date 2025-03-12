@@ -21,8 +21,8 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "brif": "bin.js",
-    "brifui": "bin.js"
+    "brif": "./.bin/bin.js",
+    "brifui": "./.bin/bin.js"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
+    "@brifui/node": "^0.0.1",
     "@brifui/typescript-config": "^0.0.3",
     "@types/node": "^22.13.5",
     "cac": "^6.7.14",
@@ -47,7 +48,6 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
-    "@brifui/node": "^0.0.1",
     "@clack/prompts": "0.9.1",
     "@pandacss/dev": "^0.53.1",
     "@rslib/core": "^0.5.4",

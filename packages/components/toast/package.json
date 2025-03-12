@@ -33,7 +33,6 @@
     "@brifui/button": "^0.0.23",
     "@brifui/styled": "^0.0.21",
     "@brifui/utils": "^0.0.16",
-    "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sonner": "^2.0.1"
@@ -50,6 +49,7 @@
     "eslint": "^9.15.0",
     "global-jsdom": "^26.0.0",
     "jsdom": "^26.0.0",
+    "lucide-react": "^0.475.0",
     "typescript": "5.5.4"
   },
   "tsup": {
