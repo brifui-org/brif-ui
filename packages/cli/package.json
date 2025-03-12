@@ -10,7 +10,7 @@
     "ui"
   ],
   "files": [
-    ".bin",
+    "bin",
     "dist",
     "src"
   ],
@@ -22,8 +22,8 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "brif": "./.bin/bin.js",
-    "brifui": "./.bin/bin.js"
+    "brif": "./bin/bin.js",
+    "brifui": "./bin/bin.js"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
