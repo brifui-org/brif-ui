@@ -620,9 +620,9 @@ var CAC = class extends import_events.EventEmitter {
 var cac = (name = "") => new CAC(name);
 
 // package.json
-var version = "0.0.17";
+var version = "0.0.18";
 var dependencies = {
-  "@brifui/node": "^0.0.0",
+  "@brifui/node": "^0.0.1",
   "@clack/prompts": "0.9.1",
   "@pandacss/dev": "^0.53.1",
   "@rslib/core": "^0.5.4",
@@ -656,13 +656,6 @@ var logger = {
 
 // src/commands/codegen.ts
 var pandaVersion = dependencies["@pandacss/dev"].slice(1);
-var modulesToTranspile = {
-  css: "./dist/css/**",
-  jsx: "./dist/jsx/**",
-  patterns: "./dist/patterns/**",
-  themes: "./dist/themes/**",
-  tokens: "./dist/tokens/**"
-};
 async function codegen() {
   try {
     const styledPackagePath = (0, import_node.locatePackage)("styled");
@@ -674,28 +667,10 @@ async function codegen() {
     (0, import_node_child_process.execSync)(`npx panda codegen --config brifui.config.ts`);
     await (0, import_core.build)({
       lib: [
-        ...Object.keys(modulesToTranspile).map((k) => ({
-          source: {
-            entry: {
-              index: resolveStyledPath(
-                modulesToTranspile[k]
-              )
-            }
-          },
-          output: {
-            target: "node",
-            cleanDistPath: false,
-            distPath: {
-              root: resolveStyledPath(`./distcjs/${k}`)
-            }
-          },
-          bundle: false,
-          format: "cjs"
-        })),
         {
           source: {
             entry: {
-              index: resolveStyledPath("./dist/helpers.mjs")
+              index: resolveStyledPath("./dist/**")
             }
           },
           output: {

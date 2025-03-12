@@ -9,14 +9,6 @@ import { logger } from "../utils/logger";
 
 const pandaVersion = dependencies["@pandacss/dev"].slice(1);
 
-const modulesToTranspile = {
-  css: "./dist/css/**",
-  jsx: "./dist/jsx/**",
-  patterns: "./dist/patterns/**",
-  themes: "./dist/themes/**",
-  tokens: "./dist/tokens/**"
-} as const;
-
 export async function codegen() {
   try {
     const styledPackagePath = locatePackage("styled");
@@ -29,28 +21,10 @@ export async function codegen() {
     execSync(`npx panda codegen --config brifui.config.ts`);
     await build({
       lib: [
-        ...(Object.keys(modulesToTranspile).map((k) => ({
-          source: {
-            entry: {
-              index: resolveStyledPath(
-                modulesToTranspile[k as keyof typeof modulesToTranspile]
-              )
-            }
-          },
-          output: {
-            target: "node",
-            cleanDistPath: false,
-            distPath: {
-              root: resolveStyledPath(`./distcjs/${k}`)
-            }
-          },
-          bundle: false,
-          format: "cjs"
-        })) as object[]),
         {
           source: {
             entry: {
-              index: resolveStyledPath("./dist/helpers.mjs")
+              index: resolveStyledPath("./dist/**")
             }
           },
           output: {
