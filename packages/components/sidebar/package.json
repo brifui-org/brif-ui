@@ -1,6 +1,6 @@
 {
   "name": "@brifui/sidebar",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Sidebar component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,9 +30,9 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.21",
-    "@brifui/tooltip": "^0.0.12",
-    "@brifui/utils": "^0.0.16",
+    "@brifui/styled": "^0.0.22",
+    "@brifui/tooltip": "^0.0.13",
+    "@brifui/utils": "^0.0.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

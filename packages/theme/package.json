@@ -1,6 +1,6 @@
 {
   "name": "@brifui/theme",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Theming library for Brif UI.",
   "sideEffects": false,
   "type": "module",
@@ -51,7 +51,7 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
-    "@brifui/node": "^0.0.1",
+    "@brifui/node": "^0.0.2",
     "@brifui/postcss": "^0.0.7",
     "@pandacss/dev": "^0.53.1",
     "color": "^4.2.3",
