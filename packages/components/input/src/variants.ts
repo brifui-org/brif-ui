@@ -26,7 +26,8 @@ export const inputVariants = sva({
       },
       _focusWithin: {
         borderColor: "border",
-        outline: "2px solid {colors.primary}"
+        outline: "4px solid {colors.primary}",
+        outlineOffset: "px"
       },
       "&:has(input:disabled)": {
         bg: "background.disabled",

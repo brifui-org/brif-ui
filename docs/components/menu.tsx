@@ -2,9 +2,16 @@
 
 import React, { ComponentPropsWithRef } from "react";
 import { useMenu } from "@/app/providers/menu-context";
+import { MenuIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Badge, Button } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
+
+import { dependencies } from "../package.json";
+
+const CURRENT_VERSION = dependencies["@brifui/components"].slice(1);
 
 const MENU = [
   {
@@ -127,6 +134,11 @@ const MENU = [
         key: "textarea",
         title: "Textarea",
         href: "/docs/textarea"
+      },
+      {
+        key: "radio-group",
+        title: "RadioGroup",
+        href: "/docs/radio-group"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }
@@ -210,45 +222,94 @@ const Section: React.FC<ComponentPropsWithRef<"div"> & { title: string }> = ({
 export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
   className
 }) => {
-  const { isOpen } = useMenu();
+  const { isOpen, setOpen } = useMenu();
 
   return (
     <aside
       role="menu"
-      className={cx(
-        css({
-          px: 6,
-          py: 12,
-          scrollbar: "hidden",
-          w: "fit-content",
-          bg: "background",
-          height: "calc(100vh - 59px)",
-          overflowY: "auto",
-          borderRight: "2px solid {colors.border}",
-          display: "block",
-          position: {
-            base: "fixed",
-            lg: "sticky"
-          },
-          top: 59,
-          left: 0,
-          zIndex: "10",
-          transition: "transform .3s ease",
-          transform: {
-            base: isOpen ? "translateX(0)" : "translateX(-100%)",
-            lg: "unset"
-          }
-        }),
-        className
-      )}
+      className={css({
+        scrollbar: "hidden",
+        display: "block",
+        w: "fit-content",
+        minH: "100%",
+        overflowY: "auto",
+        bg: "background",
+        position: {
+          base: "absolute",
+          lg: "relative"
+        },
+        top: 0,
+        left: 0,
+        transition: "transform .3s ease",
+        transform: {
+          base: isOpen ? "translateX(0)" : "translateX(-100%)",
+          lg: "unset"
+        },
+        zIndex: "20",
+        borderRight: "2px solid {colors.border}"
+      })}
     >
-      {MENU.map((section) => (
-        <Section key={section.key} title={section.title}>
-          {section.children.map((item) => (
-            <Item key={item.key} title={item.title} href={item.href} />
-          ))}
-        </Section>
-      ))}
+      <div
+        className={css({
+          px: 6,
+          h: "60px",
+          display: "flex",
+          alignItems: "center",
+          position: "sticky",
+          top: 0,
+          left: 0,
+          borderBottom: "2px solid {colors.border}",
+          bg: "background",
+          zIndex: "20",
+          visibility: {
+            base: "hidden",
+            lg: "visible"
+          }
+        })}
+      >
+        <Button
+          className={css({
+            display: {
+              lg: "none"
+            }
+          })}
+          size="icon"
+          variant="outline"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <MenuIcon size={18} />
+        </Button>
+        <Link href="/">
+          <Image
+            quality={100}
+            alt="Brif UI logo"
+            src="/logo.png"
+            width={42}
+            height={42}
+          />
+        </Link>
+        <Badge suppressHydrationWarning size="sm">
+          {CURRENT_VERSION}
+        </Badge>
+      </div>
+      <div
+        className={css({
+          px: 6,
+          pt: 6,
+          pb: 12,
+          display: "block",
+          bg: "background",
+          w: "fit-content"
+        })}
+      >
+        {MENU.map((section) => (
+          <Section key={section.key} title={section.title}>
+            {section.children.map((item) => (
+              <Item key={item.key} title={item.title} href={item.href} />
+            ))}
+          </Section>
+        ))}
+      </div>
     </aside>
   );
 };
