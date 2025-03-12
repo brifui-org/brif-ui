@@ -28,7 +28,8 @@
     "version": "changeset version && yarn install --no-immutable",
     "release": "yarn build && changeset publish",
     "changeset:beta": "changeset pre enter beta",
-    "create:comp": "plop component"
+    "create:comp": "plop component",
+    "version:check": "tsx ./scripts/version-check.ts"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
@@ -48,6 +49,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-sort-json": "^4.1.1",
     "tsup": "^8.3.5",
+    "tsx": "^4.19.3",
     "turbo": "^2.3.3",
     "typescript": "5.5.4",
     "vitest": "^2.1.8"

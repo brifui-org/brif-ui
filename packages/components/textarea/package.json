@@ -30,8 +30,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.18",
-    "@brifui/utils": "^0.0.13",
+    "@brifui/styled": "^0.0.21",
+    "@brifui/utils": "^0.0.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

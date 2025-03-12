@@ -5,11 +5,11 @@
   "type": "module",
   "sideEffects": false,
   "keywords": [
-    "CLI",
+    "theme",
+    "theming",
     "ui"
   ],
   "files": [
-    ".bin",
     "dist",
     "src"
   ],
@@ -26,8 +26,8 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "rslib build",
-    "dev": "rslib build --watch",
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."
@@ -57,5 +57,14 @@
     "fast-glob": "^3.3.3",
     "find-up": "^7.0.0",
     "minimatch": "^10.0.1"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2019",
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "shims": true
   }
 }
