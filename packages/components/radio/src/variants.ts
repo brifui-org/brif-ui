@@ -20,6 +20,7 @@ export const radioVariants = sva({
         }
       },
       _disabled: {
+        cursor: "not-allowed",
         borderColor:
           "color-mix(in oklab, {colors.border}, {colors.background} 68%)",
         backgroundColor:
@@ -120,14 +121,10 @@ export const radioVariants = sva({
     error: {
       true: {
         item: {
+          boxShadowColor: "error",
           borderColor: "error",
           _checked: {
             borderColor: "error"
-          },
-          "&:not(:disabled)": {
-            _hover: {
-              boxShadow: "component.sm.error"
-            }
           }
         }
       }

@@ -228,36 +228,40 @@ export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
     <aside
       role="menu"
       className={css({
+        width: "250px",
         scrollbar: "hidden",
         display: "block",
         w: "fit-content",
         minH: "100%",
+        maxH: "100svh",
         overflowY: "auto",
         bg: "background",
         position: {
           base: "absolute",
-          lg: "relative"
+          lg: "fixed"
         },
         top: 0,
-        left: 0,
         transition: "transform .3s ease",
         transform: {
           base: isOpen ? "translateX(0)" : "translateX(-100%)",
           lg: "unset"
         },
-        zIndex: "20",
+        zIndex: {
+          base: "20",
+          lg: "50"
+        },
         borderRight: "2px solid {colors.border}"
       })}
     >
       <div
         className={css({
           px: 6,
-          h: "60px",
-          display: "flex",
-          alignItems: "center",
-          position: "sticky",
           top: 0,
           left: 0,
+          h: "60px",
+          position: "sticky",
+          display: "flex",
+          alignItems: "center",
           borderBottom: "2px solid {colors.border}",
           bg: "background",
           zIndex: "20",

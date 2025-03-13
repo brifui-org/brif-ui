@@ -108,55 +108,15 @@ export const switchVariants = sva({
     error: {
       true: {
         root: {
-          borderColor: "error"
+          borderColor: "error",
+          boxShadowColor: "error"
         }
       }
     }
   },
   defaultVariants: {
     size: "md"
-  },
-  compoundVariants: [
-    {
-      size: "sm",
-      error: true,
-      css: {
-        root: {
-          '&:not([data-disabled=""])': {
-            _hover: {
-              boxShadow: "component.sm.error"
-            }
-          }
-        }
-      }
-    },
-    {
-      size: "md",
-      error: true,
-      css: {
-        root: {
-          '&:not([data-disabled=""])': {
-            _hover: {
-              boxShadow: "component.sm.error"
-            }
-          }
-        }
-      }
-    },
-    {
-      size: "lg",
-      error: true,
-      css: {
-        root: {
-          '&:not([data-disabled=""])': {
-            _hover: {
-              boxShadow: "component.md.error"
-            }
-          }
-        }
-      }
-    }
-  ]
+  }
 });
 
 export type SwitchVariantProps = RecipeVariantProps<typeof switchVariants>;

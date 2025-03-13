@@ -7,6 +7,7 @@ import {
   keyframes,
   textStyles
 } from "../tokens";
+import { boxShadowUtility } from "../utilities";
 
 export const preset = definePreset({
   name: "brifui",
@@ -28,17 +29,7 @@ export const preset = definePreset({
   },
   utilities: {
     extend: {
-      boxShadow: {
-        transform(value, { token }) {
-          if (typeof value !== "string" || !value.startsWith("var"))
-            return {
-              boxShadow: value
-            };
-          return {
-            boxShadow: `${value} var(--shadow-color, ${token("colors.text")})`
-          };
-        }
-      }
+      boxShadow: boxShadowUtility
     }
   }
 });

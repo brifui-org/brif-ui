@@ -29,11 +29,13 @@ export const textareaVariants = sva({
       },
       _focus: {
         borderColor: "border",
-        outline: "2px solid {colors.primary}"
+        outline: "4px solid {colors.primary}",
+        outlineOffset: "px"
       },
       _focusVisible: {
         borderColor: "border",
-        outline: "2px solid {colors.primary}"
+        outline: "4px solid {colors.primary}",
+        outlineOffset: "px"
       },
       _disabled: {
         cursor: "not-allowed",

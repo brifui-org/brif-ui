@@ -59,7 +59,8 @@ export const selectVariants = sva({
     error: {
       true: {
         trigger: {
-          borderColor: "error"
+          borderColor: "error",
+          boxShadowColor: "error"
         }
       }
     }
@@ -67,48 +68,7 @@ export const selectVariants = sva({
   defaultVariants: {
     size: "md",
     error: false
-  },
-  compoundVariants: [
-    {
-      size: "sm",
-      error: true,
-      css: {
-        trigger: {
-          _hover: {
-            "&:not(:disabled)": {
-              boxShadow: "component.sm.error"
-            }
-          }
-        }
-      }
-    },
-    {
-      size: "md",
-      error: true,
-      css: {
-        trigger: {
-          _hover: {
-            "&:not(:disabled)": {
-              boxShadow: "component.md.error"
-            }
-          }
-        }
-      }
-    },
-    {
-      size: "lg",
-      error: true,
-      css: {
-        trigger: {
-          _hover: {
-            "&:not(:disabled)": {
-              boxShadow: "component.lg.error"
-            }
-          }
-        }
-      }
-    }
-  ]
+  }
 });
 
 export type SelectVariantProps = RecipeVariantProps<typeof selectVariants>;
