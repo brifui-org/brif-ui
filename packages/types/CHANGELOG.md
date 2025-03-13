@@ -1,5 +1,11 @@
 # @brifui/types
 
+## 0.0.13
+
+### Patch Changes
+
+- [#156](https://github.com/brifui-org/brif-ui/pull/156) [`3d641ba`](https://github.com/brifui-org/brif-ui/commit/3d641ba85a7885afd765244f4cb782d53a80504c) Thanks [@thinh-trinh-duc](https://github.com/thinh-trinh-duc)! - updated theme box shadow utility
+
 ## 0.0.12
 
 ### Patch Changes

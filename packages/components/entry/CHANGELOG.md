@@ -1,5 +1,30 @@
 # @brifui/components
 
+## 0.0.39
+
+### Patch Changes
+
+- Updated dependencies [[`3d641ba`](https://github.com/brifui-org/brif-ui/commit/3d641ba85a7885afd765244f4cb782d53a80504c)]:
+  - @brifui/checkbox@0.0.25
+  - @brifui/accordion@0.0.25
+  - @brifui/avatar@0.0.15
+  - @brifui/badge@0.0.9
+  - @brifui/button@0.0.26
+  - @brifui/card@0.0.25
+  - @brifui/codeblock@0.0.15
+  - @brifui/form@0.0.26
+  - @brifui/input@0.0.29
+  - @brifui/radio@0.0.2
+  - @brifui/select@0.0.26
+  - @brifui/sidebar@0.0.16
+  - @brifui/spinner@0.0.15
+  - @brifui/switch@0.0.9
+  - @brifui/table@0.0.17
+  - @brifui/text@0.0.18
+  - @brifui/textarea@0.0.4
+  - @brifui/toast@0.0.15
+  - @brifui/tooltip@0.0.15
+
 ## 0.0.38
 
 ### Patch Changes

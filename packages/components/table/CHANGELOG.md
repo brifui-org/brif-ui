@@ -1,5 +1,13 @@
 # @brifui/table
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.24
+  - @brifui/utils@0.0.19
+
 ## 0.0.16
 
 ### Patch Changes

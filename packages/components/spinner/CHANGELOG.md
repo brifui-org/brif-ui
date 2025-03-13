@@ -1,5 +1,13 @@
 # @brifui/spinner
 
+## 0.0.15
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.24
+  - @brifui/utils@0.0.19
+
 ## 0.0.14
 
 ### Patch Changes
