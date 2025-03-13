@@ -14,30 +14,24 @@ export const shadows: Shadows = {
 
 export const componentShadows: ComponentShadows = {
   sm: {
-    DEFAULT: { value: "{shadows.sm} {colors.text}" },
-    error: { value: "{shadows.sm} {colors.error}" }
+    DEFAULT: { value: "{shadows.sm}" }
   },
   md: {
-    DEFAULT: { value: "{shadows.md} {colors.text}" },
-    error: { value: "{shadows.md} {colors.error}" }
+    DEFAULT: { value: "{shadows.md}" }
   },
   lg: {
-    DEFAULT: { value: "{shadows.lg} {colors.text}" },
-    error: { value: "{shadows.lg} {colors.error}" }
+    DEFAULT: { value: "{shadows.lg}" }
   }
 };
 
 export const darkComponentShadows: ComponentShadows = {
   sm: {
-    DEFAULT: { value: "{shadows.sm} {colors.black}" },
-    error: { value: "{shadows.sm} {colors.error}" }
+    DEFAULT: { value: "{shadows.sm}" }
   },
   md: {
-    DEFAULT: { value: "{shadows.md} {colors.black}" },
-    error: { value: "{shadows.md} {colors.error}" }
+    DEFAULT: { value: "{shadows.md}" }
   },
   lg: {
-    DEFAULT: { value: "{shadows.lg} {colors.black}" },
-    error: { value: "{shadows.lg} {colors.error}" }
+    DEFAULT: { value: "{shadows.lg}" }
   }
 };
