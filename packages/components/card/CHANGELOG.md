@@ -1,5 +1,13 @@
 # @brifui/card
 
+## 0.0.25
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.24
+  - @brifui/utils@0.0.19
+
 ## 0.0.24
 
 ### Patch Changes
