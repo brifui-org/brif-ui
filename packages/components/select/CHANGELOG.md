@@ -1,5 +1,16 @@
 # @brifui/select
 
+## 0.0.27
+
+### Patch Changes
+
+- [#158](https://github.com/brifui-org/brif-ui/pull/158) [`ca055ac`](https://github.com/brifui-org/brif-ui/commit/ca055ac1474ee3211a4c954393946690932b64f4) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated styles
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.25
+  - @brifui/button@0.0.27
+  - @brifui/utils@0.0.20
+
 ## 0.0.26
 
 ### Patch Changes
