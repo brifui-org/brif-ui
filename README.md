@@ -67,6 +67,8 @@ BrifUI includes a wide range of components:
 - **Layout**: Box, Flex, Grid, Stack
 - **Overlay**: Drawer, Modal, Popover, Tooltip
 
+... And many more.
+
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
