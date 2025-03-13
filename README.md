@@ -1,33 +1,116 @@
+# BrifUI
+
 <p align="center">
-  <a href="https://brifui.netlify.app">
-      <img width="20%" src="https://raw.githubusercontent.com/brifui-org/brif-ui/refs/heads/main/docs/public/logo.png" alt="brifui" />
-      <h1 align="center">BrifUI</h1>
-  </a>
-</p>
-</br>
-<p align="center">
-  <a href="https://github.com/brifui-org/brif-ui/blob/main/LICENSE">
-    <img src="https://img.shields.io/npm/l/@brifui/components" alt="License">
-  </a>
-  <a href="https://www.npmjs.com/package/@brifui/components">
-    <img src="https://img.shields.io/npm/dm/@brifui/components?style=flat-round" alt="npm downloads">
-  </a>
+  <img width="10%" src="./docs/public/logo-with-bg.png" alt="brifui" />
 </p>
 
-## Getting Started
+<p align="center">
+  A modern, accessible React UI component library built with Panda CSS and Radix UI.
+</p>
 
-Visit <a aria-label="brifui learn" href="https://brifui.netlify.app/docs">https://brifui.netlify.app/docs</a> to get started with BrifUI.
+<p align="center">
+  <a href="https://www.npmjs.com/package/@brifui/react"><img src="https://img.shields.io/npm/v/@brifui/components?style=flat-square" alt="npm version"></a>
+  <a href="https://github.com/yourorg/brif-ui/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@brifui/components?style=flat-square" alt="license"></a>
+  <a href="https://www.npmjs.com/package/@brifui/react"><img src="https://img.shields.io/npm/dm/@brifui/components?style=flat-square" alt="npm downloads"></a>
+</p>
+
+## Features
+
+- 🧱 **Brutalist Design**: Honest, raw aesthetic with functional simplicity
+- 🌈 **Modern Design System**: Beautiful, consistent UI components - powerred by [PandaCSS](https://panda-css.com/)
+- ♿ **Accessibility**: WCAG 2.1 compliant components - powerred by [RadixUI](https://www.radix-ui.com/)
+- 🎨 **Customizable**: Fully customizable with Panda CSS
+- 🔍 **TypeScript**: Full type support
+- 📦 **Modular**: Import only what you need
+- 🌐 **SSR Compatible**: Works with Next.js and other SSR frameworks
+- 🌙 **Dark Mode**: Built-in support for light and dark themes
+
+## Installation
+
+```bash
+# With npm
+npm install @brifui/react
+
+# With yarn
+yarn add @brifui/react
+
+# With pnpm
+pnpm add @brifui/react
+```
+
+## Quick Start
+
+```jsx
+import { Button } from '@brifui/react';
+
+function App() {
+  return (
+    <Button variant="primary">
+      Click me
+    </Button>
+  );
+}
+```
 
 ## Documentation
 
-Visit [https://brifui.netlify.app/docs](https://brifui.netlify.app/docs) to view the full documentation.
+For complete documentation, visit our [documentation website](https://brif-ui.com/docs).
 
+## Components
 
-## Community
+BrifUI includes a wide range of components:
 
-We're excited to see the community adopt BrifUI, raise issues, and provide feedback.
-Whether it's a feature request, bug report, or a project to showcase, please get involved!
+- **Inputs**: Button, Checkbox, Radio, Select, Slider, Switch, TextField
+- **Navigation**: Breadcrumb, Link, Menu, Pagination, Tabs
+- **Data Display**: Accordion, Avatar, Badge, Card, Table, Tag
+- **Feedback**: Alert, Dialog, Progress, Spinner, Toast
+- **Layout**: Box, Flex, Grid, Stack
+- **Overlay**: Drawer, Modal, Popover, Tooltip
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## Project Structure
+
+```
+docs/                  # Documentation website
+packages/
+  ├── cli/             # @brifui/cli package
+  ├── components/      # Component monorepo
+  │    ├── accordion/  # Individual component packages
+  │    ├── button/
+  │    └── ...
+  ├── entry/           # Entrypoint of the library
+  ├── postcss/         # @brifui/postcss package
+  ├── styled/          # @brifui/styled package
+  ├── theme/           # @brifui/theme package
+  ├── types/           # @brifui/types package
+  └── utils/           # @brifui/utils package
+```
+
+## Development
+
+To set up the development environment:
+
+```bash
+# Clone the repository
+git clone https://github.com/yourorg/brif-ui.git
+cd brif-ui
+
+# Install dependencies
+yarn
+
+# Start development environment
+yarn dev
+```
+
+Run the test suite with:
+
+```bash
+yarn test
+```
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)
