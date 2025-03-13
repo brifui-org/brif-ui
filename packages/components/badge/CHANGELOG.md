@@ -1,5 +1,13 @@
 # @brifui/badge
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.25
+  - @brifui/utils@0.0.20
+
 ## 0.0.9
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @brifui/button
 
+## 0.0.27
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.25
+  - @brifui/utils@0.0.20
+
 ## 0.0.26
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@brifui/spinner",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Spinner component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,8 +30,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.24",
-    "@brifui/utils": "^0.0.19",
+    "@brifui/styled": "^0.0.25",
+    "@brifui/utils": "^0.0.20",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
