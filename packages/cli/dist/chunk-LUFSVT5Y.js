@@ -36,7 +36,7 @@ function locatePackage(packageName) {
 }
 
 // package.json
-var version = "0.0.22";
+var version = "0.0.23";
 var dependencies = {
   "@clack/prompts": "0.9.1",
   "@pandacss/dev": "^0.53.1",

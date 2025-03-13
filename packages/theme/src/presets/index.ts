@@ -25,5 +25,20 @@ export const preset = definePreset({
       "--global-font-heading": "{fonts.heading}",
       "--global-font-body": "{fonts.body}"
     }
+  },
+  utilities: {
+    extend: {
+      boxShadow: {
+        transform(value, { token }) {
+          if (typeof value !== "string" || !value.startsWith("var"))
+            return {
+              boxShadow: value
+            };
+          return {
+            boxShadow: `${value} var(--shadow-color, ${token("colors.text")})`
+          };
+        }
+      }
+    }
   }
 });

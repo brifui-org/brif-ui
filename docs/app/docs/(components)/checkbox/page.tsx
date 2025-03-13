@@ -86,10 +86,15 @@ export default function CheckboxDocs() {
             },
             gridTemplateColumns: {
               base: "1fr",
-              md: "1fr 1fr 1fr"
+              md: "1fr 1fr 1fr 1fr"
             }
           })}
         >
+          <Checkbox disabled error>
+            <Checkbox.Indicator />
+            <Checkbox.Label>Error</Checkbox.Label>
+          </Checkbox>
+
           <Checkbox disabled>
             <Checkbox.Indicator />
             <Checkbox.Label>Unchecked</Checkbox.Label>
@@ -103,6 +108,38 @@ export default function CheckboxDocs() {
           <Checkbox disabled checked="indeterminate">
             <Checkbox.Indicator />
             <Checkbox.Label>Indeterminate</Checkbox.Label>
+          </Checkbox>
+        </Page.Preview>
+        <Page.CodePreview>HIHI</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section title="Error">
+        <Page.Preview
+          className={css({
+            gap: 4,
+            justifyItems: {
+              base: "start",
+              md: "center"
+            },
+            gridTemplateColumns: {
+              base: "1fr",
+              md: "1fr 1fr 1fr"
+            }
+          })}
+        >
+          <Checkbox error size="sm">
+            <Checkbox.Indicator />
+            <Checkbox.Label>Small</Checkbox.Label>
+          </Checkbox>
+
+          <Checkbox error size="md">
+            <Checkbox.Indicator />
+            <Checkbox.Label>Medium</Checkbox.Label>
+          </Checkbox>
+
+          <Checkbox error size="lg">
+            <Checkbox.Indicator />
+            <Checkbox.Label>Large</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
         <Page.CodePreview>HIHI</Page.CodePreview>

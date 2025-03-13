@@ -7,11 +7,12 @@ export const checkboxVariants = sva({
       display: "flex",
       alignItems: "center",
       transition: "border-color .15s, box-shadow .15s",
-      "&[data-disabled]": {
+      _disabled: {
         cursor: "not-allowed"
       }
     },
     indicator: {
+      bg: "background",
       cursor: "pointer",
       display: "inline-flex",
       alignItems: "center",
@@ -20,27 +21,28 @@ export const checkboxVariants = sva({
       borderStyle: "solid",
       borderColor: "border",
       transition: "border-color .15s, box-shadow .15s",
-      '&[data-state="checked"]': {
-        bg: "default",
-        color: "default.foreground",
-        _groupHover: {
-          bg: "primary",
-          color: "primary.foreground"
+      _checked: {
+        "&:not(:disabled)": {
+          bg: "default",
+          color: "default.foreground",
+          _groupHover: {
+            bg: "primary",
+            color: "primary.foreground"
+          }
         }
       },
-      '&[data-state="unchecked"]': {
-        bg: "background"
-      },
-      "&[data-disabled]": {
+      _disabled: {
+        color: "text.disabled",
         pointerEvents: "none",
-        borderColor: "border.disabled"
+        borderColor: "border.disabled",
+        backgroundColor: "background.disabled"
       }
     },
     label: {
       pl: 2,
       color: "text",
       cursor: "pointer",
-      "&[data-disabled]": {
+      _disabled: {
         color: "text.disabled",
         pointerEvents: "none"
       }
@@ -109,11 +111,23 @@ export const checkboxVariants = sva({
     indeterminate: {
       true: {},
       false: {}
+    },
+    error: {
+      true: {
+        indicator: {
+          borderColor: "error",
+          boxShadowColor: "error",
+          _disabled: {
+            borderColor: "error/32"
+          }
+        }
+      }
     }
   },
   defaultVariants: {
     size: "md",
-    indeterminate: false
+    indeterminate: false,
+    error: false
   }
 });
 

@@ -6,7 +6,6 @@ import { Recursive, Token } from "./base";
 export type Shadows = Recursive<Token<string>>;
 export type SemanticShadows = {
   DEFAULT: Token<string>;
-  error: Token<string>;
 };
 export type ComponentShadows = {
   sm: SemanticShadows;

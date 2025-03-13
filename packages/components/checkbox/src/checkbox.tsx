@@ -17,11 +17,12 @@ const Indicator: React.FC<CheckboxIndicatorProps> = ({
   className,
   ...props
 }) => {
-  const { id, indeterminate } = useCheckboxVariant();
+  const { id, indeterminate, error } = useCheckboxVariant();
 
   return (
     <BaseCheckbox.Indicator
       id={id}
+      aria-invalid={error}
       className={cx(_css(css), className)}
       {...props}
     >
@@ -36,10 +37,11 @@ export type CheckboxLabelProps = WithCssProps<
   React.ComponentPropsWithRef<"label">
 >;
 const Label: React.FC<CheckboxLabelProps> = ({ css, className, ...props }) => {
-  const { id, size, indeterminate, disabled } = useCheckboxVariant();
+  const { id, size, indeterminate, disabled, error } = useCheckboxVariant();
 
   const raw = checkboxVariants.raw({
     size,
+    error,
     indeterminate
   });
 
@@ -61,22 +63,35 @@ export type CheckboxProps = WithCssProps<
 export const Checkbox: React.FC<CheckboxProps> & {
   Indicator: typeof Indicator;
   Label: typeof Label;
-} = ({ id, css, size, className, children, checked, disabled, ...props }) => {
+} = ({
+  id,
+  css,
+  size,
+  className,
+  children,
+  checked,
+  disabled,
+  error,
+  ...props
+}) => {
   const [indicators, labels] = findChildrenByType(children, Indicator, Label);
 
   const raw = checkboxVariants.raw({
     size,
+    error,
     indeterminate: checked === "indeterminate"
   });
 
   return (
     <CheckboxProvider
+      error={error}
       size={size}
       indeterminate={checked === "indeterminate"}
       id={id}
       disabled={disabled}
     >
       <div
+        aria-invalid={error}
         data-disabled={disabled ? "" : undefined}
         className={cx(_css(raw.root, css), "group", className)}
       >
