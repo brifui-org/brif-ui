@@ -248,16 +248,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@brifui/accordion@npm:^0.0.26, @brifui/accordion@workspace:packages/components/accordion":
+"@brifui/accordion@npm:^0.0.27, @brifui/accordion@workspace:packages/components/accordion":
   version: 0.0.0-use.local
   resolution: "@brifui/accordion@workspace:packages/components/accordion"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/types": "npm:^0.0.13"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@radix-ui/react-accordion": "npm:^1.2.3"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -276,16 +276,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/avatar@npm:^0.0.16, @brifui/avatar@workspace:packages/components/avatar":
+"@brifui/avatar@npm:^0.0.17, @brifui/avatar@workspace:packages/components/avatar":
   version: 0.0.0-use.local
   resolution: "@brifui/avatar@workspace:packages/components/avatar"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/types": "npm:^0.0.13"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -300,15 +300,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/badge@npm:^0.0.10, @brifui/badge@workspace:packages/components/badge":
+"@brifui/badge@npm:^0.0.11, @brifui/badge@workspace:packages/components/badge":
   version: 0.0.0-use.local
   resolution: "@brifui/badge@workspace:packages/components/badge"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -323,15 +323,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/button@npm:^0.0.27, @brifui/button@workspace:packages/components/button":
+"@brifui/button@npm:^0.0.28, @brifui/button@workspace:packages/components/button":
   version: 0.0.0-use.local
   resolution: "@brifui/button@workspace:packages/components/button"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@types/react": "npm:^19"
@@ -345,15 +345,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/card@npm:^0.0.26, @brifui/card@workspace:packages/components/card":
+"@brifui/card@npm:^0.0.27, @brifui/card@workspace:packages/components/card":
   version: 0.0.0-use.local
   resolution: "@brifui/card@workspace:packages/components/card"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@types/react": "npm:^19"
@@ -367,15 +367,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/checkbox@npm:^0.0.26, @brifui/checkbox@workspace:packages/components/checkbox":
+"@brifui/checkbox@npm:^0.0.27, @brifui/checkbox@workspace:packages/components/checkbox":
   version: 0.0.0-use.local
   resolution: "@brifui/checkbox@workspace:packages/components/checkbox"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@radix-ui/react-checkbox": "npm:^1.1.4"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -424,15 +424,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/codeblock@npm:^0.0.16, @brifui/codeblock@workspace:packages/components/codeblock":
+"@brifui/codeblock@npm:^0.0.17, @brifui/codeblock@workspace:packages/components/codeblock":
   version: 0.0.0-use.local
   resolution: "@brifui/codeblock@workspace:packages/components/codeblock"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -449,30 +449,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.40, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.41, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
-    "@brifui/accordion": "npm:^0.0.26"
-    "@brifui/avatar": "npm:^0.0.16"
-    "@brifui/badge": "npm:^0.0.10"
-    "@brifui/button": "npm:^0.0.27"
-    "@brifui/card": "npm:^0.0.26"
-    "@brifui/checkbox": "npm:^0.0.26"
-    "@brifui/codeblock": "npm:^0.0.16"
+    "@brifui/accordion": "npm:^0.0.27"
+    "@brifui/avatar": "npm:^0.0.17"
+    "@brifui/badge": "npm:^0.0.11"
+    "@brifui/button": "npm:^0.0.28"
+    "@brifui/card": "npm:^0.0.27"
+    "@brifui/checkbox": "npm:^0.0.27"
+    "@brifui/codeblock": "npm:^0.0.17"
     "@brifui/eslint-config": "npm:^0.0.3"
-    "@brifui/form": "npm:^0.0.27"
-    "@brifui/input": "npm:^0.0.30"
-    "@brifui/radio": "npm:^0.0.3"
-    "@brifui/select": "npm:^0.0.27"
-    "@brifui/sidebar": "npm:^0.0.17"
-    "@brifui/spinner": "npm:^0.0.16"
-    "@brifui/switch": "npm:^0.0.10"
-    "@brifui/table": "npm:^0.0.18"
-    "@brifui/text": "npm:^0.0.19"
-    "@brifui/textarea": "npm:^0.0.5"
-    "@brifui/toast": "npm:^0.0.16"
-    "@brifui/tooltip": "npm:^0.0.16"
+    "@brifui/form": "npm:^0.0.28"
+    "@brifui/input": "npm:^0.0.31"
+    "@brifui/radio": "npm:^0.0.4"
+    "@brifui/select": "npm:^0.0.28"
+    "@brifui/sidebar": "npm:^0.0.18"
+    "@brifui/spinner": "npm:^0.0.17"
+    "@brifui/switch": "npm:^0.0.11"
+    "@brifui/table": "npm:^0.0.19"
+    "@brifui/text": "npm:^0.0.20"
+    "@brifui/textarea": "npm:^0.0.6"
+    "@brifui/toast": "npm:^0.0.17"
+    "@brifui/tooltip": "npm:^0.0.17"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@microsoft/api-extractor": "npm:^7.49.1"
     "@types/react": "npm:^19.0.5"
@@ -503,15 +503,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/form@npm:^0.0.27, @brifui/form@workspace:packages/components/form":
+"@brifui/form@npm:^0.0.28, @brifui/form@workspace:packages/components/form":
   version: 0.0.0-use.local
   resolution: "@brifui/form@workspace:packages/components/form"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@radix-ui/react-form": "npm:^0.1.2"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -528,15 +528,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/input@npm:^0.0.30, @brifui/input@workspace:packages/components/input":
+"@brifui/input@npm:^0.0.31, @brifui/input@workspace:packages/components/input":
   version: 0.0.0-use.local
   resolution: "@brifui/input@workspace:packages/components/input"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -607,15 +607,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/radio@npm:^0.0.3, @brifui/radio@workspace:packages/components/radio":
+"@brifui/radio@npm:^0.0.4, @brifui/radio@workspace:packages/components/radio":
   version: 0.0.0-use.local
   resolution: "@brifui/radio@workspace:packages/components/radio"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@radix-ui/react-radio-group": "npm:^1.2.3"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -634,16 +634,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/select@npm:^0.0.27, @brifui/select@workspace:packages/components/select":
+"@brifui/select@npm:^0.0.28, @brifui/select@workspace:packages/components/select":
   version: 0.0.0-use.local
   resolution: "@brifui/select@workspace:packages/components/select"
   dependencies:
-    "@brifui/button": "npm:^0.0.27"
+    "@brifui/button": "npm:^0.0.28"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@radix-ui/react-select": "npm:^2.1.6"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -660,16 +660,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/sidebar@npm:^0.0.17, @brifui/sidebar@workspace:packages/components/sidebar":
+"@brifui/sidebar@npm:^0.0.18, @brifui/sidebar@workspace:packages/components/sidebar":
   version: 0.0.0-use.local
   resolution: "@brifui/sidebar@workspace:packages/components/sidebar"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
-    "@brifui/tooltip": "npm:^0.0.16"
+    "@brifui/styled": "npm:^0.0.26"
+    "@brifui/tooltip": "npm:^0.0.17"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -684,15 +684,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/spinner@npm:^0.0.16, @brifui/spinner@workspace:packages/components/spinner":
+"@brifui/spinner@npm:^0.0.17, @brifui/spinner@workspace:packages/components/spinner":
   version: 0.0.0-use.local
   resolution: "@brifui/spinner@workspace:packages/components/spinner"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -707,12 +707,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/styled@npm:^0.0.25, @brifui/styled@workspace:packages/styled":
+"@brifui/styled@npm:^0.0.26, @brifui/styled@workspace:packages/styled":
   version: 0.0.0-use.local
   resolution: "@brifui/styled@workspace:packages/styled"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
-    "@brifui/theme": "npm:^0.0.23"
+    "@brifui/theme": "npm:^0.0.24"
     "@brifui/types": "npm:^0.0.13"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@pandacss/dev": "npm:^0.53.1"
@@ -726,15 +726,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/switch@npm:^0.0.10, @brifui/switch@workspace:packages/components/switch":
+"@brifui/switch@npm:^0.0.11, @brifui/switch@workspace:packages/components/switch":
   version: 0.0.0-use.local
   resolution: "@brifui/switch@workspace:packages/components/switch"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@radix-ui/react-switch": "npm:^1.1.3"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -751,15 +751,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/table@npm:^0.0.18, @brifui/table@workspace:packages/components/table":
+"@brifui/table@npm:^0.0.19, @brifui/table@workspace:packages/components/table":
   version: 0.0.0-use.local
   resolution: "@brifui/table@workspace:packages/components/table"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -774,15 +774,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/text@npm:^0.0.19, @brifui/text@workspace:packages/components/text":
+"@brifui/text@npm:^0.0.20, @brifui/text@workspace:packages/components/text":
   version: 0.0.0-use.local
   resolution: "@brifui/text@workspace:packages/components/text"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -797,15 +797,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/textarea@npm:^0.0.5, @brifui/textarea@workspace:packages/components/textarea":
+"@brifui/textarea@npm:^0.0.6, @brifui/textarea@workspace:packages/components/textarea":
   version: 0.0.0-use.local
   resolution: "@brifui/textarea@workspace:packages/components/textarea"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -821,7 +821,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/theme@npm:^0.0.23, @brifui/theme@workspace:packages/theme":
+"@brifui/theme@npm:^0.0.24, @brifui/theme@workspace:packages/theme":
   version: 0.0.0-use.local
   resolution: "@brifui/theme@workspace:packages/theme"
   dependencies:
@@ -841,16 +841,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/toast@npm:^0.0.16, @brifui/toast@workspace:packages/components/toast":
+"@brifui/toast@npm:^0.0.17, @brifui/toast@workspace:packages/components/toast":
   version: 0.0.0-use.local
   resolution: "@brifui/toast@workspace:packages/components/toast"
   dependencies:
-    "@brifui/button": "npm:^0.0.27"
+    "@brifui/button": "npm:^0.0.28"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
     "@testing-library/user-event": "npm:^14.6.1"
@@ -867,15 +867,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/tooltip@npm:^0.0.16, @brifui/tooltip@workspace:packages/components/tooltip":
+"@brifui/tooltip@npm:^0.0.17, @brifui/tooltip@workspace:packages/components/tooltip":
   version: 0.0.0-use.local
   resolution: "@brifui/tooltip@workspace:packages/components/tooltip"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@radix-ui/react-tooltip": "npm:^1.1.8"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -918,12 +918,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/utils@npm:^0.0.20, @brifui/utils@workspace:packages/utils":
+"@brifui/utils@npm:^0.0.21, @brifui/utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@brifui/utils@workspace:packages/utils"
   dependencies:
     "@brifui/eslint-config": "npm:^0.0.3"
-    "@brifui/styled": "npm:^0.0.25"
+    "@brifui/styled": "npm:^0.0.26"
     "@brifui/types": "npm:^0.0.13"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@microsoft/api-extractor": "npm:^7.49.1"
@@ -6775,13 +6775,13 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@brifui/cli": "npm:^0.0.23"
-    "@brifui/components": "npm:^0.0.40"
+    "@brifui/components": "npm:^0.0.41"
     "@brifui/eslint-config": "npm:^0.0.3"
-    "@brifui/styled": "npm:^0.0.25"
-    "@brifui/theme": "npm:^0.0.23"
+    "@brifui/styled": "npm:^0.0.26"
+    "@brifui/theme": "npm:^0.0.24"
     "@brifui/types": "npm:^0.0.13"
     "@brifui/typescript-config": "npm:^0.0.3"
-    "@brifui/utils": "npm:^0.0.20"
+    "@brifui/utils": "npm:^0.0.21"
     "@icons-pack/react-simple-icons": "npm:^12.0.0"
     "@pandacss/dev": "npm:^0.53.1"
     "@types/node": "npm:^20"

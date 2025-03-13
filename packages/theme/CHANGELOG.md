@@ -1,5 +1,11 @@
 # @brifui/theme
 
+## 0.0.24
+
+### Patch Changes
+
+- [#160](https://github.com/brifui-org/brif-ui/pull/160) [`c87bb78`](https://github.com/brifui-org/brif-ui/commit/c87bb7852643acba20093381141614af9475528e) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated styles
+
 ## 0.0.23
 
 ### Patch Changes
