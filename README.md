@@ -17,8 +17,8 @@
 ## Features
 
 - 🧱 **Brutalist Design**: Honest, raw aesthetic with functional simplicity
-- 🌈 **Modern Design System**: Beautiful, consistent UI components - powerred by [PandaCSS](https://panda-css.com/)
-- ♿ **Accessibility**: WCAG 2.1 compliant components - powerred by [RadixUI](https://www.radix-ui.com/)
+- 🌈 **Modern Design System**: Beautiful, consistent UI components - powered by [PandaCSS](https://panda-css.com/)
+- ♿ **Accessibility**: WCAG 2.1 compliant components - powered by [RadixUI](https://www.radix-ui.com/)
 - 🎨 **Customizable**: Fully customizable with Panda CSS
 - 🔍 **TypeScript**: Full type support
 - 📦 **Modular**: Import only what you need
