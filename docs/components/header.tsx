@@ -32,7 +32,8 @@ export const Header: React.FC<{
   return (
     <header
       className={css({
-        h: "60px",
+        minH: "60px",
+        maxH: "60px",
         px: "6",
         top: 0,
         left: 0,

@@ -54,6 +54,23 @@ export default defineConfig({
               value:
                 "color-mix(in oklab, {colors.primary}, {colors.background} 68%)"
             }
+          },
+          background: {
+            DEFAULT: {
+              value: "{colors.purple.300}"
+            },
+            muted: {
+              value: "{colors.purple.500}"
+            },
+            hover: {
+              value: "{colors.purple.600}"
+            },
+            active: {
+              value: "{colors.purple.700}"
+            },
+            disabled: {
+              value: "color-mix(in oklab, {colors.background}, white 32%)"
+            }
           }
         }
       }
@@ -77,6 +94,23 @@ export default defineConfig({
             disabled: {
               value:
                 "color-mix(in oklab, {colors.primary}, {colors.background} 68%)"
+            }
+          },
+          background: {
+            DEFAULT: {
+              value: "{colors.amber.300}"
+            },
+            muted: {
+              value: "{colors.amber.500}"
+            },
+            hover: {
+              value: "{colors.amber.600}"
+            },
+            active: {
+              value: "{colors.amber.700}"
+            },
+            disabled: {
+              value: "color-mix(in oklab, {colors.background}, white 32%)"
             }
           }
         }

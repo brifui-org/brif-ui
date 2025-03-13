@@ -14,8 +14,7 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
         mx: "auto",
         w: "100%",
         maxW: "container.xl",
-        height: "100svh",
-        overflow: "hidden",
+        minH: "100svh",
         display: "flex",
         position: "relative",
         borderLeft: {
@@ -38,7 +37,14 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
         })}
       >
         <Header alwaysShow={false} />
-        <main className={css({ flex: 1, overflowY: "auto" })}>
+        <main
+          className={css({
+            ml: {
+              base: "0",
+              lg: "250px"
+            }
+          })}
+        >
           {children}
           <Toaster />
         </main>
