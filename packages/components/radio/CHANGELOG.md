@@ -1,5 +1,15 @@
 # @brifui/radio
 
+## 0.0.4
+
+### Patch Changes
+
+- [#160](https://github.com/brifui-org/brif-ui/pull/160) [`c87bb78`](https://github.com/brifui-org/brif-ui/commit/c87bb7852643acba20093381141614af9475528e) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - updated styles
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.26
+  - @brifui/utils@0.0.21
+
 ## 0.0.3
 
 ### Patch Changes
