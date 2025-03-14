@@ -7,12 +7,18 @@ import {
   Fonts,
   FontSizes,
   FontWeights,
+  LetterSpacings,
   LineHeights,
   TextStyles
 } from "./fonts";
 import { ComponentRadii, Radii } from "./radii";
 import { ComponentShadows, Shadows } from "./shadows";
-import { ComponentSizing, ContainerSizing, Sizing } from "./sizing";
+import {
+  ComponentSizing,
+  ContainerSizing,
+  DialogSizing,
+  Sizing
+} from "./sizing";
 import { ZIndex } from "./z-index";
 
 export type Theme = {
@@ -27,12 +33,14 @@ export type Theme = {
     shadows: Shadows;
     spacing: Recursive<Token<string>>;
     zIndex: ZIndex;
+    letterSpacings: LetterSpacings;
   };
   semanticTokens: {
     colors: SemanticColors;
     sizes: {
       component: ComponentSizing;
       container: ContainerSizing;
+      dialog: DialogSizing;
     };
     radii: {
       component: ComponentRadii;

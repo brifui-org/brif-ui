@@ -35,6 +35,7 @@
     "@brifui/card": "^0.0.27",
     "@brifui/checkbox": "^0.0.27",
     "@brifui/codeblock": "^0.0.17",
+    "@brifui/dialog": "^0.0.0",
     "@brifui/form": "^0.0.28",
     "@brifui/input": "^0.0.31",
     "@brifui/radio": "^0.0.4",

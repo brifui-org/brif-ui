@@ -14,6 +14,7 @@ export type Fonts = {
 export type FontSizes = Recursive<Token<string>>;
 export type FontWeights = Recursive<Token<string>>;
 export type LineHeights = Recursive<Token<string>>;
+export type LetterSpacings = Recursive<Token<string>>;
 
 export type TypographyHeading = {
   sm: BaseTextStyles[string];

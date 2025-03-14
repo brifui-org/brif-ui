@@ -16,3 +16,9 @@ export type ContainerSizing = {
   xl: Token<string>;
   xxl: Token<string>;
 };
+export type DialogSizing = {
+  sm: Token<string>;
+  md: Token<string>;
+  lg: Token<string>;
+  screen: Token<string>;
+};
