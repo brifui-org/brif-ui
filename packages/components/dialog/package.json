@@ -30,7 +30,7 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.28",
+    "@brifui/styled": "^0.0.26",
     "@brifui/utils": "^0.0.21",
     "@radix-ui/react-dialog": "^1.1.6",
     "radix-ui": "^1.1.3",
