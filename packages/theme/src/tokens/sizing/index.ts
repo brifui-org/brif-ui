@@ -1,4 +1,9 @@
-import { ComponentSizing, ContainerSizing, Sizing } from "@brifui/types";
+import {
+  ComponentSizing,
+  ContainerSizing,
+  DialogSizing,
+  Sizing
+} from "@brifui/types";
 
 export const sizing: Sizing = {
   sm: {
@@ -123,15 +128,15 @@ export const sizing: Sizing = {
 export const componentSizing: ComponentSizing = {
   sm: {
     value: "{sizes.sm}",
-    description: "Used for component's height - 32px"
+    description: "Used for form component's height - 32px"
   },
   md: {
     value: "{sizes.md}",
-    description: "Used for component's height - 40px"
+    description: "Used for form component's height - 40px"
   },
   lg: {
     value: "{sizes.lg}",
-    description: "Used for component's height - 52px"
+    description: "Used for form component's height - 52px"
   }
 };
 
@@ -155,5 +160,24 @@ export const containerSizing: ContainerSizing = {
   xxl: {
     value: "1536px",
     description: "Used for container's width - 1536px"
+  }
+};
+
+export const dialogSizing: DialogSizing = {
+  sm: {
+    value: "320px",
+    description: "Used for modal's width - 320px"
+  },
+  md: {
+    value: "640px",
+    description: "Used for modal's width - 640px"
+  },
+  lg: {
+    value: "960px",
+    description: "Used for modal's width - 960px"
+  },
+  screen: {
+    value: "100vw",
+    description: "Used for modal's width - 100vw"
   }
 };

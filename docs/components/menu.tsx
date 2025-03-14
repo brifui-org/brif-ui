@@ -139,6 +139,11 @@ const MENU = [
         key: "radio-group",
         title: "RadioGroup",
         href: "/docs/radio-group"
+      },
+      {
+        key: "dialog",
+        title: "Dialog",
+        href: "/docs/dialog"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }
