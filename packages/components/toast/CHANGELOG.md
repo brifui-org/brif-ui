@@ -1,5 +1,14 @@
 # @brifui/toast
 
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.27
+  - @brifui/utils@0.0.22
+  - @brifui/button@0.0.29
+
 ## 0.0.17
 
 ### Patch Changes

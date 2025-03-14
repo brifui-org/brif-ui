@@ -1,5 +1,13 @@
 # @brifui/radio
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.27
+  - @brifui/utils@0.0.22
+
 ## 0.0.4
 
 ### Patch Changes
