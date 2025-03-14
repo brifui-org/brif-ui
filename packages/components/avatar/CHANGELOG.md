@@ -1,5 +1,14 @@
 # @brifui/avatar
 
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies [[`705a812`](https://github.com/brifui-org/brif-ui/commit/705a812e1eee59d5301159c8aebf557d339f1acb)]:
+  - @brifui/types@0.0.14
+  - @brifui/styled@0.0.27
+  - @brifui/utils@0.0.22
+
 ## 0.0.17
 
 ### Patch Changes

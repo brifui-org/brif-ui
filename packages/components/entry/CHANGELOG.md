@@ -1,5 +1,33 @@
 # @brifui/components
 
+## 0.0.42
+
+### Patch Changes
+
+- [#162](https://github.com/brifui-org/brif-ui/pull/162) [`705a812`](https://github.com/brifui-org/brif-ui/commit/705a812e1eee59d5301159c8aebf557d339f1acb) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added dialog
+
+- Updated dependencies [[`705a812`](https://github.com/brifui-org/brif-ui/commit/705a812e1eee59d5301159c8aebf557d339f1acb)]:
+  - @brifui/dialog@0.0.1
+  - @brifui/accordion@0.0.28
+  - @brifui/avatar@0.0.18
+  - @brifui/badge@0.0.12
+  - @brifui/button@0.0.29
+  - @brifui/card@0.0.28
+  - @brifui/checkbox@0.0.28
+  - @brifui/codeblock@0.0.18
+  - @brifui/form@0.0.29
+  - @brifui/input@0.0.32
+  - @brifui/radio@0.0.5
+  - @brifui/select@0.0.29
+  - @brifui/sidebar@0.0.19
+  - @brifui/spinner@0.0.18
+  - @brifui/switch@0.0.12
+  - @brifui/table@0.0.20
+  - @brifui/text@0.0.21
+  - @brifui/textarea@0.0.7
+  - @brifui/toast@0.0.18
+  - @brifui/tooltip@0.0.18
+
 ## 0.0.41
 
 ### Patch Changes
