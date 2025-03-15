@@ -51,8 +51,7 @@ export const sidebarVariants = sva({
       flexDirection: "column",
       position: "sticky",
       top: 0,
-      left: 0,
-      bg: "background"
+      left: 0
     },
     body: {
       p: 2,
@@ -70,8 +69,7 @@ export const sidebarVariants = sva({
       flexDirection: "column",
       position: "sticky",
       bottom: 0,
-      left: 0,
-      bg: "background"
+      left: 0
     },
     menu: {
       gap: 1,
