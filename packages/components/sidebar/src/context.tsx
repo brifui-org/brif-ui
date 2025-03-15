@@ -18,19 +18,23 @@ export const SidebarContext = createContext<SidebarContextType>({
 
 export const SideBarProvider: React.FC<
   SidebarContextStylesType & {
-    children?: (
-      props: Omit<SidebarContextType, keyof SidebarContextStylesType>
-    ) => React.ReactNode;
+    children?:
+      | ((
+          props: Omit<SidebarContextType, keyof SidebarContextStylesType>
+        ) => React.ReactNode)
+      | React.ReactNode;
   }
-> = ({ children = () => null }) => {
+> = ({ children }) => {
   const [isOpen, setOpen] = useState<boolean>(true);
 
   return (
     <SidebarContext.Provider value={{ isOpen, setOpen }}>
-      {children({
-        isOpen,
-        setOpen
-      })}
+      {typeof children === "function"
+        ? children({
+            isOpen,
+            setOpen
+          })
+        : children}
     </SidebarContext.Provider>
   );
 };

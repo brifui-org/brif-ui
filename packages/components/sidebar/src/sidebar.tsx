@@ -203,39 +203,42 @@ const Footer: React.FC<SidebarFooterProps> = ({ css, className, ...props }) => {
 };
 
 export type SidebarProps = WithCssProps<
-  SidebarVariantProps & React.ComponentPropsWithRef<"aside">
+  SidebarVariantProps &
+    React.ComponentPropsWithRef<"aside"> & {
+      isOpen?: boolean;
+    }
 >;
 const Root: React.FC<SidebarProps> = ({
   css,
   className,
   children,
+  isOpen,
+  style = {},
   ...props
 }) => {
   const raw = sidebarVariants.raw({});
 
   return (
-    <SideBarProvider>
-      {({ isOpen }) => (
-        <aside
-          style={
-            {
-              [cssVars.width.DEFAULT]:
-                `var(${isOpen ? cssVars.width.expand : cssVars.width.collapsed})`,
-              [cssVars.width.expand]: "300px",
-              [cssVars.width.collapsed]: "68px"
-            } as CSSProperties
-          }
-          className={cx(_css(raw.root, css), className)}
-          {...props}
-        >
-          <div className={_css(raw.sidebar)}>{children}</div>
-        </aside>
-      )}
-    </SideBarProvider>
+    <aside
+      style={
+        {
+          [cssVars.width.DEFAULT]:
+            `var(${isOpen ? cssVars.width.expand : cssVars.width.collapsed})`,
+          [cssVars.width.expand]: "300px",
+          [cssVars.width.collapsed]: "68px",
+          ...style
+        } as CSSProperties
+      }
+      className={cx(_css(raw.root, css), className)}
+      {...props}
+    >
+      <div className={_css(raw.sidebar)}>{children}</div>
+    </aside>
   );
 };
 
 export const Sidebar = {
+  Provider: SideBarProvider,
   Root,
   Header,
   Body,
