@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 
-import { Scrollarea } from "./scrollarea";
+import { ScrollArea } from "./scrollarea";
 
-describe("Scrollarea", () => {})
+describe.skip("Scrollarea", () => {});
