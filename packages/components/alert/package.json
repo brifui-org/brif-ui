@@ -1,6 +1,6 @@
 {
   "name": "@brifui/alert",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Alert component - Brif UI",
   "sideEffects": false,
   "type": "module",

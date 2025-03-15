@@ -1,5 +1,12 @@
 # @brifui/components
 
+## 0.0.44
+
+### Patch Changes
+
+- Updated dependencies [[`226e4a7`](https://github.com/brifui-org/brif-ui/commit/226e4a71e54507754fff350c8f052b05fed60d34)]:
+  - @brifui/alert@0.0.1
+
 ## 0.0.43
 
 ### Patch Changes
