@@ -28,7 +28,6 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
-    "dev": "tsup src --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."
