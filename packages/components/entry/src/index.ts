@@ -19,3 +19,4 @@ export * from "@brifui/textarea";
 export * from "@brifui/radio";
 export * from "@brifui/dialog";
 export * from "@brifui/scrollarea";
+export * from "@brifui/alert";

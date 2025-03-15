@@ -584,7 +584,7 @@ var CAC = class extends EventEmitter {
 var cac = (name = "") => new CAC(name);
 
 // package.json
-var version = "0.0.23";
+var version = "0.0.24";
 var dependencies = {
   "@clack/prompts": "0.9.1",
   "@pandacss/dev": "^0.53.1",

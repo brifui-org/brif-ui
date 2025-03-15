@@ -29,6 +29,7 @@
   "module": "./src/index.ts",
   "dependencies": {
     "@brifui/accordion": "^0.0.28",
+    "@brifui/alert": "^0.0.0",
     "@brifui/avatar": "^0.0.18",
     "@brifui/badge": "^0.0.12",
     "@brifui/button": "^0.0.29",
