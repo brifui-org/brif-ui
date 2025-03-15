@@ -1,5 +1,11 @@
 # @brifui/dialog
 
+## 0.0.2
+
+### Patch Changes
+
+- [#166](https://github.com/brifui-org/brif-ui/pull/166) [`c79f2cc`](https://github.com/brifui-org/brif-ui/commit/c79f2cc770667585414a9f8c673be7e5d50fe83e) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - first releases
+
 ## 0.0.1
 
 ### Patch Changes

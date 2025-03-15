@@ -1,5 +1,16 @@
 # @brifui/components
 
+## 0.0.43
+
+### Patch Changes
+
+- [#166](https://github.com/brifui-org/brif-ui/pull/166) [`c79f2cc`](https://github.com/brifui-org/brif-ui/commit/c79f2cc770667585414a9f8c673be7e5d50fe83e) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - added ScrollArea
+
+- Updated dependencies [[`c79f2cc`](https://github.com/brifui-org/brif-ui/commit/c79f2cc770667585414a9f8c673be7e5d50fe83e), [`c79f2cc`](https://github.com/brifui-org/brif-ui/commit/c79f2cc770667585414a9f8c673be7e5d50fe83e), [`c79f2cc`](https://github.com/brifui-org/brif-ui/commit/c79f2cc770667585414a9f8c673be7e5d50fe83e)]:
+  - @brifui/sidebar@0.0.20
+  - @brifui/text@0.0.22
+  - @brifui/dialog@0.0.2
+
 ## 0.0.42
 
 ### Patch Changes
