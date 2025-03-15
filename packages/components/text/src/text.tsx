@@ -5,13 +5,13 @@ import { WithCssProps } from "@brifui/utils";
 import { TextVariantProps, variants } from "./variants";
 
 export type TextProps<T extends React.ElementType> = WithCssProps<
-  React.ComponentProps<T> & {
+  Omit<React.ComponentProps<T>, keyof NonNullable<TextVariantProps>> & {
     as?: T;
   } & TextVariantProps
 >;
 
 export function Text<T extends React.ElementType = "span">({
-  as: Tag = "span",
+  as: Tag = "span" as T,
   css,
   type,
   className,
@@ -21,6 +21,7 @@ export function Text<T extends React.ElementType = "span">({
   ...props
 }: TextProps<T>) {
   return (
+    // @ts-expect-error improve later
     <Tag
       className={cx(
         _css(variants.raw({ type, color, fontWeight, mono }), css),

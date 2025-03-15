@@ -1,110 +1,158 @@
-export const defaultSnippet = `import { Button, Tooltip } from "@brifui/components"
+export const defaultSnippet = `import { Button, Dialog, Form, Input } from "@brifui/components"
 
 const Example = () => (
   <>
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        <Button>Top</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content>
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
+    <Dialog.Root size="sm">
+      <Dialog.Trigger>
+        <Button>Open - sm</Button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Edit profile</Dialog.Title>
+            <Dialog.Description>
+              Make changes to your profile here. Click save when you're
+              done.
+            </Dialog.Description>
+            <Dialog.Close />
+          </Dialog.Header>
+          <Dialog.Body>
+            <Form.Root css={css.raw({ py: 2 })}>
+              <Form.Field name="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control>
+                  <Input value="John Doe" />
+                </Form.Control>
+              </Form.Field>
+              <Form.Field name="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control>
+                  <Input value="john.doe@example.com" />
+                </Form.Control>
+              </Form.Field>
+            </Form.Root>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button>Save changes</Button>
+          </Dialog.Footer>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
 
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        <Button>Right</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content side="right">
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
+    <Dialog.Root size="md">
+      <Dialog.Trigger>
+        <Button>Open - md</Button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Edit profile</Dialog.Title>
+            <Dialog.Description>
+              Make changes to your profile here. Click save when you're
+              done.
+            </Dialog.Description>
+            <Dialog.Close />
+          </Dialog.Header>
+          <Dialog.Body>
+            <Form.Root css={css.raw({ py: 2 })}>
+              <Form.Field name="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control>
+                  <Input value="John Doe" />
+                </Form.Control>
+              </Form.Field>
+              <Form.Field name="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control>
+                  <Input value="john.doe@example.com" />
+                </Form.Control>
+              </Form.Field>
+            </Form.Root>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button>Save changes</Button>
+          </Dialog.Footer>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
 
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        <Button>Bottom</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content side="bottom">
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
+    <Dialog.Root size="lg">
+      <Dialog.Trigger>
+        <Button>Open - lg</Button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Edit profile</Dialog.Title>
+            <Dialog.Description>
+              Make changes to your profile here. Click save when you're
+              done.
+            </Dialog.Description>
+            <Dialog.Close />
+          </Dialog.Header>
+          <Dialog.Body>
+            <Form.Root css={css.raw({ py: 4 })}>
+              <Form.Field name="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control>
+                  <Input value="John Doe" />
+                </Form.Control>
+              </Form.Field>
+              <Form.Field name="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control>
+                  <Input value="john.doe@example.com" />
+                </Form.Control>
+              </Form.Field>
+            </Form.Root>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button>Save changes</Button>
+          </Dialog.Footer>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
 
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        <Button>Left</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content side="left">
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
-  </>
-)
-`;
-
-export const variantnippet = `import { Button, Tooltip } from "@brifui/components"
-
-const Example = () => (
-  <>
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        <Button>Default</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content>
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
-
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        <Button>Warning</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content type="warning" side="right">
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
-
-    <Tooltip.Root>
-      <Tooltip.Trigger>
-        <Button>Error</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content type="error" side="bottom">
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
-  </>
-)
-`;
-
-export const noDelaySnippet = `import { Button, Tooltip } from "@brifui/components"
-
-const Example = () => (
-  <>
-    <Tooltip.Root delayDuration={0}>
-      <Tooltip.Trigger>
-        <Button>Default</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content>
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
-
-    <Tooltip.Root delayDuration={0}>
-      <Tooltip.Trigger>
-        <Button>Warning</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content type="warning">
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
-
-    <Tooltip.Root delayDuration={0}>
-      <Tooltip.Trigger>
-        <Button>Error</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content type="error">
-        The Evil Rabbit Jumped over the Fence
-      </Tooltip.Content>
-    </Tooltip.Root>
+    <Dialog.Root size="screen">
+      <Dialog.Trigger>
+        <Button>Open - screen</Button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Edit profile</Dialog.Title>
+            <Dialog.Description>
+              Make changes to your profile here. Click save when you're
+              done.
+            </Dialog.Description>
+            <Dialog.Close />
+          </Dialog.Header>
+          <Dialog.Body>
+            <Form.Root css={css.raw({ py: 2 })}>
+              <Form.Field name="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control>
+                  <Input value="John Doe" />
+                </Form.Control>
+              </Form.Field>
+              <Form.Field name="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control>
+                  <Input value="john.doe@example.com" />
+                </Form.Control>
+              </Form.Field>
+            </Form.Root>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button>Save changes</Button>
+          </Dialog.Footer>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   </>
 )
 `;

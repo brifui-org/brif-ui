@@ -100,7 +100,7 @@ export const dialogVariants = sva({
       screen: {
         content: {
           maxW: "dialog.screen",
-          h: "screen"
+          h: "100svh"
         }
       }
     }

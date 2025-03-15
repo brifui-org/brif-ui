@@ -1,12 +1,12 @@
 "use client";
 
-import React, { ComponentPropsWithRef } from "react";
+import React, { ComponentPropsWithRef, useEffect, useRef } from "react";
 import { useMenu } from "@/app/providers/menu-context";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Badge, Button } from "@brifui/components";
+import { Badge, Button, ScrollArea } from "@brifui/components";
 import { css, cx } from "@brifui/styled/css";
 
 import { dependencies } from "../package.json";
@@ -144,6 +144,11 @@ const MENU = [
         key: "dialog",
         title: "Dialog",
         href: "/docs/dialog"
+      },
+      {
+        key: "scrollarea",
+        title: "Scrollarea",
+        href: "/docs/scrollarea"
       }
     ].sort((a, b) => (a.title > b.title ? 1 : -1))
   }
@@ -224,32 +229,47 @@ const Section: React.FC<ComponentPropsWithRef<"div"> & { title: string }> = ({
   );
 };
 
-export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
-  className
-}) => {
+export const Menu: React.FC<ComponentPropsWithRef<"aside">> = () => {
+  const ref = useRef<HTMLElement>(null);
   const { isOpen, setOpen } = useMenu();
+
+  useEffect(() => {
+    if (isOpen) {
+      const offsetY =
+        (window.scrollY || window.document.body.scrollTop) -
+        (window.document.body.clientTop || 0) +
+        60;
+      if (ref.current) {
+        ref.current.style.setProperty("top", `${offsetY}px`);
+      }
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
 
   return (
     <aside
+      ref={ref}
       role="menu"
       className={css({
         width: "250px",
         scrollbar: "hidden",
         display: "block",
         w: "fit-content",
-        minH: "100%",
-        maxH: "100svh",
-        overflowY: "auto",
         bg: "background",
         position: {
           base: "absolute",
           lg: "fixed"
         },
-        top: 0,
         transition: "transform .3s ease",
         transform: {
           base: isOpen ? "translateX(0)" : "translateX(-100%)",
           lg: "unset"
+        },
+        top: {
+          base: "unset",
+          lg: "0 !important"
         },
         zIndex: {
           base: "20",
@@ -258,67 +278,75 @@ export const Menu: React.FC<ComponentPropsWithRef<"aside">> = ({
         borderRight: "2px solid {colors.border}"
       })}
     >
-      <div
-        className={css({
-          px: 6,
-          top: 0,
-          left: 0,
-          h: "60px",
-          position: "sticky",
-          display: "flex",
-          alignItems: "center",
-          borderBottom: "2px solid {colors.border}",
-          bg: "background",
-          zIndex: "20",
-          visibility: {
-            base: "hidden",
-            lg: "visible"
+      <ScrollArea.Root
+        css={css.raw({
+          h: {
+            base: "calc(100svh - 60px)",
+            lg: "100lvh"
           }
         })}
       >
-        <Button
+        <div
           className={css({
+            px: 6,
+            top: 0,
+            left: 0,
+            h: "60px",
+            position: "sticky",
             display: {
-              lg: "none"
-            }
+              base: "none",
+              lg: "flex"
+            },
+            alignItems: "center",
+            borderBottom: "2px solid {colors.border}",
+            bg: "background",
+            zIndex: "20"
           })}
-          size="icon"
-          variant="outline"
-          onClick={() => setOpen((prev) => !prev)}
         >
-          <MenuIcon size={18} />
-        </Button>
-        <Link href="/">
-          <Image
-            quality={100}
-            alt="Brif UI logo"
-            src="/logo.png"
-            width={42}
-            height={42}
-          />
-        </Link>
-        <Badge suppressHydrationWarning size="sm">
-          {CURRENT_VERSION}
-        </Badge>
-      </div>
-      <div
-        className={css({
-          px: 6,
-          pt: 6,
-          pb: 12,
-          display: "block",
-          bg: "background",
-          w: "fit-content"
-        })}
-      >
-        {MENU.map((section) => (
-          <Section key={section.key} title={section.title}>
-            {section.children.map((item) => (
-              <Item key={item.key} title={item.title} href={item.href} />
-            ))}
-          </Section>
-        ))}
-      </div>
+          <Button
+            className={css({
+              display: {
+                lg: "none"
+              }
+            })}
+            size="icon"
+            variant="outline"
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            <MenuIcon size={18} />
+          </Button>
+          <Link href="/">
+            <Image
+              quality={100}
+              alt="Brif UI logo"
+              src="/logo.png"
+              width={42}
+              height={42}
+            />
+          </Link>
+          <Badge suppressHydrationWarning size="sm">
+            {CURRENT_VERSION}
+          </Badge>
+        </div>
+        <div
+          className={css({
+            px: 6,
+            pt: 6,
+            pb: 12,
+            display: "block",
+            bg: "background",
+            w: "fit-content"
+          })}
+        >
+          {MENU.map((section) => (
+            <Section key={section.key} title={section.title}>
+              {section.children.map((item) => (
+                <Item key={item.key} title={item.title} href={item.href} />
+              ))}
+            </Section>
+          ))}
+        </div>
+      </ScrollArea.Root>
     </aside>
   );
 };
