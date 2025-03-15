@@ -1,5 +1,11 @@
 # @brifui/cli
 
+## 0.0.25
+
+### Patch Changes
+
+- [#170](https://github.com/brifui-org/brif-ui/pull/170) [`226e4a7`](https://github.com/brifui-org/brif-ui/commit/226e4a71e54507754fff350c8f052b05fed60d34) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - patched version
+
 ## 0.0.24
 
 ### Patch Changes

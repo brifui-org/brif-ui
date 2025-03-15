@@ -276,7 +276,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/alert@npm:^0.0.0, @brifui/alert@workspace:packages/components/alert":
+"@brifui/alert@npm:^0.0.1, @brifui/alert@workspace:packages/components/alert":
   version: 0.0.0-use.local
   resolution: "@brifui/alert@workspace:packages/components/alert"
   dependencies:
@@ -417,7 +417,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/cli@npm:^0.0.24, @brifui/cli@workspace:packages/cli":
+"@brifui/cli@npm:^0.0.25, @brifui/cli@workspace:packages/cli":
   version: 0.0.0-use.local
   resolution: "@brifui/cli@workspace:packages/cli"
   dependencies:
@@ -473,12 +473,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.43, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.44, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
     "@brifui/accordion": "npm:^0.0.28"
-    "@brifui/alert": "npm:^0.0.0"
+    "@brifui/alert": "npm:^0.0.1"
     "@brifui/avatar": "npm:^0.0.18"
     "@brifui/badge": "npm:^0.0.12"
     "@brifui/button": "npm:^0.0.29"
@@ -6854,8 +6854,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
   dependencies:
-    "@brifui/cli": "npm:^0.0.24"
-    "@brifui/components": "npm:^0.0.43"
+    "@brifui/cli": "npm:^0.0.25"
+    "@brifui/components": "npm:^0.0.44"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.27"
     "@brifui/theme": "npm:^0.0.25"
