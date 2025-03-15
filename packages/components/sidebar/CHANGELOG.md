@@ -1,5 +1,11 @@
 # @brifui/sidebar
 
+## 0.0.21
+
+### Patch Changes
+
+- [#173](https://github.com/brifui-org/brif-ui/pull/173) [`0ecc284`](https://github.com/brifui-org/brif-ui/commit/0ecc284bb887a336c7f0ab40617ad2c41e9ba938) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - separated sidebar provider
+
 ## 0.0.20
 
 ### Patch Changes
