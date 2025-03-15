@@ -18,3 +18,4 @@ export * from "@brifui/badge";
 export * from "@brifui/textarea";
 export * from "@brifui/radio";
 export * from "@brifui/dialog";
+export * from "@brifui/scrollarea";

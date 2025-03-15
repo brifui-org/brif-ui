@@ -4,7 +4,7 @@ import { Page } from "@/components/page";
 import { Button, Dialog, Form, Input } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
-import { defaultSnippet, noDelaySnippet, variantnippet } from "./snippet";
+import { defaultSnippet } from "./snippet";
 
 export default function DialogDocs() {
   return (

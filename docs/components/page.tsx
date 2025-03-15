@@ -4,7 +4,7 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Accordion, Card, Codeblock } from "@brifui/components";
-import { css, cx } from "@brifui/styled/css";
+import { css, cx, Styles } from "@brifui/styled/css";
 
 const Title: React.FC<{
   title: string;
@@ -109,28 +109,33 @@ const Section: React.FC<{
 };
 
 const Preview: React.FC<{
+  css?: Styles;
   children?: React.ReactNode;
   className?: string;
-}> = ({ children, className }) => {
+}> = ({ css: _css, children, className }) => {
   return (
     <Card
-      css={css.raw({
-        borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 0,
-        borderBottomWidth: "0px",
-        borderBottom: "none",
-        overflow: "auto"
-      })}
+      css={css.raw(
+        {
+          borderBottomLeftRadius: 0,
+          borderBottomRightRadius: 0,
+          borderBottomWidth: "0px",
+          borderBottom: "none",
+          overflow: "auto"
+        },
+        _css
+      )}
     >
       <Card.Body
-        className={cx(
-          css({
+        css={css.raw(
+          {
             py: 6,
             display: "grid",
             alignItems: "center"
-          }),
-          className
+          },
+          _css
         )}
+        className={className}
       >
         {children}
       </Card.Body>

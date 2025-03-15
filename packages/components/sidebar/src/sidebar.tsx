@@ -212,12 +212,6 @@ const Root: React.FC<SidebarProps> = ({
   ...props
 }) => {
   const raw = sidebarVariants.raw({});
-  const [headers, bodies, footers] = findChildrenByType(
-    children,
-    Header,
-    Body,
-    Footer
-  );
 
   return (
     <SideBarProvider>
@@ -234,11 +228,7 @@ const Root: React.FC<SidebarProps> = ({
           className={cx(_css(raw.root, css), className)}
           {...props}
         >
-          <div className={_css(raw.sidebar)}>
-            {headers}
-            {bodies}
-            {footers}
-          </div>
+          <div className={_css(raw.sidebar)}>{children}</div>
         </aside>
       )}
     </SideBarProvider>

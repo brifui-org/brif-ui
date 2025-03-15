@@ -60,6 +60,7 @@
     "minimatch": "^10.0.1"
   },
   "tsup": {
+    "splitting": false,
     "clean": true,
     "target": "es2019",
     "format": [
