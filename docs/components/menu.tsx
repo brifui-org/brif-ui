@@ -56,6 +56,11 @@ const MENU = [
     title: "Components",
     children: [
       {
+        key: "alert",
+        title: "Alert",
+        href: "/docs/alert"
+      },
+      {
         key: "Button",
         title: "Button",
         href: "/docs/button"

@@ -276,6 +276,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brifui/alert@npm:^0.0.0, @brifui/alert@workspace:packages/components/alert":
+  version: 0.0.0-use.local
+  resolution: "@brifui/alert@workspace:packages/components/alert"
+  dependencies:
+    "@brifui/eslint-config": "npm:^0.0.3"
+    "@brifui/mocks": "npm:^0.0.5"
+    "@brifui/styled": "npm:^0.0.27"
+    "@brifui/typescript-config": "npm:^0.0.3"
+    "@brifui/utils": "npm:^0.0.22"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@testing-library/user-event": "npm:^14.6.1"
+    "@types/react": "npm:^19"
+    "@types/react-dom": "npm:^19"
+    eslint: "npm:^9.15.0"
+    global-jsdom: "npm:^26.0.0"
+    jsdom: "npm:^26.0.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    typescript: "npm:5.5.4"
+    vitest: "npm:^2.1.8"
+  languageName: unknown
+  linkType: soft
+
 "@brifui/avatar@npm:^0.0.18, @brifui/avatar@workspace:packages/components/avatar":
   version: 0.0.0-use.local
   resolution: "@brifui/avatar@workspace:packages/components/avatar"
@@ -454,6 +478,7 @@ __metadata:
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
     "@brifui/accordion": "npm:^0.0.28"
+    "@brifui/alert": "npm:^0.0.0"
     "@brifui/avatar": "npm:^0.0.18"
     "@brifui/badge": "npm:^0.0.12"
     "@brifui/button": "npm:^0.0.29"

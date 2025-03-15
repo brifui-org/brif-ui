@@ -1,0 +1,18 @@
+"use client";
+
+import React, { createContext, useContext } from "react";
+
+import { {{capitalize componentName}}VariantProps } from "./variants";
+
+export type {{capitalize componentName}}ContextType = NonNullable<{{capitalize componentName}}VariantProps>;
+export const {{capitalize componentName}}Context = createContext<{{capitalize componentName}}ContextType>({});
+
+export const DialogProvider: React.FC<
+  React.PropsWithChildren<{{capitalize componentName}}ContextType>
+> = ({ children, ...props }) => {
+  return (
+    <{{capitalize componentName}}Context.Provider value={props}>{children}</{{capitalize componentName}}Context.Provider>
+  );
+};
+
+export const use{{capitalize componentName}} = () => useContext({{capitalize componentName}}Context);
