@@ -60,6 +60,8 @@ const CollapseButton = () => {
 };
 
 export default function SidebarDocs() {
+  const { isOpen } = useSidebar();
+
   return (
     <Page>
       <Page.Title
@@ -74,7 +76,7 @@ export default function SidebarDocs() {
             overflow: "hidden"
           })}
         >
-          <Sidebar.Root>
+          <Sidebar.Root isOpen={isOpen}>
             <ScrollArea.Root
               css={css.raw({
                 h: "450px"
