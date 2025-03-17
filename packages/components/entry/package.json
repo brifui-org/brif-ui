@@ -1,6 +1,6 @@
 {
   "name": "@brifui/components",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "description": "Brif UI components",
   "sideEffects": false,
   "type": "module",
@@ -32,7 +32,7 @@
     "@brifui/alert": "^0.0.1",
     "@brifui/avatar": "^0.0.18",
     "@brifui/badge": "^0.0.12",
-    "@brifui/button": "^0.0.29",
+    "@brifui/button": "^0.0.30",
     "@brifui/card": "^0.0.28",
     "@brifui/checkbox": "^0.0.28",
     "@brifui/codeblock": "^0.0.18",
@@ -41,14 +41,14 @@
     "@brifui/input": "^0.0.32",
     "@brifui/radio": "^0.0.5",
     "@brifui/scrollarea": "^0.0.0",
-    "@brifui/select": "^0.0.29",
+    "@brifui/select": "^0.0.30",
     "@brifui/sidebar": "^0.0.23",
     "@brifui/spinner": "^0.0.18",
     "@brifui/switch": "^0.0.12",
     "@brifui/table": "^0.0.20",
     "@brifui/text": "^0.0.22",
     "@brifui/textarea": "^0.0.7",
-    "@brifui/toast": "^0.0.18",
+    "@brifui/toast": "^0.0.19",
     "@brifui/tooltip": "^0.0.18"
   },
   "devDependencies": {
