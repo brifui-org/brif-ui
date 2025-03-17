@@ -1,5 +1,5 @@
 import React from "react";
-import { Toaster } from "@brifui/components";
+import { ScrollArea, Toaster } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
 import { Header } from "./header";
@@ -9,46 +9,52 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
   children
 }) => {
   return (
-    <div
-      className={css({
-        mx: "auto",
-        w: "100%",
-        maxW: "container.xl",
-        minH: "100svh",
-        display: "flex",
-        position: "relative",
-        borderLeft: {
-          base: "none",
-          lg: "2px solid {colors.border}"
-        },
-        borderRight: {
-          base: "none",
-          lg: "2px solid {colors.border}"
-        }
+    <ScrollArea.Root
+      css={css.raw({
+        minHeight: "100vh",
+        maxHeight: "100svh"
       })}
     >
-      <Menu />
       <div
         className={css({
-          flex: 1,
+          mx: "auto",
+          w: "100%",
+          maxW: "container.xl",
           display: "flex",
-          flexDirection: "column",
-          width: "100%"
+          position: "relative",
+          borderLeft: {
+            base: "none",
+            lg: "2px solid {colors.border}"
+          },
+          borderRight: {
+            base: "none",
+            lg: "2px solid {colors.border}"
+          }
         })}
       >
-        <Header alwaysShow={false} />
-        <main
+        <Menu />
+        <div
           className={css({
-            ml: {
-              base: "0",
-              lg: "250px"
-            }
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            width: "100%"
           })}
         >
-          {children}
-          <Toaster />
-        </main>
+          <Header alwaysShow={false} />
+          <main
+            className={css({
+              ml: {
+                base: "0",
+                lg: "250px"
+              }
+            })}
+          >
+            {children}
+            <Toaster />
+          </main>
+        </div>
       </div>
-    </div>
+    </ScrollArea.Root>
   );
 };
