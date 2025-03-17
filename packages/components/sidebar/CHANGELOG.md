@@ -1,5 +1,11 @@
 # @brifui/sidebar
 
+## 0.0.22
+
+### Patch Changes
+
+- [#175](https://github.com/brifui-org/brif-ui/pull/175) [`7daeef9`](https://github.com/brifui-org/brif-ui/commit/7daeef963dc860338fb64c4e646c08a0d66d3e99) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - fixed sidebar header + footer background issue
+
 ## 0.0.21
 
 ### Patch Changes
