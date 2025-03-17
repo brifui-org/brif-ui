@@ -1,5 +1,11 @@
 # @brifui/button
 
+## 0.0.30
+
+### Patch Changes
+
+- [#179](https://github.com/brifui-org/brif-ui/pull/179) [`36ed9d7`](https://github.com/brifui-org/brif-ui/commit/36ed9d7e81761ad7b6a46caaf365bfe5151c2474) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - fixed flickering transition on hover
+
 ## 0.0.29
 
 ### Patch Changes

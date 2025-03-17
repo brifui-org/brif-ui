@@ -347,7 +347,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/button@npm:^0.0.29, @brifui/button@workspace:packages/components/button":
+"@brifui/button@npm:^0.0.30, @brifui/button@workspace:packages/components/button":
   version: 0.0.0-use.local
   resolution: "@brifui/button@workspace:packages/components/button"
   dependencies:
@@ -473,7 +473,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.47, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.48, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
@@ -481,7 +481,7 @@ __metadata:
     "@brifui/alert": "npm:^0.0.1"
     "@brifui/avatar": "npm:^0.0.18"
     "@brifui/badge": "npm:^0.0.12"
-    "@brifui/button": "npm:^0.0.29"
+    "@brifui/button": "npm:^0.0.30"
     "@brifui/card": "npm:^0.0.28"
     "@brifui/checkbox": "npm:^0.0.28"
     "@brifui/codeblock": "npm:^0.0.18"
@@ -491,14 +491,14 @@ __metadata:
     "@brifui/input": "npm:^0.0.32"
     "@brifui/radio": "npm:^0.0.5"
     "@brifui/scrollarea": "npm:^0.0.0"
-    "@brifui/select": "npm:^0.0.29"
+    "@brifui/select": "npm:^0.0.30"
     "@brifui/sidebar": "npm:^0.0.23"
     "@brifui/spinner": "npm:^0.0.18"
     "@brifui/switch": "npm:^0.0.12"
     "@brifui/table": "npm:^0.0.20"
     "@brifui/text": "npm:^0.0.22"
     "@brifui/textarea": "npm:^0.0.7"
-    "@brifui/toast": "npm:^0.0.18"
+    "@brifui/toast": "npm:^0.0.19"
     "@brifui/tooltip": "npm:^0.0.18"
     "@brifui/typescript-config": "npm:^0.0.3"
     "@microsoft/api-extractor": "npm:^7.49.1"
@@ -714,11 +714,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/select@npm:^0.0.29, @brifui/select@workspace:packages/components/select":
+"@brifui/select@npm:^0.0.30, @brifui/select@workspace:packages/components/select":
   version: 0.0.0-use.local
   resolution: "@brifui/select@workspace:packages/components/select"
   dependencies:
-    "@brifui/button": "npm:^0.0.29"
+    "@brifui/button": "npm:^0.0.30"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
     "@brifui/styled": "npm:^0.0.27"
@@ -921,11 +921,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/toast@npm:^0.0.18, @brifui/toast@workspace:packages/components/toast":
+"@brifui/toast@npm:^0.0.19, @brifui/toast@workspace:packages/components/toast":
   version: 0.0.0-use.local
   resolution: "@brifui/toast@workspace:packages/components/toast"
   dependencies:
-    "@brifui/button": "npm:^0.0.29"
+    "@brifui/button": "npm:^0.0.30"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/mocks": "npm:^0.0.5"
     "@brifui/styled": "npm:^0.0.27"
@@ -6855,7 +6855,7 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@brifui/cli": "npm:^0.0.25"
-    "@brifui/components": "npm:^0.0.47"
+    "@brifui/components": "npm:^0.0.48"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.27"
     "@brifui/theme": "npm:^0.0.25"

@@ -1,5 +1,12 @@
 # @brifui/select
 
+## 0.0.30
+
+### Patch Changes
+
+- Updated dependencies [[`36ed9d7`](https://github.com/brifui-org/brif-ui/commit/36ed9d7e81761ad7b6a46caaf365bfe5151c2474)]:
+  - @brifui/button@0.0.30
+
 ## 0.0.29
 
 ### Patch Changes
