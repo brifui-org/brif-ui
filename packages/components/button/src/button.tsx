@@ -60,34 +60,29 @@ export const Button: React.FC<ButtonProps> & {
     Suffix
   );
 
+  const raw = buttonVariants.raw({
+    variant,
+    size,
+    fluid
+  });
+
   return (
-    <button
-      className={cx(
-        _css(
-          buttonVariants.raw({
-            variant,
-            size,
-            fluid
-          }),
-          css
-        ),
-        className
-      )}
-      {...props}
-    >
-      {prefixes}
-      <span
-        className={_css({
-          flex: 1,
-          px: "1.5",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        })}
-      >
-        {others}
-      </span>
-      {suffixes}
+    <button className={cx(_css(raw.root, css), className)} {...props}>
+      <div className={_css(raw.container)}>
+        {prefixes}
+        <span
+          className={_css({
+            flex: 1,
+            px: "1.5",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          })}
+        >
+          {others}
+        </span>
+        {suffixes}
+      </div>
     </button>
   );
 };

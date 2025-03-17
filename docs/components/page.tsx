@@ -148,7 +148,11 @@ const CodePreview: React.FC<{ children?: string }> = ({
 }) => {
   return (
     <Accordion.Root
-      className={css({ boxShadow: "component.lg", borderTopRadius: 0 })}
+      className={css({
+        boxShadow: "component.lg",
+        borderTopRadius: 0,
+        zIndex: "10"
+      })}
       type="single"
       collapsible
     >

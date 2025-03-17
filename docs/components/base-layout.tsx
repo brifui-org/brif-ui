@@ -44,6 +44,7 @@ export const BaseLayout: React.FC<{ children?: React.ReactNode }> = ({
           <Header alwaysShow={false} />
           <main
             className={css({
+              maxW: "screen",
               ml: {
                 base: "0",
                 lg: "250px"
