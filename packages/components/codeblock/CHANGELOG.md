@@ -1,5 +1,11 @@
 # @brifui/codeblock
 
+## 0.0.19
+
+### Patch Changes
+
+- [#181](https://github.com/brifui-org/brif-ui/pull/181) [`be85a14`](https://github.com/brifui-org/brif-ui/commit/be85a1423de97baabab83657eae3e91951434d2a) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - improved codeblock styles
+
 ## 0.0.18
 
 ### Patch Changes

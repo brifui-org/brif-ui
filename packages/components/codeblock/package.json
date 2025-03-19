@@ -1,6 +1,6 @@
 {
   "name": "@brifui/codeblock",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Codeblock component - Brif UI",
   "sideEffects": false,
   "type": "module",

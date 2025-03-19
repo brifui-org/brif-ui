@@ -1,5 +1,12 @@
 # @brifui/components
 
+## 0.0.49
+
+### Patch Changes
+
+- Updated dependencies [[`be85a14`](https://github.com/brifui-org/brif-ui/commit/be85a1423de97baabab83657eae3e91951434d2a)]:
+  - @brifui/codeblock@0.0.19
+
 ## 0.0.48
 
 ### Patch Changes
