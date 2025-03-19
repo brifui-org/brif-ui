@@ -1,6 +1,6 @@
 {
   "name": "@brifui/components",
-  "version": "0.0.48",
+  "version": "0.0.49",
   "description": "Brif UI components",
   "sideEffects": false,
   "type": "module",
@@ -35,7 +35,7 @@
     "@brifui/button": "^0.0.30",
     "@brifui/card": "^0.0.28",
     "@brifui/checkbox": "^0.0.28",
-    "@brifui/codeblock": "^0.0.18",
+    "@brifui/codeblock": "^0.0.19",
     "@brifui/dialog": "^0.0.2",
     "@brifui/form": "^0.0.29",
     "@brifui/input": "^0.0.32",
