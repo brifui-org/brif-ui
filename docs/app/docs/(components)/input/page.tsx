@@ -5,6 +5,13 @@ import { ArrowUpCircleIcon } from "lucide-react";
 import { Input } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import {
+  disabledSnippet,
+  errorSnippet,
+  prefixAndSuffixSnippet,
+  sizeSnippet
+} from "./snippet";
+
 export default function InputDocs() {
   return (
     <Page>
@@ -28,7 +35,7 @@ export default function InputDocs() {
           <Input size="md" placeholder="Default" />
           <Input size="lg" placeholder="Default" />
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{sizeSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Prefix and suffix">
@@ -63,7 +70,7 @@ export default function InputDocs() {
             </Input.Suffix>
           </Input>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{prefixAndSuffixSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Disabled">
@@ -89,7 +96,7 @@ export default function InputDocs() {
             </Input.Suffix>
           </Input>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{disabledSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Error">
@@ -107,7 +114,7 @@ export default function InputDocs() {
           <Input error size="md" placeholder="Error" />
           <Input error size="lg" placeholder="Error" />
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{errorSnippet}</Page.CodePreview>
       </Page.Section>
     </Page>
   );
