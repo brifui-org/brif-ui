@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import {
+import SyntaxHighlighter, {
   createElement,
-  Prism as SyntaxHighlighter,
   SyntaxHighlighterProps
 } from "react-syntax-highlighter";
 import { css as _css, cx } from "@brifui/styled/css";

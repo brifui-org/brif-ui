@@ -5,6 +5,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, Form, Input } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { defaultSnippet } from "./snippet";
+
 type Inputs = {
   username: string;
   password: string;
@@ -80,7 +82,7 @@ export default function FormDocs() {
             </Form.Submit>
           </Form.Root>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{defaultSnippet}</Page.CodePreview>
       </Page.Section>
     </Page>
   );

@@ -21,7 +21,7 @@ const exampleSnippet = `function MyComponent(props) {
   );
 }`;
 
-export default function InputDocs() {
+export default function CodeBlockDocs() {
   return (
     <Page>
       <Page.Title

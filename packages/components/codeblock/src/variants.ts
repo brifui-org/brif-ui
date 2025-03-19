@@ -3,11 +3,7 @@ import { RecipeVariantProps, sva } from "@brifui/styled/css";
 export const codeblockVariants = sva({
   slots: ["root", "content", "line", "header", "filename", "icon"],
   base: {
-    root: {
-      "& .language-autohotkey .token.selector": {
-        color: "#00a4db"
-      }
-    },
+    root: {},
     line: {
       pr: 2,
       cursor: "default",
@@ -30,68 +26,44 @@ export const codeblockVariants = sva({
       }
     },
     content: {
-      '&[class*="language-"],code[class*="language-"]': {
-        tabSize: 4,
-        color: "{colors.text} !important",
-        fontFamily: "mono",
-        direction: "ltr",
-        textAlign: "left",
-        textShadow: "none !important",
-        whiteSpace: "pre",
-        wordSpacing: "normal",
-        wordBreak: "normal",
-        textStyle: "text.sm",
-        hyphens: "none"
-      },
-      '&>code[class*="language-"]': {
-        w: "100%",
-        display: "inline-block",
-        textStyle: "text.sm"
-      },
-      /**
-       * Code block
-       */
-      '&[class*="language-"]': {
-        py: "1",
+      "& .hljs": {
         display: "block",
-        overflow: "auto",
-        backgroundColor: "background"
+        overflowX: "auto"
       },
-      /**
-       * Inline code
-       */
-      '&:not(pre) > code[class*="language-"]': {
-        px: ".2em",
-        py: "px",
-        overflow: "auto",
-        backgroundColor: "background"
+      "& .hljs-name": {
+        color: "green.900"
       },
-
-      "& .token": {
-        "&.comment,&.prolog,&.doctype,&.cdata": {
-          color: "#999988",
-          fontStyle: "italic"
-        },
-        "&.namespace": {
-          opacity: 0.7
-        },
-        "&.string,&.attr-value": {
-          color: "#e3116c"
-        },
-        "&.entity,&.url,&.symbol,&.number,&.boolean,&.variable,&.constant,&.property,&.regex,&.inserted":
-          {
-            color: "#36acaa"
-          },
-        "&.atrule,&.keyword,&.attr-name": {
-          color: "#00a4db"
-        },
-        "&.important,&.function,&.bold": {
-          color: "#9A050F",
-          fontWeight: "bold"
-        },
-        "&.italic": {
-          fontStyle: "italic"
+      "& .hljs-keyword": {
+        color: "pink.900"
+      },
+      "& .hljs-title": {
+        color: "purple.900"
+      },
+      "& .hljs-comment": {
+        color: "gray.900"
+      },
+      "& .hljs-function": {
+        "& .hljs-keyword": {
+          color: "#ff79c6"
         }
+      },
+      "& .hljs-number": {
+        color: "blue.900"
+      },
+      "& .hljs-string": {
+        color: "green.900"
+      },
+      "& .hljs-attr": {
+        color: "amber.900"
+      },
+      "& .hljs-symbol": {
+        color: "green.900"
+      },
+      "& .hljs-strong": {
+        fontWeight: "bold"
+      },
+      "& .hljs-emphasis": {
+        fontStyle: "italic"
       }
     },
     header: {

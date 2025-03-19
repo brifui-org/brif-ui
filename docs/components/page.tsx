@@ -103,7 +103,14 @@ const Section: React.FC<{
           </p>
         )}
       </div>
-      <div>{children}</div>
+      <div
+        className={css({
+          boxShadow: "component.lg",
+          borderRadius: "component.lg"
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 };
@@ -121,7 +128,8 @@ const Preview: React.FC<{
           borderBottomRightRadius: 0,
           borderBottomWidth: "0px",
           borderBottom: "none",
-          overflow: "auto"
+          overflow: "auto",
+          boxShadow: "none"
         },
         _css
       )}
@@ -129,9 +137,17 @@ const Preview: React.FC<{
       <Card.Body
         css={css.raw(
           {
+            minH: "36",
             py: 6,
             display: "grid",
-            alignItems: "center"
+            alignItems: "center",
+            backgroundImage: {
+              base: "radial-gradient(circle,rgba(0,0,0,.1) 3px,transparent 0)",
+              _dark:
+                "radial-gradient(circle,rgba(265,265,265,.1) 3px,transparent 0)"
+            },
+            backgroundPosition: "-2px -2px",
+            backgroundSize: "30px 30px"
           },
           _css
         )}
@@ -148,10 +164,8 @@ const CodePreview: React.FC<{ children?: string }> = ({
 }) => {
   return (
     <Accordion.Root
-      className={css({
-        boxShadow: "component.lg",
-        borderTopRadius: 0,
-        zIndex: "10"
+      css={css.raw({
+        borderTopRadius: 0
       })}
       type="single"
       collapsible

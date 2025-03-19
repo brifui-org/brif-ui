@@ -82,10 +82,11 @@ export default function SidebarDocs() {
                 h: "450px"
               })}
             >
-              <Sidebar.Header>
+              <Sidebar.Header css={css.raw({ background: "background" })}>
                 <Sidebar.Menu
                   css={css.raw({
                     p: 2,
+
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "space-between"
@@ -198,7 +199,11 @@ export default function SidebarDocs() {
                   </Sidebar.Menu>
                 </Sidebar.Group>
               </Sidebar.Body>
-              <Sidebar.Footer>
+              <Sidebar.Footer
+                css={css.raw({
+                  background: "background"
+                })}
+              >
                 <Sidebar.Menu>
                   <CollapseButton />
                 </Sidebar.Menu>
