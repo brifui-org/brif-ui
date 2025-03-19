@@ -59,7 +59,8 @@ const Section: React.FC<{
   description?: string;
   children?: React.ReactNode;
   className?: string;
-}> = ({ title, description, children, className }) => {
+  shadow?: boolean;
+}> = ({ title, description, children, className, shadow = true }) => {
   return (
     <div
       className={cx(
@@ -105,7 +106,7 @@ const Section: React.FC<{
       </div>
       <div
         className={css({
-          boxShadow: "component.lg",
+          boxShadow: shadow ? "component.lg" : "none",
           borderRadius: "component.lg"
         })}
       >

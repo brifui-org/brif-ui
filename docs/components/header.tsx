@@ -77,7 +77,7 @@ export const Header: React.FC<{
             <Image
               quality={100}
               alt="Brif UI logo"
-              src="/logo.png"
+              src="/logo-with-bg.png"
               width={42}
               height={42}
             />

@@ -12,7 +12,11 @@ export default function CardDocs() {
         description="Displays a card with header, content, and footer."
       />
 
-      <Page.Section title="Default" description="Default shadow is large">
+      <Page.Section
+        shadow={false}
+        title="Default"
+        description="Default shadow is large"
+      >
         <div
           className={css({ display: "flex", flexDirection: "column", gap: 4 })}
         >
@@ -34,7 +38,7 @@ export default function CardDocs() {
         </div>
       </Page.Section>
 
-      <Page.Section title="Bordered">
+      <Page.Section shadow={false} title="Bordered">
         <Card bordered>
           <Card.Header>Header</Card.Header>
           <Card.Body className={css({ py: 6 })}>Body</Card.Body>
