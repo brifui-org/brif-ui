@@ -322,12 +322,12 @@ const DesktopMenu = () => {
           <Image
             quality={100}
             alt="Brif UI logo"
-            src="/logo.png"
+            src="/logo-with-bg.png"
             width={42}
             height={42}
           />
         </Link>
-        <Badge suppressHydrationWarning size="sm">
+        <Badge css={css.raw({ ml: 2 })} suppressHydrationWarning size="sm">
           {CURRENT_VERSION}
         </Badge>
       </div>

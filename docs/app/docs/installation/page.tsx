@@ -53,7 +53,7 @@ export default function InstallationPage() {
         description="Welcome to the BrifUI documentation 👋"
       />
 
-      <Page.Section title="Requirement">
+      <Page.Section shadow={false} title="Requirement">
         <ul className={css({ listStyle: "inside" })}>
           <Text as="li">
             <InlineLink target="_blank" href="https://react.dev">
@@ -73,7 +73,7 @@ export default function InstallationPage() {
         </ul>
       </Page.Section>
 
-      <Page.Section title="Installation">
+      <Page.Section shadow={false} title="Installation">
         <Card css={css.raw({ mb: 6 })}>
           <Card.Body>
             <Codeblock.Root>
@@ -197,7 +197,7 @@ export const RootComponent = () => {
           </Card.Body>
         </Card>
       </Page.Section>
-      <Page.Section title="FAQ"></Page.Section>
+      <Page.Section shadow={false} title="FAQ"></Page.Section>
     </Page>
   );
 }

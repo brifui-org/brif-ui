@@ -91,7 +91,7 @@ export default function IntroductionPage() {
         </Card>
       </Page.Title>
 
-      <Page.Section title="What is BrifUI?">
+      <Page.Section shadow={false} title="What is BrifUI?">
         <Text as="p">
           BrifUI is a UI library for React that helps you build beautiful and
           accessible user interfaces. Created on top of{" "}
@@ -106,7 +106,7 @@ export default function IntroductionPage() {
         </Text>
       </Page.Section>
 
-      <Page.Section title="Contributing">
+      <Page.Section shadow={false} title="Contributing">
         <Text>
           We are very welcome any contributon to{" "}
           <InlineLink href="/" target="_blank">

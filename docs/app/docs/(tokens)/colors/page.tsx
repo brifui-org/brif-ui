@@ -57,6 +57,7 @@ export default function ColorsDocs() {
         description="Rules of colors throughout the system."
       />
       <Page.Section
+        shadow={false}
         title="Tokens"
         description="The color palette is a copy from Vercel."
       >
@@ -84,7 +85,7 @@ export default function ColorsDocs() {
         </Text>
       </Page.Section>
 
-      <Page.Section title="Common colors">
+      <Page.Section shadow={false} title="Common colors">
         <div className={previewContainerStyles}>
           <Text as="p" fontWeight="semibold" type="text.lg">
             White & Black
@@ -240,7 +241,7 @@ export default function ColorsDocs() {
         </div>
       </Page.Section>
 
-      <Page.Section title="Semantic colors">
+      <Page.Section shadow={false} title="Semantic colors">
         <div className={previewContainerStyles}>
           <Text as="p" fontWeight="semibold" type="text.lg">
             Background
