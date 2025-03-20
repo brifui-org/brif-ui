@@ -11,7 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@brifui/components": "^0.0.50",
+    "@brifui/components": "^0.0.51",
     "@brifui/styled": "^0.0.28",
     "@brifui/utils": "^0.0.23",
     "@icons-pack/react-simple-icons": "^12.0.0",

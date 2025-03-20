@@ -449,7 +449,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/codeblock@npm:^0.0.20, @brifui/codeblock@workspace:packages/components/codeblock":
+"@brifui/codeblock@npm:^0.0.21, @brifui/codeblock@workspace:packages/components/codeblock":
   version: 0.0.0-use.local
   resolution: "@brifui/codeblock@workspace:packages/components/codeblock"
   dependencies:
@@ -474,7 +474,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brifui/components@npm:^0.0.50, @brifui/components@workspace:packages/components/entry":
+"@brifui/components@npm:^0.0.51, @brifui/components@workspace:packages/components/entry":
   version: 0.0.0-use.local
   resolution: "@brifui/components@workspace:packages/components/entry"
   dependencies:
@@ -485,7 +485,7 @@ __metadata:
     "@brifui/button": "npm:^0.0.31"
     "@brifui/card": "npm:^0.0.29"
     "@brifui/checkbox": "npm:^0.0.29"
-    "@brifui/codeblock": "npm:^0.0.20"
+    "@brifui/codeblock": "npm:^0.0.21"
     "@brifui/dialog": "npm:^0.0.3"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/form": "npm:^0.0.30"
@@ -7080,7 +7080,7 @@ __metadata:
   resolution: "docs@workspace:docs"
   dependencies:
     "@brifui/cli": "npm:^0.0.26"
-    "@brifui/components": "npm:^0.0.50"
+    "@brifui/components": "npm:^0.0.51"
     "@brifui/eslint-config": "npm:^0.0.3"
     "@brifui/styled": "npm:^0.0.28"
     "@brifui/theme": "npm:^0.0.26"
