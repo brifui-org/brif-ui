@@ -1,7 +1,7 @@
 import { cac } from "cac";
 
 import { version } from "../package.json";
-import { codegen } from "./commands/codegen.js";
+import { codegenCommand } from "./commands/codegen.js";
 
 export async function main() {
   const cli = cac("brif");
@@ -11,7 +11,7 @@ export async function main() {
   cli
     .command("codegen", "Generate styled system")
     .option("--cwd <cwd>", "Current working directory", { default: cwd })
-    .action(codegen);
+    .action(codegenCommand);
 
   cli.help();
   cli.version(version);
@@ -19,9 +19,7 @@ export async function main() {
 
   try {
     await cli.runMatchedCommand();
-  } catch (error) {
-    console.error(error);
-
+  } catch {
     process.exit(1);
   }
 }
