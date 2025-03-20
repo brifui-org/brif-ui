@@ -1,5 +1,13 @@
 # @brifui/textarea
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.28
+  - @brifui/utils@0.0.23
+
 ## 0.0.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @brifui/utils
 
+## 0.0.4
+
+### Patch Changes
+
+- [#184](https://github.com/brifui-org/brif-ui/pull/184) [`d907d08`](https://github.com/brifui-org/brif-ui/commit/d907d08f3dbc863add64b933d56ea55d77296fe5) Thanks [@thinh-trinh-duc](https://github.com/thinh-trinh-duc)! - improved CLI codebase readability and codegen speed
+
 ## 0.0.3
 
 ### Patch Changes
