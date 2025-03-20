@@ -1,25 +1,53 @@
+import { codegen, loadConfigAndCreateContext } from "@pandacss/node";
 import { build } from "@rslib/core";
-import chalk from "chalk";
-import { execSync } from "node:child_process";
+import { Effect } from "effect";
 import path from "node:path";
-import { locatePackage } from "@brifui/node";
+import {
+  defaultExeceptionHandler,
+  EXCEPTIONS,
+  locatePackage,
+  logger
+} from "@brifui/node";
 
-import { dependencies } from "../../package.json";
-import { logger } from "../utils/logger";
+const getStyledPackagePath = (): Effect.Effect<string, Error> => {
+  const styledPath = locatePackage("styled");
+  if (!styledPath) {
+    return Effect.fail(EXCEPTIONS.StyledPackageNotFound);
+  }
 
-const pandaVersion = dependencies["@pandacss/dev"].slice(1);
+  return Effect.succeed(styledPath);
+};
 
-export async function codegen() {
-  try {
-    const styledPackagePath = locatePackage("styled");
-    if (!styledPackagePath) {
-      throw new Error("Failed to locate @brifui/styled package");
+const resolvePath = (p1: Effect.Effect<string, Error>) => (p2: string) =>
+  path.resolve(Effect.runSync(p1), p2);
+
+const resolveStyledPath = Effect.runSync(
+  Effect.try({
+    try: getStyledPackagePath,
+    catch: () => {
+      throw EXCEPTIONS.StyledPackageNotFound;
     }
-    const resolveStyledPath = (p: string) => path.resolve(styledPackagePath, p);
+  }).pipe(Effect.andThen(resolvePath))
+);
 
-    logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
-    execSync(`npx panda codegen --config brifui.config.ts`);
-    await build({
+const runPandaCodegen = Effect.tryPromise({
+  try: async () => {
+    const ctx = await loadConfigAndCreateContext({
+      cwd: process.cwd(),
+      configPath: "brifui.config.ts"
+    });
+    const { msg, box } = await codegen(ctx);
+    logger.plain(box);
+    logger.plain(msg);
+  },
+  catch: () => {
+    throw EXCEPTIONS.CodegenFailed;
+  }
+});
+
+const transpileESMToCJS = Effect.tryPromise({
+  try: () =>
+    build({
       lib: [
         {
           source: {
@@ -38,19 +66,17 @@ export async function codegen() {
           format: "cjs"
         }
       ]
-    });
-
-    logger.log(
-      `${chalk.blue("@brifui/styled/dist/css")}: the css function to author styles`
-    );
-    logger.log(
-      `${chalk.blue("@brifui/styled/dist/tokens")}: the css variables and js function to query your tokens`
-    );
-    logger.log(
-      `${chalk.blue("@brifui/styled/dist/patterns")}: functions to implement and apply common layout patterns`
-    );
-  } catch (err) {
-    logger.error("Failed to run codegen command");
-    console.error(err);
+    }),
+  catch: () => {
+    throw EXCEPTIONS.CodegenTranspileFailed;
   }
+});
+
+export async function codegenCommand() {
+  const tasks = Effect.forEach([runPandaCodegen, transpileESMToCJS], (task) =>
+    Effect.either(task)
+  );
+  await Effect.runPromise(tasks)
+    .then(() => void 0)
+    .catch(defaultExeceptionHandler);
 }

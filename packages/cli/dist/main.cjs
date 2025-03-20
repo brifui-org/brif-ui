@@ -620,23 +620,12 @@ var CAC = class extends import_events.EventEmitter {
 var cac = (name = "") => new CAC(name);
 
 // package.json
-var version = "0.0.24";
-var dependencies = {
-  "@clack/prompts": "0.9.1",
-  "@pandacss/dev": "^0.53.1",
-  "@rslib/core": "^0.5.4",
-  "bundle-n-require": "^1.1.1",
-  chalk: "4.1.2",
-  escalade: "^3.2.0",
-  "fast-glob": "^3.3.3",
-  "find-up": "^7.0.0",
-  minimatch: "^10.0.1"
-};
+var version = "0.0.25";
 
 // src/commands/codegen.ts
+var import_node = require("@pandacss/node");
 var import_core = require("@rslib/core");
-var import_chalk2 = __toESM(require("chalk"), 1);
-var import_node_child_process = require("child_process");
+var import_effect = require("effect");
 var import_node_path2 = __toESM(require("path"), 1);
 
 // ../node/src/locate-package.ts
@@ -666,77 +655,120 @@ function locatePackage(packageName) {
   }
 }
 
-// src/utils/logger.ts
+// ../node/src/logger.ts
 var import_chalk = __toESM(require("chalk"), 1);
 var PREFIX = import_chalk.default.bgBlack.yellow("[BrifUI]");
 var logger = {
+  plain: console.log,
   log: (...args) => console.log(PREFIX, import_chalk.default.bgBlue.white("[INFO]"), ...args),
   warning: (...args) => console.log(PREFIX, "[WARN]", import_chalk.default.yellow(...args)),
-  error: (...args) => console.log(PREFIX, "[ERR]", import_chalk.default.red(...args)),
+  error: (...args) => console.log(PREFIX, import_chalk.default.bgRed("[ERR]"), import_chalk.default.red(...args)),
   debug: (...args) => {
     if (!process.env.BRIF_DEBUG) return;
     console.log(PREFIX, import_chalk.default.bgGrey.black("[DEBUG]"), ...args);
   }
 };
 
-// src/commands/codegen.ts
-var pandaVersion = dependencies["@pandacss/dev"].slice(1);
-async function codegen() {
-  try {
-    const styledPackagePath = locatePackage("styled");
-    if (!styledPackagePath) {
-      throw new Error("Failed to locate @brifui/styled package");
-    }
-    const resolveStyledPath = (p) => import_node_path2.default.resolve(styledPackagePath, p);
-    logger.debug(`Running codegen command on @pandacss/dev@${pandaVersion}`);
-    (0, import_node_child_process.execSync)(`npx panda codegen --config brifui.config.ts`);
-    await (0, import_core.build)({
-      lib: [
-        {
-          source: {
-            entry: {
-              index: resolveStyledPath("./dist/**")
-            }
-          },
-          output: {
-            target: "node",
-            cleanDistPath: false,
-            distPath: {
-              root: resolveStyledPath("./distcjs")
-            }
-          },
-          bundle: false,
-          format: "cjs"
-        }
-      ]
-    });
-    logger.log(
-      `${import_chalk2.default.blue("@brifui/styled/dist/css")}: the css function to author styles`
-    );
-    logger.log(
-      `${import_chalk2.default.blue("@brifui/styled/dist/tokens")}: the css variables and js function to query your tokens`
-    );
-    logger.log(
-      `${import_chalk2.default.blue("@brifui/styled/dist/patterns")}: functions to implement and apply common layout patterns`
-    );
-  } catch (err) {
-    logger.error("Failed to run codegen command");
-    console.error(err);
+// ../node/src/exceptions.ts
+var EXCEPTION_CODE = {
+  STYLED_PACKAGE_NOT_FOUND: "STYLED_PACKAGE_NOT_FOUND",
+  CODEGEN_FAILED: "CODEGEN_FAILED",
+  CODEGEN_TRANSPILE_FAILED: "CODEGEN_TRANSPILE_FAILED"
+};
+var EXCEPTIONS = {
+  StyledPackageNotFound: new Error(EXCEPTION_CODE.STYLED_PACKAGE_NOT_FOUND),
+  CodegenFailed: new Error(EXCEPTION_CODE.CODEGEN_FAILED),
+  CodegenTranspileFailed: new Error(EXCEPTION_CODE.CODEGEN_TRANSPILE_FAILED)
+};
+
+// ../node/src/exception-handler.ts
+var defaultExeceptionHandler = (error) => {
+  switch (error.message) {
+    case EXCEPTION_CODE.CODEGEN_FAILED:
+      logger.error("Failed to run codegen command");
+      break;
+    case EXCEPTION_CODE.CODEGEN_TRANSPILE_FAILED:
+      logger.error("Failed to transpile styled to CJS");
+      break;
   }
+  throw error;
+};
+
+// src/commands/codegen.ts
+var getStyledPackagePath = () => {
+  const styledPath = locatePackage("styled");
+  if (!styledPath) {
+    return import_effect.Effect.fail(EXCEPTIONS.StyledPackageNotFound);
+  }
+  return import_effect.Effect.succeed(styledPath);
+};
+var resolvePath = (p1) => (p2) => import_node_path2.default.resolve(import_effect.Effect.runSync(p1), p2);
+var resolveStyledPath = import_effect.Effect.runSync(
+  import_effect.Effect.try({
+    try: getStyledPackagePath,
+    catch: () => {
+      throw EXCEPTIONS.StyledPackageNotFound;
+    }
+  }).pipe(import_effect.Effect.andThen(resolvePath))
+);
+var runPandaCodegen = import_effect.Effect.tryPromise({
+  try: async () => {
+    const ctx = await (0, import_node.loadConfigAndCreateContext)({
+      cwd: process.cwd(),
+      configPath: "brifui.config.ts"
+    });
+    const { msg, box } = await (0, import_node.codegen)(ctx);
+    logger.plain(box);
+    logger.plain(msg);
+  },
+  catch: () => {
+    throw EXCEPTIONS.CodegenFailed;
+  }
+});
+var transpileESMToCJS = import_effect.Effect.tryPromise({
+  try: () => (0, import_core.build)({
+    lib: [
+      {
+        source: {
+          entry: {
+            index: resolveStyledPath("./dist/**")
+          }
+        },
+        output: {
+          target: "node",
+          cleanDistPath: false,
+          distPath: {
+            root: resolveStyledPath("./distcjs")
+          }
+        },
+        bundle: false,
+        format: "cjs"
+      }
+    ]
+  }),
+  catch: () => {
+    throw EXCEPTIONS.CodegenTranspileFailed;
+  }
+});
+async function codegenCommand() {
+  const tasks = import_effect.Effect.forEach(
+    [runPandaCodegen, transpileESMToCJS],
+    (task) => import_effect.Effect.either(task)
+  );
+  await import_effect.Effect.runPromise(tasks).then(() => void 0).catch(defaultExeceptionHandler);
 }
 
 // src/main.ts
 async function main() {
   const cli = cac("brif");
   const cwd = process.cwd();
-  cli.command("codegen", "Generate styled system").option("--cwd <cwd>", "Current working directory", { default: cwd }).action(codegen);
+  cli.command("codegen", "Generate styled system").option("--cwd <cwd>", "Current working directory", { default: cwd }).action(codegenCommand);
   cli.help();
   cli.version(version);
   cli.parse(process.argv, { run: false });
   try {
     await cli.runMatchedCommand();
-  } catch (error) {
-    console.error(error);
+  } catch {
     process.exit(1);
   }
 }

@@ -26,6 +26,7 @@
   },
   "main": "src/index.ts",
   "dependencies": {
+    "effect": "^3.13.12",
     "escalade": "^3.2.0"
   },
   "peerDependencies": {

@@ -1,3 +1,3 @@
-declare function codegen(): Promise<void>;
+declare function codegenCommand(): Promise<void>;
 
-export { codegen };
+export { codegenCommand };

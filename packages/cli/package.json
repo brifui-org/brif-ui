@@ -49,10 +49,11 @@
   },
   "dependencies": {
     "@clack/prompts": "0.9.1",
-    "@pandacss/dev": "^0.53.1",
+    "@pandacss/node": "^0.53.1",
     "@rslib/core": "^0.5.4",
     "bundle-n-require": "^1.1.1",
     "chalk": "4.1.2",
+    "effect": "^3.13.12",
     "escalade": "^3.2.0",
     "fast-glob": "^3.3.3",
     "find-up": "^7.0.0",
