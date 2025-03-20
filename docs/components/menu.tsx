@@ -2,12 +2,10 @@
 
 import React, { ComponentPropsWithRef } from "react";
 import { useMenu } from "@/app/providers/menu-context";
-import { MenuIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Badge, Button, ScrollArea } from "@brifui/components";
-import { css, cx } from "@brifui/styled/css";
+import { Badge, ScrollArea } from "@brifui/components";
+import { css } from "@brifui/styled/css";
 
 import { dependencies } from "../package.json";
 
@@ -319,8 +317,8 @@ const DesktopMenu = () => {
         })}
       >
         <Link href="/">
-          <Image
-            quality={100}
+          <img
+            className={css({ w: "42px", h: "42px" })}
             alt="Brif UI logo"
             src="/logo-with-bg.png"
             width={42}

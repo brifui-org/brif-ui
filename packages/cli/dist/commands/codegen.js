@@ -33,12 +33,12 @@ function locatePackage(packageName) {
 
 // ../node/src/logger.ts
 import chalk from "chalk";
-var PREFIX = chalk.bgBlack.yellow("[BrifUI]");
+var PREFIX = chalk.yellow("[BrifUI]");
 var logger = {
   plain: console.log,
   log: (...args) => console.log(PREFIX, chalk.bgBlue.white("[INFO]"), ...args),
-  warning: (...args) => console.log(PREFIX, "[WARN]", chalk.yellow(...args)),
-  error: (...args) => console.log(PREFIX, chalk.bgRed("[ERR]"), chalk.red(...args)),
+  warning: (...args) => console.log(PREFIX, chalk.bgYellow.black("[WARN]"), chalk.yellow(...args)),
+  error: (...args) => console.log(PREFIX, chalk.bgRed.white("[ERR]"), chalk.red(...args)),
   debug: (...args) => {
     if (!process.env.BRIF_DEBUG) return;
     console.log(PREFIX, chalk.bgGrey.black("[DEBUG]"), ...args);

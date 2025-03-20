@@ -620,7 +620,7 @@ var CAC = class extends import_events.EventEmitter {
 var cac = (name = "") => new CAC(name);
 
 // package.json
-var version = "0.0.25";
+var version = "0.0.26";
 
 // src/commands/codegen.ts
 var import_node = require("@pandacss/node");
@@ -657,12 +657,12 @@ function locatePackage(packageName) {
 
 // ../node/src/logger.ts
 var import_chalk = __toESM(require("chalk"), 1);
-var PREFIX = import_chalk.default.bgBlack.yellow("[BrifUI]");
+var PREFIX = import_chalk.default.yellow("[BrifUI]");
 var logger = {
   plain: console.log,
   log: (...args) => console.log(PREFIX, import_chalk.default.bgBlue.white("[INFO]"), ...args),
-  warning: (...args) => console.log(PREFIX, "[WARN]", import_chalk.default.yellow(...args)),
-  error: (...args) => console.log(PREFIX, import_chalk.default.bgRed("[ERR]"), import_chalk.default.red(...args)),
+  warning: (...args) => console.log(PREFIX, import_chalk.default.bgYellow.black("[WARN]"), import_chalk.default.yellow(...args)),
+  error: (...args) => console.log(PREFIX, import_chalk.default.bgRed.white("[ERR]"), import_chalk.default.red(...args)),
   debug: (...args) => {
     if (!process.env.BRIF_DEBUG) return;
     console.log(PREFIX, import_chalk.default.bgGrey.black("[DEBUG]"), ...args);
