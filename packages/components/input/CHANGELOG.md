@@ -1,5 +1,13 @@
 # @brifui/input
 
+## 0.0.33
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.28
+  - @brifui/utils@0.0.23
+
 ## 0.0.32
 
 ### Patch Changes

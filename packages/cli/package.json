@@ -1,6 +1,6 @@
 {
   "name": "@brifui/cli",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "CLI tool for Brif UI.",
   "type": "module",
   "sideEffects": false,
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
-    "@brifui/node": "^0.0.3",
+    "@brifui/node": "^0.0.4",
     "@brifui/typescript-config": "^0.0.3",
     "@types/node": "^22.13.5",
     "cac": "^6.7.14",

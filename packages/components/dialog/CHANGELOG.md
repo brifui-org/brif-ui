@@ -1,5 +1,13 @@
 # @brifui/dialog
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @brifui/styled@0.0.28
+  - @brifui/utils@0.0.23
+
 ## 0.0.2
 
 ### Patch Changes

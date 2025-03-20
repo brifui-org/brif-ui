@@ -1,6 +1,6 @@
 {
   "name": "@brifui/styled",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Styled system for Brif UI.",
   "sideEffects": false,
   "type": "module",
@@ -65,7 +65,7 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
-    "@brifui/theme": "^0.0.25",
+    "@brifui/theme": "^0.0.26",
     "@pandacss/dev": "^0.53.1"
   }
 }
