@@ -8,12 +8,22 @@ export const codeblockVariants = sva({
       pr: 2,
       cursor: "default",
       display: "block",
+      "& .linenumber": {
+        pl: 3.5,
+        cursor: "pointer",
+        _hover: {
+          color: "text"
+        }
+      },
       _highlighted: {
         background:
           "color-mix(in oklab, {colors.primary} 20%, transparent 100%)",
         "& .linenumber": {
           background: "primary",
-          color: "primary.foreground"
+          color: "primary.foreground",
+          _hover: {
+            color: "primary.foreground"
+          }
         }
       },
       '&:not([data-highlighted="true"])': {
@@ -26,6 +36,15 @@ export const codeblockVariants = sva({
       }
     },
     content: {
+      pt: 2,
+      fontFamily: "mono",
+      textStyle: "text.sm",
+      overflow: "auto",
+      "& > code": {
+        display: "block",
+        minW: "100%",
+        width: "max-content"
+      },
       "& .hljs": {
         display: "block",
         overflowX: "auto"
@@ -64,6 +83,9 @@ export const codeblockVariants = sva({
       },
       "& .hljs-emphasis": {
         fontStyle: "italic"
+      },
+      "& .hljs-built_in": {
+        color: "amber.900"
       }
     },
     header: {

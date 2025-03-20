@@ -2,6 +2,7 @@
 
 import { Page } from "@/components/page";
 import { Codeblock } from "@brifui/components";
+import { css } from "@brifui/styled/css";
 
 import {
   defaultSnippet,
@@ -30,7 +31,7 @@ export default function CodeBlockDocs() {
       />
 
       <Page.Section title="Default">
-        <Page.Preview>
+        <Page.Preview css={css.raw({ backgroundImage: "none" })}>
           <Codeblock.Root>
             <Codeblock.Content language="tsx">
               {exampleSnippet}
@@ -41,7 +42,7 @@ export default function CodeBlockDocs() {
       </Page.Section>
 
       <Page.Section title="Highlighted lines">
-        <Page.Preview>
+        <Page.Preview css={css.raw({ backgroundImage: "none" })}>
           <Codeblock.Root>
             <Codeblock.Content language="tsx" hightlightLines={[5, 8]}>
               {exampleSnippet}
@@ -52,7 +53,7 @@ export default function CodeBlockDocs() {
       </Page.Section>
 
       <Page.Section title="With filename">
-        <Page.Preview>
+        <Page.Preview css={css.raw({ backgroundImage: "none" })}>
           <Codeblock.Root>
             <Codeblock.Header
               icon={
