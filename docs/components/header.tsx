@@ -5,7 +5,6 @@ import { useMenu } from "@/app/providers/menu-context";
 import { SiGithub, SiNpm } from "@icons-pack/react-simple-icons";
 import { Menu, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Badge, Button } from "@brifui/components";
@@ -74,8 +73,8 @@ export const Header: React.FC<{
             </Button>
           )}
           <Link href="/">
-            <Image
-              quality={100}
+            <img
+              className={css({ w: "42px", h: "42px" })}
               alt="Brif UI logo"
               src="/logo-with-bg.png"
               width={42}
