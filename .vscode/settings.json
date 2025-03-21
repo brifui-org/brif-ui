@@ -1,15 +1,17 @@
 {
   "[mdx]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "editor.formatOnSave": true,
-  "editor.semanticHighlighting.enabled": false,
   "typescript.format.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.tsserver.enableTracing": true

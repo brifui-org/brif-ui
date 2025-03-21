@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const checkboxVariants = sva({
+export const checkboxSlotRecipe = defineSlotRecipe({
+  className: "checkbox",
+  description: "The styles of the `Checkbox` component",
   slots: ["root", "indicator", "label"],
   base: {
     root: {
@@ -36,6 +38,11 @@ export const checkboxVariants = sva({
         pointerEvents: "none",
         borderColor: "border.disabled",
         backgroundColor: "background.disabled"
+      },
+      "&:not([data-disabled])": {
+        _groupHover: {
+          boxShadow: "component.sm"
+        }
       }
     },
     label: {
@@ -61,11 +68,6 @@ export const checkboxVariants = sva({
           "& svg": {
             w: "12px",
             h: "12px"
-          },
-          _groupHover: {
-            "&:not([data-disabled])": {
-              boxShadow: "component.sm"
-            }
           }
         }
       },
@@ -80,11 +82,6 @@ export const checkboxVariants = sva({
           "& svg": {
             w: "14px",
             h: "14px"
-          },
-          _groupHover: {
-            "&:not([data-disabled])": {
-              boxShadow: "component.sm"
-            }
           }
         }
       },
@@ -99,11 +96,6 @@ export const checkboxVariants = sva({
           "& svg": {
             w: "18px",
             h: "18px"
-          },
-          _groupHover: {
-            "&:not([data-disabled])": {
-              boxShadow: "component.sm"
-            }
           }
         }
       }
@@ -130,5 +122,3 @@ export const checkboxVariants = sva({
     error: false
   }
 });
-
-export type CheckBoxVariantProps = RecipeVariantProps<typeof checkboxVariants>;

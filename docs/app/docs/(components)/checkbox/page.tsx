@@ -3,6 +3,7 @@
 import { Page } from "@/components/page";
 import { Checkbox } from "@brifui/components";
 import { css } from "@brifui/styled/css";
+import { disabledSnippet, errorSnippet, indeterminateSnippet, sizeSnippet } from "./snippet";
 
 export default function CheckboxDocs() {
   return (
@@ -41,7 +42,7 @@ export default function CheckboxDocs() {
             <Checkbox.Label>Large</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{sizeSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Indeterminate">
@@ -73,7 +74,7 @@ export default function CheckboxDocs() {
             <Checkbox.Label>Large</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{indeterminateSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Disabled">
@@ -110,7 +111,7 @@ export default function CheckboxDocs() {
             <Checkbox.Label>Indeterminate</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{disabledSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Error">
@@ -127,22 +128,22 @@ export default function CheckboxDocs() {
             }
           })}
         >
-          <Checkbox error size="sm">
+          <Checkbox id="checkbox-small-error" error size="sm">
             <Checkbox.Indicator />
             <Checkbox.Label>Small</Checkbox.Label>
           </Checkbox>
 
-          <Checkbox error size="md">
+          <Checkbox id="checkbox-medium-error" error size="md">
             <Checkbox.Indicator />
             <Checkbox.Label>Medium</Checkbox.Label>
           </Checkbox>
 
-          <Checkbox error size="lg">
+          <Checkbox id="checkbox-large-error" error size="lg">
             <Checkbox.Indicator />
             <Checkbox.Label>Large</Checkbox.Label>
           </Checkbox>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{errorSnippet}</Page.CodePreview>
       </Page.Section>
     </Page>
   );

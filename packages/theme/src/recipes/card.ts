@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const cardVariants = sva({
+export const cardSlotRecipe = defineSlotRecipe({
+  className: "card",
+  description: "The styles of the `Card` component",
   slots: ["root", "header", "body", "footer"],
   base: {
     root: {
@@ -53,5 +55,3 @@ export const cardVariants = sva({
     bordered: false
   }
 });
-
-export type CardVariantProps = RecipeVariantProps<typeof cardVariants>;
