@@ -2,19 +2,19 @@ import React from "react";
 import { XIcon } from "lucide-react";
 import { Dialog as BaseDialog } from "radix-ui";
 import { css as _css, cx } from "@brifui/styled/css";
+import { dialog, DialogVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { DialogProvider, useDialog } from "./context";
-import { DialogVariantProps, dialogVariants } from "./variants";
 
 export type DialogCloseProps = WithCssProps<BaseDialog.DialogCloseProps>;
 const Close: React.FC<DialogCloseProps> = ({ css, className, ...props }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
 
   return (
     <BaseDialog.Close
-      className={cx(_css(raw.close, css), className)}
+      className={cx(classes.close, _css(css), className)}
       {...props}
     >
       <XIcon color="currentColor" />
@@ -30,11 +30,11 @@ const Description: React.FC<DialogDescriptionProps> = ({
   ...props
 }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
 
   return (
     <BaseDialog.Description
-      className={cx(_css(raw.description, css), className)}
+      className={cx(classes.description, _css(css), className)}
       {...props}
     />
   );
@@ -43,11 +43,11 @@ const Description: React.FC<DialogDescriptionProps> = ({
 export type DialogTitleProps = WithCssProps<BaseDialog.DialogTitleProps>;
 const Title: React.FC<DialogContentProps> = ({ css, className, ...props }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
 
   return (
     <BaseDialog.Title
-      className={cx(_css(raw.title, css), className)}
+      className={cx(classes.title, _css(css), className)}
       {...props}
     />
   );
@@ -63,7 +63,7 @@ const Header: React.FC<DialogContentProps> = ({
   ...props
 }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
   const [titles, closes, descs] = findChildrenByType(
     children,
     Title,
@@ -72,7 +72,7 @@ const Header: React.FC<DialogContentProps> = ({
   );
 
   return (
-    <div className={cx(_css(raw.header, css), className)} {...props}>
+    <div className={cx(classes.header, _css(css), className)} {...props}>
       {titles}
       {descs}
       {closes}
@@ -83,9 +83,9 @@ const Header: React.FC<DialogContentProps> = ({
 export type DialogBodyProps = WithCssProps<React.ComponentPropsWithRef<"div">>;
 const Body: React.FC<DialogBodyProps> = ({ css, className, ...props }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
 
-  return <div className={cx(_css(raw.body, css), className)} {...props} />;
+  return <div className={cx(classes.body, _css(css), className)} {...props} />;
 };
 
 export type DialogFooterProps = WithCssProps<
@@ -93,9 +93,11 @@ export type DialogFooterProps = WithCssProps<
 >;
 const Footer: React.FC<DialogFooterProps> = ({ css, className, ...props }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
 
-  return <div className={cx(_css(raw.footer, css), className)} {...props} />;
+  return (
+    <div className={cx(classes.footer, _css(css), className)} {...props} />
+  );
 };
 
 export type DialogContentProps = WithCssProps<BaseDialog.DialogContentProps>;
@@ -106,7 +108,7 @@ const Content: React.FC<DialogContentProps> = ({
   ...props
 }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
   const [headers, bodies, footers] = findChildrenByType(
     children,
     Header,
@@ -116,7 +118,7 @@ const Content: React.FC<DialogContentProps> = ({
 
   return (
     <BaseDialog.Content
-      className={cx(_css(raw.content, css), className)}
+      className={cx(classes.content, _css(css), className)}
       {...props}
     >
       {headers}
@@ -133,11 +135,11 @@ const Overlay: React.FC<DialogOverlayProps> = ({
   ...props
 }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
 
   return (
     <BaseDialog.Overlay
-      className={cx(_css(raw.overlay, css), className)}
+      className={cx(classes.overlay, _css(css), className)}
       {...props}
     />
   );
@@ -155,12 +157,12 @@ const Trigger: React.FC<DialogTriggerProps> = ({
   ...props
 }) => {
   const { size } = useDialog();
-  const raw = dialogVariants.raw({ size });
+  const classes = dialog({ size });
 
   return (
     <BaseDialog.Trigger
       asChild
-      className={cx(_css(raw.trigger, css), className)}
+      className={cx(classes.trigger, _css(css), className)}
       {...props}
     />
   );

@@ -33,31 +33,14 @@ export default function DialogDocs() {
               <Dialog.Overlay />
               <Dialog.Content>
                 <Dialog.Header>
-                  <Dialog.Title>Edit profile</Dialog.Title>
+                  <Dialog.Title>Delete profile</Dialog.Title>
                   <Dialog.Description>
-                    Make changes to your profile here. Click save when you're
-                    done.
+                    Are you sure that you want to delete your profile?
                   </Dialog.Description>
                   <Dialog.Close />
                 </Dialog.Header>
-                <Dialog.Body>
-                  <Form.Root css={css.raw({ py: 2 })}>
-                    <Form.Field name="name">
-                      <Form.Label>Name</Form.Label>
-                      <Form.Control>
-                        <Input value="John Doe" />
-                      </Form.Control>
-                    </Form.Field>
-                    <Form.Field name="email">
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control>
-                        <Input value="john.doe@example.com" />
-                      </Form.Control>
-                    </Form.Field>
-                  </Form.Root>
-                </Dialog.Body>
                 <Dialog.Footer>
-                  <Button>Save changes</Button>
+                  <Button variant="error">Delete</Button>
                 </Dialog.Footer>
               </Dialog.Content>
             </Dialog.Portal>

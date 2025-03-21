@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const codeblockVariants = sva({
+export const codeblockSlotRecipe = defineSlotRecipe({
+  className: "codeblock",
+  description: "The styles of `Codeblock` component",
   slots: ["root", "content", "line", "header", "filename", "icon"],
   base: {
     root: {},
@@ -8,11 +10,14 @@ export const codeblockVariants = sva({
       pr: 2,
       cursor: "default",
       display: "block",
+      transition: "background-color .15s ease-out",
       "& .linenumber": {
         pl: 3.5,
+        color: "#999988",
         cursor: "pointer",
         _hover: {
-          color: "text"
+          color: "text",
+          fontWeight: "semibold"
         }
       },
       _highlighted: {
@@ -27,9 +32,6 @@ export const codeblockVariants = sva({
         }
       },
       '&:not([data-highlighted="true"])': {
-        "& .linenumber": {
-          color: "#999988"
-        },
         _hover: {
           background: "background.hover"
         }
@@ -116,7 +118,3 @@ export const codeblockVariants = sva({
     }
   }
 });
-
-export type CodeblockVariantProps = RecipeVariantProps<
-  typeof codeblockVariants
->;

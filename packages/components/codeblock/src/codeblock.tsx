@@ -6,9 +6,8 @@ import SyntaxHighlighter, {
   SyntaxHighlighterProps
 } from "react-syntax-highlighter";
 import { css as _css, cx } from "@brifui/styled/css";
+import { codeblock, CodeblockVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
-
-import { CodeblockVariantProps, codeblockVariants } from "./variants";
 
 export type CodeblockHeaderProps = WithCssProps<
   Omit<React.ComponentPropsWithRef<"div">, "children"> & {
@@ -23,12 +22,12 @@ const Header: React.FC<CodeblockHeaderProps> = ({
   filename = "",
   ...props
 }) => {
-  const raw = codeblockVariants.raw({});
+  const classes = codeblock({});
 
   return (
-    <div className={cx(_css(raw.header, css), className)} {...props}>
-      <div className={_css(raw.icon)}>{icon}</div>
-      <div className={_css(raw.filename)}>{filename}</div>
+    <div className={cx(classes.header, _css(css), className)} {...props}>
+      <div className={classes.icon}>{icon}</div>
+      <div className={classes.filename}>{filename}</div>
     </div>
   );
 };
@@ -46,11 +45,11 @@ const Content: React.FC<CodeblockContentProps> = ({
   hightlightLines = [],
   ...props
 }) => {
-  const raw = codeblockVariants.raw({});
+  const classes = codeblock({});
 
   return (
     <SyntaxHighlighter
-      className={cx(_css(raw.content, css), className)}
+      className={cx(classes.content, _css(css), className)}
       language="typescript"
       showLineNumbers
       {...props}
@@ -65,7 +64,7 @@ const Content: React.FC<CodeblockContentProps> = ({
               ...row,
               properties: {
                 ...(row.properties ?? {}),
-                className: [_css(raw.line)],
+                className: [classes.line],
                 "data-highlighted": hightlightLines.includes(idx + 1)
                   ? true
                   : undefined
@@ -92,12 +91,12 @@ const Root: React.FC<CodeblockProps> = ({
   children,
   ...props
 }) => {
-  const raw = codeblockVariants.raw({});
+  const classes = codeblock({});
 
   const [headers, contents] = findChildrenByType(children, Header, Content);
 
   return (
-    <div className={cx(_css(raw.root, css), className)} {...props}>
+    <div className={cx(classes.root, _css(css), className)} {...props}>
       {headers}
       {contents}
     </div>

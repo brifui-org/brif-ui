@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Badge, Button } from "@brifui/components";
-import { css } from "@brifui/styled/css";
+import { css, Styles } from "@brifui/styled/css";
 
 import { dependencies } from "../package.json";
 
@@ -18,7 +18,8 @@ export const Header: React.FC<{
   stars?: number;
   download?: number;
   alwaysShow?: boolean;
-}> = ({ stars = 0, download = 0, alwaysShow = true }) => {
+  css?: Styles;
+}> = ({ css: _css, stars = 0, download = 0, alwaysShow = true }) => {
   const { setOpen } = useMenu();
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
@@ -30,21 +31,24 @@ export const Header: React.FC<{
 
   return (
     <header
-      className={css({
-        minH: "60px",
-        maxH: "60px",
-        px: "6",
-        top: 0,
-        left: 0,
-        display: "flex",
-        alignItems: "center",
-        borderBottomWidth: "2px",
-        borderStyle: "solid",
-        borderColor: "border",
-        position: "sticky",
-        bg: "background",
-        zIndex: "30"
-      })}
+      className={css(
+        {
+          minH: "60px",
+          maxH: "60px",
+          px: "6",
+          top: 0,
+          left: 0,
+          display: "flex",
+          alignItems: "center",
+          borderBottomWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "border",
+          position: "sticky",
+          bg: "background",
+          zIndex: "30"
+        },
+        _css
+      )}
     >
       <div
         className={css({
@@ -73,6 +77,7 @@ export const Header: React.FC<{
             </Button>
           )}
           <Link href="/">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className={css({ w: "42px", h: "42px" })}
               alt="Brif UI logo"

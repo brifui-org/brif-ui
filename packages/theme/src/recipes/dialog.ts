@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const dialogVariants = sva({
+export const dialogSlotRecipe = defineSlotRecipe({
+  className: "dialog",
+  description: "The styles of `Dialog` component",
   slots: [
     "root",
     "overlay",
@@ -107,5 +109,3 @@ export const dialogVariants = sva({
   },
   defaultVariants: { size: "md" }
 });
-
-export type DialogVariantProps = RecipeVariantProps<typeof dialogVariants>;

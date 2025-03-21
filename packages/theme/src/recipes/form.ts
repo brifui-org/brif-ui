@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const formVariants = sva({
+export const formSlotRecipe = defineSlotRecipe({
+  className: "form",
+  description: "The styles of `Form` component",
   slots: [
     "root",
     "field",
@@ -49,5 +51,3 @@ export const formVariants = sva({
     }
   }
 });
-
-export type FormVariantProps = RecipeVariantProps<typeof formVariants>;
