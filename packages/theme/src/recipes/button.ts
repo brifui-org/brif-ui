@@ -1,6 +1,8 @@
-import { sva, type RecipeVariantProps } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const buttonVariants = sva({
+export const buttonSlotRecipe = defineSlotRecipe({
+  className: "button",
+  description: "The styles of the `Button` component",
   slots: ["root", "container"],
   base: {
     root: {
@@ -10,7 +12,9 @@ export const buttonVariants = sva({
          */
         _hover: {
           "&>div": {
-            cursor: "pointer"
+            cursor: "pointer",
+            boxShadow: "component.md",
+            transform: "translate(-4px, -4px)"
           }
         },
         /**
@@ -19,24 +23,28 @@ export const buttonVariants = sva({
         _focusVisible: {
           outline: "4px solid {colors.primary}",
           outlineOffset: "2px"
+        },
+        /**
+         * Active state
+         */
+        _active: {
+          "&>div": {
+            boxShadow: "sm",
+            transform: "translate(-2px, -2px)"
+          }
         }
       },
       /**
        * Disabled
        */
       _disabled: {
-        cursor: "not-allowed",
-        "&>div": {
-          backgroundColor:
-            "color-mix(in oklab, var(--brif-button-bg-color), {colors.background} 68%)",
-          borderColor:
-            "color-mix(in oklab, var(--brif-button-border-color), {colors.background} 68%)",
-          color:
-            "color-mix(in oklab, var(--brif-button-text-color), {colors.background} 68%)"
-        }
+        cursor: "not-allowed"
       }
     },
     container: {
+      backgroundColor: "var(--brif-button-bg-color)",
+      borderColor: "var(--brif-button-border-color)",
+      color: "var(--brif-button-text-color)",
       display: "flex",
       width: "100%",
       alignItems: "center",
@@ -48,7 +56,15 @@ export const buttonVariants = sva({
        * Fonts
        */
       fontFamily: "body",
-      fontWeight: "600"
+      fontWeight: "600",
+      _groupDisabled: {
+        backgroundColor:
+          "color-mix(in oklab, var(--brif-button-bg-color), {colors.background} 68%)",
+        borderColor:
+          "color-mix(in oklab, var(--brif-button-border-color), {colors.background} 68%)",
+        color:
+          "color-mix(in oklab, var(--brif-button-text-color), {colors.background} 68%)"
+      }
     }
   },
   variants: {
@@ -71,9 +87,6 @@ export const buttonVariants = sva({
           }
         },
         container: {
-          bg: "default",
-          borderColor: "default",
-          color: "default.foreground",
           "--brif-button-bg-color": "token(colors.default)",
           "--brif-button-border-color": "token(colors.default)",
           "--brif-button-text-color": "token(colors.default.foreground)"
@@ -95,9 +108,6 @@ export const buttonVariants = sva({
           }
         },
         container: {
-          bg: "background",
-          borderColor: "border",
-          color: "text",
           "--brif-button-bg-color": "token(colors.background)",
           "--brif-button-border-color": "token(colors.text)",
           "--brif-button-text-color": "token(colors.text)"
@@ -121,9 +131,6 @@ export const buttonVariants = sva({
           }
         },
         container: {
-          bg: "error",
-          borderColor: "error",
-          color: "error.foreground",
           "--brif-button-bg-color": "token(colors.error)",
           "--brif-button-border-color": "token(colors.error)",
           "--brif-button-text-color": "token(colors.error.foreground)"
@@ -147,9 +154,6 @@ export const buttonVariants = sva({
           }
         },
         container: {
-          bg: "warning",
-          borderColor: "warning",
-          color: "warning.foreground",
           "--brif-button-bg-color": "token(colors.warning)",
           "--brif-button-border-color": "token(colors.warning)",
           "--brif-button-text-color": "token(colors.warning.foreground)"
@@ -159,96 +163,40 @@ export const buttonVariants = sva({
     size: {
       sm: {
         root: {
-          borderRadius: "component.md",
-          "&:not(:disabled)": {
-            _hover: {
-              "&>div": {
-                boxShadow: "component.sm",
-                transform: "translate(-2px, -2px)"
-              }
-            },
-            _active: {
-              "&>div": {
-                boxShadow: "none",
-                transform: "translate(0px, 0px)"
-              }
-            }
-          }
+          borderRadius: "component.md"
         },
         container: {
+          px: "2",
           borderRadius: "component.md",
           height: "component.sm",
-          px: "2",
           textStyle: "button.xs"
         }
       },
       md: {
         root: {
-          borderRadius: "component.md",
-          "&:not(:disabled)": {
-            _hover: {
-              "&>div": {
-                boxShadow: "component.md",
-                transform: "translate(-4px, -4px)"
-              }
-            },
-            _active: {
-              "&>div": {
-                boxShadow: "component.sm",
-                transform: "translate(-2px, -2px)"
-              }
-            }
-          }
+          borderRadius: "component.md"
         },
         container: {
-          height: "component.md",
           px: "2.5",
+          height: "component.md",
           borderRadius: "component.md",
           textStyle: "button.sm"
         }
       },
       lg: {
         root: {
-          borderRadius: "component.lg",
-          "&:not(:disabled)": {
-            _hover: {
-              "&>div": {
-                boxShadow: "component.lg",
-                transform: "translate(-6px, -6px)"
-              }
-            },
-            _active: {
-              "&>div": {
-                boxShadow: "component.md",
-                transform: "translate(-4px, -4px)"
-              }
-            }
-          }
+          borderRadius: "component.lg"
         },
         container: {
-          height: "component.lg",
           px: "3.5",
+          height: "component.lg",
           borderRadius: "component.lg",
           textStyle: "button.md"
         }
       },
       icon: {
         root: {
-          borderRadius: "component.md",
-          "&:not(:disabled)": {
-            _hover: {
-              "&>div": {
-                boxShadow: "component.sm",
-                transform: "translate(-2px, -2px)"
-              }
-            },
-            _active: {
-              "&>div": {
-                boxShadow: "none",
-                transform: "translate(-0px, -0px)"
-              }
-            }
-          }
+          borderRadius: "component.md"
         },
         container: {
           aspectRatio: "1/1",
@@ -270,5 +218,3 @@ export const buttonVariants = sva({
     fluid: false
   }
 });
-
-export type ButtonVariantProps = RecipeVariantProps<typeof buttonVariants>;

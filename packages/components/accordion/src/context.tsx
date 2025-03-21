@@ -1,8 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-
-import { AccordionVariantProps } from "./variants";
+import { AccordionVariantProps } from "@brifui/styled/recipes";
 
 export const AccordionContext = createContext<
   NonNullable<AccordionVariantProps>

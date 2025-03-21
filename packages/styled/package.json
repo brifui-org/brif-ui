@@ -38,6 +38,11 @@
       "import": "./dist/patterns/index.mjs",
       "require": "./distcjs/patterns/index.cjs"
     },
+    "./recipes": {
+      "types": "./dist/recipes/index.d.ts",
+      "import": "./dist/recipes/index.mjs",
+      "require": "./distcjs/recipes/index.cjs"
+    },
     "./helpers": {
       "import": "./dist/helpers.mjs",
       "require": "./distcjs/helpers.cjs"

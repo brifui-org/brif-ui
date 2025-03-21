@@ -113,7 +113,10 @@ export default function IntroductionPage() {
             BrifUI
           </InlineLink>
           . Please take a look at our{" "}
-          <InlineLink href="/" target="_blank">
+          <InlineLink
+            href="https://github.com/brifui-org/brif-ui/blob/main/CONTRIBUTING.md"
+            target="_blank"
+          >
             contribution guideline
           </InlineLink>{" "}
           before you contribute to this project.

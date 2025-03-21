@@ -32,9 +32,6 @@
     "postpack": "clean-package restore",
     "lint": "eslint ."
   },
-  "peerDependencies": {
-    "@pandacss/dev": "^0.53.1"
-  },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
     "@brifui/node": "^0.0.4",

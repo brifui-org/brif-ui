@@ -1,8 +1,7 @@
 import React from "react";
 import { css as _css, cx } from "@brifui/styled/css";
+import { button, ButtonVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
-
-import { ButtonVariantProps, buttonVariants } from "./variants";
 
 const Prefix: React.FC<WithCssProps<React.ComponentPropsWithRef<"div">>> = ({
   className,
@@ -60,15 +59,18 @@ export const Button: React.FC<ButtonProps> & {
     Suffix
   );
 
-  const raw = buttonVariants.raw({
+  const classes = button({
     variant,
     size,
     fluid
   });
 
   return (
-    <button className={cx(_css(raw.root, css), className)} {...props}>
-      <div className={_css(raw.container)}>
+    <button
+      className={cx(classes.root, "group", _css(css), className)}
+      {...props}
+    >
+      <div className={classes.container}>
         {prefixes}
         <span
           className={_css({

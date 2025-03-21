@@ -1,11 +1,21 @@
 {
-  "tabWidth": 2,
-  "semi": true,
-  "trailingComma": "none",
-  "quoteProps": "as-needed",
-  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-sort-json"],
-  "importOrder": ["^react$", "<THIRD_PARTY_MODULES>", "<BUILTIN_MODULES>", "^@brifui/(.*)$", "", "^[./]"],
+  "importOrder": [
+    "^react$",
+    "<THIRD_PARTY_MODULES>",
+    "<BUILTIN_MODULES>",
+    "^@brifui/(.*)$",
+    "",
+    "^[./]"
+  ],
+  "importOrderCaseSensitive": false,
   "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
   "importOrderTypeScriptVersion": "5.0.0",
-  "importOrderCaseSensitive": false
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-sort-json"
+  ],
+  "quoteProps": "as-needed",
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "none"
 }

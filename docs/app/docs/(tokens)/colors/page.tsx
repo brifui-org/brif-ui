@@ -59,7 +59,7 @@ export default function ColorsDocs() {
       <Page.Section
         shadow={false}
         title="Tokens"
-        description="The color palette is a copy from Vercel."
+        description="The color palette is inspired from Vercel."
       >
         <Text
           as="p"

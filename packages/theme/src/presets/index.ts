@@ -1,5 +1,11 @@
-import { definePreset } from "@pandacss/dev";
+import { definePreset, SlotRecipeConfig } from "@pandacss/dev";
 
+import {
+  accordionSlotRecipe,
+  alertSlotRecipe,
+  avatarSlotRecipe,
+  buttonSlotRecipe
+} from "../recipes";
 import {
   baseSemanticTokens,
   baseTokens,
@@ -9,6 +15,13 @@ import {
 } from "../tokens";
 import { boxShadowUtility } from "../utilities";
 
+const slotRecipes: Record<string, SlotRecipeConfig> = {
+  button: buttonSlotRecipe,
+  accordion: accordionSlotRecipe,
+  alert: alertSlotRecipe,
+  avatar: avatarSlotRecipe
+};
+
 export const preset = definePreset({
   name: "brifui",
   theme: {
@@ -16,7 +29,8 @@ export const preset = definePreset({
     semanticTokens: baseSemanticTokens,
     keyframes,
     breakpoints,
-    textStyles
+    textStyles,
+    slotRecipes
   },
   globalCss: {
     html: {
@@ -31,5 +45,8 @@ export const preset = definePreset({
     extend: {
       boxShadow: boxShadowUtility
     }
+  },
+  staticCss: {
+    recipes: "*"
   }
 });

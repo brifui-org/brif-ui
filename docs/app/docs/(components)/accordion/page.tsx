@@ -4,6 +4,7 @@ import { Page } from "@/components/page";
 import { Accordion } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { accordionItemAPIs, accordionRootAPIs } from "./apis";
 import { size } from "./snippet";
 
 export default function AccordionDocs() {
@@ -84,6 +85,12 @@ export default function AccordionDocs() {
           </Accordion.Root>
         </Page.Preview>
         <Page.CodePreview>{size}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Root" apis={accordionRootAPIs} />
+
+        <Page.APIReference title="Item" apis={accordionItemAPIs} />
       </Page.Section>
     </Page>
   );

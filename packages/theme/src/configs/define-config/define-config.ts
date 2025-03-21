@@ -38,7 +38,9 @@ export const defineConfig = (configs: Config = {}) => {
     presets: [preset],
     importMap: "@brifui/styled",
     staticCss: {
-      themes: themeKeys
+      extend: {
+        themes: themeKeys
+      }
     },
     outdir: path.relative(process.cwd(), styledPackagePath!)
   });

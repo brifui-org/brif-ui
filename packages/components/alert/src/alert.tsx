@@ -1,16 +1,16 @@
 import React from "react";
 import { css as _css, cx } from "@brifui/styled/css";
+import { alert, AlertVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { AlertProvider, useAlert } from "./context";
-import { AlertVariantProps, alertVariants } from "./variants";
 
 export type AlertTitleProps = WithCssProps<React.ComponentPropsWithRef<"h5">>;
 const Title: React.FC<AlertTitleProps> = ({ css, className, ...props }) => {
   const { error } = useAlert();
-  const raw = alertVariants.raw({ error });
+  const classes = alert({ error });
 
-  return <h5 className={cx(_css(raw.title, css), className)} {...props}></h5>;
+  return <h5 className={cx(classes.title, _css(css), className)} {...props} />;
 };
 
 export type AlertDescriptionProps = WithCssProps<
@@ -22,10 +22,10 @@ const Description: React.FC<AlertDescriptionProps> = ({
   ...props
 }) => {
   const { error } = useAlert();
-  const raw = alertVariants.raw({ error });
+  const classes = alert({ error });
 
   return (
-    <div className={cx(_css(raw.description, css), className)} {...props}></div>
+    <div className={cx(classes.description, _css(css), className)} {...props} />
   );
 };
 
@@ -39,7 +39,7 @@ const Root: React.FC<AlertProps> = ({
   error,
   ...props
 }) => {
-  const raw = alertVariants.raw({ error });
+  const classes = alert({ error });
   const [titles, descriptions, others] = findChildrenByType(
     children,
     Title,
@@ -48,7 +48,7 @@ const Root: React.FC<AlertProps> = ({
 
   return (
     <AlertProvider error={error}>
-      <div className={cx(_css(raw.root, css), className)} {...props}>
+      <div className={cx(classes.root, _css(css), className)} {...props}>
         {others}
         {titles}
         {descriptions}

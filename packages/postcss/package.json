@@ -36,10 +36,6 @@
     "./package.json": "./package.json"
   },
   "author": "Thinh Trinh Duc <thinh.duc.trinh@gmail.com>",
-  "peerDependencies": {
-    "@pandacss/postcss": "^0.53.1",
-    "postcss": "^8.4.49"
-  },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
     "@brifui/typescript-config": "^0.0.3",
