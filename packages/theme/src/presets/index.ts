@@ -4,7 +4,9 @@ import {
   accordionSlotRecipe,
   alertSlotRecipe,
   avatarSlotRecipe,
-  buttonSlotRecipe
+  buttonSlotRecipe,
+  cardSlotRecipe,
+  checkboxSlotRecipe
 } from "../recipes";
 import {
   baseSemanticTokens,
@@ -19,7 +21,9 @@ const slotRecipes: Record<string, SlotRecipeConfig> = {
   button: buttonSlotRecipe,
   accordion: accordionSlotRecipe,
   alert: alertSlotRecipe,
-  avatar: avatarSlotRecipe
+  avatar: avatarSlotRecipe,
+  card: cardSlotRecipe,
+  checkbox: checkboxSlotRecipe
 };
 
 export const preset = definePreset({

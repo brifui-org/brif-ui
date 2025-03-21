@@ -1,11 +1,12 @@
 "use client";
 
+import { CheckboxVariantProps } from "@brifui/styled/recipes";
 import React from "react";
 
-import { CheckBoxVariantProps } from "./variants";
+
 
 export type CheckboxContextType = Pick<
-  NonNullable<CheckBoxVariantProps>,
+  NonNullable<CheckboxVariantProps>,
   "size" | "indeterminate" | "error"
 > & {
   id?: string;

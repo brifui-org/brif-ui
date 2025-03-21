@@ -4,10 +4,10 @@ import React from "react";
 import { CheckIcon, MinusIcon } from "lucide-react";
 import { Checkbox as BaseCheckbox } from "radix-ui";
 import { css as _css, cx } from "@brifui/styled/css";
+import { checkbox, CheckboxVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { CheckboxProvider, useCheckboxVariant } from "./context";
-import { CheckBoxVariantProps, checkboxVariants } from "./variants";
 
 export type CheckboxIndicatorProps =
   WithCssProps<BaseCheckbox.CheckboxIndicatorProps>;
@@ -22,7 +22,7 @@ const Indicator: React.FC<CheckboxIndicatorProps> = ({
   return (
     <BaseCheckbox.Indicator
       id={id}
-      aria-invalid={error}
+      aria-invalid={!!error}
       className={cx(_css(css), className)}
       {...props}
     >
@@ -39,7 +39,7 @@ export type CheckboxLabelProps = WithCssProps<
 const Label: React.FC<CheckboxLabelProps> = ({ css, className, ...props }) => {
   const { id, size, indeterminate, disabled, error } = useCheckboxVariant();
 
-  const raw = checkboxVariants.raw({
+  const classes = checkbox({
     size,
     error,
     indeterminate
@@ -49,15 +49,15 @@ const Label: React.FC<CheckboxLabelProps> = ({ css, className, ...props }) => {
     <label
       data-disabled={disabled ? "" : undefined}
       htmlFor={id}
-      className={cx(_css(raw.label, css), className)}
+      className={cx(classes.label, _css(css), className)}
       {...props}
     />
   );
 };
 
 export type CheckboxProps = WithCssProps<
-  CheckBoxVariantProps &
-    Omit<BaseCheckbox.CheckboxProps, keyof CheckBoxVariantProps>
+  CheckboxVariantProps &
+    Omit<BaseCheckbox.CheckboxProps, keyof CheckboxVariantProps>
 >;
 
 export const Checkbox: React.FC<CheckboxProps> & {
@@ -76,7 +76,7 @@ export const Checkbox: React.FC<CheckboxProps> & {
 }) => {
   const [indicators, labels] = findChildrenByType(children, Indicator, Label);
 
-  const raw = checkboxVariants.raw({
+  const classes = checkbox({
     size,
     error,
     indeterminate: checked === "indeterminate"
@@ -91,15 +91,15 @@ export const Checkbox: React.FC<CheckboxProps> & {
       disabled={disabled}
     >
       <div
-        aria-invalid={error}
+        aria-invalid={!!error}
         data-disabled={disabled ? "" : undefined}
-        className={cx(_css(raw.root, css), "group", className)}
+        className={cx(classes.root, _css(css), "group", className)}
       >
         <BaseCheckbox.Root
           id={id}
           checked={checked}
           disabled={disabled}
-          className={cx(_css(raw.indicator))}
+          className={classes.indicator}
           {...props}
         >
           {indicators}
