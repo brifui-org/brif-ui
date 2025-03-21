@@ -196,6 +196,7 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/) format:
 ```
 
 Types include:
+
 - `feat`: A new feature
 - `fix`: A bug fix
 - `docs`: Documentation changes

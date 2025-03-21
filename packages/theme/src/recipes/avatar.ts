@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const avatarVariants = sva({
+export const avatarSlotRecipe = defineSlotRecipe({
+  className: "avatar",
+  description: "The styles of the `Avatar` component",
   slots: ["root", "img"],
   base: {
     root: {
@@ -47,5 +49,3 @@ export const avatarVariants = sva({
     isLoading: false
   }
 });
-
-export type AvatarVariantProps = RecipeVariantProps<typeof avatarVariants>;

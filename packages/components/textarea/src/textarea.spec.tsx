@@ -3,4 +3,4 @@ import { userEvent } from "@testing-library/user-event";
 
 import { Textarea } from "./textarea";
 
-describe("Textarea", () => {})
+describe("Textarea", () => {});

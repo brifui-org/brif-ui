@@ -4,10 +4,10 @@ import React from "react";
 import { ChevronDown } from "lucide-react";
 import { Accordion as BaseAccordion } from "radix-ui";
 import { css as _css, cx } from "@brifui/styled/css";
+import { accordion, AccordionVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { AccordionProvider, useAccordion } from "./context";
-import { AccordionVariantProps, accordionVariants } from "./variants";
 
 export type AccordionContentProps =
   WithCssProps<BaseAccordion.AccordionContentProps>;
@@ -18,11 +18,13 @@ const Content: React.FC<AccordionContentProps> = ({
   ...props
 }) => {
   const { size } = useAccordion();
-  const raw = accordionVariants.raw({ size });
+  const classes = accordion({ size });
 
   return (
-    <BaseAccordion.Content className={_css(raw.contentContainer)} {...props}>
-      <div className={cx(_css(raw.content, css), className)}>{children}</div>
+    <BaseAccordion.Content className={classes.contentContainer} {...props}>
+      <div className={cx(classes.content, _css(css), className)}>
+        {children}
+      </div>
     </BaseAccordion.Content>
   );
 };
@@ -32,12 +34,12 @@ export type AccordionIconProps = WithCssProps<
 >;
 const Icon: React.FC<AccordionIconProps> = ({ css, className, ...props }) => {
   const { size } = useAccordion();
-  const raw = accordionVariants.raw({ size });
+  const classes = accordion({ size });
 
   return (
     <div
       data-item="icon"
-      className={cx(_css(raw.icon, css), className)}
+      className={cx(classes.icon, _css(css), className)}
       {...props}
     />
   );
@@ -52,12 +54,12 @@ const Trigger: React.FC<AccordionTriggerProps> = ({
   ...props
 }) => {
   const { size } = useAccordion();
-  const raw = accordionVariants.raw({ size });
+  const classes = accordion({ size });
   const [icons, others] = findChildrenByType(children, Icon);
 
   return (
     <BaseAccordion.Trigger
-      className={cx(_css(raw.trigger, css), className)}
+      className={cx(classes.trigger, _css(css), className)}
       {...props}
     >
       <span>{others}</span>
@@ -96,12 +98,12 @@ const Root: React.FC<AccordionProps> = ({
 }) => {
   const [items] = findChildrenByType(children, Item);
 
-  const raw = accordionVariants.raw({ size });
+  const classes = accordion({ size });
 
   return (
     <AccordionProvider size={size}>
       <BaseAccordion.Root
-        className={cx(_css(raw.root, css), className)}
+        className={cx(classes.root, _css(css), className)}
         {...props}
       >
         {items}

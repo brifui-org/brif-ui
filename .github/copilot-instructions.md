@@ -4,7 +4,7 @@ This codebase appears to be the React UI library built with [Panda CSS](https://
 
 # Stack and Key Technologies
 
-- **Frontend framework**: 
+- **Frontend framework**:
   - React.
   - NextJS.
 - **Language**:
@@ -53,6 +53,7 @@ docs # Documentation website
 - When testing user interactions, `userEvent` should be setup instead of calling directly.
 
 Each unit test should cover:
+
 - Web Accessilibity.
 - Component interactions.
 
@@ -61,6 +62,7 @@ Test should be written in this format:
 - `describe` contains the title of the scenario.
   - `describe` with title is the component name shouyld be preserved without transform to lowercase.
 - `it` contains the expected behaviour of the test => should start with `should` and all lowercase.
+
 ```tsx
 describe("Scenraio A", () => {
   it("should <the expected behaviour>", () => {
@@ -69,7 +71,9 @@ describe("Scenraio A", () => {
   ...
 })
 ```
+
 - When testing with multiple scenarios => should use nested `describe` blocks where each `decribe` block is a single scenarios instead of multiple separate `describe` blocks.
+
 ```tsx
 describe("Scenraio A", () => {
   describe("Scenario B", () => {
@@ -78,4 +82,3 @@ describe("Scenraio A", () => {
   ...
 })
 ```
-

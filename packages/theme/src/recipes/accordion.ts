@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const accordionVariants = sva({
+export const accordionSlotRecipe = defineSlotRecipe({
+  className: "accordion",
+  description: "The styles of the `Accordion` component",
   slots: ["root", "item", "trigger", "contentContainer", "content", "icon"],
   base: {
     root: {
@@ -134,7 +136,3 @@ export const accordionVariants = sva({
     size: "md"
   }
 });
-
-export type AccordionVariantProps = RecipeVariantProps<
-  typeof accordionVariants
->;

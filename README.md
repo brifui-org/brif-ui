@@ -41,14 +41,10 @@ pnpm add @brifui/react
 ## Quick Start
 
 ```jsx
-import { Button } from '@brifui/react';
+import { Button } from "@brifui/react";
 
 function App() {
-  return (
-    <Button variant="primary">
-      Click me
-    </Button>
-  );
+  return <Button variant="primary">Click me</Button>;
 }
 ```
 

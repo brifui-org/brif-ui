@@ -1,8 +1,7 @@
 import React from "react";
 import { css as _css, cx } from "@brifui/styled/css";
+import { avatar, AvatarVariantProps } from "@brifui/styled/recipes";
 import { WithCssProps } from "@brifui/utils";
-
-import { AvatarVariantProps, avatarVariants } from "./variants";
 
 export type AvatarProps = WithCssProps<
   AvatarVariantProps &
@@ -24,7 +23,7 @@ export const Avatar: React.FC<AvatarProps> = ({
 }) => {
   const imgRef = React.useRef<HTMLImageElement>(null);
   const [isInternalLoading, setLoading] = React.useState<boolean>(true);
-  const raw = avatarVariants.raw({ isLoading: isLoading ?? isInternalLoading });
+  const classes = avatar({ isLoading: isLoading ?? isInternalLoading });
 
   React.useEffect(() => {
     if (imgRef.current?.complete) {
@@ -39,7 +38,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           "--size": `${size}px`
         } as React.CSSProperties
       }
-      className={cx(_css(raw.root, css), className)}
+      className={cx(classes.root, _css(css), className)}
       {...props}
     >
       <img
@@ -50,7 +49,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         width={size}
         height={size}
         loading={loading}
-        className={_css(raw.img)}
+        className={classes.img}
         onLoad={() => {
           setLoading(false);
         }}

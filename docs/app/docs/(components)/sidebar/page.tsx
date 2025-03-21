@@ -93,10 +93,10 @@ export default function SidebarDocs() {
                   })}
                 >
                   <Link href="/docs/sidebar">
-                    <Image
-                      quality={100}
+                    <img
+                      className={css({ w: "32px", h: "32px" })}
                       alt="Brif UI logo"
-                      src="/logo.png"
+                      src="/logo-with-bg.png"
                       width={32}
                       height={32}
                     />

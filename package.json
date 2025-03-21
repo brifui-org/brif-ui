@@ -20,7 +20,7 @@
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "typecheck": "turbo run typecheck",
-    "codegen": "turbo run codegen --concurrency 1 --ui stream",
+    "codegen": "yarn run build:cli && turbo run codegen --concurrency 1 --ui stream",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky",
     "commit": "git-cz",

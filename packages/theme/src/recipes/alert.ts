@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const alertVariants = sva({
+export const alertSlotRecipe = defineSlotRecipe({
+  className: "alert",
+  description: "The styles of the `Alert` component",
   slots: ["root", "title", "description"],
   base: {
     root: {
@@ -59,5 +61,3 @@ export const alertVariants = sva({
     error: false
   }
 });
-
-export type AlertVariantProps = RecipeVariantProps<typeof alertVariants>;

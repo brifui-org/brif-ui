@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { Accordion, Card, Codeblock } from "@brifui/components";
+import { AsteriskIcon } from "lucide-react";
+import { Accordion, Card, Codeblock, Table, Text } from "@brifui/components";
 import { css, cx, Styles } from "@brifui/styled/css";
 
 const Title: React.FC<{
@@ -185,6 +184,104 @@ const CodePreview: React.FC<{ children?: string }> = ({
   );
 };
 
+export type ComponentAPI = {
+  name: string;
+  type: string | string[];
+  default?: string;
+  required?: boolean;
+};
+
+const APIReference: React.FC<{
+  title?: string;
+  apis: ComponentAPI[];
+  css?: Styles;
+}> = ({ title, apis, css: _css }) => {
+  return (
+    <div
+      className={css(
+        css.raw({
+          mb: 4
+        }),
+        _css
+      )}
+    >
+      {title && (
+        <div className={css({ mb: 2 })}>
+          <Text as="h4" type="text.lg" fontWeight="semibold">
+            {title}
+          </Text>
+        </div>
+      )}
+      <Table.Root>
+        <Table.Head>
+          <Table.Row>
+            <Table.HCell>Prop</Table.HCell>
+            <Table.HCell>Type</Table.HCell>
+            <Table.HCell>Default</Table.HCell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          {apis.map((api) => (
+            <Table.Row key={api.name}>
+              <Table.Cell>
+                <div className={css({ display: "flex", alignItems: "start" })}>
+                  <Text
+                    type="text.xs"
+                    css={css.raw({
+                      py: 1,
+                      px: 2,
+                      bg: "default",
+                      color: "default.foreground",
+                      fontFamily: "mono",
+                      borderRadius: "component.md"
+                    })}
+                  >
+                    {api.name}
+                  </Text>
+                  {api.required && (
+                    <AsteriskIcon
+                      size={12}
+                      className={css({ color: "error" })}
+                    />
+                  )}
+                </div>
+              </Table.Cell>
+              <Table.Cell>
+                <Text
+                  type="text.xs"
+                  css={css.raw({
+                    py: 1,
+                    px: 2,
+                    bg: "gray.200",
+                    fontFamily: "mono",
+                    borderRadius: "component.md"
+                  })}
+                >
+                  {Array.isArray(api.type) ? api.type.join(" | ") : api.type}
+                </Text>
+              </Table.Cell>
+              <Table.Cell>
+                <Text
+                  type="text.xs"
+                  css={css.raw({
+                    py: 1,
+                    px: 2,
+                    bg: "gray.200",
+                    fontFamily: "mono",
+                    borderRadius: "component.md"
+                  })}
+                >
+                  {api.default || "_"}
+                </Text>
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table.Root>
+    </div>
+  );
+};
+
 export const Page = ({ children }: { children?: React.ReactNode }) => {
   return <div className={css({ pb: "24" })}>{children}</div>;
 };
@@ -192,3 +289,4 @@ Page.Title = Title;
 Page.Section = Section;
 Page.Preview = Preview;
 Page.CodePreview = CodePreview;
+Page.APIReference = APIReference;

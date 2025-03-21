@@ -1,8 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-
-import { AlertVariantProps } from "./variants";
+import { AlertVariantProps } from "@brifui/styled/recipes";
 
 export type AlertContextType = NonNullable<AlertVariantProps>;
 export const AlertContext = createContext<AlertContextType>({});
