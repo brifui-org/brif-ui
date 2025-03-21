@@ -1,8 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-
-import { FormVariantProps } from "./variants";
+import { FormVariantProps } from "@brifui/styled/recipes";
 
 export const FormContext = createContext<NonNullable<FormVariantProps>>({});
 
