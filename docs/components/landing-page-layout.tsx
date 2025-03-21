@@ -12,7 +12,7 @@ export const LandingPageLayout: React.FC<{ children?: React.ReactNode }> = ({
       className={css({
         mx: "auto",
         maxW: "container.xl",
-        minH: "100svh",
+        minH: "100lvh",
         display: "flex",
         flexDir: "column",
         borderLeft: {
@@ -26,7 +26,7 @@ export const LandingPageLayout: React.FC<{ children?: React.ReactNode }> = ({
         position: "relative"
       })}
     >
-      <Header />
+      <Header css={{ position: "relative" }} />
       <main
         className={css({
           flex: 1,

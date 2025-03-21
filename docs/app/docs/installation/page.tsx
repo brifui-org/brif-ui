@@ -197,7 +197,7 @@ export const RootComponent = () => {
           </Card.Body>
         </Card>
       </Page.Section>
-      <Page.Section shadow={false} title="FAQ"></Page.Section>
+      <Page.Section shadow={false} title="FAQ" />
     </Page>
   );
 }

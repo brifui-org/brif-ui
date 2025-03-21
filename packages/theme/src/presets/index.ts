@@ -6,7 +6,10 @@ import {
   avatarSlotRecipe,
   buttonSlotRecipe,
   cardSlotRecipe,
-  checkboxSlotRecipe
+  checkboxSlotRecipe,
+  codeblockSlotRecipe,
+  dialogSlotRecipe,
+  formSlotRecipe
 } from "../recipes";
 import {
   baseSemanticTokens,
@@ -17,14 +20,17 @@ import {
 } from "../tokens";
 import { boxShadowUtility } from "../utilities";
 
-const slotRecipes: Record<string, SlotRecipeConfig> = {
+const slotRecipes = {
   button: buttonSlotRecipe,
   accordion: accordionSlotRecipe,
   alert: alertSlotRecipe,
   avatar: avatarSlotRecipe,
   card: cardSlotRecipe,
-  checkbox: checkboxSlotRecipe
-};
+  checkbox: checkboxSlotRecipe,
+  codeblock: codeblockSlotRecipe,
+  dialog: dialogSlotRecipe,
+  form: formSlotRecipe
+} satisfies Record<string, SlotRecipeConfig>;
 
 export const preset = definePreset({
   name: "brifui",

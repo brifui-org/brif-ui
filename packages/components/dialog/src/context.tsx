@@ -1,8 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-
-import { DialogVariantProps } from "./variants";
+import { DialogVariantProps } from "@brifui/styled/recipes";
 
 export type DialogContextType = NonNullable<DialogVariantProps>;
 export const DialogContext = createContext<DialogContextType>({});
