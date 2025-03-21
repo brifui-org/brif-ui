@@ -1,1 +1,1 @@
-packages/components/entry/README.md
+./packages/components/entry/README.md
