@@ -1,7 +1,7 @@
 # BrifUI
 
 <p align="center">
-  <img width="10%" src="../../../docs/public/logo-with-bg.png" alt="brifui" />
+  <img width="10%" src="https://github.com/brifui-org/brif-ui/blob/main/docs/public/logo-with-bg.png" alt="brifui" />
 </p>
 
 <p align="center">
