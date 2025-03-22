@@ -10,3 +10,4 @@ export * from "./form";
 export * from "./input";
 export * from "./radio-group";
 export * from "./scrollarea";
+export * from "./select";

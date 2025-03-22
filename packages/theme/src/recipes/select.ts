@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const selectVariants = sva({
+export const selectSlotRecipe = defineSlotRecipe({
+  className: "select",
+  description: "The styles of `Select` component",
   slots: ["root", "trigger", "content", "item"],
   base: {
     content: {
@@ -17,10 +19,10 @@ export const selectVariants = sva({
       border: "none",
       outline: "none",
       cursor: "pointer",
-      "&[data-highlighted]": {
+      _highlighted: {
         bg: "background.hover"
       },
-      "&[data-disabled]": {
+      _disabled: {
         cursor: "not-allowed",
         opacity: ".32"
       }
@@ -59,8 +61,10 @@ export const selectVariants = sva({
     error: {
       true: {
         trigger: {
-          borderColor: "error",
-          boxShadowColor: "error"
+          boxShadowColor: "error",
+          "& > div": {
+            "--brif-button-border-color": "token(colors.error)"
+          }
         }
       }
     }
@@ -70,5 +74,3 @@ export const selectVariants = sva({
     error: false
   }
 });
-
-export type SelectVariantProps = RecipeVariantProps<typeof selectVariants>;

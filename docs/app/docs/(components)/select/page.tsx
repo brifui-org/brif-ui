@@ -5,6 +5,14 @@ import { ChevronsUpDownIcon } from "lucide-react";
 import { Select } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { selectAPIs, selectItemAPIs, selectValueAPIs } from "./apis";
+import {
+  customIconSnippet,
+  disabledSnippet,
+  errorSnippet,
+  sizeSnippet
+} from "./snippet";
+
 export default function SelectDocs() {
   return (
     <Page>
@@ -66,7 +74,7 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{sizeSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Custom icon">
@@ -131,7 +139,7 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{customIconSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Disabled">
@@ -189,7 +197,7 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{disabledSnippet}</Page.CodePreview>
       </Page.Section>
 
       <Page.Section title="Error">
@@ -245,7 +253,18 @@ export default function SelectDocs() {
             </Select.Content>
           </Select>
         </Page.Preview>
-        <Page.CodePreview>HIHI</Page.CodePreview>
+        <Page.CodePreview>{errorSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Select" apis={selectAPIs} />
+        <Page.APIReference title="Trigger" tag="button" />
+        <Page.APIReference title="Value" tag="span" apis={selectValueAPIs} />
+        <Page.APIReference title="Icon" />
+        <Page.APIReference title="Group" />
+        <Page.APIReference title="Content" />
+        <Page.APIReference title="Item" apis={selectItemAPIs} />
+        <Page.APIReference title="ItemText" tag="label" />
       </Page.Section>
     </Page>
   );

@@ -5,10 +5,10 @@ import { ChevronDownIcon } from "lucide-react";
 import { Select as BaseSelect } from "radix-ui";
 import { Button, ButtonProps } from "@brifui/button";
 import { css as _css, cx } from "@brifui/styled/css";
+import { select, SelectVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { SelectProvider, useSelectVariant } from "./context";
-import { SelectVariantProps, selectVariants } from "./variants";
 
 export type SelectValueProps = WithCssProps<BaseSelect.SelectValueProps>;
 const Value: React.FC<SelectValueProps> = ({ css, className, ...props }) => {
@@ -33,10 +33,10 @@ const Group: React.FC<SelectGroupProps> = ({ css, className, ...props }) => {
 export type SelectItemProps = WithCssProps<BaseSelect.SelectItemProps>;
 const Item: React.FC<SelectItemProps> = ({ css, className, ...props }) => {
   const variants = useSelectVariant();
-  const raw = selectVariants.raw(variants);
+  const classes = select(variants);
   return (
     <BaseSelect.Item
-      className={cx(_css(raw.item, css), className)}
+      className={cx(classes.item, _css(css), className)}
       {...props}
     />
   );
@@ -78,17 +78,21 @@ const Trigger: React.FC<SelectTrigerProps> = ({
   className,
   ...props
 }) => {
-  const variants = useSelectVariant();
+  const { error, size } = useSelectVariant();
   const [values, icons] = findChildrenByType(children, Value, Icon);
 
-  const raw = selectVariants.raw(variants);
+  const classes = select({
+    error,
+    size
+  });
 
   return (
     <BaseSelect.Trigger asChild>
       <Button
         variant="outline"
-        className={cx(_css(raw.trigger, css), className)}
-        size={variants.size}
+        aria-invalid={!!error}
+        className={cx(classes.trigger, _css(css), className)}
+        size={size}
         {...props}
       >
         {values}
@@ -133,7 +137,7 @@ export const Select: React.FC<SelectProps> & {
 }) => {
   const [triggers, contents] = findChildrenByType(children, Trigger, Content);
 
-  const raw = selectVariants.raw({ size });
+  const classes = select({ size });
 
   return (
     <SelectProvider error={error} size={size}>
@@ -144,7 +148,7 @@ export const Select: React.FC<SelectProps> & {
             position={position}
             side={side}
             sideOffset={sideOffset}
-            className={_css(raw.content, css)}
+            className={cx(classes.content, _css(css))}
           >
             <BaseSelect.ScrollUpButton />
             {contents}
