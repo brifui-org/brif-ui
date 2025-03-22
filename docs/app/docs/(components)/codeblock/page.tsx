@@ -4,6 +4,7 @@ import { Page } from "@/components/page";
 import { Codeblock } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { codeblockContentAPIs, codeblockHeaderAPIs } from "./apis";
 import {
   defaultSnippet,
   fileNameSnippet,
@@ -65,11 +66,11 @@ export default function CodeBlockDocs() {
                     shapeRendering: "auto"
                   }}
                 >
-                  <circle cx="0" cy="0" fill="currentColor" r="2.05"></circle>
+                  <circle cx="0" cy="0" fill="currentColor" r="2.05" />
                   <g fill="none" stroke="currentColor" strokeWidth="1">
-                    <ellipse rx="11" ry="4.2"></ellipse>
-                    <ellipse rx="11" ry="4.2" transform="rotate(60)"></ellipse>
-                    <ellipse rx="11" ry="4.2" transform="rotate(120)"></ellipse>
+                    <ellipse rx="11" ry="4.2" />
+                    <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+                    <ellipse rx="11" ry="4.2" transform="rotate(120)" />
                   </g>
                 </svg>
               }
@@ -81,6 +82,12 @@ export default function CodeBlockDocs() {
           </Codeblock.Root>
         </Page.Preview>
         <Page.CodePreview>{fileNameSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Root" />
+        <Page.APIReference title="Header" apis={codeblockHeaderAPIs} />
+        <Page.APIReference title="Content" apis={codeblockContentAPIs} />
       </Page.Section>
     </Page>
   );

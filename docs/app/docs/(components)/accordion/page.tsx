@@ -44,6 +44,13 @@ export default function AccordionDocs() {
                 cillum dolore eu fugiat nulla pariatur.
               </Accordion.Content>
             </Accordion.Item>
+            <Accordion.Item disabled value="item-3">
+              <Accordion.Trigger>Question B?</Accordion.Trigger>
+              <Accordion.Content>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </Accordion.Content>
+            </Accordion.Item>
           </Accordion.Root>
 
           <Accordion.Root size="md" type="single" collapsible>
@@ -58,6 +65,13 @@ export default function AccordionDocs() {
             </Accordion.Item>
             <Accordion.Item value="item-2">
               <Accordion.Trigger>Question B?</Accordion.Trigger>
+              <Accordion.Content>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </Accordion.Content>
+            </Accordion.Item>
+            <Accordion.Item value="item-3">
+              <Accordion.Trigger>Question C?</Accordion.Trigger>
               <Accordion.Content>
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur.
@@ -82,6 +96,13 @@ export default function AccordionDocs() {
                 cillum dolore eu fugiat nulla pariatur.
               </Accordion.Content>
             </Accordion.Item>
+            <Accordion.Item value="item-3">
+              <Accordion.Trigger>Question C?</Accordion.Trigger>
+              <Accordion.Content>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </Accordion.Content>
+            </Accordion.Item>
           </Accordion.Root>
         </Page.Preview>
         <Page.CodePreview>{size}</Page.CodePreview>
@@ -91,6 +112,10 @@ export default function AccordionDocs() {
         <Page.APIReference title="Root" apis={accordionRootAPIs} />
 
         <Page.APIReference title="Item" apis={accordionItemAPIs} />
+
+        <Page.APIReference title="Trigger" />
+
+        <Page.APIReference title="Content" />
       </Page.Section>
     </Page>
   );

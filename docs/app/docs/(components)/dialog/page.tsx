@@ -4,6 +4,7 @@ import { Page } from "@/components/page";
 import { Button, Dialog, Form, Input } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { dialogPortalAPIs, dialogRootAPIs } from "./apis";
 import { defaultSnippet } from "./snippet";
 
 export default function DialogDocs() {
@@ -161,6 +162,20 @@ export default function DialogDocs() {
           </Dialog.Root>
         </Page.Preview>
         <Page.CodePreview>{defaultSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Root" apis={dialogRootAPIs} />
+        <Page.APIReference title="Trigger" />
+        <Page.APIReference title="Portal" apis={dialogPortalAPIs} />
+        <Page.APIReference title="Overlay" />
+        <Page.APIReference title="Content" />
+        <Page.APIReference title="Header" />
+        <Page.APIReference title="Title" />
+        <Page.APIReference title="Description" />
+        <Page.APIReference title="Close" />
+        <Page.APIReference title="Body" />
+        <Page.APIReference title="Footer" />
       </Page.Section>
     </Page>
   );

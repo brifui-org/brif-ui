@@ -9,7 +9,8 @@ import {
   checkboxSlotRecipe,
   codeblockSlotRecipe,
   dialogSlotRecipe,
-  formSlotRecipe
+  formSlotRecipe,
+  inputSlotRecipe
 } from "../recipes";
 import {
   baseSemanticTokens,
@@ -29,7 +30,8 @@ const slotRecipes = {
   checkbox: checkboxSlotRecipe,
   codeblock: codeblockSlotRecipe,
   dialog: dialogSlotRecipe,
-  form: formSlotRecipe
+  form: formSlotRecipe,
+  input: inputSlotRecipe
 } satisfies Record<string, SlotRecipeConfig>;
 
 export const preset = definePreset({

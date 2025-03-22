@@ -4,6 +4,7 @@ import { Page } from "@/components/page";
 import { Avatar } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { avatarAPIs } from "./apis";
 import { loading, size } from "./snippet";
 
 export default function AvatarDocs() {
@@ -61,6 +62,10 @@ export default function AvatarDocs() {
           />
         </Page.Preview>
         <Page.CodePreview>{loading}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Avatar" apis={avatarAPIs} />
       </Page.Section>
     </Page>
   );

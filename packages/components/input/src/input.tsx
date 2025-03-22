@@ -1,8 +1,7 @@
 import React from "react";
 import { css as _css, cx } from "@brifui/styled/css";
+import { input, InputVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
-
-import { InputVariantProps, inputVariants } from "./variants";
 
 export type InputProps = WithCssProps<
   InputVariantProps & Omit<React.ComponentPropsWithRef<"input">, "size">
@@ -18,10 +17,7 @@ const Prefix: React.FC<
 > = ({ css, bordered, className, size, ...props }) => {
   return (
     <div
-      className={cx(
-        _css(inputVariants.raw({ size, bordered }).prefix, css),
-        className
-      )}
+      className={cx(input({ size, bordered }).prefix, _css(css), className)}
       {...props}
     />
   );
@@ -34,7 +30,7 @@ const Suffix: React.FC<
 > = ({ css, className, size, ...props }) => {
   return (
     <div
-      className={cx(_css(inputVariants.raw({ size }).suffix, css), className)}
+      className={cx(input({ size }).suffix, _css(css), className)}
       {...props}
     />
   );
@@ -49,17 +45,20 @@ export const Input: React.FC<Omit<InputProps, "bordered">> & {
   const hasPrefix = !!prefixes?.length;
   const hasSuffix = !!suffixes?.length;
 
-  const raw = inputVariants.raw({ size, hasPrefix, hasSuffix, error });
+  const classes = input({ size, hasPrefix, hasSuffix, error });
 
   return (
-    <div aria-invalid={error} className={cx(_css(raw.root, css), className)}>
+    <div
+      aria-invalid={!!error}
+      className={cx(classes.root, _css(css), className)}
+    >
       {prefixes?.map((prefix, idx) =>
         React.cloneElement(prefix, {
           key: idx,
           size
         })
       )}
-      <input className={_css(raw.input)} {...props} />
+      <input className={classes.input} {...props} />
       {suffixes?.map((suffix, idx) =>
         React.cloneElement(suffix, {
           key: idx,

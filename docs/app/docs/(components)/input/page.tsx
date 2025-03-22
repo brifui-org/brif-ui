@@ -5,6 +5,7 @@ import { ArrowUpCircleIcon } from "lucide-react";
 import { Input } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { inputAPIs } from "./apis";
 import {
   disabledSnippet,
   errorSnippet,
@@ -115,6 +116,12 @@ export default function InputDocs() {
           <Input error size="lg" placeholder="Error" />
         </Page.Preview>
         <Page.CodePreview>{errorSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Input" tag="input" apis={inputAPIs} />
+        <Page.APIReference title="Prefix" />
+        <Page.APIReference title="Suffix" />
       </Page.Section>
     </Page>
   );

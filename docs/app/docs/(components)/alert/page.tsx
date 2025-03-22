@@ -44,6 +44,12 @@ export default function AlertDocs() {
         </Page.Preview>
         <Page.CodePreview>{errorSnippet}</Page.CodePreview>
       </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Root" />
+        <Page.APIReference title="Title" />
+        <Page.APIReference title="Description" />
+      </Page.Section>
     </Page>
   );
 }
