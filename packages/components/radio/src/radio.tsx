@@ -2,10 +2,10 @@ import React from "react";
 import { CircleIcon } from "lucide-react";
 import { RadioGroup as BaseRadioGroup } from "radix-ui";
 import { css as _css, cx } from "@brifui/styled/css";
+import { radioGroup, RadioGroupVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { RadioGroupProvider, useRadioGroup } from "./context";
-import { RadioVariantProps, radioVariants } from "./variants";
 
 export type RadioLabelProps = WithCssProps<
   React.ComponentPropsWithRef<"label">
@@ -17,10 +17,10 @@ const Label: React.FC<RadioLabelProps> = ({
   ...props
 }) => {
   const { size, error } = useRadioGroup();
-  const raw = radioVariants.raw({ size, error });
+  const classes = radioGroup({ size, error });
 
   return (
-    <label className={cx(_css(raw.label, css), className)} {...props}>
+    <label className={cx(classes.label, _css(css), className)} {...props}>
       {children}
     </label>
   );
@@ -35,12 +35,12 @@ const Indicator: React.FC<RadioIndicatorProps> = ({
   ...props
 }) => {
   const { size, error } = useRadioGroup();
-  const raw = radioVariants.raw({ size, error });
+  const classes = radioGroup({ size, error });
 
   return (
     <BaseRadioGroup.Indicator
-      aria-invalid={error}
-      className={cx(_css(raw.indicator, css), className)}
+      aria-invalid={!!error}
+      className={cx(classes.indicator, _css(css), className)}
       {...props}
     >
       <CircleIcon />
@@ -57,14 +57,14 @@ const Item: React.FC<RadioItemProps> = ({
   ...props
 }) => {
   const { size, error } = useRadioGroup();
-  const raw = radioVariants.raw({ size, error });
+  const classes = radioGroup({ size, error });
   const [indicators, labels] = findChildrenByType(children, Indicator, Label);
 
   return (
-    <div className={cx(_css(raw.itemContainer, css), className)}>
+    <div className={cx(classes.itemContainer, _css(css), className)}>
       <BaseRadioGroup.Item
-        aria-invalid={error}
-        className={cx(_css(raw.item, css))}
+        aria-invalid={!!error}
+        className={classes.item}
         {...props}
       >
         {indicators}
@@ -75,7 +75,7 @@ const Item: React.FC<RadioItemProps> = ({
 };
 
 export type RadioProps = WithCssProps<
-  RadioVariantProps & BaseRadioGroup.RadioGroupProps
+  RadioGroupVariantProps & BaseRadioGroup.RadioGroupProps
 >;
 const Root: React.FC<RadioProps> = ({
   css,
@@ -85,13 +85,13 @@ const Root: React.FC<RadioProps> = ({
   error,
   ...props
 }) => {
-  const raw = radioVariants.raw({ error, size });
+  const classes = radioGroup({ error, size });
   const [items] = findChildrenByType(children, Item);
 
   return (
     <RadioGroupProvider size={size} error={error}>
       <BaseRadioGroup.Root
-        className={cx(_css(raw.root, css), className)}
+        className={cx(classes.root, _css(css), className)}
         {...props}
       >
         {items}

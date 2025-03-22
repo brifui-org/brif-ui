@@ -34,8 +34,9 @@ export const accordionSlotRecipe = defineSlotRecipe({
       },
       _disabled: {
         cursor: "not-allowed",
-        color: "text/32",
-        backgroundColor: "background.muted/32"
+        color: "color-mix(in oklab, {colors.text}, {colors.background} 68%)",
+        backgroundColor:
+          "color-mix(in oklab, {colors.background.muted}, {colors.background} 68%)"
       }
     },
     icon: {

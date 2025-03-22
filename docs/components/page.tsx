@@ -223,7 +223,7 @@ const APIReference: React.FC<{
     <div
       className={css(
         css.raw({
-          mb: 4
+          mb: 6
         }),
         _css
       )}

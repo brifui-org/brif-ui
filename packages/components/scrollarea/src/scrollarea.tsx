@@ -1,10 +1,10 @@
 import React from "react";
 import { ScrollArea as BaseScrollArea } from "radix-ui";
 import { css as _css, cx } from "@brifui/styled/css";
+import { scrollarea, ScrollareaVariantProps } from "@brifui/styled/recipes";
 import { WithCssProps } from "@brifui/utils";
 
 import { ScrollAreaProvider } from "./context";
-import { ScrollAreaVariantProps, scrollAreaVariants } from "./variants";
 
 export type ScrollAreaScrollbarProps =
   WithCssProps<BaseScrollArea.ScrollAreaScrollbarProps>;
@@ -14,21 +14,21 @@ const Scrollbar: React.FC<ScrollAreaScrollbarProps> = ({
   children,
   ...props
 }) => {
-  const raw = scrollAreaVariants.raw({ orientation: props.orientation });
+  const classes = scrollarea({ orientation: props.orientation });
 
   return (
     <BaseScrollArea.Scrollbar
-      className={cx(_css(raw.scrollbar, css), className)}
+      className={cx(classes.scrollbar, _css(css), className)}
       {...props}
     >
       {children}
-      <BaseScrollArea.Thumb className={_css(raw.thumb)} />
+      <BaseScrollArea.Thumb className={classes.thumb} />
     </BaseScrollArea.Scrollbar>
   );
 };
 
 export type ScrollAreaProps = WithCssProps<
-  ScrollAreaVariantProps & BaseScrollArea.ScrollAreaProps
+  ScrollareaVariantProps & BaseScrollArea.ScrollAreaProps
 >;
 const Root: React.FC<ScrollAreaProps> = ({
   className,
@@ -36,13 +36,13 @@ const Root: React.FC<ScrollAreaProps> = ({
   children,
   ...props
 }) => {
-  const raw = scrollAreaVariants.raw();
+  const classes = scrollarea();
 
   return (
     <ScrollAreaProvider>
-      <BaseScrollArea.Root className={_css(raw.root)} {...props}>
+      <BaseScrollArea.Root className={classes.root} {...props}>
         <BaseScrollArea.Viewport
-          className={cx(_css(raw.viewport, css), className)}
+          className={cx(classes.viewport, _css(css), className)}
         >
           {children}
         </BaseScrollArea.Viewport>

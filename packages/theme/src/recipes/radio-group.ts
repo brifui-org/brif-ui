@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const radioVariants = sva({
+export const radioGroupSlotRecipe = defineSlotRecipe({
+  className: "radioGroup",
+  description: "The styles of the `RadioGroup` component",
   slots: ["root", "itemContainer", "item", "indicator", "label"],
   base: {
     root: {
@@ -29,9 +31,9 @@ export const radioVariants = sva({
           borderColor:
             "color-mix(in oklab, {colors.text}, {colors.background} 68%)"
         },
-        "&[aria-invalid]": {
-          borderColor:
-            "color-mix(in oklab, {colors.error}, {colors.background} 68%)"
+        "& + label": {
+          cursor: "not-allowed",
+          color: "color-mix(in oklab, {colors.text}, {colors.background} 68%)"
         }
       },
       _checked: {
@@ -58,7 +60,7 @@ export const radioVariants = sva({
           fill: "color-mix(in oklab, {colors.text}, {colors.background} 68%)"
         },
         _checked: {
-          "&[aria-invalid]": {
+          '&[aria-invalid="true"]': {
             "& > svg": {
               stroke:
                 "color-mix(in oklab, {colors.error}, {colors.background} 68%)",
@@ -70,6 +72,7 @@ export const radioVariants = sva({
     },
     label: {
       pl: 2,
+      w: "100%",
       cursor: "pointer"
     }
   },
@@ -125,6 +128,12 @@ export const radioVariants = sva({
           borderColor: "error",
           _checked: {
             borderColor: "error"
+          },
+          _disabled: {
+            '&[aria-invalid="true"]': {
+              borderColor:
+                "color-mix(in oklab, {colors.error}, {colors.background} 68%)"
+            }
           }
         }
       }
@@ -135,5 +144,3 @@ export const radioVariants = sva({
     error: false
   }
 });
-
-export type RadioVariantProps = RecipeVariantProps<typeof radioVariants>;
