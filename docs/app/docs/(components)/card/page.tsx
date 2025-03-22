@@ -4,6 +4,7 @@ import { Page } from "@/components/page";
 import { Card } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { cardAPIs } from "./apis";
 import { borderredSnippet, sizeSnippet } from "./snippet";
 
 export default function CardDocs() {
@@ -56,6 +57,13 @@ export default function CardDocs() {
           </Card>
         </Page.Preview>
         <Page.CodePreview>{borderredSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Card " apis={cardAPIs} />
+        <Page.APIReference title="Header" />
+        <Page.APIReference title="Body" />
+        <Page.APIReference title="Footer" />
       </Page.Section>
     </Page>
   );

@@ -7,16 +7,11 @@ export const accordionSlotRecipe = defineSlotRecipe({
   base: {
     root: {
       w: "100%",
-      overflow: "hidden",
-      border: "2px solid {colors.border}",
-      "& > div": {
-        "&:not(:last-child)": {
-          borderBottom: "2px solid {colors.border}"
-        }
-      }
+      borderRadius: "component.md"
     },
     trigger: {
       px: 5,
+      outline: "none",
       bg: "background.muted",
       cursor: "pointer",
       display: "flex",
@@ -37,12 +32,10 @@ export const accordionSlotRecipe = defineSlotRecipe({
           transform: "rotate(0deg)"
         }
       },
-      /**
-       * Focus
-       */
-      _focusVisible: {
-        outline: "4px solid {colors.primary}",
-        outlineOffset: "2px"
+      _disabled: {
+        cursor: "not-allowed",
+        color: "text/32",
+        backgroundColor: "background.muted/32"
       }
     },
     icon: {
@@ -66,14 +59,34 @@ export const accordionSlotRecipe = defineSlotRecipe({
       px: 5,
       py: 2,
       borderTop: "2px solid {colors.border}"
+    },
+    item: {
+      overflow: "hidden",
+      border: "2px solid {colors.border}",
+      borderBottom: "none",
+      _first: {
+        borderTopLeftRadius: "component.md",
+        borderTopRightRadius: "component.md"
+      },
+      _last: {
+        borderBottom: "2px solid {colors.border}",
+        borderBottomLeftRadius: "component.md",
+        borderBottomRightRadius: "component.md"
+      },
+      _only: {
+        borderBottom: "2px solid {colors.border}"
+      },
+      /**
+       * Focus within
+       */
+      _focusWithin: {
+        outline: "4px solid {colors.primary}"
+      }
     }
   },
   variants: {
     size: {
       sm: {
-        root: {
-          borderRadius: "component.md"
-        },
         trigger: {
           textStyle: "heading.sm",
           h: "component.sm"
@@ -91,9 +104,6 @@ export const accordionSlotRecipe = defineSlotRecipe({
         }
       },
       md: {
-        root: {
-          borderRadius: "component.md"
-        },
         trigger: {
           textStyle: "heading.md",
           h: "component.md"
@@ -111,9 +121,6 @@ export const accordionSlotRecipe = defineSlotRecipe({
         }
       },
       lg: {
-        root: {
-          borderRadius: "component.lg"
-        },
         trigger: {
           textStyle: "heading.lg",
           h: "component.lg"

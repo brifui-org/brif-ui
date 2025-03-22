@@ -75,11 +75,20 @@ const Trigger: React.FC<AccordionTriggerProps> = ({
 };
 
 export type AccordionItemProps = WithCssProps<BaseAccordion.AccordionItemProps>;
-const Item: React.FC<AccordionItemProps> = ({ children, ...props }) => {
+const Item: React.FC<AccordionItemProps> = ({
+  css,
+  className,
+  children,
+  ...props
+}) => {
+  const { size } = useAccordion();
   const [triggers, contents] = findChildrenByType(children, Trigger, Content);
 
   return (
-    <BaseAccordion.Item {...props}>
+    <BaseAccordion.Item
+      className={cx(accordion({ size }).item, _css(css), className)}
+      {...props}
+    >
       {triggers}
       {contents}
     </BaseAccordion.Item>

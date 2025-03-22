@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Atom } from "lucide-react";
 import { Button } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { buttonAPIs } from "./apis";
 import { disabled, prefixAndSuffix, size, variants } from "./snippet";
 
 export default function ButtonDocs() {
@@ -118,6 +119,12 @@ export default function ButtonDocs() {
           </Button>
         </Page.Preview>
         <Page.CodePreview>{prefixAndSuffix}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Button" tag="button" apis={buttonAPIs} />
+        <Page.APIReference title="Prefix" tag="button" />
+        <Page.APIReference title="Suffix" tag="button" />
       </Page.Section>
     </Page>
   );

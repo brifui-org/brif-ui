@@ -3,7 +3,14 @@
 import { Page } from "@/components/page";
 import { Checkbox } from "@brifui/components";
 import { css } from "@brifui/styled/css";
-import { disabledSnippet, errorSnippet, indeterminateSnippet, sizeSnippet } from "./snippet";
+
+import { checkboxAPIs } from "./apis";
+import {
+  disabledSnippet,
+  errorSnippet,
+  indeterminateSnippet,
+  sizeSnippet
+} from "./snippet";
 
 export default function CheckboxDocs() {
   return (
@@ -144,6 +151,12 @@ export default function CheckboxDocs() {
           </Checkbox>
         </Page.Preview>
         <Page.CodePreview>{errorSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Checkbox" apis={checkboxAPIs} />
+        <Page.APIReference title="Indicator" />
+        <Page.APIReference title="Label" tag="label" />
       </Page.Section>
     </Page>
   );

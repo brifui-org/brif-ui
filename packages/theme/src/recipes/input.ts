@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const inputVariants = sva({
+export const inputSlotRecipe = defineSlotRecipe({
+  className: "input",
+  description: "The styles of `Input` component",
   slots: ["root", "input", "prefix", "suffix"],
   base: {
     root: {
@@ -147,5 +149,3 @@ export const inputVariants = sva({
     error: false
   }
 });
-
-export type InputVariantProps = RecipeVariantProps<typeof inputVariants>;
