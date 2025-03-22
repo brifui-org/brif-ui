@@ -4,6 +4,7 @@ import { Page } from "@/components/page";
 import { RadioGroup } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { radioGroupItemAPIs, radioGroupRootAPIs } from "./apis";
 import { defaultSnippet, disabledSnippet, errorSnippet } from "./snippet";
 
 export default function InputDocs() {
@@ -196,6 +197,13 @@ export default function InputDocs() {
           </RadioGroup.Root>
         </Page.Preview>
         <Page.CodePreview>{errorSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Root" apis={radioGroupRootAPIs} />
+        <Page.APIReference title="Item" apis={radioGroupItemAPIs} />
+        <Page.APIReference title="Indicator" />
+        <Page.APIReference title="Label" tag="label" />
       </Page.Section>
     </Page>
   );

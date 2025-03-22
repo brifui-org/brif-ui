@@ -1,6 +1,8 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
+import { defineSlotRecipe } from "@pandacss/dev";
 
-export const scrollAreaVariants = sva({
+export const scrollareaSlotRecipe = defineSlotRecipe({
+  className: "scrollarea",
+  description: "The styles of the `Scrollarea` component",
   slots: ["root", "viewport", "scrollbar", "corner", "thumb"],
   base: {
     root: {
@@ -54,7 +56,3 @@ export const scrollAreaVariants = sva({
     orientation: "vertical"
   }
 });
-
-export type ScrollAreaVariantProps = RecipeVariantProps<
-  typeof scrollAreaVariants
->;

@@ -10,7 +10,9 @@ import {
   codeblockSlotRecipe,
   dialogSlotRecipe,
   formSlotRecipe,
-  inputSlotRecipe
+  inputSlotRecipe,
+  radioGroupSlotRecipe,
+  scrollareaSlotRecipe
 } from "../recipes";
 import {
   baseSemanticTokens,
@@ -31,7 +33,9 @@ const slotRecipes = {
   codeblock: codeblockSlotRecipe,
   dialog: dialogSlotRecipe,
   form: formSlotRecipe,
-  input: inputSlotRecipe
+  input: inputSlotRecipe,
+  radioGroup: radioGroupSlotRecipe,
+  scrollarea: scrollareaSlotRecipe
 } satisfies Record<string, SlotRecipeConfig>;
 
 export const preset = definePreset({

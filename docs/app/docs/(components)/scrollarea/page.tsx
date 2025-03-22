@@ -33,7 +33,7 @@ export default function ScrollAreaDocs() {
               >
                 Tags
               </Text>
-              {tags.map((tag, idx) => (
+              {tags.map((tag) => (
                 <Text
                   suppressHydrationWarning
                   key={tag}
@@ -54,6 +54,11 @@ export default function ScrollAreaDocs() {
           </ScrollArea.Root>
         </Page.Preview>
         <Page.CodePreview>{defaultSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Root" />
+        <Page.APIReference title="Scrollbar" />
       </Page.Section>
     </Page>
   );

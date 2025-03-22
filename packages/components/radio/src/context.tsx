@@ -1,15 +1,14 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
+import { RadioGroupVariantProps } from "@brifui/styled/recipes";
 
-import { RadioVariantProps } from "./variants";
-
-export type RadioGroupContextType = NonNullable<RadioVariantProps>;
+export type RadioGroupContextType = NonNullable<RadioGroupVariantProps>;
 
 const RadioGroupContext = createContext<RadioGroupContextType>({});
 
 export const RadioGroupProvider: React.FC<
-  React.PropsWithChildren<NonNullable<RadioVariantProps>>
+  React.PropsWithChildren<NonNullable<RadioGroupVariantProps>>
 > = ({ children, ...props }) => {
   return (
     <RadioGroupContext.Provider value={props}>

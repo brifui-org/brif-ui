@@ -1,10 +1,9 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
+import { ScrollareaVariantProps } from "@brifui/styled/recipes";
 
-import { ScrollAreaVariantProps } from "./variants";
-
-export type ScrollAreaContextType = NonNullable<ScrollAreaVariantProps>;
+export type ScrollAreaContextType = NonNullable<ScrollareaVariantProps>;
 
 const ScrollAreaContext = createContext<ScrollAreaContextType>({});
 
