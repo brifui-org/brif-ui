@@ -12,7 +12,8 @@ import {
   formSlotRecipe,
   inputSlotRecipe,
   radioGroupSlotRecipe,
-  scrollareaSlotRecipe
+  scrollareaSlotRecipe,
+  selectSlotRecipe
 } from "../recipes";
 import {
   baseSemanticTokens,
@@ -35,7 +36,8 @@ const slotRecipes = {
   form: formSlotRecipe,
   input: inputSlotRecipe,
   radioGroup: radioGroupSlotRecipe,
-  scrollarea: scrollareaSlotRecipe
+  scrollarea: scrollareaSlotRecipe,
+  select: selectSlotRecipe
 } satisfies Record<string, SlotRecipeConfig>;
 
 export const preset = definePreset({

@@ -9,6 +9,7 @@ export const tableVariants = sva({
     },
     table: {
       w: "100%",
+      bg: "background",
       textStyle: "text.sm"
     },
     row: {
@@ -29,7 +30,7 @@ export const tableVariants = sva({
       "&:last-child": {
         textAlign: "right"
       },
-      borderBottom: "1px solid {colors.border}"
+      borderBottom: "2px solid {colors.border}"
     },
     cell: {
       px: 2,
@@ -82,7 +83,7 @@ export const tableVariants = sva({
         row: {
           "&:nth-child(odd)": {
             "& td": {
-              bg: "color-mix(in srgb, {colors.background.muted}, transparent)"
+              bg: "background.muted/50"
             }
           }
         }

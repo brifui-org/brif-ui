@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-
-import { SelectVariantProps } from "./variants";
+import { SelectVariantProps } from "@brifui/styled/recipes";
 
 export type SelectContextType = Pick<
   NonNullable<SelectVariantProps>,
