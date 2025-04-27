@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const avatarSlotRecipe = defineSlotRecipe({
+export const avatarSlotRecipe = {
   className: "avatar",
   description: "The styles of the `Avatar` component",
   slots: ["root", "img"],
@@ -48,4 +46,4 @@ export const avatarSlotRecipe = defineSlotRecipe({
   defaultVariants: {
     isLoading: false
   }
-});
+} satisfies BrifUISlotRecipeConfig;

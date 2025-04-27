@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const formSlotRecipe = defineSlotRecipe({
+export const formSlotRecipe = {
   className: "form",
   description: "The styles of `Form` component",
   slots: [
@@ -50,4 +48,4 @@ export const formSlotRecipe = defineSlotRecipe({
       justifyContent: "space-between"
     }
   }
-});
+} satisfies BrifUISlotRecipeConfig;

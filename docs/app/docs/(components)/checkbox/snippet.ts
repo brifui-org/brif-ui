@@ -18,7 +18,7 @@ export const Example = () => (
     </Checkbox>
   </>
 )
-`
+`;
 
 export const indeterminateSnippet = `import { Checkbox } from "@brifui/components";
 
@@ -40,7 +40,7 @@ export const Example = () => (
     </Checkbox>
   </>
 )
-`
+`;
 
 export const disabledSnippet = `import { Checkbox } from "@brifui/components";
 
@@ -67,7 +67,7 @@ export const Example = () => (
     </Checkbox>
   </>
 )
-`
+`;
 
 export const errorSnippet = `import { Checkbox } from "@brifui/components";
 
@@ -94,4 +94,4 @@ export const Example = () => (
     </Checkbox>
   </>
 )
-`
+`;

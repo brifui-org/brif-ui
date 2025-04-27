@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const scrollareaSlotRecipe = defineSlotRecipe({
+export const scrollareaSlotRecipe = {
   className: "scrollarea",
   description: "The styles of the `Scrollarea` component",
   slots: ["root", "viewport", "scrollbar", "corner", "thumb"],
@@ -55,4 +53,4 @@ export const scrollareaSlotRecipe = defineSlotRecipe({
   defaultVariants: {
     orientation: "vertical"
   }
-});
+} satisfies BrifUISlotRecipeConfig;

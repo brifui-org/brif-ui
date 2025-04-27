@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const accordionSlotRecipe = defineSlotRecipe({
+export const accordionSlotRecipe = {
   className: "accordion",
   description: "The styles of the `Accordion` component",
   slots: ["root", "item", "trigger", "contentContainer", "content", "icon"],
@@ -143,4 +141,4 @@ export const accordionSlotRecipe = defineSlotRecipe({
   defaultVariants: {
     size: "md"
   }
-});
+} satisfies BrifUISlotRecipeConfig;

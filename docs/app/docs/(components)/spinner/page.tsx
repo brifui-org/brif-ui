@@ -4,6 +4,7 @@ import { Page } from "@/components/page";
 import { Spinner } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import { spinnerAPIs } from "./apis";
 import { size } from "./snippet";
 
 export default function SpinnerDocs() {
@@ -27,6 +28,10 @@ export default function SpinnerDocs() {
           <Spinner size="lg" />
         </Page.Preview>
         <Page.CodePreview>{size}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Spinner" apis={spinnerAPIs} />
       </Page.Section>
     </Page>
   );

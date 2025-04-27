@@ -21,7 +21,6 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
-    "dev": "tsup src --watch",
     "lint": "eslint ."
   },
   "main": "dist/index.cjs",
@@ -39,13 +38,13 @@
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
     "@brifui/typescript-config": "^0.0.3",
-    "eslint": "^9.15.0",
-    "typescript": "5.5.4",
-    "vitest": "^2.1.8"
+    "eslint": "^9.25.1",
+    "typescript": "5.8.3",
+    "vitest": "^2.1.9"
   },
   "dependencies": {
-    "@pandacss/postcss": "^0.53.1",
-    "postcss": "^8.4.49"
+    "@pandacss/postcss": "^0.53.4",
+    "postcss": "^8.5.3"
   },
   "tsup": {
     "clean": true,

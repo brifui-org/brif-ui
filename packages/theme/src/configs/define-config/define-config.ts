@@ -4,9 +4,14 @@ import { locatePackage } from "@brifui/node";
 import { Config } from "@brifui/types";
 
 import { preset } from "../../presets";
-import { resolveConfig, resolveThemeVariantConfig } from "./resolve-config";
+import type { ComponentSlotRecipes } from "../../recipes";
+import {
+  resolveConfig,
+  resolveSlotRecipeConfig,
+  resolveThemeVariantConfig
+} from "./resolve-config";
 
-export const defineConfig = (configs: Config = {}) => {
+export const defineConfig = (configs: Config<ComponentSlotRecipes> = {}) => {
   const { include = ["./src/**/*.{ts,tsx,js,jsx}"] } = configs;
 
   const styledPackagePath = path.resolve(locatePackage("styled")!, "dist");
@@ -33,7 +38,9 @@ export const defineConfig = (configs: Config = {}) => {
       tokens: resolveConfig(configs, "tokens"),
       semanticTokens: resolveConfig(configs, "semanticTokens"),
       keyframes: resolveConfig(configs, "keyframes"),
-      breakpoints: resolveConfig(configs, "breakpoints")
+      breakpoints: resolveConfig(configs, "breakpoints"),
+      textStyles: resolveConfig(configs, "textStyles"),
+      slotRecipes: resolveSlotRecipeConfig(configs)
     },
     presets: [preset],
     importMap: "@brifui/styled",

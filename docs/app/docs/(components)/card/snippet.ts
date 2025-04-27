@@ -17,8 +17,7 @@ export const Example = () => (
     <Card.Footer>Footer</Card.Footer>
   </Card>
 )
-`
-
+`;
 
 export const borderredSnippet = `import { Card } from "@brifui/components";
 
@@ -29,4 +28,4 @@ export const Example = () => (
     <Card.Footer>Footer</Card.Footer>
   </Card>
 )
-`
+`;

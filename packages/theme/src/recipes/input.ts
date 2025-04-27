@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const inputSlotRecipe = defineSlotRecipe({
+export const inputSlotRecipe = {
   className: "input",
   description: "The styles of `Input` component",
   slots: ["root", "input", "prefix", "suffix"],
@@ -148,4 +146,4 @@ export const inputSlotRecipe = defineSlotRecipe({
     bordered: true,
     error: false
   }
-});
+} satisfies BrifUISlotRecipeConfig;

@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const checkboxSlotRecipe = defineSlotRecipe({
+export const checkboxSlotRecipe = {
   className: "checkbox",
   description: "The styles of the `Checkbox` component",
   slots: ["root", "indicator", "label"],
@@ -121,4 +119,4 @@ export const checkboxSlotRecipe = defineSlotRecipe({
     indeterminate: false,
     error: false
   }
-});
+} satisfies BrifUISlotRecipeConfig;

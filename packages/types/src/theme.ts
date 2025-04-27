@@ -1,4 +1,4 @@
-import { CssKeyframes } from "@pandacss/dev";
+import { CssKeyframes, SlotRecipeConfig } from "@pandacss/dev";
 
 import { DeepPartial, Recursive, Token } from "./base";
 import { Breakpoints } from "./breakpoints";
@@ -12,6 +12,7 @@ import {
   TextStyles
 } from "./fonts";
 import { ComponentRadii, Radii } from "./radii";
+import { ExtendableRecipes } from "./recipes";
 import { ComponentShadows, Shadows } from "./shadows";
 import {
   ComponentSizing,
@@ -60,7 +61,7 @@ export interface ExtendableTheme extends PartialTheme {
   extends?: PartialTheme;
 }
 
-export type Config = {
+export type Config<R extends Record<string, SlotRecipeConfig>> = {
   /**
    * List of files glob to watch for changes.
    * @default []
@@ -73,5 +74,9 @@ export type Config = {
   /**
    * The theme variants for your project.
    */
-  themes?: Record<string, Pick<PartialTheme, "tokens" | "semanticTokens">>;
+  themes?: Record<
+    string,
+    Pick<PartialTheme, "tokens" | "semanticTokens" | "textStyles">
+  >;
+  recipes?: ExtendableRecipes<R>;
 };

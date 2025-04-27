@@ -1,6 +1,6 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
-
-export const spinnerVariants = sva({
+export const spinnerSlotRecipes = {
+  className: "spinner",
+  description: "The styles of the `Spinner` component",
   slots: ["spinner"],
   base: {
     spinner: {
@@ -37,6 +37,4 @@ export const spinnerVariants = sva({
   defaultVariants: {
     size: "md"
   }
-});
-
-export type SpinnerVariantProps = RecipeVariantProps<typeof spinnerVariants>;
+} satisfies BrifUISlotRecipeConfig;

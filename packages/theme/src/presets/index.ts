@@ -1,20 +1,6 @@
-import { definePreset, SlotRecipeConfig } from "@pandacss/dev";
+import { definePreset } from "@pandacss/dev";
 
-import {
-  accordionSlotRecipe,
-  alertSlotRecipe,
-  avatarSlotRecipe,
-  buttonSlotRecipe,
-  cardSlotRecipe,
-  checkboxSlotRecipe,
-  codeblockSlotRecipe,
-  dialogSlotRecipe,
-  formSlotRecipe,
-  inputSlotRecipe,
-  radioGroupSlotRecipe,
-  scrollareaSlotRecipe,
-  selectSlotRecipe
-} from "../recipes";
+import { slotRecipes } from "../recipes";
 import {
   baseSemanticTokens,
   baseTokens,
@@ -23,22 +9,6 @@ import {
   textStyles
 } from "../tokens";
 import { boxShadowUtility } from "../utilities";
-
-const slotRecipes = {
-  button: buttonSlotRecipe,
-  accordion: accordionSlotRecipe,
-  alert: alertSlotRecipe,
-  avatar: avatarSlotRecipe,
-  card: cardSlotRecipe,
-  checkbox: checkboxSlotRecipe,
-  codeblock: codeblockSlotRecipe,
-  dialog: dialogSlotRecipe,
-  form: formSlotRecipe,
-  input: inputSlotRecipe,
-  radioGroup: radioGroupSlotRecipe,
-  scrollarea: scrollareaSlotRecipe,
-  select: selectSlotRecipe
-} satisfies Record<string, SlotRecipeConfig>;
 
 export const preset = definePreset({
   name: "brifui",

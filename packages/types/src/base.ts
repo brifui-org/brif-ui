@@ -13,3 +13,7 @@ export type Token<Value> = {
   description?: string;
   deprecated?: boolean | string;
 };
+
+export type Prettify<T> = {
+  [K in keyof T]: T[K];
+} & {};

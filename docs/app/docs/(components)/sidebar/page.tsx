@@ -25,17 +25,26 @@ import {
 } from "@brifui/components";
 import { css } from "@brifui/styled/css";
 
+import {
+  sidebarAPIs,
+  sidebarBodyAPIs,
+  sidebarFooterAPIs,
+  sidebarGroupAPIs,
+  sidebarGroupLabelAPIs,
+  sidebarHeaderAPIs,
+  sidebarMenuAPIs,
+  sidebarMenuItemAPIs,
+  sidebarMenuItemIconAPIs,
+  sidebarMenuItemLabelAPIs,
+  sidebarProviderAPIs
+} from "./apis";
 import { defaultSnippet } from "./snippet";
 
 const CollapseButton = () => {
   const { isOpen, setOpen } = useSidebar();
 
   return (
-    <div
-      className={css({
-        p: 2
-      })}
-    >
+    <div className={css({ p: 2 })}>
       <Button
         size={isOpen ? "md" : "icon"}
         fluid={isOpen}
@@ -71,17 +80,10 @@ export default function SidebarDocs() {
 
       <Page.Section title="Default">
         <Page.Preview
-          className={css({
-            p: "0px !important",
-            overflow: "hidden"
-          })}
+          className={css({ p: "0px !important", overflow: "hidden" })}
         >
           <Sidebar.Root isOpen={isOpen}>
-            <ScrollArea.Root
-              css={css.raw({
-                h: "450px"
-              })}
-            >
+            <ScrollArea.Root css={css.raw({ h: "450px" })}>
               <Sidebar.Header css={css.raw({ background: "background" })}>
                 <Sidebar.Menu
                   css={css.raw({
@@ -199,11 +201,7 @@ export default function SidebarDocs() {
                   </Sidebar.Menu>
                 </Sidebar.Group>
               </Sidebar.Body>
-              <Sidebar.Footer
-                css={css.raw({
-                  background: "background"
-                })}
-              >
+              <Sidebar.Footer css={css.raw({ background: "background" })}>
                 <Sidebar.Menu>
                   <CollapseButton />
                 </Sidebar.Menu>
@@ -212,6 +210,30 @@ export default function SidebarDocs() {
           </Sidebar.Root>
         </Page.Preview>
         <Page.CodePreview>{defaultSnippet}</Page.CodePreview>
+      </Page.Section>
+
+      <Page.Section shadow={false} title="API Reference">
+        <Page.APIReference title="Provider" apis={sidebarProviderAPIs} />
+        <Page.APIReference tag="aside" title="Root" apis={sidebarAPIs} />
+        <Page.APIReference title="Header" apis={sidebarHeaderAPIs} />
+        <Page.APIReference title="Body" apis={sidebarBodyAPIs} />
+        <Page.APIReference title="Footer" apis={sidebarFooterAPIs} />
+        <Page.APIReference title="Group" apis={sidebarGroupAPIs} />
+        <Page.APIReference title="GroupLabel" apis={sidebarGroupLabelAPIs} />
+        <Page.APIReference title="Menu" apis={sidebarMenuAPIs} />
+        <Page.APIReference
+          tag="T"
+          title="MenuItem"
+          apis={sidebarMenuItemAPIs}
+        />
+        <Page.APIReference
+          title="MenuItemLabel"
+          apis={sidebarMenuItemLabelAPIs}
+        />
+        <Page.APIReference
+          title="MenuItemIcon"
+          apis={sidebarMenuItemIconAPIs}
+        />
       </Page.Section>
     </Page>
   );

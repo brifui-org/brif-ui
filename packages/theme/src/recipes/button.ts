@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const buttonSlotRecipe = defineSlotRecipe({
+export const buttonSlotRecipe = {
   className: "button",
   description: "The styles of the `Button` component",
   slots: ["root", "container"],
@@ -217,4 +215,4 @@ export const buttonSlotRecipe = defineSlotRecipe({
     size: "md",
     fluid: false
   }
-});
+} satisfies BrifUISlotRecipeConfig;

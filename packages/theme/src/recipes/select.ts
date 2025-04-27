@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const selectSlotRecipe = defineSlotRecipe({
+export const selectSlotRecipe = {
   className: "select",
   description: "The styles of `Select` component",
   slots: ["root", "trigger", "content", "item"],
@@ -73,4 +71,4 @@ export const selectSlotRecipe = defineSlotRecipe({
     size: "md",
     error: false
   }
-});
+} satisfies BrifUISlotRecipeConfig;
