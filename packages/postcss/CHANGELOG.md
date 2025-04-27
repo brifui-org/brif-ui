@@ -1,5 +1,11 @@
 # @brifui/postcss
 
+## 0.0.8
+
+### Patch Changes
+
+- [#200](https://github.com/brifui-org/brif-ui/pull/200) [`356c900`](https://github.com/brifui-org/brif-ui/commit/356c900c8079ecf6795597c9baba3cf2488300d7) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - Supports for component styles overrides
+
 ## 0.0.7
 
 ### Patch Changes

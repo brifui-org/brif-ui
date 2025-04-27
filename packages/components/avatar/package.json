@@ -1,6 +1,6 @@
 {
   "name": "@brifui/avatar",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Avatar component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,16 +30,16 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.28",
-    "@brifui/types": "^0.0.14",
-    "@brifui/utils": "^0.0.23",
+    "@brifui/styled": "^0.0.29",
+    "@brifui/types": "^0.0.15",
+    "@brifui/utils": "^0.0.24",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.3",
-    "@brifui/mocks": "^0.0.5",
-    "@brifui/typescript-config": "^0.0.3",
+    "@brifui/eslint-config": "^0.0.4",
+    "@brifui/mocks": "^0.0.6",
+    "@brifui/typescript-config": "^0.0.4",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",

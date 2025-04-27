@@ -1,6 +1,6 @@
 {
   "name": "@brifui/theme",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Theming library for Brif UI.",
   "sideEffects": false,
   "type": "module",
@@ -40,9 +40,9 @@
     }
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.3",
-    "@brifui/types": "^0.0.14",
-    "@brifui/typescript-config": "^0.0.3",
+    "@brifui/eslint-config": "^0.0.4",
+    "@brifui/types": "^0.0.15",
+    "@brifui/typescript-config": "^0.0.4",
     "@types/color": "^4.2.0",
     "clean-package": "^2.2.0",
     "eslint": "^9.25.1",
@@ -50,8 +50,8 @@
     "vitest": "^2.1.9"
   },
   "dependencies": {
-    "@brifui/node": "^0.0.4",
-    "@brifui/postcss": "^0.0.7",
+    "@brifui/node": "^0.0.5",
+    "@brifui/postcss": "^0.0.8",
     "@pandacss/dev": "^0.53.4",
     "color": "^4.2.3",
     "deepmerge": "^4.3.1"
