@@ -1,8 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-
-import { SidebarVariantProps } from "./variants";
+import { SidebarVariantProps } from "@brifui/styled/recipes";
 
 export type SidebarContextStylesType = NonNullable<SidebarVariantProps>;
 

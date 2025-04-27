@@ -2,6 +2,10 @@
 import deepmerge from "deepmerge";
 import { Config, Theme } from "@brifui/types";
 
+import {
+  slotRecipes as defaultSlotRecipes,
+  type ComponentSlotRecipes
+} from "../../recipes";
 import { dark, light } from "../../themes";
 import {
   baseSemanticTokens,
@@ -25,7 +29,7 @@ const defaultThemeVariants = {
 } as const;
 
 export const resolveConfig = (
-  config: Config | undefined,
+  config: Config<ComponentSlotRecipes> | undefined,
   key: keyof typeof defaultConfig
 ): any => {
   if (
@@ -47,17 +51,26 @@ export const resolveConfig = (
   return config.theme[key];
 };
 
-export const resolveThemeVariantConfig = (config: Config | undefined) => {
+export const resolveThemeVariantConfig = (
+  config: Config<ComponentSlotRecipes> | undefined
+) => {
   if (!config || !config.themes) return defaultThemeVariants;
 
   return {
     ...defaultThemeVariants,
-    ...Object.keys(config.themes).reduce<NonNullable<Config["themes"]>>(
-      (theme, key) => {
-        theme[key] = config.themes?.[key] ?? {};
-        return theme;
-      },
-      {}
-    )
+    ...Object.keys(config.themes).reduce<
+      NonNullable<Config<ComponentSlotRecipes>["themes"]>
+    >((theme, key) => {
+      theme[key] = config.themes?.[key] ?? {};
+      return theme;
+    }, {})
   };
+};
+
+export const resolveSlotRecipeConfig = (
+  config: Config<ComponentSlotRecipes> | undefined
+) => {
+  if (!config || !config.recipes) return defaultSlotRecipes;
+
+  return deepmerge(defaultSlotRecipes, config.recipes);
 };

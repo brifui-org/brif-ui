@@ -1,8 +1,7 @@
 import React from "react";
 import { css as _css, cx } from "@brifui/styled/css";
+import { card, CardVariantProps } from "@brifui/styled/recipes";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
-
-import { CardVariantProps, card } from "@brifui/styled/recipes";
 
 export type CardProps = WithCssProps<
   CardVariantProps & React.ComponentPropsWithRef<"div">
@@ -20,11 +19,7 @@ const Header: React.FC<CardHeaderProps> = ({
 }) => {
   return (
     <div
-      className={cx(
-        card({ shadow, bordered }).header,
-        _css(css),
-        className
-      )}
+      className={cx(card({ shadow, bordered }).header, _css(css), className)}
       {...props}
     />
   );
@@ -39,11 +34,7 @@ const Body: React.FC<CardBodyProps> = ({
 }) => {
   return (
     <div
-      className={cx(
-        card({ shadow, bordered }).body,
-        _css(css),
-        className
-      )}
+      className={cx(card({ shadow, bordered }).body, _css(css), className)}
       {...props}
     />
   );
@@ -58,11 +49,7 @@ const Footer: React.FC<CardFooterProps> = ({
 }) => {
   return (
     <div
-      className={cx(
-        card({ shadow, bordered }).footer,
-        _css(css),
-        className
-      )}
+      className={cx(card({ shadow, bordered }).footer, _css(css), className)}
       {...props}
     />
   );
@@ -82,11 +69,7 @@ export const Card: React.FC<CardProps> & {
 
   return (
     <div
-      className={cx(
-        card({ shadow, bordered }).root,
-        _css(css),
-        className
-      )}
+      className={cx(card({ shadow, bordered }).root, _css(css), className)}
       {...props}
     >
       {headers?.map((header, idx) =>

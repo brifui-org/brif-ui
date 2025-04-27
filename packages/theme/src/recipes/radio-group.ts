@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const radioGroupSlotRecipe = defineSlotRecipe({
+export const radioGroupSlotRecipe = {
   className: "radioGroup",
   description: "The styles of the `RadioGroup` component",
   slots: ["root", "itemContainer", "item", "indicator", "label"],
@@ -143,4 +141,4 @@ export const radioGroupSlotRecipe = defineSlotRecipe({
     size: "md",
     error: false
   }
-});
+} satisfies BrifUISlotRecipeConfig;

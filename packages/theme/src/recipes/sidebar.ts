@@ -1,6 +1,4 @@
-import { RecipeVariantProps, sva } from "@brifui/styled/css";
-
-export const cssVars = {
+const cssVars = {
   width: {
     DEFAULT: "--brifui-sidebar-width",
     expand: "--brifui-sidebar-expand-width",
@@ -8,7 +6,9 @@ export const cssVars = {
   }
 };
 
-export const sidebarVariants = sva({
+export const sidebarSlotRecipes = {
+  className: "sidebar",
+  description: "The styles of the `Sidebar` component",
   slots: [
     "root",
     "sidebar",
@@ -140,6 +140,4 @@ export const sidebarVariants = sva({
       color: "text.muted"
     }
   }
-});
-
-export type SidebarVariantProps = RecipeVariantProps<typeof sidebarVariants>;
+} satisfies BrifUISlotRecipeConfig;

@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const alertSlotRecipe = defineSlotRecipe({
+export const alertSlotRecipe = {
   className: "alert",
   description: "The styles of the `Alert` component",
   slots: ["root", "title", "description"],
@@ -60,4 +58,4 @@ export const alertSlotRecipe = defineSlotRecipe({
   defaultVariants: {
     error: false
   }
-});
+} satisfies BrifUISlotRecipeConfig;

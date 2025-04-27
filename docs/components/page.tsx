@@ -73,7 +73,10 @@ const Section: React.FC<{
           flexDirection: "column",
           borderBottomWidth: "2px",
           borderBottomStyle: "solid",
-          borderBottomColor: "border.muted"
+          borderBottomColor: "border.muted",
+          "& p": {
+            mb: 2
+          }
         }),
         className
       )}
@@ -228,7 +231,7 @@ const APIReference: React.FC<{
         _css
       )}
     >
-      {title && (
+      {!!title?.length && (
         <div
           className={css({
             mb: 2,
@@ -258,7 +261,7 @@ const APIReference: React.FC<{
           </AttributeTag>
         </div>
       )}
-      {apis && apis.length && (
+      {apis && !!apis.length && (
         <Table.Root>
           <Table.Head>
             <Table.Row>

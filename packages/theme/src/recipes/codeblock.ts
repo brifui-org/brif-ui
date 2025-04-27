@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const codeblockSlotRecipe = defineSlotRecipe({
+export const codeblockSlotRecipe = {
   className: "codeblock",
   description: "The styles of `Codeblock` component",
   slots: ["root", "content", "line", "header", "filename", "icon"],
@@ -117,4 +115,4 @@ export const codeblockSlotRecipe = defineSlotRecipe({
       overflow: "hidden"
     }
   }
-});
+} satisfies BrifUISlotRecipeConfig;

@@ -23,7 +23,6 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsup src --dts",
-    "dev": "tsup src --dts --watch",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "lint": "eslint ."
@@ -44,16 +43,16 @@
     "@brifui/eslint-config": "^0.0.3",
     "@brifui/types": "^0.0.14",
     "@brifui/typescript-config": "^0.0.3",
-    "@types/color": "^4",
+    "@types/color": "^4.2.0",
     "clean-package": "^2.2.0",
-    "eslint": "^9.15.0",
-    "typescript": "5.5.4",
-    "vitest": "^2.1.8"
+    "eslint": "^9.25.1",
+    "typescript": "5.8.3",
+    "vitest": "^2.1.9"
   },
   "dependencies": {
     "@brifui/node": "^0.0.4",
     "@brifui/postcss": "^0.0.7",
-    "@pandacss/dev": "^0.53.1",
+    "@pandacss/dev": "^0.53.4",
     "color": "^4.2.3",
     "deepmerge": "^4.3.1"
   },

@@ -56,21 +56,18 @@
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
-  "peerDependencies": {
-    "@pandacss/dev": "^0.53.1"
-  },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.3",
     "@brifui/types": "^0.0.14",
     "@brifui/typescript-config": "^0.0.3",
-    "@rslib/core": "^0.5.4",
+    "@rslib/core": "^0.5.5",
     "delay-cli": "^2.0.0",
-    "eslint": "^9.15.0",
-    "typescript": "5.5.4",
-    "vitest": "^2.1.8"
+    "eslint": "^9.25.1",
+    "typescript": "5.8.3",
+    "vitest": "^2.1.9"
   },
   "dependencies": {
     "@brifui/theme": "^0.0.26",
-    "@pandacss/dev": "^0.53.1"
+    "@pandacss/dev": "^0.53.4"
   }
 }

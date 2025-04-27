@@ -35,7 +35,10 @@ const contentStyles = css({
 });
 
 const mainStyles = css({
-  maxW: "screen",
+  maxW: {
+    base: "screen",
+    lg: "calc(100vw - 250px)"
+  },
   ml: {
     base: "0",
     lg: "250px"

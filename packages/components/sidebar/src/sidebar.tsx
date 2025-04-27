@@ -2,11 +2,19 @@
 
 import React, { CSSProperties } from "react";
 import { css as _css, cx } from "@brifui/styled/css";
+import { sidebar, SidebarVariantProps } from "@brifui/styled/recipes";
 import { Tooltip } from "@brifui/tooltip";
 import { findChildrenByType, WithCssProps } from "@brifui/utils";
 
 import { SideBarProvider, useSidebar } from "./context";
-import { cssVars, SidebarVariantProps, sidebarVariants } from "./variants";
+
+export const cssVars = {
+  width: {
+    DEFAULT: "--brifui-sidebar-width",
+    expand: "--brifui-sidebar-expand-width",
+    collapsed: "--brifui-sidebar-collapsed-width"
+  }
+};
 
 export type SidebarMenuItemIconProps = WithCssProps<
   React.ComponentPropsWithRef<"div">
@@ -16,10 +24,10 @@ const MenuItemIcon: React.FC<SidebarMenuItemIconProps> = ({
   className,
   ...props
 }) => {
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
 
   return (
-    <div className={cx(_css(raw.menuItemIcon, css), className)} {...props} />
+    <div className={cx(raw.menuItemIcon, _css(css), className)} {...props} />
   );
 };
 
@@ -31,10 +39,10 @@ const MenuItemLabel: React.FC<SidebarMenuItemLabelProps> = ({
   className,
   ...props
 }) => {
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
 
   return (
-    <div className={cx(_css(raw.menuItemLabel, css), className)} {...props} />
+    <div className={cx(raw.menuItemLabel, _css(css), className)} {...props} />
   );
 };
 
@@ -61,7 +69,7 @@ function MenuItem<T extends React.ElementType>({
   ...props
 }: SidebarMenuItemProps<T>) {
   const { isOpen } = useSidebar();
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
   const [icons, labels] = findChildrenByType(
     children,
     MenuItemIcon,
@@ -74,7 +82,7 @@ function MenuItem<T extends React.ElementType>({
     <Tooltip.Root open={shouldShowTooltip ? undefined : false}>
       <Tooltip.Trigger>
         <As
-          className={cx(_css(raw.menuItem, css), className)}
+          className={cx(raw.menuItem, _css(css), className)}
           {...props}
           role="menuitem"
           aria-disabled={disabled}
@@ -92,12 +100,12 @@ function MenuItem<T extends React.ElementType>({
 
 export type SidebarMenuProps = WithCssProps<React.ComponentPropsWithRef<"div">>;
 const Menu: React.FC<SidebarMenuProps> = ({ css, className, ...props }) => {
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
 
   return (
     <div
       role="menu"
-      className={cx(_css(raw.menu, css), className)}
+      className={cx(raw.menu, _css(css), className)}
       {...props}
     />
   );
@@ -112,14 +120,14 @@ const Group: React.FC<SidebarGroupProps> = ({
   children,
   ...props
 }) => {
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
   const [labels, menus] = findChildrenByType(children, GroupLabel, Menu);
 
   return (
     <div
       data-sidebar-part="group"
       role="group"
-      className={cx(_css(raw.group, css), className)}
+      className={cx(raw.group, _css(css), className)}
       {...props}
     >
       {labels}
@@ -137,14 +145,14 @@ const GroupLabel: React.FC<SidebarGroupLabelProps> = ({
   ...props
 }) => {
   const { isOpen } = useSidebar();
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
 
   if (!isOpen) return null;
 
   return (
     <div
       data-sidebar-part="group-label"
-      className={cx(_css(raw.groupLabel, css), className)}
+      className={cx(raw.groupLabel, _css(css), className)}
       {...props}
     />
   );
@@ -154,12 +162,12 @@ export type SidebarHeaderProps = WithCssProps<
   React.ComponentPropsWithRef<"div">
 >;
 const Header: React.FC<SidebarHeaderProps> = ({ css, className, ...props }) => {
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
 
   return (
     <div
       data-sidebar-part="header"
-      className={cx(_css(raw.header, css), className)}
+      className={cx(raw.header, _css(css), className)}
       {...props}
     />
   );
@@ -172,14 +180,14 @@ const Body: React.FC<SidebarBodyProps> = ({
   children,
   ...props
 }) => {
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
 
   const [groups] = findChildrenByType(children, Group);
 
   return (
     <div
       data-sidebar-part="body"
-      className={cx(_css(raw.body, css), className)}
+      className={cx(raw.body, _css(css), className)}
       {...props}
     >
       {groups}
@@ -191,12 +199,12 @@ export type SidebarFooterProps = WithCssProps<
   React.ComponentPropsWithRef<"div">
 >;
 const Footer: React.FC<SidebarFooterProps> = ({ css, className, ...props }) => {
-  const raw = sidebarVariants.raw();
+  const raw = sidebar();
 
   return (
     <div
       data-sidebar-part="footer"
-      className={cx(_css(raw.footer, css), className)}
+      className={cx(raw.footer, _css(css), className)}
       {...props}
     />
   );
@@ -216,7 +224,7 @@ const Root: React.FC<SidebarProps> = ({
   style = {},
   ...props
 }) => {
-  const raw = sidebarVariants.raw({});
+  const raw = sidebar();
 
   return (
     <aside
@@ -229,10 +237,10 @@ const Root: React.FC<SidebarProps> = ({
           ...style
         } as CSSProperties
       }
-      className={cx(_css(raw.root, css), className)}
+      className={cx(raw.root, _css(css), className)}
       {...props}
     >
-      <div className={_css(raw.sidebar)}>{children}</div>
+      <div className={raw.sidebar}>{children}</div>
     </aside>
   );
 };

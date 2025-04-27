@@ -1,6 +1,4 @@
-import { defineSlotRecipe } from "@pandacss/dev";
-
-export const dialogSlotRecipe = defineSlotRecipe({
+export const dialogSlotRecipe = {
   className: "dialog",
   description: "The styles of `Dialog` component",
   slots: [
@@ -108,4 +106,4 @@ export const dialogSlotRecipe = defineSlotRecipe({
     }
   },
   defaultVariants: { size: "md" }
-});
+} satisfies BrifUISlotRecipeConfig;
