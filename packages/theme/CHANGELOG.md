@@ -1,5 +1,15 @@
 # @brifui/theme
 
+## 0.0.27
+
+### Patch Changes
+
+- [#200](https://github.com/brifui-org/brif-ui/pull/200) [`356c900`](https://github.com/brifui-org/brif-ui/commit/356c900c8079ecf6795597c9baba3cf2488300d7) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - Supports for component styles overrides
+
+- Updated dependencies [[`356c900`](https://github.com/brifui-org/brif-ui/commit/356c900c8079ecf6795597c9baba3cf2488300d7)]:
+  - @brifui/node@0.0.5
+  - @brifui/postcss@0.0.8
+
 ## 0.0.26
 
 ### Patch Changes

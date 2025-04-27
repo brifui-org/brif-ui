@@ -1,5 +1,35 @@
 # @brifui/components
 
+## 0.0.52
+
+### Patch Changes
+
+- [#200](https://github.com/brifui-org/brif-ui/pull/200) [`356c900`](https://github.com/brifui-org/brif-ui/commit/356c900c8079ecf6795597c9baba3cf2488300d7) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - Supports for component styles overrides
+
+- Updated dependencies [[`356c900`](https://github.com/brifui-org/brif-ui/commit/356c900c8079ecf6795597c9baba3cf2488300d7)]:
+  - @brifui/accordion@0.0.30
+  - @brifui/alert@0.0.3
+  - @brifui/avatar@0.0.20
+  - @brifui/badge@0.0.14
+  - @brifui/button@0.0.32
+  - @brifui/card@0.0.30
+  - @brifui/checkbox@0.0.30
+  - @brifui/codeblock@0.0.22
+  - @brifui/dialog@0.0.4
+  - @brifui/form@0.0.31
+  - @brifui/input@0.0.34
+  - @brifui/radio@0.0.7
+  - @brifui/scrollarea@0.0.2
+  - @brifui/select@0.0.32
+  - @brifui/sidebar@0.0.25
+  - @brifui/spinner@0.0.20
+  - @brifui/switch@0.0.14
+  - @brifui/table@0.0.22
+  - @brifui/text@0.0.24
+  - @brifui/textarea@0.0.9
+  - @brifui/toast@0.0.21
+  - @brifui/tooltip@0.0.20
+
 ## 0.0.51
 
 ### Patch Changes

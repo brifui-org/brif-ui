@@ -1,6 +1,6 @@
 {
   "name": "@brifui/utils",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Brif UI components - utils library",
   "sideEffects": false,
   "type": "module",
@@ -26,14 +26,14 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.28",
-    "@brifui/types": "^0.0.14",
+    "@brifui/styled": "^0.0.29",
+    "@brifui/types": "^0.0.15",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.3",
-    "@brifui/typescript-config": "^0.0.3",
+    "@brifui/eslint-config": "^0.0.4",
+    "@brifui/typescript-config": "^0.0.4",
     "@microsoft/api-extractor": "^7.52.5",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
