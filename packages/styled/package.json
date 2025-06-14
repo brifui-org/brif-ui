@@ -62,12 +62,12 @@
     "@brifui/typescript-config": "^0.0.4",
     "@rslib/core": "^0.5.5",
     "delay-cli": "^2.0.0",
-    "eslint": "^9.25.1",
+    "eslint": "^9.29.0",
     "typescript": "5.8.3",
     "vitest": "^2.1.9"
   },
   "dependencies": {
     "@brifui/theme": "^0.0.27",
-    "@pandacss/dev": "^0.53.4"
+    "@pandacss/dev": "^0.54.0"
   }
 }

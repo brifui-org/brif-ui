@@ -36,25 +36,25 @@
     "@brifui/eslint-config": "^0.0.4",
     "@brifui/node": "^0.0.5",
     "@brifui/typescript-config": "^0.0.4",
-    "@types/node": "^22.15.2",
+    "@types/node": "^22.15.31",
     "cac": "^6.7.14",
     "clean-package": "^2.2.0",
-    "eslint": "^9.25.1",
+    "eslint": "^9.29.0",
     "typescript": "5.8.3",
     "update-notifier": "^7.3.1",
     "vitest": "^2.1.9"
   },
   "dependencies": {
     "@clack/prompts": "0.9.1",
-    "@pandacss/node": "^0.53.4",
+    "@pandacss/node": "^0.54.0",
     "@rslib/core": "^0.5.5",
     "bundle-n-require": "^1.1.2",
     "chalk": "4.1.2",
-    "effect": "^3.14.14",
+    "effect": "^3.16.7",
     "escalade": "^3.2.0",
     "fast-glob": "^3.3.3",
     "find-up": "^7.0.0",
-    "minimatch": "^10.0.1"
+    "minimatch": "^10.0.3"
   },
   "tsup": {
     "splitting": false,
