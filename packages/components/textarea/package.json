@@ -1,6 +1,6 @@
 {
   "name": "@brifui/textarea",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Textarea component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,15 +30,15 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.29",
-    "@brifui/utils": "^0.0.24",
+    "@brifui/styled": "^0.0.30",
+    "@brifui/utils": "^0.0.25",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.4",
-    "@brifui/mocks": "^0.0.6",
-    "@brifui/typescript-config": "^0.0.4",
+    "@brifui/eslint-config": "^0.0.5",
+    "@brifui/mocks": "^0.0.7",
+    "@brifui/typescript-config": "^0.0.5",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",

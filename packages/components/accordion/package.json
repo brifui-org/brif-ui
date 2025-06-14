@@ -1,6 +1,6 @@
 {
   "name": "@brifui/accordion",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "Accordion component - Brif UI",
   "sideEffects": false,
   "type": "module",
@@ -30,18 +30,18 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "dependencies": {
-    "@brifui/styled": "^0.0.29",
-    "@brifui/types": "^0.0.15",
-    "@brifui/utils": "^0.0.24",
+    "@brifui/styled": "^0.0.30",
+    "@brifui/types": "^0.0.16",
+    "@brifui/utils": "^0.0.25",
     "@radix-ui/react-accordion": "^1.2.11",
     "radix-ui": "^1.4.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.4",
-    "@brifui/mocks": "^0.0.6",
-    "@brifui/typescript-config": "^0.0.4",
+    "@brifui/eslint-config": "^0.0.5",
+    "@brifui/mocks": "^0.0.7",
+    "@brifui/typescript-config": "^0.0.5",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",

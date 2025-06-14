@@ -1,5 +1,35 @@
 # @brifui/components
 
+## 0.0.53
+
+### Patch Changes
+
+- [#202](https://github.com/brifui-org/brif-ui/pull/202) [`cd5b1ec`](https://github.com/brifui-org/brif-ui/commit/cd5b1ec7ef6df20d63f9ea4a18bc935127d6dfe8) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - Bumped panda version to 0.54.0
+
+- Updated dependencies [[`cd5b1ec`](https://github.com/brifui-org/brif-ui/commit/cd5b1ec7ef6df20d63f9ea4a18bc935127d6dfe8)]:
+  - @brifui/accordion@0.0.31
+  - @brifui/alert@0.0.4
+  - @brifui/avatar@0.0.21
+  - @brifui/badge@0.0.15
+  - @brifui/button@0.0.33
+  - @brifui/card@0.0.31
+  - @brifui/checkbox@0.0.31
+  - @brifui/codeblock@0.0.23
+  - @brifui/dialog@0.0.5
+  - @brifui/form@0.0.32
+  - @brifui/input@0.0.35
+  - @brifui/radio@0.0.8
+  - @brifui/scrollarea@0.0.3
+  - @brifui/select@0.0.33
+  - @brifui/sidebar@0.0.26
+  - @brifui/spinner@0.0.21
+  - @brifui/switch@0.0.15
+  - @brifui/table@0.0.23
+  - @brifui/text@0.0.25
+  - @brifui/textarea@0.0.10
+  - @brifui/toast@0.0.22
+  - @brifui/tooltip@0.0.21
+
 ## 0.0.52
 
 ### Patch Changes
