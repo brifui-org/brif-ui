@@ -66,7 +66,7 @@ export default function InstallationPage() {
               target="_blank"
               href="https://github.com/chakra-ui/panda/releases/tag/%40pandacss%2Ftypes%400.53.4"
             >
-              Panda CSS 0.53.4
+              Panda CSS 0.54.0
             </InlineLink>{" "}
             or later.
           </Text>

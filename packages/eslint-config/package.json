@@ -9,18 +9,18 @@
     "./react": "./react.js"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.1",
-    "@next/eslint-plugin-next": "^15.3.1",
-    "eslint": "^9.25.1",
+    "@eslint/js": "^9.29.0",
+    "@next/eslint-plugin-next": "^15.3.3",
+    "eslint": "^9.29.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-turbo": "^2.5.2",
+    "eslint-plugin-turbo": "^2.5.4",
     "globals": "^15.15.0",
-    "turbo": "^2.5.2",
+    "turbo": "^2.5.4",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.31.0"
+    "typescript-eslint": "^8.34.0"
   }
 }

@@ -21,7 +21,8 @@ export default function ScrollAreaDocs() {
       <Page.Section title="Default">
         <Page.Preview
           css={css.raw({
-            p: 0
+            p: 0,
+            py: 0
           })}
         >
           <ScrollArea.Root>

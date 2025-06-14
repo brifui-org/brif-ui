@@ -26,17 +26,17 @@
   },
   "main": "src/index.ts",
   "dependencies": {
-    "effect": "^3.14.14",
+    "effect": "^3.16.7",
     "escalade": "^3.2.0"
   },
   "devDependencies": {
     "@brifui/eslint-config": "^0.0.4",
     "@brifui/typescript-config": "^0.0.4",
-    "@microsoft/api-extractor": "^7.52.5",
-    "eslint": "^9.25.1",
+    "@microsoft/api-extractor": "^7.52.8",
+    "eslint": "^9.29.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.0",
     "typescript": "5.8.3",
     "vitest": "^2.1.9"
   },

@@ -45,14 +45,14 @@
     "@brifui/typescript-config": "^0.0.4",
     "@types/color": "^4.2.0",
     "clean-package": "^2.2.0",
-    "eslint": "^9.25.1",
+    "eslint": "^9.29.0",
     "typescript": "5.8.3",
     "vitest": "^2.1.9"
   },
   "dependencies": {
     "@brifui/node": "^0.0.5",
     "@brifui/postcss": "^0.0.8",
-    "@pandacss/dev": "^0.53.4",
+    "@pandacss/dev": "^0.54.0",
     "color": "^4.2.3",
     "deepmerge": "^4.3.1"
   },
