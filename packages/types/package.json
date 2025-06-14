@@ -1,6 +1,6 @@
 {
   "name": "@brifui/types",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Types library for Brif UI.",
   "type": "module",
   "sideEffects": false,
@@ -25,8 +25,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "devDependencies": {
-    "@brifui/eslint-config": "^0.0.4",
-    "@brifui/typescript-config": "^0.0.4",
+    "@brifui/eslint-config": "^0.0.5",
+    "@brifui/typescript-config": "^0.0.5",
     "clean-package": "^2.2.0",
     "eslint": "^9.29.0",
     "typescript": "5.8.3",

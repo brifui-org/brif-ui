@@ -1,5 +1,16 @@
 # @brifui/select
 
+## 0.0.33
+
+### Patch Changes
+
+- [#202](https://github.com/brifui-org/brif-ui/pull/202) [`cd5b1ec`](https://github.com/brifui-org/brif-ui/commit/cd5b1ec7ef6df20d63f9ea4a18bc935127d6dfe8) Thanks [@trinhthinh388](https://github.com/trinhthinh388)! - Bumped panda version to 0.54.0
+
+- Updated dependencies [[`cd5b1ec`](https://github.com/brifui-org/brif-ui/commit/cd5b1ec7ef6df20d63f9ea4a18bc935127d6dfe8)]:
+  - @brifui/button@0.0.33
+  - @brifui/styled@0.0.30
+  - @brifui/utils@0.0.25
+
 ## 0.0.32
 
 ### Patch Changes
